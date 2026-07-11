@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<title>富林有機農場 - 相依為命</title>
+<style>
+  :root{
+  --soil-dark:#5B4028;
+    --soil:#8B5E3C;
+    --paper:#F3F1E2;
+    --paper-deep:#EAE6D3;
+    --ink:#2B2620;
+    --ink-soft:#5A5346;
+    --moss:#4C7A3D;
+    --moss-deep:#375A2C;
+    --amber:#D99A20;
+    --amber-deep:#B87D12;
+    --coral:#DC5A3E;
+    --teal:#256F72;
+    --river:#33628C;
+    --line:#D8D2BB;
+    --card:#FCFAF1;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    font-weight:400;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.display{
+    font-family:"ZCOOL KuaiLe","Noto Sans TC",sans-serif;
+    font-weight:400;
+    color:var(--soil-dark);
+  }
+ 
+  a{color:var(--teal);}
+  .wrap{max-width: 1600px;margin:0 auto;padding:0 24px;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:76px 24px 96px;
+    background:
+      radial-gradient(circle at 12% 20%, rgba(163,199,154,0.35), transparent 45%),
+      radial-gradient(circle at 88% 75%, rgba(227,167,59,0.25), transparent 40%),
+      linear-gradient(160deg, #F9F4E8 0%, #F3ECD9 100%);
+    overflow:hidden;
+    text-align:center;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:13px;
+    letter-spacing:.14em;
+    color:var(--moss-deep);
+    font-weight:700;
+    background:rgba(76,122,61,.12);
+    border:1px solid rgba(76,122,61,.35);
+    border-radius:999px;
+    padding:5px 14px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(38px,6vw,64px);
+    margin:0 0 14px;
+    line-height:1.25;
+  }
+  .hero h1 .accent{color:var(--moss-deep);}
+  .hero p.lead{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width: 1600px;
+    margin-top:10px;
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:10px;
+    margin-top:24px;
+  }
+  .meta-chip{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:8px 14px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+  .meta-chip b{color:var(--ink);font-weight:700;}
+
+  /* ===== 共生網絡圖 signature ===== */
+  .web-figure{margin-top:34px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 8px 6px;}
+  .web-figure figcaption{text-align:center;font-size:13px;color:var(--ink-soft);padding:6px 10px 10px;}
+
+  /* ===== NAV ===== */
+  .toc{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 22px;
+    margin:34px 0;
+  }
+  .toc h4{font-size:14px;letter-spacing:.06em;color:var(--moss-deep);text-transform:uppercase;margin-bottom:10px;}
+  .toc ol{columns:2;gap:24px;margin:0;padding-left:20px;font-size:14.5px;}
+  .toc li{margin-bottom:6px;break-inside:avoid;}
+  @media(max-width:640px){.toc ol{columns:1;}}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .kicker{
+    font-size:12.5px;font-weight:700;letter-spacing:.14em;color:var(--amber-deep);
+    text-transform:uppercase;margin-bottom:8px;
+  }
+  h2{font-size:26px;}
+  p{margin:.6em 0;}
+
+  .callout{
+    border-left:4px solid var(--moss);
+    background:rgba(76,122,61,.07);
+    border-radius:0 10px 10px 0;
+    padding:14px 18px;
+    font-size:14.5px;
+    margin:16px 0;
+  }
+  .callout.amber{border-color:var(--amber-deep);background:rgba(217,154,32,.1);}
+  .callout.coral{border-color:var(--coral);background:rgba(220,90,62,.09);}
+  .callout b{color:var(--ink);}
+  .callout .tag{
+    display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;
+    background:var(--ink);color:var(--paper);border-radius:6px;padding:1px 8px;margin-right:8px;
+  }
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14.5px;background:var(--card);border-radius:12px;overflow:hidden;}
+  caption{caption-side:top;text-align:left;font-weight:700;font-family:"Noto Serif TC",serif;font-size:16px;margin-bottom:8px;color:var(--ink);}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+  th{background:var(--paper-deep);font-weight:700;color:var(--moss-deep);font-size:13.5px;letter-spacing:.02em;}
+  tr:last-child td{border-bottom:none;}
+  td.num{white-space:nowrap;font-weight:700;color:var(--ink-soft);}
+
+  .badge{display:inline-block;font-size:11.5px;font-weight:700;border-radius:6px;padding:2px 9px;color:#fff;}
+  .b-obs{background:var(--river);}
+  .b-make{background:var(--amber-deep);}
+  .b-open{background:var(--moss);}
+  .b-cap{background:var(--coral);}
+
+  /* ===== unit cards ===== */
+  .unit{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 26px;
+    margin:22px 0;
+    position:relative;
+  }
+  .unit-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+  .unit-week{
+    font-family:"Noto Serif TC",serif;font-weight:900;color:var(--moss-deep);
+    font-size:15px;letter-spacing:.04em;
+  }
+  .unit h3{font-size:20px;margin:0;}
+  .unit-sub{font-size:13.5px;color:var(--ink-soft);margin-bottom:14px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px;}
+  @media(max-width:700px){.grid2{grid-template-columns:1fr;}}
+  .block h5{
+    font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--teal);margin:0 0 6px 0;
+  }
+  .block ul{margin:0;padding-left:18px;font-size:14px;}
+  .block ol{margin:0;padding-left:18px;font-size:14px;}
+  .block li{margin-bottom:4px;}
+  .flow-step{display:flex;gap:10px;margin-bottom:8px;font-size:14px;}
+  .flow-time{flex:0 0 66px;color:var(--amber-deep);font-weight:700;font-size:13px;}
+  .safety{
+    margin-top:14px;background:rgba(220,90,62,.08);border:1px solid rgba(220,90,62,.3);
+    border-radius:10px;padding:10px 14px;font-size:13.8px;
+  }
+  .safety b{color:var(--coral);}
+  .assess{margin-top:10px;font-size:13.8px;color:var(--ink-soft);}
+  .assess b{color:var(--ink);}
+
+  .two-col-note{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media(max-width:700px){.two-col-note{grid-template-columns:1fr;}}
+  .note-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;}
+  .note-card h4{font-size:16px;margin-bottom:8px;}
+
+  footer{padding:36px 0 60px;text-align:center;color:var(--ink-soft);font-size:13px;}
+  footer .farm{font-family:"Noto Serif TC",serif;font-weight:700;color:var(--moss-deep);font-size:15px;margin-bottom:4px;}
+
+  @media print{
+    body{background:#fff;}
+    .hero{background:#fff;border-bottom:2px solid #000;}
+    section{break-inside:avoid;border-bottom:1px solid #ccc;}
+    .unit{break-inside:avoid;}
+    .toc{break-inside:avoid;}
+  }
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,242,227,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:2px solid var(--rice-light);
+  }
+  .nav-inner{
+    max-width:1900px;margin:0 auto;padding:12px;
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:10px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:8px;
+    font-size:1.15rem;font-weight:900;color:var(--rice-dark);
+  }
+  .logo a{
+    text-decoration:none;color:var(--soil);
+    padding-bottom:3px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .logo-mark{font-size:1.5rem;}
+  .nav-links{display:flex;gap:22px;font-size:.92rem;font-weight:700;flex-wrap:wrap;}
+  .nav-links a{
+    text-decoration:none;color:var(--soil);
+    padding-bottom:3px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .nav-links a:hover{border-color:var(--turmeric);color:var(--rice-dark);}
+  .nav-cta{
+    background:var(--rice);color:#fff;padding:9px 20px;border-radius:24px;
+    font-size:.88rem;font-weight:700;text-decoration:none;
+    box-shadow:0 3px 0 var(--rice-dark);white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(1px);box-shadow:0 2px 0 var(--rice-dark);}
+.soil-strip{
+    height:14px;
+    background:repeating-linear-gradient(90deg, #8B5E3C 0 26px, #5B4028 26px 30px);
+  }
+</style>
+</head>
+<body>
+<nav>
+
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-mark">🌾</span><a href="https://snoweryi.github.io/kid/course">富林有機農場</a></div>
+    <div class="nav-links">
+      <a href="https://snoweryi.github.io/kid/course/115_61.html">115秋_6.1打好根基</a>
+      <a href="https://snoweryi.github.io/kid/course/115_63.html">6.3珍惜所有</a>
+      <a href="https://snoweryi.github.io/kid/course/115_64.html">6.4寶貝地球</a>
+      <a href="https://snoweryi.github.io/kid/course/115_65.html">115春_6.5看見微小</a>
+      <a href="https://snoweryi.github.io/kid/course/115_66.html">6.6 解決兩難</a>
+    </div>
+    <a class="nav-cta" href="#contact">預約洽詢</a>
+  </div>
+ 
+</nav>
+<header class="hero">  
+    <!--<span class="eyebrow">富林有機農場 × NGU恩澤優實驗教育機構</span>-->
+    <h1>相依為命：營造校園裡的<span class="accent">互利共生</span></h1>
+    <p class="lead">115學年度秋季自然探索課程規劃案　｜　分類：互助互利　｜　學科內容：相依為命</p>
+    <div class="hero-meta">
+      <div class="meta-chip">授課單位：<b>富林有機農場</b>（新竹縣芎林鄉）</div>
+      <div class="meta-chip">建議週期：<b>12個教學單元 / 約14教學週</b></div>
+      <div class="meta-chip">建議時數：<b>每次90分鐘（2節課）</b></div>
+      <div class="meta-chip">適用對象：<b>國小混齡班（可依年段分級任務）</b></div>
+    </div>
+
+    
+  
+</header>
+<div class="soil-strip"></div>
+<div class="wrap">
+<figure class="web-figure">
+      <svg viewBox="0 0 900 360" width="100%" role="img" aria-label="校園互利共生網絡示意圖：農場為中心，連結蜜源植物、蝴蝶、蜜蜂、蜻蜓、蓋斑鬥魚、愛玉與校園環境">
+        <defs>
+          <marker id="dot" markerWidth="6" markerHeight="6" refX="3" refY="3"><circle cx="3" cy="3" r="2.4" fill="#CBB98A"/></marker>
+        </defs>
+        <!-- connecting lines -->
+        <g stroke="#CBB98A" stroke-width="1.6" fill="none" opacity="0.9">
+          <line x1="450" y1="180" x2="150" y2="70"/>
+          <line x1="450" y1="180" x2="330" y2="45"/>
+          <line x1="450" y1="180" x2="560" y2="40"/>
+          <line x1="450" y1="180" x2="740" y2="80"/>
+          <line x1="450" y1="180" x2="120" y2="270"/>
+          <line x1="450" y1="180" x2="320" y2="320"/>
+          <line x1="450" y1="180" x2="600" y2="315"/>
+          <line x1="450" y1="180" x2="800" y2="255"/>
+        </g>
+        <!-- center node -->
+        <circle cx="450" cy="180" r="46" fill="#4C7A3D"/>
+        <text x="450" y="176" text-anchor="middle" fill="#F3F1E2" font-size="14" font-family="Noto Serif TC, serif" font-weight="700">富林</text>
+        <text x="450" y="194" text-anchor="middle" fill="#F3F1E2" font-size="14" font-family="Noto Serif TC, serif" font-weight="700">農場</text>
+
+        <!-- nodes -->
+        <g font-family="Noto Sans TC, sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+          <circle cx="150" cy="70" r="30" fill="#D99A20"/><text x="150" y="75" fill="#2B2620">蜜源植物</text>
+          <circle cx="330" cy="45" r="30" fill="#DC5A3E"/><text x="330" y="50" fill="#fff">蝴蝶</text>
+          <circle cx="560" cy="40" r="30" fill="#D99A20"/><text x="560" y="45" fill="#2B2620">蜜蜂</text>
+          <circle cx="740" cy="80" r="30" fill="#256F72"/><text x="740" y="85" fill="#fff">蜻蜓</text>
+          <circle cx="120" cy="270" r="30" fill="#33628C"/><text x="120" y="266" fill="#fff">蓋斑</text><text x="120" y="282" fill="#fff">鬥魚</text>
+          <circle cx="320" cy="320" r="30" fill="#4C7A3D"/><text x="320" y="325" fill="#fff">愛玉</text>
+          <circle cx="600" cy="315" r="30" fill="#D99A20"/><text x="600" y="311" fill="#2B2620">蜜蜂</text><text x="600" y="326" fill="#2B2620">的家</text>
+          <circle cx="800" cy="255" r="30" fill="#DC5A3E"/><text x="800" y="251" fill="#fff">校園</text><text x="800" y="266" fill="#fff">環境</text>
+        </g>
+      </svg>
+      <figcaption>每一種生物都是彼此的合作夥伴——這張網絡圖，就是本學期十二堂課要帶孩子親手「走一遍」的故事。</figcaption>
+    </figure>
+</div>
+<div class="wrap">
+
+<nav class="toc">
+  <h4>課程規劃目錄</h4>
+  <ol>
+    <li><a href="#stehm">課程理念與STEHM精神說明</a></li>
+    <li><a href="#overview">課程總覽表（12單元）</a></li>
+    <li><a href="#units">單元教案詳解</a></li>
+    <li><a href="#season">季節與排課建議（農場實務觀點）</a></li>
+    <li><a href="#material">教材教具與成本估算</a></li>
+    <li><a href="#safety">安全管理總表</a></li>
+    <li><a href="#appendix">附錄：素養對應與延伸建議</a></li>
+  </ol>
+</nav>
+
+<section id="stehm">
+  <div class="kicker">01　課程理念</div>
+  <h2>從「STEHM精神」出發：所有生命都活在關係裡</h2>
+  <p>依貴校課綱所列「介紹課程，說明STEHM的精神」，此處先說明本規劃案的理解與教學切入角度：</p>
+  <div class="callout">
+    <span class="tag">說明</span>
+    <b>STEHM</b> 一般理解為 STEAM（科學 Science、技術 Technology、工程 Engineering、藝術 Art、數學 Mathematics）的延伸版本，將 A 替換或擴充為 <b>H（人文 Humanity／健康 Health）</b>，強調跨領域學習之外，也重視人與環境、生命的連結。<br>
+    <b style="color:var(--coral)">提醒：</b>由於各實驗教育機構對 STEHM 的定義可能略有差異，建議上課前與貴校確認正式定義文字，以便第一週開場簡報用詞完全對齊校方理念（此為推測性說明，非已確認資訊）。
+  </div>
+  <p>本課程以「<b>相依為命</b>」為主軸，選擇貴校指定的六種生物／植物（蜜源植物、蝴蝶、蜜蜂、蜻蜓、蓋斑鬥魚、愛玉），每一種都是「一種生物離開另一種就活不下去、或活得辛苦」的真實案例——這正是 STEHM 精神中「跨領域知識最終服務於理解生命關係」的具體示範。農場主將以第一線有機農業經營者的角度，用真實的田間觀察、而非教科書式的講述，帶孩子看見這張網。</p>
+</section>
+
+<section id="overview">
+  <div class="kicker">02　課程總覽</div>
+  <h2>十二堂課總覽表</h2>
+  <table>
+    <caption>115學年度秋季「相依為命」課程總覽（建議每週90分鐘）</caption>
+    <thead>
+      <tr><th>週次</th><th>主題</th><th>課程類型</th><th>核心概念</th><th>建議地點</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="num">W1</td><td>開學導論：STEHM精神與農場的智慧</td><td><span class="badge b-open">導論</span></td><td>互利共生的定義與生活實例</td><td>教室</td></tr>
+      <tr><td class="num">W2</td><td>認識蜜源植物</td><td><span class="badge b-obs">觀察</span></td><td>植物如何「邀請」昆蟲</td><td>校園／教室</td></tr>
+      <tr><td class="num">W3</td><td>認識蝴蝶</td><td><span class="badge b-obs">觀察</span></td><td>完全變態與食草專一性</td><td>教室（活體視情況）</td></tr>
+      <tr><td class="num">W4</td><td>認識蜜蜂</td><td><span class="badge b-obs">觀察</span></td><td>社會分工與授粉經濟價值</td><td>教室</td></tr>
+      <tr><td class="num">W5</td><td>認識蜻蜓</td><td><span class="badge b-obs">觀察</span></td><td>水陸兩棲與水質指標</td><td>教室／水池區</td></tr>
+      <tr><td class="num">W6</td><td>認識蓋斑鬥魚</td><td><span class="badge b-obs">觀察</span></td><td>原生種瀕危與濕地保育</td><td>教室</td></tr>
+      <tr><td class="num">W7</td><td>設計蜜蜂的家（一）設計課</td><td><span class="badge b-make">實作</span></td><td>獨居蜂習性與工程繪圖入門</td><td>教室</td></tr>
+      <tr><td class="num">W8</td><td>設計蜜蜂的家（二）製作課</td><td><span class="badge b-make">實作</span></td><td>結構穩固性與動手組裝</td><td>教室／戶外</td></tr>
+      <tr><td class="num">W9</td><td>與動物互生的植物：愛玉</td><td><span class="badge b-make">實作</span></td><td>隱花果與愛玉小蜂的專一共生</td><td>教室（食品衛生）</td></tr>
+      <tr><td class="num">W10</td><td>營造互生校園（一）踏查規劃</td><td><span class="badge b-open">統整</span></td><td>棲地需求盤點與方案設計</td><td>校園</td></tr>
+      <tr><td class="num">W11</td><td>營造互生校園（二）動手施作</td><td><span class="badge b-make">實作</span></td><td>種植、安裝、標示牌製作</td><td>校園</td></tr>
+      <tr><td class="num">W12</td><td>成果發表與行動宣言</td><td><span class="badge b-cap">總結</span></td><td>表達統整與長期維護承諾</td><td>教室</td></tr>
+    </tbody>
+  </table>
+  <div class="callout amber"><span class="tag">彈性</span>若貴校排課為每週僅一節（40–45分鐘），建議將每一單元拆為「知識堂」與「觀察／實作堂」兩節，總週數可延長為 18–20 週，涵蓋完整秋季學期。</div>
+</section>
+
+<section id="units">
+  <div class="kicker">03　單元教案</div>
+  <h2>單元教案詳解</h2>
+
+  <div class="unit">
+    <div class="unit-head"><span class="unit-week">W1</span><h3>開學導論：認識STEHM精神與農場的智慧</h3></div>
+    <div class="unit-sub">學習目標：理解跨領域學習與「互利共生」核心概念／認識富林有機農場與有機農業理念</div>
+    <div class="grid2">
+      <div class="block">
+        <h5>教學流程</h5>
+        <div class="flow-step"><div class="flow-time">15min</div>破冰遊戲「誰是我的好朋友？」——配對卡（如蜜蜂配花、愛玉配愛玉小蜂）</div>
+        <div class="flow-step"><div class="flow-time">40min</div>農場主分享有機農場經營故事＋STEHM精神圖文簡報＋短影片</div>
+        <div class="flow-step"><div class="flow-time">25min</div>分組討論「校園裡有哪些互利共生的例子？」並繪製小組海報</div>
+        <div class="flow-step"><div class="flow-time">10min</div>發下本學期「集章護照」，預告任務地圖，說明12週旅程</div>
+      </div>
+      <div class="block">
+        <h5>教具材料</h5>
+        <ul><li>互利共生配對卡（自製，約20組）</li><li>農場簡報／短影片</li><li>海報紙、彩色筆</li><li>集章護照（每生一本，自製）</li></ul>
+        <h5 style="margin-top:14px;">評量方式</h5>
+        <p class="assess">配對卡遊戲正確率、小組海報內容完整度、課堂參與觀察紀錄</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="unit">
+    <div class="unit-head"><span class="unit-week">W2</span><h3>認識蜜源植物</h3></div>
+    <div class="unit-sub">學習目標：辨識常見蜜源植物特徵與花期／培養野外觀察與記錄能力</div>
+    <div class="grid2">
+      <div class="block">
+        <h5>教學流程</h5>
+        <div class="flow-step"><div class="flow-time">20min</div>圖鑑比對講解：花色、花形、氣味如何吸引昆蟲</div>
+        <div class="flow-step"><div class="flow-time">50min</div>校園走讀＋觀察記錄單（畫下三種植物並記錄拜訪的昆蟲）</div>
+        <div class="flow-step"><div class="flow-time">20min</div>分組分享觀察成果</div>
+      </div>
+      <div class="block">
+        <h5>教具材料</h5>
+        <ul><li>農場帶來的蜜源植物盆栽／枝葉樣本（馬纓丹、澤蘭、油菜花、蜜蜂花等）</li><li>觀察記錄單、放大鏡</li><li>相機或平板（拍照存證用）</li></ul>
+        <div class="safety"><b>安全提醒：</b>穿長袖長褲防蚊蟲叮咬；事先確認校園路線是否有具毒性植物（如夾竹桃），並繞開或加以說明。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="unit">
+    <div class="unit-head"><span class="unit-week">W3</span><h3>認識蝴蝶</h3></div>
+    <div class="unit-sub">學習目標：理解完全變態四階段（卵—幼蟲—蛹—成蟲）／區分「食草」與「蜜源植物」的不同角色</div>
+    <div class="grid2">
+      <div class="block">
+        <h5>教學流程</h5>
+        <div class="flow-step"><div class="flow-time">15min</div>生命週期教具導入（標本或模型）</div>
+        <div class="flow-step"><div class="flow-time">40min</div>觀察箱幼蟲／蛹（如當季有現成材料）或高解析生態影片</div>
+        <div class="flow-step"><div class="flow-time">30min</div>「生命週期轉盤」DIY著色與組裝</div>
+        <div class="flow-step"><div class="flow-time">15min</div>分享與提問</div>
+      </div>
+      <div class="block">
+        <h5>教具材料</h5>
+        <ul><li>蝴蝶生命週期標本／模型（可洽在地保育團體或農場既有教具）</li><li>食草盆栽，如馬利筋（樺斑蝶）、食茱萸（鳳蝶）</li><li>生命週期轉盤紙材</li></ul>
+        <div class="safety"><b>安全提醒：</b>如使用活體幼蟲，教導輕柔觸碰方式；務必說明不可捕捉野外成蝶，破壞其棲地與族群。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="unit">
+    <div class="unit-head"><span class="unit-week">W4</span><h3>認識蜜蜂</h3></div>
+    <div class="unit-sub">學習目標：認識蜂群社會分工（蜂后／工蜂／雄蜂）／理解授粉機制與蜂蜜產出過程</div>
+    <div class="grid2">
+      <div class="block">
+        <h5>教學流程</h5>
+        <div class="flow-step"><div class="flow-time">20min</div>蜂箱結構模型／授粉影片講解</div>
+        <div class="flow-step"><div class="flow-time">40min</div>安全觀察箱（密封壓克力式）近距離觀察，不開放直接接觸</div>
+        <div class="flow-step"><div class="flow-time">20min</div>蜂產品體驗：蜂蜜品評、蜂蠟觸摸</div>
+        <div class="flow-step"><div class="flow-time">10min</div>問答統整</div>
+      </div>
+      <div class="block">
+        <h5>教具材料</h5>
+        <ul><li>密封透明觀察箱（活蜂僅供觀察，不觸摸）</li><li>蜂產品樣本：蜂蜜、蜂蠟</li><li>授粉機制示意圖卡</li></ul>
+        <div class="safety"><b>重要安全事項：</b>全程<b>不</b>開放學生直接接觸活蜂。上課前務必調查全班是否有蜂毒過敏史學生，並事先與校方確認緊急應變流程（如過敏性休克送醫程序）。</div>
+      </div>
+    </div>
+    <div class="assess"><b>評量：</b>能說出蜂群三種角色分工、能解釋授粉對植物繁殖的意義。</div>
+  </div>
+
+  <div class="unit">
+    <div class="unit-head"><span class="unit-week">W5</span><h3>認識蜻蜓</h3></div>
+    <div class="unit-sub">學習目標：認識水蠆到成蟲的變態歷程／理解蜻蜓作為水質潔淨度指標的意義</div>
+    <div class="grid2">
+      <div class="block">
+        <h5>教學流程</h5>
+        <div class="flow-step"><div class="flow-time">20min</div>蜻蜓與豆娘辨識比較（翅膀停棲姿態差異）</div>
+        <div class="flow-step"><div class="flow-time">40min</div>水蠆觀察（生態缸或校內水域現場觀察）</div>
+        <div class="flow-step"><div class="flow-time">20min</div>飛行結構科學遊戲：紙蜻蜓／飛行翼製作（結合工程思維：重心與翼形）</div>
+        <div class="flow-step"><div class="flow-time">10min</div>分享統整</div>
+      </div>
+      <div class="block">
+        <h5>教具材料</h5>
+        <ul><li>水蠆標本或觀察缸</li><li>蜻蜓／豆娘辨識圖卡</li><li>紙蜻蜓／飛行翼DIY材料（西卡紙、迴紋針配重）</li></ul>
+        <div class="safety"><b>安全提醒：</b>水域觀察需固定缸體並管理學生站位，避免推擠導致跌倒或打翻水缸。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="unit">
+    <div class="unit-head"><span class="unit-week">W6</span><h3>認識蓋斑鬥魚</h3></div>
+    <div class="unit-sub">學習目標：認識原生種特性（耐低氧、築泡巢護幼）／理解瀕危現況與有機農法對水域生態的保護意義</div>
+    <div class="grid2">
+      <div class="block">
+        <h5>教學流程</h5>
+        <div class="flow-step"><div class="flow-time">20min</div>蓋斑鬥魚介紹與棲地危機短片（外來種入侵、水域污染）</div>
+        <div class="flow-step"><div class="flow-time">40min</div>活體觀察缸近距離觀察（如時機允許可觀察泡巢／護幼行為）</div>
+        <div class="flow-step"><div class="flow-time">20min</div>繪製「我的濕地保育行動卡」</div>
+        <div class="flow-step"><div class="flow-time">10min</div>分享</div>
+      </div>
+      <div class="block">
+        <h5>教具材料</h5>
+        <ul><li>蓋斑鬥魚觀察缸（建議提前1–2天於學校靜置，減少運輸緊迫）</li><li>保育行動卡學習單</li></ul>
+        <div class="safety"><b>安全提醒：</b>玻璃缸搬運與擺放須固定於穩固桌面；留意水溫與溶氧變化，觀察後歸還農場照養。</div>
+      </div>
+    </div>
+    <div class="callout"><span class="tag">農場實務</span>蓋斑鬥魚曾廣泛分布於台灣平地水田與埤塘，但因慣行農法農藥污染與外來魚種（如大肚魚）排擠而族群大減。此正是向孩子說明「有機農業如何保護原生水域生態」的最佳實例。</div>
+  </div>
+
+  <div class="unit">
+    <div class="unit-head"><span class="unit-week">W7–W8</span><h3>設計與製作蜜蜂的家</h3></div>
+    <div class="unit-sub">學習目標：認識獨居蜂習性與棲地需求／學習基礎工程繪圖與結構穩固性概念</div>
+    <div class="callout amber"><span class="tag">專業建議</span><b>建議採用「獨居蜂旅館（Insect Hotel）」，而非蜂箱／蜂巢。</b>理由：獨居蜂（如切葉蜂、木蜂）性情溫和、不主動攻擊、無需蜂群管理、成本低、適合校園長期展示，且能同時吸引多種原生授粉昆蟲，安全性遠高於處理真正的蜂群。</div>
+    <div class="grid2">
+      <div class="block">
+        <h5>W7 設計課流程</h5>
+        <div class="flow-step"><div class="flow-time">15min</div>獨居蜂圖鑑介紹</div>
+        <div class="flow-step"><div class="flow-time">15min</div>原理說明：孔洞直徑（2–10mm）與深度對應不同蜂種</div>
+        <div class="flow-step"><div class="flow-time">50min</div>分組設計草圖繪製，含基本尺寸標註（工程繪圖入門）</div>
+        <div class="flow-step"><div class="flow-time">10min</div>設計分享</div>
+      </div>
+      <div class="block">
+        <h5>W8 製作課流程</h5>
+        <div class="flow-step"><div class="flow-time">10min</div>材料與工具安全說明</div>
+        <div class="flow-step"><div class="flow-time">60min</div>分組組裝：木框固定、竹筒／鑽孔木塊填充</div>
+        <div class="flow-step"><div class="flow-time">15min</div>彩繪裝飾與命名</div>
+        <div class="flow-step"><div class="flow-time">15min</div>成果展示、討論校園安置地點</div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:6px;">
+      <div class="block">
+        <h5>教具材料</h5>
+        <ul><li>回收棧板木框（環保省成本）</li><li>桂竹筒／鑽孔木塊（直徑2–10mm不等）</li><li>非毒性彩繪顏料、防水漆</li><li>方格設計紙、鉛筆尺規</li></ul>
+      </div>
+      <div class="block">
+        <div class="safety"><b>安全提醒：</b>鑽孔、裁切等工具操作一律由教師或農場主示範及協助；學生僅操作低風險步驟（插竹筒、彩繪）；熱熔膠槍全程由成人操作，避免燙傷。</div>
+        <div class="assess"><b>評量：</b>設計圖含至少3種孔徑並標註尺寸；完成一件穩固的蜜蜂旅館作品。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="unit">
+    <div class="unit-head"><span class="unit-week">W9</span><h3>與動物互生的植物：愛玉</h3></div>
+    <div class="unit-sub">學習目標：認識愛玉與愛玉小蜂的專一性共生關係（隱花果構造）／體驗愛玉凍傳統食品加工</div>
+    <div class="grid2">
+      <div class="block">
+        <h5>教學流程</h5>
+        <div class="flow-step"><div class="flow-time">20min</div>愛玉果實構造與愛玉小蜂共生關係影片＋講解</div>
+        <div class="flow-step"><div class="flow-time">40min</div>愛玉籽搓洗DIY（親手製作愛玉凍，理解隱花果內籽粒即果實構造）</div>
+        <div class="flow-step"><div class="flow-time">20min</div>品嚐與討論</div>
+        <div class="flow-step"><div class="flow-time">10min</div>延伸思考：「如果沒有愛玉小蜂，會發生什麼事？」</div>
+      </div>
+      <div class="block">
+        <h5>教具材料</h5>
+        <ul><li>愛玉果乾（去籽曬乾）</li><li>棉布袋、乾淨飲用水（建議煮沸放涼）、篩網</li><li>透明杯具、愛玉小蜂放大圖卡／顯微照片</li></ul>
+        <div class="safety"><b>安全提醒：</b>搓洗前徹底洗手，使用煮沸過的飲用水，注意食品衛生；事前確認學生有無相關食物過敏史。</div>
+      </div>
+    </div>
+    <div class="callout">愛玉是「絕對專一共生（obligate mutualism）」的經典教材——全世界只有愛玉小蜂能鑽入愛玉隱花果為其授粉，兩者互相依存、缺一不可。台灣愛玉主要分布於新竹尖石、五峰及中低海拔山區，可延伸連結在地地理知識。</div>
+  </div>
+
+  <div class="unit">
+    <div class="unit-head"><span class="unit-week">W10–W11</span><h3>營造互生的校園環境</h3></div>
+    <div class="unit-sub">學習目標：統整本學期所學，實地規劃並執行校園棲地改造行動</div>
+    <div class="grid2">
+      <div class="block">
+        <h5>W10 規劃課</h5>
+        <div class="flow-step"><div class="flow-time">40min</div>校園生態踏查：分組記錄光照、水源、既有植栽</div>
+        <div class="flow-step"><div class="flow-time">40min</div>討論並繪製「校園互利共生改造方案」配置圖（含蜜蜂旅館安置點）</div>
+        <div class="flow-step"><div class="flow-time">10min</div>方案發表</div>
+      </div>
+      <div class="block">
+        <h5>W11 施作課</h5>
+        <div class="flow-step"><div class="flow-time">60min</div>分站實作：種植站／蜜蜂旅館安裝站／解說牌製作站（輪流體驗）</div>
+        <div class="flow-step"><div class="flow-time">15min</div>後續澆水與維護說明</div>
+        <div class="flow-step"><div class="flow-time">15min</div>總結分享</div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:6px;">
+      <div class="block">
+        <h5>教具材料</h5>
+        <ul><li>蜜源植物苗（農場提供：馬纓丹、澤蘭等）</li><li>小型園藝工具（小鏟子、灑水器）</li><li>木質解說牌材料、防水麥克筆</li></ul>
+      </div>
+      <div class="block">
+        <div class="safety"><b>安全提醒：</b>使用園藝工具須成人在旁協助，避免尖銳工具誤傷；戶外活動注意防曬防蚊。</div>
+        <div class="assess"><b>評量：</b>提出至少1項具體改造提案並完成配置草圖；完成至少1項實際校園改造行動。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="unit">
+    <div class="unit-head"><span class="unit-week">W12</span><h3>成果發表與行動宣言</h3></div>
+    <div class="unit-sub">學習目標：統整學期成果、培養表達與反思能力、建立長期維護棲地的責任感</div>
+    <div class="grid2">
+      <div class="block">
+        <h5>教學流程</h5>
+        <div class="flow-step"><div class="flow-time">40min</div>分組成果展示（海報／實物／照片紀錄）</div>
+        <div class="flow-step"><div class="flow-time">20min</div>互評與提問</div>
+        <div class="flow-step"><div class="flow-time">20min</div>「互利共生行動宣言」簽署＋集章護照頒獎</div>
+        <div class="flow-step"><div class="flow-time">10min</div>農場主總結分享，邀約全班期末實地參訪農場</div>
+      </div>
+      <div class="block">
+        <h5>教具材料</h5>
+        <ul><li>展示看板</li><li>集章護照（累積12週集章）</li><li>小獎勵：農場自產迷你蜂蜜罐、愛玉凍DIY包等</li></ul>
+        <h5 style="margin-top:14px;">評量方式</h5>
+        <p class="assess">集章護照完成率、口頭發表表現、行動宣言具體度</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="season">
+  <div class="kicker">04　排課建議</div>
+  <h2>季節與排課建議（農場實務觀點）</h2>
+  <p>以下是以新竹芎林在地物候經驗提出的排課邏輯，<b>非教科書資訊，而是實際農場觀察建議</b>：</p>
+  <div class="callout amber">
+    <span class="tag">實務建議</span>
+    秋季學期（9月至隔年1月）自新竹地區的物候來看，<b>9–11月</b>仍是蝴蝶、蜜蜂、蜻蜓等昆蟲活動較活躍的季節，<b>12月起氣溫下降，昆蟲活動明顯減少</b>。因此本規劃將六個「觀察型」單元（W2–W6）安排在學期前段（約9月中至10月底），把「動手實作型」單元（蜜蜂旅館製作、愛玉DIY、校園改造）安排在氣溫轉涼的11月至1月，剛好順應昆蟲活動的季節節奏，也能在戶外觀察素材較豐富時把握機會，室內動手課則不受天氣限制。
+  </div>
+  <p>另建議預留 1 週彈性備用課（如遇颱風、寒流停課或戶外活動天候不佳），可安排於 W6 與 W7 之間，作為緩衝週。</p>
+</section>
+
+<section id="material">
+  <div class="kicker">05　成本估算</div>
+  <h2>教材教具與成本估算（供貴校經費申請參考）</h2>
+  <table>
+    <caption>12週課程主要耗材與教具估算（新台幣）</caption>
+    <thead>
+      <tr><th>項目</th><th>對應週次</th><th>數量／備註</th><th>單價估算</th><th>小計</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>集章護照（自製印刷）</td><td>W1–W12</td><td>依班級人數，約25–30本</td><td>約30元/本</td><td>約 900元</td></tr>
+      <tr><td>蜜源植物盆栽／枝葉樣本</td><td>W2</td><td>租借／農場提供</td><td>—</td><td>0元（農場提供）</td></tr>
+      <tr><td>蝴蝶生命週期教具租借</td><td>W3</td><td>向在地保育團體洽借</td><td>視租借行情</td><td>約 0–500元</td></tr>
+      <tr><td>密封觀察箱＋蜂產品樣本</td><td>W4</td><td>農場自有設備＋蜂蜜/蜂蠟</td><td>—</td><td>0元（農場提供）</td></tr>
+      <tr><td>水蠆觀察缸＋飛行翼材料</td><td>W5</td><td>西卡紙、迴紋針等文具</td><td>約100元/組材料</td><td>約 500元（全班）</td></tr>
+      <tr><td>蓋斑鬥魚觀察缸與照養</td><td>W6</td><td>農場提供活體與缸具</td><td>—</td><td>0元（農場提供）</td></tr>
+      <tr><td>蜜蜂旅館材料（木框、竹筒、顏料）</td><td>W7–W8</td><td>依分組數量，每組1件成品</td><td>約150–250元/組</td><td>約 900–1,500元（6組估）</td></tr>
+      <tr><td>愛玉果乾與相關耗材</td><td>W9</td><td>依班級人數估算</td><td>約20元/人</td><td>約 500–600元</td></tr>
+      <tr><td>蜜源植物苗（校園種植用）</td><td>W10–W11</td><td>約15–20株</td><td>約40元/株</td><td>約 600–800元</td></tr>
+      <tr><td>解說牌材料（木料、防水筆）</td><td>W10–W11</td><td>5–8面</td><td>約80元/面</td><td>約 400–640元</td></tr>
+      <tr><td>成果發表獎勵品（蜂蜜罐、愛玉凍包）</td><td>W12</td><td>依人數</td><td>約50元/份</td><td>約 1,250–1,500元</td></tr>
+    </tbody>
+  </table>
+  <div class="callout"><span class="tag">估算</span>全學期耗材總成本約落在 <b>新台幣 5,500–7,000 元</b> 區間（不含農場主授課鐘點費與交通費），實際金額請依班級人數與採購通路調整。多數活體觀察教具（蜜蜂、蓋斑鬥魚、蜜源植物）由富林有機農場提供，可大幅降低採購成本。</div>
+</section>
+
+<section id="safety">
+  <div class="kicker">06　安全管理</div>
+  <h2>安全管理總表</h2>
+  <table>
+    <caption>課前應確認事項一覽</caption>
+    <thead><tr><th>風險項目</th><th>相關單元</th><th>建議事前措施</th></tr></thead>
+    <tbody>
+      <tr><td>蜂毒過敏</td><td>W4、W7–W8</td><td>課前調查全班過敏史；活蜂全程不開放觸摸；確認校方緊急送醫流程</td></tr>
+      <tr><td>植物接觸過敏／毒性植物</td><td>W2、W3</td><td>踏查路線先排查有毒植物；提醒過敏體質學生避免直接皮膚接觸</td></tr>
+      <tr><td>玻璃缸具破損風險</td><td>W5、W6</td><td>缸具固定於穩固桌面，教師全程在旁；避免學生推擠</td></tr>
+      <tr><td>工具操作風險（鑽孔、熱熔膠）</td><td>W7–W8</td><td>危險工具僅由教師／農場主操作，學生僅參與低風險步驟</td></tr>
+      <tr><td>食品衛生</td><td>W9</td><td>使用煮沸放涼飲用水；操作前徹底洗手；確認食物過敏史</td></tr>
+      <tr><td>戶外園藝工具與日曬</td><td>W10–W11</td><td>成人陪同操作工具；提醒防曬防蚊、補充水分</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="appendix">
+  <div class="kicker">07　附錄</div>
+  <h2>素養對應與延伸建議</h2>
+  <div class="two-col-note">
+    <div class="note-card">
+      <h4>對應核心素養（供貴校課程備查參考）</h4>
+      <ul style="padding-left:18px;font-size:14.5px;">
+        <li>自然科學領域：觀察與探索、資料蒐集與分析、生命現象的認識</li>
+        <li>科技／工程：結構設計、簡易測量與繪圖、動手實作</li>
+        <li>人文／健康：生命教育、環境永續、團隊合作與表達</li>
+      </ul>
+    </div>
+    <div class="note-card">
+      <h4>延伸建議（農場主專業建議）</h4>
+      <ul style="padding-left:18px;font-size:14.5px;">
+        <li>可搭配免費 App「iNaturalist」讓學生用平板拍照，透過 AI 影像辨識協助昆蟲與植物物種辨識，兼具STEHM中的科技元素與公民科學參與</li>
+        <li>建議學期末安排一次全班實地參訪富林有機農場，讓孩子在真實農場場域驗證課堂所學</li>
+        <li>蜜蜂旅館與蜜源植物區完成後，建議建立長期觀察紀錄機制（如每月定點拍照），可延伸為次學期的長期研究課程</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout coral" style="margin-top:22px;">
+    <span class="tag">備註</span>本規劃案中之週次安排、時數配置與成本估算，係依據一般國小混齡實驗教育課程之常見節奏所提出的建議方案，實際執行仍請與貴校教學團隊確認班級人數、排課節次與經費額度後調整。
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="farm">富林有機農場｜新竹縣芎林鄉</div>
+  課程規劃提供：富林有機農場場主　｜　115學年度秋季課程提案　｜　本文件可自由列印使用
+</footer>
+
+</body>
+</html>
