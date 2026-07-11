@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>寶貝地球：有機肥料的秘密｜115年秋季課程規劃</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --soil-dark:#5B4028;
+    --soil:#8B5E3C;
+    --leaf-dark:#3F6B48;
+    --leaf:#5C8A5A;
+    --leaf-light:#A8C79A;
+    --cream:#F9F4E8;
+    --cream-card:#FFFCF5;
+    --sun:#E3A73B;
+    --sky:#7CA6BF;
+    --ink:#3A3226;
+    --shadow: 0 6px 18px rgba(91,64,40,0.12);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Noto Sans TC", sans-serif;
+    line-height:1.75;
+  }
+  h1,h2,h3,.display{
+    font-family:"ZCOOL KuaiLe","Noto Sans TC",sans-serif;
+    font-weight:400;
+    color:var(--soil-dark);
+  }
+  a{color:var(--leaf-dark);}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:76px 24px 96px;
+    background:
+      radial-gradient(circle at 12% 20%, rgba(163,199,154,0.35), transparent 45%),
+      radial-gradient(circle at 88% 75%, rgba(227,167,59,0.25), transparent 40%),
+      linear-gradient(160deg, #F9F4E8 0%, #F3ECD9 100%);
+    overflow:hidden;
+    text-align:center;
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    font-size:14px;
+    letter-spacing:.12em;
+    color:var(--leaf-dark);
+    background:rgba(92,138,90,0.12);
+    border:1px solid rgba(92,138,90,0.35);
+    border-radius:999px;
+    padding:6px 18px;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(38px,6vw,64px);
+    margin:0 0 14px;
+    line-height:1.25;
+  }
+  .hero h1 span{color:var(--leaf-dark);}
+  .hero p.sub{
+    font-size:18px;
+    color:#6b5c46;
+    max-width:640px;
+    margin:0 auto 30px;
+  }
+  .hero .meta-bar{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .meta-chip{
+    background:var(--cream-card);
+    border:1px solid rgba(91,64,40,0.15);
+    border-radius:14px;
+    padding:10px 20px;
+    font-size:14px;
+    box-shadow:var(--shadow);
+  }
+  .meta-chip b{display:block;font-size:16px;color:var(--soil-dark);}
+
+  .soil-strip{
+    height:14px;
+    background:repeating-linear-gradient(90deg, var(--soil) 0 26px, var(--soil-dark) 26px 30px);
+  }
+
+  section{padding:70px 24px;max-width:1080px;margin:0 auto;}
+  .section-title{
+    text-align:center;
+    margin-bottom:12px;
+    font-size:clamp(26px,4vw,36px);
+  }
+  .section-lead{
+    text-align:center;
+    max-width:660px;
+    margin:0 auto 48px;
+    color:#6b5c46;
+    font-size:16px;
+  }
+
+  /* ===== INTRO CARDS ===== */
+  .intro-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+  }
+  .intro-card{
+    background:var(--cream-card);
+    border-radius:18px;
+    padding:26px 24px;
+    box-shadow:var(--shadow);
+    border-top:4px solid var(--leaf);
+  }
+  .intro-card h3{font-size:20px;margin:0 0 10px;}
+  .intro-card p{font-size:14.5px;color:#584c3c;margin:0;}
+
+  /* ===== JOURNEY / MODULES ===== */
+  .journey{position:relative;}
+  .journey-path{
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:6px;
+    background:repeating-linear-gradient(to bottom, var(--leaf-light) 0 10px, transparent 10px 20px);
+    transform:translateX(-50%);
+    z-index:0;
+  }
+  @media (max-width:780px){ .journey-path{display:none;} }
+
+  .module{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+    align-items:start;
+    margin-bottom:56px;
+  }
+  .module:nth-child(even) .module-card{grid-column:2;}
+  .module:nth-child(even) .module-icon{grid-column:1;grid-row:1;justify-self:end;}
+  .module:nth-child(odd) .module-icon{justify-self:start;}
+  @media (max-width:780px){
+    .module{grid-template-columns:1fr;}
+    .module:nth-child(even) .module-card, .module:nth-child(odd) .module-card{grid-column:1;}
+    .module:nth-child(even) .module-icon, .module:nth-child(odd) .module-icon{grid-column:1;justify-self:start;}
+  }
+
+  .module-icon{
+    width:96px;height:96px;
+    border-radius:50%;
+    background:var(--leaf);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 0 8px var(--cream), 0 6px 16px rgba(63,107,72,0.35);
+    font-size:42px;
+  }
+  .module:nth-child(1) .module-icon{background:var(--sun);}
+  .module:nth-child(2) .module-icon{background:var(--sky);}
+  .module:nth-child(3) .module-icon{background:#B08050;}
+  .module:nth-child(4) .module-icon{background:var(--leaf);}
+
+  .module-card{
+    background:var(--cream-card);
+    border-radius:20px;
+    padding:30px 30px 26px;
+    box-shadow:var(--shadow);
+  }
+  .module-tag{
+    display:inline-block;
+    font-size:12.5px;
+    color:#fff;
+    background:var(--soil);
+    padding:4px 12px;
+    border-radius:999px;
+    margin-bottom:10px;
+    letter-spacing:.05em;
+  }
+  .module-card h3{font-size:23px;margin:0 0 6px;}
+  .module-card .duration{font-size:13.5px;color:var(--leaf-dark);font-weight:700;margin-bottom:16px;}
+  .module-block{margin-top:16px;}
+  .module-block h4{
+    font-size:14px;
+    margin:0 0 8px;
+    color:var(--soil-dark);
+    display:flex;align-items:center;gap:6px;
+  }
+  .module-block ul{margin:0;padding-left:20px;font-size:14.5px;color:#4a4033;}
+  .module-block li{margin-bottom:5px;}
+  .flow-steps{list-style:none;padding:0;margin:0;counter-reset:step;}
+  .flow-steps li{
+    counter-increment:step;
+    position:relative;
+    padding:6px 0 6px 32px;
+    font-size:14.5px;
+    color:#4a4033;
+    border-left:2px solid var(--leaf-light);
+    margin-left:8px;
+  }
+  .flow-steps li::before{
+    content:counter(step);
+    position:absolute;left:-14px;top:5px;
+    width:24px;height:24px;
+    background:var(--leaf);
+    color:#fff;
+    border-radius:50%;
+    font-size:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;
+  }
+  .safety-note{
+    margin-top:16px;
+    background:#FBF0DC;
+    border:1px dashed var(--sun);
+    border-radius:12px;
+    padding:12px 16px;
+    font-size:13.5px;
+    color:#6b4f1f;
+  }
+
+  /* ===== TABLE ===== */
+  .overview-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--cream-card);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    font-size:14.5px;
+  }
+  .overview-table th, .overview-table td{
+    padding:14px 16px;
+    text-align:left;
+    border-bottom:1px solid #EDE3CB;
+  }
+  .overview-table th{
+    background:var(--leaf-dark);
+    color:#fff;
+    font-weight:700;
+  }
+  .overview-table tr:last-child td{border-bottom:none;}
+  .overview-table tr:nth-child(even) td{background:#FBF7EC;}
+
+  /* ===== ASSESSMENT / GOALS ===== */
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  @media (max-width:780px){.two-col{grid-template-columns:1fr;}}
+  .panel{
+    background:var(--cream-card);
+    border-radius:18px;
+    padding:28px;
+    box-shadow:var(--shadow);
+  }
+  .panel h3{font-size:19px;margin:0 0 14px;}
+  .panel ul{margin:0;padding-left:20px;font-size:14.5px;color:#4a4033;}
+  .panel li{margin-bottom:8px;}
+
+  footer{
+    background:var(--soil-dark);
+    color:#EFE6D3;
+    text-align:center;
+    padding:40px 24px 50px;
+    font-size:13.5px;
+  }
+  footer .brand{font-family:"ZCOOL KuaiLe";font-size:20px;color:#fff;margin-bottom:8px;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="eyebrow">分類｜寶貝地球　·　115年度秋季課程</span>
+  <h1>有機肥料的<span>秘密</span><br>從鴨池、雞舍到餐桌廚餘</h1>
+  <p class="sub">恩激優實驗教育機構 × 富林有機農場　場主到校授課<br>帶孩子動手摸土、聞土、養土，看懂一份「垃圾」如何變成滋養大地的養分。</p>
+  <div class="meta-bar">
+    <div class="meta-chip"><b>國小 3–6 年級</b>適用年段</div>
+    <div class="meta-chip"><b>共 4 堂課</b>每堂 80 分鐘</div>
+    <div class="meta-chip"><b>校園農園區 / 戶外教學區</b>建議場地</div>
+    <div class="meta-chip"><b>富林有機農場 場主</b>主講講師</div>
+  </div>
+</div>
+<div class="soil-strip"></div>
+
+<section>
+  <h2 class="section-title">為什麼帶孩子認識有機肥？</h2>
+  <p class="section-lead">原課綱提供的四項學科內容（有機肥原理、鴨水池轉液態肥、雞舍糞便堆肥、廚餘堆肥），知識密度高、操作性強，但對國小生而言偏向農業專業技術。以下規劃將四項內容轉譯為「看得懂、摸得到、做得出來」的四堂遞進式課程，並扣合自然科學領域中「生物與環境」「物質的變化」等學習內容。</p>
+  <div class="intro-grid">
+    <div class="intro-card">
+      <h3>🌱 從觀察到操作</h3>
+      <p>每堂課先用五感觀察（聞、看、摸）建立感受，再逐步進入原理說明與實作，避免直接講述艱澀的化學名詞。</p>
+    </div>
+    <div class="intro-card">
+      <h3>🔁 建立循環概念</h3>
+      <p>四堂課共同指向同一個大概念：「動物排泄物、廚餘 → 微生物分解 → 養分回到土壤 → 長出食物」，讓孩子看見完整的物質循環。</p>
+    </div>
+    <div class="intro-card">
+      <h3>🧤 安全與衛生優先</h3>
+      <p>凡接觸糞便、廚餘、菌液的活動，均安排手套、口罩、洗手流程，並由農場講師示範後才讓學生操作。</p>
+    </div>
+    <div class="intro-card">
+      <h3>📒 帶得走的紀錄</h3>
+      <p>每位學生準備一本「土壤觀察日誌」，四堂課逐步累積紀錄，作為期末成果與評量依據。</p>
+    </div>
+  </div>
+</section>
+
+<section class="journey">
+  <h2 class="section-title">四堂課學習旅程</h2>
+  <p class="section-lead">課程沿著農場的真實動線設計：先懂原理，再走到鴨池、雞舍，最後回到教室與家庭廚房，形成一個完整迴圈。</p>
+  <div class="journey-path"></div>
+
+  <div class="module">
+    <div class="module-icon">🔍</div>
+    <div class="module-card">
+      <span class="module-tag">第 1 堂｜原理入門</span>
+      <h3>有機肥的原理：土壤裡的隱形工作者</h3>
+      <div class="duration">80 分鐘｜教室 + 小花圃</div>
+
+      <div class="module-block">
+        <h4>🎯 學習目標</h4>
+        <ul>
+          <li>能說出植物生長需要的養分從哪裡來</li>
+          <li>認識「微生物分解」是有機肥的核心原理，而非單純腐爛發臭</li>
+          <li>能分辨有機肥與化學肥料的差異（不要求記憶化學式）</li>
+        </ul>
+      </div>
+      <div class="module-block">
+        <h4>🪜 課程流程</h4>
+        <ol class="flow-steps">
+          <li>暖身提問：「垃圾桶裡的菜葉，最後去了哪裡？」引發討論</li>
+          <li>場主分享富林農場的有機理念與一日生活</li>
+          <li>圖卡教學：分解者家族（細菌、真菌、蚯蚓）如何合作</li>
+          <li>分組操作「土壤觸感箱」比較有機土與一般土的差異</li>
+          <li>學習單：畫出「養分循環圈」</li>
+        </ol>
+      </div>
+      <div class="module-block">
+        <h4>🧰 教具材料</h4>
+        <ul>
+          <li>有機土 / 一般培養土對照樣本、放大鏡、養分循環圖卡</li>
+          <li>土壤觀察日誌（第一頁）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="module">
+    <div class="module-icon">🦆</div>
+    <div class="module-card">
+      <span class="module-tag">第 2 堂｜鴨池現場</span>
+      <h3>鴨水池變身液態肥</h3>
+      <div class="duration">80 分鐘｜鴨池區（戶外）</div>
+
+      <div class="module-block">
+        <h4>🎯 學習目標</h4>
+        <ul>
+          <li>觀察鴨子與水池生態，理解排泄物如何進入水中形成養分</li>
+          <li>知道液態肥「稀釋倍數」的概念（濃度太高會傷害植物）</li>
+          <li>認識簡易水質觀察方法（顏色、氣味、澄清度）</li>
+        </ul>
+      </div>
+      <div class="module-block">
+        <h4>🪜 課程流程</h4>
+        <ol class="flow-steps">
+          <li>場主導覽鴨池，說明鴨子、水生植物與水質的關係</li>
+          <li>示範取樣：如何從鴨池取水並簡單過濾</li>
+          <li>分組體驗「稀釋實驗」— 用色水模擬液肥濃度調配</li>
+          <li>將稀釋後的液肥示範澆灌於菜圃幼苗，觀察並紀錄</li>
+          <li>回顧討論：為什麼濃度太高反而會傷害植物？</li>
+        </ol>
+      </div>
+      <div class="module-block">
+        <h4>🧰 教具材料</h4>
+        <ul>
+          <li>取水杓、過濾網、量杯、色水（模擬濃度教學用）、雨鞋</li>
+        </ul>
+      </div>
+      <div class="safety-note">⚠️ 安全提醒：全程須著雨鞋、遠離池邊濕滑處；實際鴨池水以模擬色水練習調配比例，避免學生直接接觸生水；活動後立即以肥皂徹底洗手。</div>
+    </div>
+  </div>
+
+  <div class="module">
+    <div class="module-icon">🐔</div>
+    <div class="module-card">
+      <span class="module-tag">第 3 堂｜雞舍實作</span>
+      <h3>雞舍糞便的堆肥製作</h3>
+      <div class="duration">80 分鐘｜雞舍旁堆肥區</div>
+
+      <div class="module-block">
+        <h4>🎯 學習目標</h4>
+        <ul>
+          <li>認識堆肥需要「乾料＋濕料」層層堆疊的簡單原則</li>
+          <li>能動手操作簡易堆肥箱的分層堆疊</li>
+          <li>理解「翻堆、澆水、溫度」是照顧堆肥的三件事</li>
+        </ul>
+      </div>
+      <div class="module-block">
+        <h4>🪜 課程流程</h4>
+        <ol class="flow-steps">
+          <li>參觀雞舍，觀察雞的活動與糞便收集方式</li>
+          <li>場主示範堆肥箱分層法：稻殼／落葉（乾）與雞糞（濕）交疊</li>
+          <li>分組合作動手堆疊一層迷你堆肥箱</li>
+          <li>使用堆肥溫度計實測溫度，記錄在日誌中</li>
+          <li>討論：溫度升高代表發生了什麼事？</li>
+        </ol>
+      </div>
+      <div class="module-block">
+        <h4>🧰 教具材料</h4>
+        <ul>
+          <li>迷你堆肥箱、稻殼／乾草、雞糞（已初步陳化）、堆肥溫度計、手套</li>
+        </ul>
+      </div>
+      <div class="safety-note">⚠️ 安全提醒：全程配戴手套與口罩，操作後徹底洗手消毒；有呼吸道或皮膚敏感學生由教師安排觀察組角色，改以拍照紀錄取代直接接觸。</div>
+    </div>
+  </div>
+
+  <div class="module">
+    <div class="module-icon">🍎</div>
+    <div class="module-card">
+      <span class="module-tag">第 4 堂｜生活實踐</span>
+      <h3>廚餘的堆肥製作：把家裡的廚房也變成小農場</h3>
+      <div class="duration">80 分鐘｜教室 + 小花圃</div>
+
+      <div class="module-block">
+        <h4>🎯 學習目標</h4>
+        <ul>
+          <li>能分類「可堆肥廚餘」與「不可堆肥廚餘」</li>
+          <li>動手製作一份可帶回家的小型廚餘堆肥桶</li>
+          <li>統整四堂課，說出「從廚餘到蔬菜」的完整循環故事</li>
+        </ul>
+      </div>
+      <div class="module-block">
+        <h4>🪜 課程流程</h4>
+        <ol class="flow-steps">
+          <li>分類遊戲：果皮、蛋殼、茶渣、骨頭、油脂卡牌分堆挑戰</li>
+          <li>場主示範家庭版廚餘堆肥桶的做法與注意事項</li>
+          <li>學生分組動手製作個人小堆肥桶（附操作說明卡帶回家）</li>
+          <li>總複習遊戲：「養分回家之路」— 串連四堂課內容排順序</li>
+          <li>成果分享：翻開土壤觀察日誌，各組口頭分享一項發現</li>
+          <li>頒發「小小土壤守護員」結業證書</li>
+        </ol>
+      </div>
+      <div class="module-block">
+        <h4>🧰 教具材料</h4>
+        <ul>
+          <li>分類卡牌、小型堆肥桶材料包（每人一份）、操作說明卡、結業證書</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">課程總覽表</h2>
+  <table class="overview-table">
+    <thead>
+      <tr><th>堂次</th><th>主題</th><th>核心概念</th><th>主要場地</th><th>對應原課綱內容</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>第 1 堂</td><td>有機肥的原理</td><td>分解者與養分循環</td><td>教室 / 小花圃</td><td>有機肥的原理</td></tr>
+      <tr><td>第 2 堂</td><td>鴨水池變液態肥</td><td>稀釋與濃度、水質觀察</td><td>鴨池區</td><td>鴨水池轉成液態肥</td></tr>
+      <tr><td>第 3 堂</td><td>雞舍糞便堆肥</td><td>乾濕分層、翻堆、溫度</td><td>雞舍旁堆肥區</td><td>雞舍糞便的堆肥製作</td></tr>
+      <tr><td>第 4 堂</td><td>廚餘堆肥實作</td><td>分類、生活實踐、統整回顧</td><td>教室 / 小花圃</td><td>廚餘的堆肥製作</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="two-col">
+    <div class="panel">
+      <h3>📋 評量方式</h3>
+      <ul>
+        <li>土壤觀察日誌（四堂課累積紀錄，占比 40%）</li>
+        <li>分組實作參與度：稀釋操作、堆肥分層、堆肥桶製作（占比 30%）</li>
+        <li>期末口頭分享：說出「養分回家之路」循環故事（占比 20%）</li>
+        <li>學習態度與安全衛生習慣（占比 10%）</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>🧭 教師 / 家長協同事項</h3>
+      <ul>
+        <li>建議課前於班級進行「廚餘怎麼分」的簡單前測，掌握學生先備概念</li>
+        <li>雞舍、鴨池活動請提醒學生穿著不怕弄髒的衣物及雨鞋</li>
+        <li>對氣味或觸感較敏感的學生，可安排「記錄員」或「攝影員」角色替代直接接觸</li>
+        <li>第 4 堂堆肥桶帶回家後，建議家長協助持續照顧 2–3 週，並拍照回饋班級群組</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">寶貝地球 · 有機肥料的秘密</div>
+  <div>恩激優實驗教育機構　115 年度秋季課程規劃　｜　協力單位：富林有機農場</div>
+</footer>
+
+</body>
+</html>
