@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>富林有機農場｜茁壯成長食農教育課程</title>
+
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+  --soil-dark:#5B4028;
+    --soil:#8B5E3C;
+    --cream:#FFFBF0;
+    --leaf:#6FCF57;
+    --leaf-dark:#2F7A1F;
+    --sun:#FFD166;
+    --soil:#A9744F;
+    --sky:#4FC3F5;
+    --tomato:#FF6B6B;
+    --ink:#3A3226;
+    --card:#FFFFFF;
+    --line:#E8DCC4;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(circle at 8% 10%, #FFF3D6 0%, transparent 35%),
+      radial-gradient(circle at 95% 20%, #DFF3E1 0%, transparent 30%),
+      var(--cream);
+    color:var(--ink);
+    font-family:'Noto Sans TC', sans-serif;
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  .kuai{font-family:'ZCOOL KuaiLe', cursive;}
+  .baloo{font-family:'Baloo 2', 'Noto Sans TC', sans-serif;}
+
+  /* ===== decorative floating icons ===== */
+  .float-deco{position:fixed;font-size:34px;opacity:.18;pointer-events:none;z-index:0;animation:sway 6s ease-in-out infinite;}
+  @keyframes sway{0%,100%{transform:translateY(0) rotate(-6deg);}50%{transform:translateY(-14px) rotate(6deg);}}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:76px 24px 96px;
+    background:
+      radial-gradient(circle at 12% 20%, rgba(163,199,154,0.35), transparent 45%),
+      radial-gradient(circle at 88% 75%, rgba(227,167,59,0.25), transparent 40%),
+      linear-gradient(160deg, #F9F4E8 0%, #F3ECD9 100%);
+    overflow:hidden;
+    text-align:center;
+  }
+  .hero .badge-top{
+    display:inline-block;background:var(--tomato);color:#fff;
+    padding:6px 22px;border-radius:999px;font-size:14px;font-weight:700;
+    letter-spacing:2px;box-shadow:0 4px 0 #D94F4F;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(32px,6vw,56px);
+    margin:6px 0 8px;color:var(--leaf-dark);
+    text-shadow:3px 3px 0 #fff, 5px 5px 0 rgba(111,207,87,.25);
+  }
+  .hero h2{
+    margin:0 0 18px;font-size:clamp(18px,3vw,26px);
+    color:var(--soil);font-weight:700;
+  }
+  .hero p.sub{max-width: 1600px;margin:0 auto;font-size:16px;color:#6b5f4a;}
+  .hero-icons{margin-top:26px;font-size:38px;letter-spacing:22px;}
+
+  .info-strip{
+    display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
+    margin-top:30px;
+  }
+  .info-chip{
+    background:#fff;border:3px solid var(--line);border-radius:18px;
+    padding:10px 18px;font-size:14px;font-weight:700;color:var(--leaf-dark);
+    box-shadow:0 4px 0 var(--line);
+  }
+  .info-chip span.big{font-size:20px;margin-right:6px;}
+
+  /* ===== SECTION WRAPPERS ===== */
+  section{position:relative;z-index:1;max-width: 1600px;margin:0 auto;padding:50px 22px;}
+  .section-title{
+    text-align:center;font-size:clamp(24px,4vw,34px);color:var(--leaf-dark);
+    margin-bottom:8px;
+  }
+  .section-title .emoji{font-size:.9em;}
+  .section-sub{text-align:center;color:#8a7c62;margin-bottom:34px;font-size:15px;}
+
+  /* ===== GROWTH PATH (signature element) ===== */
+  .path-wrap{position:relative;padding:20px 0 10px;}
+  .path-line{
+    position:absolute;left:50%;top:0;bottom:0;width:8px;
+    background:repeating-linear-gradient(180deg, var(--leaf) 0 18px, transparent 18px 32px);
+    transform:translateX(-50%);border-radius:8px;z-index:0;
+  }
+  .station{
+    position:relative;z-index:1;display:flex;align-items:flex-start;gap:20px;
+    margin-bottom:34px;
+  }
+  .station.right{flex-direction:row-reverse;text-align:right;}
+  .station .stem{
+    flex:0 0 76px;display:flex;flex-direction:column;align-items:center;
+  }
+  .stem .stage-emoji{
+    font-size:34px;background:#fff;border:4px solid var(--leaf);
+    border-radius:50%;width:76px;height:76px;display:flex;align-items:center;
+    justify-content:center;box-shadow:0 5px 0 var(--leaf-dark);flex-shrink:0;
+  }
+  .stem .stage-no{
+    margin-top:6px;font-size:13px;font-weight:800;color:var(--leaf-dark);
+    background:var(--sun);padding:2px 10px;border-radius:999px;
+  }
+  .card{
+    flex:1;background:var(--card);border:3px solid var(--line);
+    border-radius:22px;padding:22px 24px;box-shadow:0 6px 0 var(--line);
+    min-width:0;
+  }
+  .card h3{
+    margin:0 0 6px;font-size:21px;color:var(--soil);display:flex;gap:8px;align-items:center;
+  }
+  .station.right .card h3{flex-direction:row-reverse;}
+  .card .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px;}
+  .station.right .tag-row{justify-content:flex-end;}
+  .tag{
+    font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;color:#fff;
+  }
+  .tag.time{background:var(--sky);}
+  .tag.age{background:var(--tomato);}
+  .tag.goal{background:var(--leaf);}
+  .card p{margin:6px 0;font-size:14.5px;color:#4c4433;}
+  .card ul{margin:8px 0 8px;padding-left:20px;font-size:14.5px;color:#4c4433;}
+  .station.right ul{padding-left:0;padding-right:20px;}
+  .card .block-label{
+    font-weight:800;color:var(--leaf-dark);font-size:13.5px;margin-top:12px;
+    display:block;
+  }
+  .kit-box{
+    margin-top:12px;background:#FFF8EA;border:2px dashed var(--sun);
+    border-radius:14px;padding:10px 14px;font-size:13.5px;color:#7a6a3f;
+  }
+
+  /* ===== SCHEDULE TABLE ===== */
+  .table-wrap{overflow-x:auto;border-radius:20px;border:3px solid var(--line);}
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;min-width:640px;}
+  thead th{
+    background:var(--leaf);color:#fff;padding:12px 10px;font-size:14px;
+    position:sticky;top:0;
+  }
+  tbody td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:center;}
+  tbody tr:nth-child(even){background:#FBF7EA;}
+  tbody tr:last-child td{border-bottom:none;}
+  td.week{font-weight:800;color:var(--leaf-dark);}
+
+  /* ===== PASSPORT / ASSESSMENT ===== */
+  .passport-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .stamp{
+    background:#fff;border:3px dashed var(--soil);border-radius:16px;
+    text-align:center;padding:18px 10px;font-size:13.5px;font-weight:700;color:var(--soil);
+  }
+  .stamp .stamp-emoji{font-size:30px;display:block;margin-bottom:6px;}
+
+  .final-cert{
+    margin-top:30px;background:#fff;border:4px solid var(--sun);
+    border-radius:24px;padding:26px;text-align:center;
+    box-shadow:0 6px 0 var(--sun);
+  }
+  .final-cert h3{color:var(--tomato);font-size:22px;margin-top:0;}
+
+  /* ===== ISSUE / PUSHBACK SECTION ===== */
+  .issue-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:720px){.issue-grid{grid-template-columns:1fr 1fr;}}
+  .issue-card{
+    background:#fff;border:3px solid var(--line);border-radius:20px;padding:18px 20px;
+    box-shadow:0 5px 0 var(--line);
+  }
+  .issue-card h4{
+    margin:0 0 8px;font-size:16px;color:var(--tomato);display:flex;gap:8px;align-items:center;
+  }
+  .issue-card p{margin:4px 0;font-size:14px;color:#4c4433;}
+  .issue-card .fix{
+    margin-top:8px;background:#F0FBEC;border-radius:12px;padding:8px 12px;font-size:13.5px;color:var(--leaf-dark);
+  }
+
+  /* ===== ESG BANNER ===== */
+  .esg-banner{
+    background:linear-gradient(135deg,#EAF7E9,#FFF7DE);
+    border-radius:24px;padding:26px 24px;text-align:center;border:3px solid var(--leaf);
+  }
+  .esg-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px;}
+  .esg-tag{background:#fff;border:2px solid var(--leaf);border-radius:999px;padding:6px 16px;font-size:13px;font-weight:700;color:var(--leaf-dark);}
+
+  footer{
+    text-align:center;padding:40px 20px 60px;color:#8a7c62;font-size:13px;
+  }
+  footer .farm-name{color:var(--leaf-dark);font-weight:800;font-size:15px;}
+
+  @media(max-width:720px){
+    .station, .station.right{flex-direction:column;text-align:left;align-items:flex-start;}
+    .station.right .card h3, .station.right .tag-row{flex-direction:row;justify-content:flex-start;}
+    .station.right ul{padding-left:20px;padding-right:0;}
+    .path-line{left:38px;}
+    .stem{flex-direction:row;gap:10px;align-items:center;}
+    .passport-grid{grid-template-columns:repeat(2,1fr);}
+  }
+   /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,242,227,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:2px solid var(--rice-light);
+  }
+  .nav-inner{
+    max-width:1900px;margin:0 auto;padding:12px;
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:10px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:8px;
+    font-size:1.15rem;font-weight:900;color:var(--rice-dark);
+  }
+  .logo a{
+    text-decoration:none;color:var(--soil);
+    padding-bottom:3px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .logo-mark{font-size:1.5rem;}
+  .nav-links{display:flex;gap:22px;font-size:.92rem;font-weight:700;flex-wrap:wrap;}
+  .nav-links a{
+    text-decoration:none;color:var(--soil);
+    padding-bottom:3px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .nav-links a:hover{border-color:var(--turmeric);color:var(--rice-dark);}
+  .nav-cta{
+    background:var(--rice);color:#fff;padding:9px 20px;border-radius:24px;
+    font-size:.88rem;font-weight:700;text-decoration:none;
+    box-shadow:0 3px 0 var(--rice-dark);white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(1px);box-shadow:0 2px 0 var(--rice-dark);}
+.soil-strip{
+    height:14px;
+    background:repeating-linear-gradient(90deg, #8B5E3C 0 26px, #5B4028 26px 30px);
+  }
+</style>
+</head>
+<body>
+<nav>
+
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-mark">🌾</span><a href="https://snoweryi.github.io/kid/course">富林有機農場</a></div>
+    <div class="nav-links">
+      <a href="https://snoweryi.github.io/kid/course/115_61.html">115秋_6.1打好根基</a>
+      <a href="https://snoweryi.github.io/kid/course/115_63.html">6.3珍惜所有</a>
+      <a href="https://snoweryi.github.io/kid/course/115_64.html">6.4寶貝地球</a>
+      <a href="https://snoweryi.github.io/kid/course/115_65.html">115春_6.5看見微小</a>
+      <a href="https://snoweryi.github.io/kid/course/115_66.html">6.6解決兩難</a>
+	  <a href="https://snoweryi.github.io/kid/course/115_67.html">6.7茁壯成長</a>
+	  <a href="https://snoweryi.github.io/kid/course/116_51.html">116秋_5.1互助互利</a>
+    </div>
+    <a class="nav-cta" href="#contact">預約洽詢</a>
+  </div>
+ 
+</nav>
+<div class="float-deco" style="top:8%;left:4%;">🌱</div>
+<div class="float-deco" style="top:30%;right:5%;animation-delay:1s;">🐞</div>
+<div class="float-deco" style="top:60%;left:3%;animation-delay:2s;">🌾</div>
+<div class="float-deco" style="top:80%;right:6%;animation-delay:1.5s;">🦋</div>
+
+<!-- HERO -->
+<div class="hero">
+ <!-- <span class="badge-top kuai">115 學年度秋季 · 食農教育課程</span>-->
+  <h1 class="kuai">🌻 茁壯成長 🌻</h1>
+  <!--<h2 class="kuai">富林有機農場 × 恩澤優實驗教育機構</h2>-->
+  <p class="sub">帶著小朋友從一顆種子開始，認識土地、肥料與蟲蟲的秘密，最後親手拿到屬於自己的「小小有機達人」認證章！</p>
+
+  <div class="info-strip">
+    <div class="info-chip"><span class="big">👦👧</span>建議年段：國小中～高年級（3～6年級）</div>
+    <div class="info-chip"><span class="big">⏰</span>共 6 堂課・每堂 40–50 分鐘</div>
+    <div class="info-chip"><span class="big">📍</span>富林有機農場（新竹縣芎林鄉）</div>
+    <div class="info-chip"><span class="big">🎖️</span>結業頒發「小小有機達人」證書</div>
+  </div>
+  <div class="hero-icons">🌱 🪴 🐛 🧪 🐝 📜</div>
+</div>
+<div class="soil-strip"></div>
+<!-- OVERVIEW -->
+<section>
+  <div class="section-title kuai"><span class="emoji">🗺️</span> 課程設計理念</div>
+  <div class="section-sub">依大綱「茁壯成長」主題，將 6 個學科重點串成一條「種子長大的旅程」，讓孩子邊玩邊懂有機農業的完整邏輯。</div>
+  <div class="card" style="box-shadow:0 6px 0 var(--line);">
+    <p>🌱 這條學習路徑的順序不是隨機排列，而是刻意設計成「因果關係」：先讓孩子種下種子、學會照顧植物（有機種植、肥料），再進一步理解「過猶不及」的道理（肥料殘留、化學肥料影響），最後學習如何用友善的方式解決問題（有機驅蟲），並用「有機認證」作為整趟旅程的獎章與總結。</p>
+    <p>👉 每堂課都包含「動手做」與「小任務」，並發放集章護照，讓孩子在 6 堂課後集滿 6 個章，兌換最終的結業證書，呼應「有機認證」的精神——<b>認證不是貼紙，而是真正努力換來的信任。</b></p>
+  </div>
+</section>
+
+<!-- GROWTH PATH -->
+<section>
+  <div class="section-title kuai"><span class="emoji">🌾</span> 成長旅程：六堂課設計</div>
+  <div class="section-sub">跟著種子一起長大，每一站都有專屬任務章！</div>
+
+  <div class="path-wrap">
+    <div class="path-line"></div>
+
+    <!-- 1 -->
+    <div class="station">
+      <div class="stem">
+        <div class="stage-emoji">🌱</div>
+        <div class="stage-no">第 1 站</div>
+      </div>
+      <div class="card">
+        <h3>🪴 有機種植｜認識土壤好朋友</h3>
+        <div class="tag-row">
+          <span class="tag time">⏰ 45 分鐘</span>
+          <span class="tag goal">🎯 理解有機農法核心精神</span>
+        </div>
+        <span class="block-label">學習目標</span>
+        <ul>
+          <li>知道「有機」不是不用肥料，而是不使用化學農藥與化肥</li>
+          <li>認識土壤裡的微生物、蚯蚓是農夫的好朋友</li>
+        </ul>
+        <span class="block-label">課程活動</span>
+        <ul>
+          <li>農場導覽：走進有機田區，觀察慣行田 vs 有機田的差異（可用照片對比）</li>
+          <li>手作體驗：翻土、觸摸有機土壤，用放大鏡找土裡的小生物</li>
+          <li>小任務：在「農場探索卡」上畫出 3 個你找到的小生物</li>
+        </ul>
+        <div class="kit-box">🧰 教具：小鏟子、放大鏡、探索任務卡、育苗盆、種子（小白菜或萵苣）</div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="station right">
+      <div class="stem">
+        <div class="stage-emoji">🍚</div>
+        <div class="stage-no">第 2 站</div>
+      </div>
+      <div class="card">
+        <h3>🥕 認識肥料｜植物的營養餐</h3>
+        <div class="tag-row">
+          <span class="tag time">⏰ 40 分鐘</span>
+          <span class="tag goal">🎯 理解肥料的功能與種類</span>
+        </div>
+        <span class="block-label">學習目標</span>
+        <ul>
+          <li>用「吃飯」比喻，理解肥料就是植物的三餐（氮磷鉀＝飯、蛋白質、維他命）</li>
+          <li>分辨有機肥（堆肥、廚餘、雞糞）與化學肥料的差異</li>
+        </ul>
+        <span class="block-label">課程活動</span>
+        <ul>
+          <li>嗅聞辨識遊戲：矇眼聞不同肥料材料（落葉、廚餘土、雞糞肥），猜猜是什麼</li>
+          <li>堆肥小實驗：分層堆疊廚餘、落葉、土壤，帶回教室觀察發酵變化</li>
+          <li>繪本共讀：《植物也會肚子餓》延伸提問</li>
+        </ul>
+        <div class="kit-box">🧰 教具：透明堆肥箱、廚餘與落葉樣本、圖卡、繪本</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="station">
+      <div class="stem">
+        <div class="stage-emoji">⚠️</div>
+        <div class="stage-no">第 3 站</div>
+      </div>
+      <div class="card">
+        <h3>🥬 肥料殘留｜肥料吃太多會怎樣？</h3>
+        <div class="tag-row">
+          <span class="tag time">⏰ 40 分鐘</span>
+          <span class="tag goal">🎯 理解「過量」的風險</span>
+        </div>
+        <span class="block-label">學習目標</span>
+        <ul>
+          <li>知道植物吃太多肥料也會「消化不良」，殘留在葉菜裡的硝酸鹽對人體不好</li>
+          <li>理解「適量施肥」比「拚命施肥」更重要</li>
+        </ul>
+        <span class="block-label">課程活動</span>
+        <ul>
+          <li>情境短劇：《太貪心的小蘿蔔》——用簡單角色扮演演出施肥過量的後果</li>
+          <li>簡易實驗：用 pH 試紙測試不同澆灌液的酸鹼度，記錄在觀察表</li>
+          <li>小組討論：如果你是農夫，怎麼決定「該給多少肥料」？</li>
+        </ul>
+        <div class="kit-box">🧰 教具：pH 試紙、模型蔬菜道具、角色扮演小卡、觀察記錄表</div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="station right">
+      <div class="stem">
+        <div class="stage-emoji">🌍</div>
+        <div class="stage-no">第 4 站</div>
+      </div>
+      <div class="card">
+        <h3>🩹 化學肥料對土地的影響｜生病的土地</h3>
+        <div class="tag-row">
+          <span class="tag time">⏰ 45 分鐘</span>
+          <span class="tag goal">🎯 認識土地永續的重要</span>
+        </div>
+        <span class="block-label">學習目標</span>
+        <ul>
+          <li>了解長期使用化學肥料會讓土壤變硬、微生物減少、水源受影響</li>
+          <li>連結 ESG／環境永續概念：健康的土地才能種出健康的食物</li>
+        </ul>
+        <span class="block-label">課程活動</span>
+        <ul>
+          <li>觸感比一比：讓孩子觸摸「健康鬆軟土」與「硬化土」樣本，感受差異</li>
+          <li>蚯蚓觀察箱：觀察蚯蚓在兩種土壤中的活動情形，討論「土地生病了」代表什麼</li>
+          <li>海報創作：分組繪製「幫土地看病」海報，寫下 3 個照顧土地的方法</li>
+        </ul>
+        <div class="kit-box">🧰 教具：兩種土壤樣本、蚯蚓觀察箱、海報紙、彩色筆</div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="station">
+      <div class="stem">
+        <div class="stage-emoji">🐞</div>
+        <div class="stage-no">第 5 站</div>
+      </div>
+      <div class="card">
+        <h3>🔍 有機驅蟲｜抓蟲小偵探大作戰</h3>
+        <div class="tag-row">
+          <span class="tag time">⏰ 45 分鐘</span>
+          <span class="tag goal">🎯 認識友善防治方法</span>
+        </div>
+        <span class="block-label">學習目標</span>
+        <ul>
+          <li>分辨益蟲與害蟲，知道不是所有蟲都要消滅</li>
+          <li>認識有機防治方式：苦楝油、天敵、輪作、忌避植物（如萬壽菊）</li>
+        </ul>
+        <span class="block-label">課程活動</span>
+        <ul>
+          <li>昆蟲觀察與分類遊戲：用圖卡把昆蟲分成「益蟲小隊」與「害蟲小隊」</li>
+          <li>示範製作：老師示範簡易苦楝油噴劑調製過程（孩子觀察不實作化學步驟）</li>
+          <li>小小偵探任務：在田間尋找 3 種昆蟲並記錄在偵探筆記本</li>
+        </ul>
+        <div class="kit-box">🧰 教具：放大鏡、昆蟲圖卡、苦楝油示範材料、偵探筆記本、噴壺</div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="station right">
+      <div class="stem">
+        <div class="stage-emoji">🎖️</div>
+        <div class="stage-no">第 6 站</div>
+      </div>
+      <div class="card">
+        <h3>📜 有機認證｜神奇的有機標章</h3>
+        <div class="tag-row">
+          <span class="tag time">⏰ 40 分鐘</span>
+          <span class="tag goal">🎯 理解認證的意義與信任</span>
+        </div>
+        <span class="block-label">學習目標</span>
+        <ul>
+          <li>認識台灣有機認證標章，知道標章代表「被檢查過、可以信任」</li>
+          <li>理解從種植到餐桌，每一步都要經過把關才能貼上標章</li>
+        </ul>
+        <span class="block-label">課程活動</span>
+        <ul>
+          <li>標章尋寶遊戲：在多款包裝樣本中找出真正的有機標章</li>
+          <li>角色扮演：孩子輪流當「小小稽核員」，用檢查清單「稽核」模擬農田</li>
+          <li>集章護照驗收 ＋ 頒發「小小有機達人」結業證書</li>
+        </ul>
+        <div class="kit-box">🧰 教具：包裝樣本（含真假標章）、稽核清單卡、結業證書、集章護照</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section>
+  <div class="section-title kuai"><span class="emoji">📅</span> 建議排課方式（115 秋季）</div>
+  <div class="section-sub">可依學校節數安排，選擇「每週一堂」或「集中兩日營隊」兩種模式</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>週次</th><th>主題站</th><th>核心概念</th><th>時間</th><th>地點</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="week">第 1 週</td><td>🪴 有機種植</td><td>友善土地的種植方式</td><td>45 分鐘</td><td>農場田區</td></tr>
+        <tr><td class="week">第 2 週</td><td>🥕 認識肥料</td><td>植物的營養餐</td><td>40 分鐘</td><td>農場教室</td></tr>
+        <tr><td class="week">第 3 週</td><td>🥬 肥料殘留</td><td>過猶不及的道理</td><td>40 分鐘</td><td>農場教室</td></tr>
+        <tr><td class="week">第 4 週</td><td>🩹 化肥對土地影響</td><td>土地的健康與永續</td><td>45 分鐘</td><td>農場田區</td></tr>
+        <tr><td class="week">第 5 週</td><td>🐞 有機驅蟲</td><td>友善防治蟲害</td><td>45 分鐘</td><td>農場田區</td></tr>
+        <tr><td class="week">第 6 週</td><td>📜 有機認證</td><td>信任與把關</td><td>40 分鐘</td><td>農場教室＋結業式</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PASSPORT / ASSESSMENT -->
+<section>
+  <div class="section-title kuai"><span class="emoji">🧾</span> 集章護照 × 學習評量</div>
+  <div class="section-sub">不考試、不打分數，用「集滿 6 章」代替傳統評量，符合國小低壓力學習精神</div>
+  <div class="passport-grid">
+    <div class="stamp"><span class="stamp-emoji">🌱</span>探索章<br>完成土壤觀察</div>
+    <div class="stamp"><span class="stamp-emoji">🥕</span>營養章<br>完成堆肥實作</div>
+    <div class="stamp"><span class="stamp-emoji">🥬</span>適量章<br>完成情境劇討論</div>
+    <div class="stamp"><span class="stamp-emoji">🌍</span>永續章<br>完成海報創作</div>
+    <div class="stamp"><span class="stamp-emoji">🐞</span>偵探章<br>完成昆蟲任務</div>
+    <div class="stamp"><span class="stamp-emoji">📜</span>認證章<br>完成稽核角色扮演</div>
+  </div>
+  <div class="final-cert">
+    <h3 class="kuai">🏅 集滿 6 章 → 頒發「小小有機達人」結業證書</h3>
+    <p>證書上可蓋上富林有機農場專屬印章，並附上孩子的照片與 6 站集章紀錄，讓孩子把「認證」的成就感帶回家。</p>
+  </div>
+</section>
+
+<!-- ESG LINK -->
+<section>
+  <div class="esg-banner">
+    <div class="section-title kuai" style="margin-bottom:6px;"><span class="emoji">🌏</span> 與農場 ESG 定位的連結</div>
+    <p style="max-width:1600px;margin:0 auto;font-size:14.5px;color:#5c5236;">
+      這套國小課程也是富林有機農場「食農教育 × ESG 永續教育園區」發展的第一塊拼圖：透過孩子的體驗，將土壤健康、循環農業、生物多樣性等永續概念向下扎根，未來可延伸為企業員工親子場次或校外教學固定方案。
+    </p>
+    <div class="esg-tags">
+      <span class="esg-tag">🌱 環境教育</span>
+      <span class="esg-tag">♻️ 循環農業</span>
+      <span class="esg-tag">🐝 生物多樣性</span>
+      <span class="esg-tag">🤝 社區連結</span>
+      <span class="esg-tag">🏫 校外教學方案</span>
+    </div>
+  </div>
+</section>
+
+<!-- ISSUES & SOLUTIONS -->
+<section>
+  <div class="section-title kuai"><span class="emoji">🧠</span> 可能遇到的問題與對策</div>
+  <div class="section-sub">先想清楚可能的狀況，實際上課更順利</div>
+  <div class="issue-grid">
+    <div class="issue-card">
+      <h4>⚠️ 化肥／硝酸鹽等概念對國小生太抽象</h4>
+      <p>直接講「硝酸鹽」「化學殘留」孩子難以理解，容易變成單向講述。</p>
+      <div class="fix">✅ 對策：全程用「吃太多會肚子痛」「土地生病了」等擬人化比喻，搭配觸摸、嗅聞等五感活動取代文字講解。</div>
+    </div>
+    <div class="issue-card">
+      <h4>⚠️ 苦楝油調製涉及氣味與操作安全</h4>
+      <p>讓孩子親手調製可能有氣味不適或操作安全疑慮，尤其低年級。</p>
+      <div class="fix">✅ 對策：改為「老師示範＋孩子觀察聞香」，實作部分改成噴灑事先調好的稀釋液於植株，降低風險。</div>
+    </div>
+    <div class="issue-card">
+      <h4>⚠️ 田間活動受天氣影響（雨天、酷暑）</h4>
+      <p>戶外站（第1、4、5站）遇雨天或高溫可能無法進行。</p>
+      <div class="fix">✅ 對策：每個戶外站都準備「教室備案」版本（如用照片、土壤樣本盒、桌上型昆蟲箱取代田間實地觀察），並建議上午較涼爽時段安排戶外課。</div>
+    </div>
+    <div class="issue-card">
+      <h4>⚠️ 家長／學校對「認證」真實性有疑慮</h4>
+      <p>結業證書若過於商業化，可能被質疑只是行銷噱頭。</p>
+      <div class="fix">✅ 對策：明確說明「小小有機達人」證書為教育性質的成就證明，非官方有機認證，並在第6站課程中同步教孩子分辨真正的官方標章，強化教育誠信。</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="farm-name kuai">🌾 富林有機農場</div>
+  新竹縣芎林鄉・有機認證農場・食農教育 × ESG 永續園區<br>
+  本課程規劃書為 115 學年度秋季與恩澤優實驗教育機構合作提案內容
+</footer>
+
+</body>
+</html>
