@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>富林有機農場 × 恩激優實驗教育機構 115年秋季食農教育課程規劃－珍惜所有</title>
+<style>
+  :root{
+    --water:#2b7a9e;
+    --water-light:#e8f4f8;
+    --energy:#e08a1e;
+    --energy-light:#fdf1e0;
+    --leaf:#3e7d4f;
+    --leaf-light:#eaf4ea;
+    --ink:#2b2b23;
+    --paper:#fffdf7;
+    --line:#e2ddc9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    margin:0;
+    line-height:1.75;
+    padding-bottom:60px;
+  }
+  header{
+    background:linear-gradient(135deg,#2b7a9e 0%,#1c5470 100%);
+    color:#fff;
+    padding:44px 24px 34px;
+    text-align:center;
+  }
+  header h1{margin:0 0 8px;font-size:1.6rem;}
+  header .sub{font-size:1.05rem;opacity:.95;}
+  header .badge{
+    display:inline-block;margin-top:16px;
+    background:rgba(255,255,255,.18);
+    padding:6px 18px;border-radius:20px;
+    font-size:.88rem;
+  }
+  .intro{max-width:920px;margin:28px auto;padding:0 20px;}
+  .intro-card{
+    background:var(--leaf-light);
+    border:1px solid #cfe6d2;
+    border-radius:12px;
+    padding:20px 22px;
+    font-size:.95rem;
+  }
+  .intro-card h3{margin-top:0;color:var(--leaf);}
+  .section-title{
+    max-width:920px;margin:40px auto 14px;padding:0 20px;
+    font-size:1.25rem;font-weight:700;color:var(--water);
+    border-left:6px solid var(--energy);padding-left:14px;
+  }
+  .overview-wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+  table.overview{
+    width:100%;border-collapse:collapse;background:#fff;
+    box-shadow:0 1px 5px rgba(0,0,0,.06);border-radius:8px;overflow:hidden;
+  }
+  table.overview th{
+    background:var(--water);color:#fff;padding:10px 8px;font-size:.85rem;text-align:left;
+  }
+  table.overview td{
+    padding:10px 8px;border-bottom:1px solid var(--line);font-size:.85rem;vertical-align:top;
+  }
+  table.overview tr:nth-child(even) td{background:#fbfbf5;}
+  .sdg-tag{
+    display:inline-block;background:#fce8cf;color:#a15c00;
+    padding:1px 8px;border-radius:10px;font-size:.72rem;margin:1px;
+  }
+  .lesson{max-width:920px;margin:0 auto 26px;padding:0 20px;}
+  .lesson-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:22px 24px;box-shadow:0 1px 6px rgba(0,0,0,.05);
+  }
+  .lesson-card.theme-water{border-top:5px solid var(--water);}
+  .lesson-card.theme-energy{border-top:5px solid var(--energy);}
+  .lesson-card.theme-mix{border-top:5px solid var(--leaf);}
+  .lesson-head{display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;}
+  .lesson-num{
+    color:#fff;font-weight:700;
+    width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .theme-water .lesson-num{background:var(--water);}
+  .theme-energy .lesson-num{background:var(--energy);}
+  .theme-mix .lesson-num{background:var(--leaf);}
+  .lesson-title{font-size:1.15rem;font-weight:700;color:#2b2b23;}
+  .lesson-meta{font-size:.82rem;color:#777;margin-bottom:14px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px;}
+  @media (max-width:680px){.grid2{grid-template-columns:1fr;}}
+  .box{border-radius:10px;padding:14px 16px;font-size:.88rem;}
+  .theme-water .box{background:var(--water-light);}
+  .theme-energy .box{background:var(--energy-light);}
+  .theme-mix .box{background:var(--leaf-light);}
+  .box h4{margin:0 0 8px;font-size:.92rem;}
+  .theme-water .box h4{color:var(--water);}
+  .theme-energy .box h4{color:var(--energy);}
+  .theme-mix .box h4{color:var(--leaf);}
+  .box ul{margin:0;padding-left:18px;}
+  .box li{margin-bottom:4px;}
+  .flow{margin-top:14px;}
+  .flow h4{color:#555;margin-bottom:8px;}
+  .flow ol{margin:0;padding-left:20px;}
+  .flow li{margin-bottom:6px;}
+  .safety{
+    background:#fff4e8;border-left:4px solid var(--energy);
+    padding:10px 14px;border-radius:6px;font-size:.85rem;margin-top:14px;
+  }
+  .farm-link{
+    background:#eef7ee;border-left:4px solid var(--leaf);
+    padding:10px 14px;border-radius:6px;font-size:.85rem;margin-top:10px;
+  }
+  footer{
+    max-width:920px;margin:40px auto 0;padding:0 20px;
+    font-size:.8rem;color:#888;text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>💧 富林有機農場 × 恩激優實驗教育機構</h1>
+  <div class="sub">115年秋季食農教育課程規劃｜分類：珍惜所有</div>
+  <div class="badge">主題訴求：地球的資源是有限的，需要愛惜。時間、健康、體力也是有限的，需要珍惜</div>
+</header>
+
+<div class="intro">
+  <div class="intro-card">
+    <h3>📋 課程設計理念</h3>
+    <p>本課程延續上一單元「打好根基」的脈絡，從「植物需要什麼才能長大」進一步深化為「<strong>這些資源是有限的，不是取之不盡的</strong>」。透過雨水收集、水質檢測、澆水實作與綠色能源（光電、風電）體驗，讓孩子親手感受到陽光、雨水、空氣的珍貴，並把「珍惜資源」類比到「珍惜時間、健康、體力」——這是比環保知識更深一層的生命教育。</p>
+    <p>全學期共安排 <strong>7堂主題課＋1堂暖身＋1堂成果發表</strong>，共 9 次課程，由富林有機農場場主親自到校授課，並延續「班級小田地」的雨水灌溉實作，讓上一單元種下的植物，成為這單元珍惜資源教育的活教材。</p>
+  </div>
+</div>
+
+<div class="section-title">📅 課程總覽表</div>
+<div class="overview-wrap">
+<table class="overview">
+<thead>
+<tr><th>週次</th><th>課程主題</th><th>核心學科內容</th><th>對應SDG</th><th>形式</th></tr>
+</thead>
+<tbody>
+<tr><td>第0堂</td><td>暖身：如果資源會用完</td><td>認識有限資源的概念</td><td><span class="sdg-tag">SDG12</span></td><td>教室互動</td></tr>
+<tr><td>第1堂</td><td>萬物生長的三個禮物</td><td>陽光、雨水、空氣</td><td><span class="sdg-tag">SDG13</span><span class="sdg-tag">SDG15</span></td><td>教室＋戶外觀察</td></tr>
+<tr><td>第2堂</td><td>把天空的水留下來</td><td>雨水收集</td><td><span class="sdg-tag">SDG6</span></td><td>戶外實作</td></tr>
+<tr><td>第3堂</td><td>水質偵探社</td><td>雨水品質檢測</td><td><span class="sdg-tag">SDG6</span></td><td>教室實驗</td></tr>
+<tr><td>第4堂</td><td>一滴水的責任</td><td>澆水實作</td><td><span class="sdg-tag">SDG6</span><span class="sdg-tag">SDG12</span></td><td>戶外／田地實作</td></tr>
+<tr><td>第5堂</td><td>把陽光變成電</td><td>綠色能源：光電</td><td><span class="sdg-tag">SDG7</span></td><td>教室實作</td></tr>
+<tr><td>第6堂</td><td>把風變成電</td><td>綠色能源：風電</td><td><span class="sdg-tag">SDG7</span></td><td>教室＋戶外實作</td></tr>
+<tr><td>第7堂</td><td>珍惜所有大挑戰</td><td>綜合分站：水、電、時間、體力</td><td><span class="sdg-tag">SDG12</span><span class="sdg-tag">SDG13</span></td><td>分站闖關</td></tr>
+<tr><td>第8堂</td><td>成果發表：我的珍惜行動宣言</td><td>統整發表、個人承諾卡</td><td><span class="sdg-tag">SDG4</span><span class="sdg-tag">SDG17</span></td><td>成果展</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-title">📖 詳細課程規劃</div>
+
+<div class="lesson">
+<div class="lesson-card theme-mix">
+<div class="lesson-head">
+  <div class="lesson-num">0</div>
+  <div class="lesson-title">暖身：如果資源會用完</div>
+</div>
+<div class="lesson-meta">建議時間：40分鐘｜地點：教室｜適合年段：全年段</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>理解「有限」的概念：不是所有東西都用不完</li>
+      <li>建立本單元核心類比：地球資源有限＝時間、體力、健康也有限</li>
+      <li>回顧上單元「打好根基」的班級小田地現況</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>沙漏或計時器（象徵時間有限）</li>
+      <li>一瓶有刻度的水（象徵資源逐漸減少的視覺化教具）</li>
+      <li>學習護照（延續使用，本單元開新的一頁）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>暖身提問：「如果水龍頭打開卻流不出水，會怎麼樣？」（5分鐘）</li>
+    <li>「有刻度的水瓶」演示：每次舉手回答問題就倒掉一點水，體會資源會用完的感覺（10分鐘）</li>
+    <li>班級小田地巡禮：回顧上學期種下的植物現況（10分鐘）</li>
+    <li>核心類比引導：「植物需要的陽光雨水空氣是有限的，你的時間體力健康也是」（10分鐘）</li>
+    <li>預告本學期主題：珍惜所有（5分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可分享富林農場在乾旱季節必須精算灌溉用水的真實經驗，讓孩子理解「珍惜資源」不是課本口號，而是農夫每天要面對的真實課題。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-mix">
+<div class="lesson-head">
+  <div class="lesson-num">1</div>
+  <div class="lesson-title">萬物生長的三個禮物——陽光、雨水、空氣</div>
+</div>
+<div class="lesson-meta">建議時間：80分鐘｜地點：教室＋校園戶外觀察｜適合年段：全年段</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識植物生長三大要素：陽光、雨水、空氣，及其不可取代性</li>
+      <li>理解這三項資源看似「免費」，其實也有限量與品質的差異</li>
+      <li>觀察校園中植物如何因日照、雨水多寡而生長不同</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>三張角色卡：陽光哥哥、雨水姐姐、空氣朋友（擬人化教具）</li>
+      <li>簡易溫度計、濕度計</li>
+      <li>校園觀察學習單</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>角色扮演暖身：三位孩子分別扮演陽光、雨水、空氣，說出自己的「工作」（10分鐘）</li>
+    <li>小教學：為什麼植物沒有陽光會「徒長變黃」、沒有空氣根會爛掉（15分鐘）</li>
+    <li>校園戶外任務：分組測量向陽處與背陰處的溫度、濕度差異（30分鐘）</li>
+    <li>回教室統整：陽光雨水空氣「夠不夠」會怎麼影響植物？（15分鐘）</li>
+    <li>價值延伸：「這三項禮物如果被汙染或浪費了怎麼辦？」引出珍惜概念（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可用富林農場不同區塊（向陽稻田 vs 背陰蔬菜區）的實際生長對照照片，強化戶外觀察活動的真實性。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-water">
+<div class="lesson-head">
+  <div class="lesson-num">2</div>
+  <div class="lesson-title">把天空的水留下來——雨水收集</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘｜地點：校園戶外｜適合年段：全年段，建議分組動手製作</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>理解雨水收集的原理與意義：把免費落下的水留下來用，減少自來水浪費</li>
+      <li>認識簡易雨水收集系統的組成：集水面、導水管、儲水容器</li>
+      <li>動手製作班級專屬的簡易雨水收集裝置</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>回收寶特瓶或水桶（作為儲水容器）</li>
+      <li>漏斗、軟管、紗網（過濾落葉雜質用）</li>
+      <li>裝置組裝說明圖卡</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>提問引導：「下雨的時候，這些水最後都去哪裡了？」（10分鐘）</li>
+    <li>小教學：雨水收集的基本原理與農場實際應用（15分鐘）</li>
+    <li>分組動手製作簡易雨水收集裝置，安裝在校園合適集水處（40分鐘）</li>
+    <li>討論：收集到的雨水可以用來做什麼？不可以做什麼？（15分鐘）</li>
+    <li>觀察日誌記錄：畫下自己組裝的雨水收集裝置（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可分享富林農場雨水回收系統實際規模與用途（如灌溉、清洗農具），讓孩子的小裝置與農場的大系統產生連結感。</div>
+<div class="safety">⚠️ 安全提醒：裝置固定需注意穩固性，避免傾倒；提醒孩子收集的雨水初期未過濾，不可飲用或直接接觸傷口。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-water">
+<div class="lesson-head">
+  <div class="lesson-num">3</div>
+  <div class="lesson-title">水質偵探社——雨水品質檢測</div>
+</div>
+<div class="lesson-meta">建議時間：80分鐘｜地點：教室（實驗桌）｜適合年段：中高年級為主（低年級可簡化為顏色/氣味觀察）</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識簡易水質檢測方法：外觀、氣味、酸鹼度（pH）、混濁度</li>
+      <li>比較雨水、自來水、池塘水的品質差異</li>
+      <li>理解水質好壞會直接影響植物與人的健康</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>三種水樣（第2堂收集的雨水、自來水、校園池塘或水溝水）</li>
+      <li>兒童安全版pH試紙</li>
+      <li>透明杯、混濁度比對卡</li>
+      <li>水質偵探紀錄表</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>「水質偵探社」角色引導：發放偵探徽章、任務卡（10分鐘）</li>
+    <li>分組檢測三種水樣：外觀、氣味觀察（不品嚐）＋pH試紙測試（35分鐘）</li>
+    <li>記錄與比較：哪一種水最適合澆植物？為什麼？（20分鐘）</li>
+    <li>小教學：水質不好對植物根系與人體健康的影響（10分鐘）</li>
+    <li>總結：珍惜乾淨的水，也要懂得判斷水的品質（5分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可分享富林農場作為有機認證農場，對灌溉水源品質的把關方式，讓孩子理解「有機」背後也包含水質管理的專業。</div>
+<div class="safety">⚠️ 安全提醒：所有水樣僅供觀察與試紙檢測，嚴禁品嚐；池塘水或水溝水檢測後請孩子立即洗手。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-water">
+<div class="lesson-head">
+  <div class="lesson-num">4</div>
+  <div class="lesson-title">一滴水的責任——澆水實作</div>
+</div>
+<div class="lesson-meta">建議時間：80分鐘｜地點：校園田地／班級小田地｜適合年段：全年段</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>學會正確的澆水方法：時間、水量、頻率的掌握</li>
+      <li>理解「過猶不及」：澆太多水跟太少水一樣都會傷害植物</li>
+      <li>用第2堂收集的雨水實際澆灌班級小田地</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>第2堂收集的雨水（過濾後）</li>
+      <li>刻度澆水器、計時器</li>
+      <li>對照組小盆栽（澆水過多／過少／適量）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>提問：「你覺得植物是澆越多水越好嗎？」（5分鐘）</li>
+    <li>小教學：正確澆水的三個原則（看土壤乾濕、避開正午高溫、根部澆水不淋葉）（15分鐘）</li>
+    <li>對照實驗設計：三組盆栽分別澆水過多／過少／適量，掛牌標示（15分鐘）</li>
+    <li>實作：用收集的雨水為班級小田地澆水（30分鐘）</li>
+    <li>約定：接下來兩週由值日生輪流負責澆水並記錄（15分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可分享富林農場如何依作物種類與季節調整灌溉排程，並強調「精準灌溉」對水資源珍惜的重要性，呼應本單元主題。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-energy">
+<div class="lesson-head">
+  <div class="lesson-num">5</div>
+  <div class="lesson-title">把陽光變成電——綠色能源：光電</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘｜地點：教室（近窗）＋戶外｜適合年段：全年段，實作難度可依年級調整</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識太陽能發電的基本原理（光→電）</li>
+      <li>理解綠色能源與傳統燃煤發電的差異</li>
+      <li>動手操作太陽能小玩具，實際觀察光電轉換</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>太陽能小風扇／太陽能小車教具組</li>
+      <li>手電筒（模擬陽光，供陰天或室內使用）</li>
+      <li>能源種類圖卡（太陽能、煤炭、風力對照）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>提問：「電從哪裡來？」引導孩子說出已知的發電方式（10分鐘）</li>
+    <li>小教學：太陽能板如何把光變成電的簡易原理（15分鐘）</li>
+    <li>分組實作：太陽能小玩具在戶外陽光下測試運轉（30分鐘）</li>
+    <li>對照實驗：把太陽能板遮住，觀察玩具是否還能運轉（15分鐘）</li>
+    <li>討論：太陽能發電的優點與限制（例如陰天、夜晚怎麼辦？）（20分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可分享富林農場對太陽能設施的規劃或未來構想（如未來食農教育園區的綠能設施），讓孩子知道這不是遙遠的科技，而是農場正在思考的真實方案。</div>
+<div class="safety">⚠️ 戶外活動請避免長時間直視太陽或直接曝曬，提醒孩子戴帽子、留意防曬與補充水分。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-energy">
+<div class="lesson-head">
+  <div class="lesson-num">6</div>
+  <div class="lesson-title">把風變成電——綠色能源：風電</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘｜地點：教室＋校園戶外｜適合年段：全年段</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識風力發電的基本原理（風→轉動→電）</li>
+      <li>理解新竹「風城」的風力資源特色與風電發展的關聯</li>
+      <li>動手製作紙風車或簡易風力發電模型</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>紙風車材料包（色紙、竹籤、圖釘）</li>
+      <li>簡易風力發電教具組（附小燈泡或LED）</li>
+      <li>電風扇（模擬風力供室內測試）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>回顧第3堂「新竹風」的知識：為什麼新竹適合發展風力發電？（10分鐘）</li>
+    <li>小教學：風力發電的基本原理（15分鐘）</li>
+    <li>動手製作紙風車，並於戶外測試轉動效果（35分鐘）</li>
+    <li>簡易風力發電教具展示：用電風扇吹動葉片點亮LED燈（20分鐘）</li>
+    <li>統整比較：光電 vs 風電，各自適合什麼樣的環境？（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可提及新竹科學園區與離岸風電產業的地緣關係，讓孩子理解家鄉新竹在綠色能源產業中的角色。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-mix">
+<div class="lesson-head">
+  <div class="lesson-num">7</div>
+  <div class="lesson-title">珍惜所有大挑戰——綜合分站闖關</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘｜地點：教室＋校園戶外｜適合年段：全年段，分站闖關形式</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>統整本學期所學：水資源、能源、時間、體力的珍惜行動</li>
+      <li>透過遊戲化闖關，內化「珍惜」的具體行為</li>
+      <li>培養團隊合作與時間管理能力</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>四個分站教具（水站、電站、時間站、體力站）</li>
+      <li>闖關集章卡</li>
+      <li>計時器、任務卡</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>分站說明＋分組（10分鐘）</li>
+    <li>四分站輪流體驗，每站約15分鐘（60分鐘）：
+      <ul>
+        <li><strong>水站</strong>：限時用最少水量完成澆水任務</li>
+        <li><strong>電站</strong>：搶答綠色能源相關問題</li>
+        <li><strong>時間站</strong>：計時挑戰，體驗「時間有限」的急迫感（如限時完成拼圖）</li>
+        <li><strong>體力站</strong>：適度體能任務，體驗「體力用完就要休息」的道理</li>
+      </ul>
+    </li>
+    <li>回教室統整：分享闖關心得，連結到「珍惜」的核心價值（15分鐘）</li>
+    <li>集章卡蓋章，預告下堂課成果發表（5分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：時間站與體力站可由場主分享農夫「看天吃飯」的真實工作型態——例如搶收成、搶時效澆水，讓孩子理解珍惜時間與體力在真實農務中的意義。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-mix">
+<div class="lesson-head">
+  <div class="lesson-num">8</div>
+  <div class="lesson-title">成果發表：我的珍惜行動宣言</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘（可安排為班級小型成果展，邀請家長參與）｜地點：教室／校園田地</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>統整一學期所學，寫下屬於自己的「珍惜行動宣言」</li>
+      <li>展示雨水收集裝置、光電/風電實作成果</li>
+      <li>連結價值觀：珍惜地球資源，也珍惜自己的時間、健康、體力</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>學習護照（統整整學期蓋章紀錄）</li>
+      <li>個人「珍惜行動宣言卡」</li>
+      <li>雨水收集裝置與能源實作成品展示區</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>成果展示巡禮：雨水收集裝置、太陽能小車、風力發電模型（20分鐘）</li>
+    <li>學生分組發表：分享自己最有感觸的一堂課與原因（25分鐘）</li>
+    <li>撰寫「我的珍惜行動宣言卡」：寫下一件本週開始就能做到的珍惜行動（20分鐘）</li>
+    <li>場主總結分享：珍惜資源與珍惜自己的連結（15分鐘）</li>
+    <li>頒發「小小珍惜行動家」證書＋合影（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可趁機邀請家長了解富林農場的節水、綠能與循環農業實踐，並延伸介紹未來企業ESG參訪／校外教學方案。</div>
+</div>
+</div>
+
+<div class="section-title">✅ 給學校與農場的補充建議</div>
+<div class="intro">
+  <div class="intro-card">
+    <h3>教學搭配建議</h3>
+    <ul>
+      <li>本單元建議<strong>延續上單元「班級小田地」</strong>，讓雨水收集與澆水實作直接應用在既有的種植成果上，形成完整的學期教育閉環。</li>
+      <li>水質檢測（第3堂）建議提前一天請校方確認學校是否有現成的池塘/水溝水源可採樣，若無則可改用「校園積水」或請農場提供灌溉溝渠水樣。</li>
+      <li>光電與風電教具建議選用<strong>無須焊接、可重複使用</strong>的市售兒童科學教具組，降低操作風險並可留給學校未來重複使用。</li>
+      <li>第7堂「體力站」任務強度請依學校體育課常規標準設計，避免過度消耗孩子體力，並準備飲水與休息時間。</li>
+      <li>成果發表建議保留雨水收集裝置與能源模型讓學校留存展示，作為長期食農教育角落的一部分。</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  富林有機農場 × 恩激優實驗教育機構（NGU）115年秋季食農教育課程規劃－珍惜所有　｜　規劃製作日期：2026年7月11日
+</footer>
+
+</body>
+</html>
