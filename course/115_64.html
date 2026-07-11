@@ -273,10 +273,56 @@
     font-size:13.5px;
   }
   footer .brand{font-family:"ZCOOL KuaiLe";font-size:20px;color:#fff;margin-bottom:8px;}
+
+/* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,242,227,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:2px solid var(--rice-light);
+  }
+  .nav-inner{
+    max-width:1900px;margin:0 auto;padding:12px;
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:10px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:8px;
+    font-size:1.15rem;font-weight:900;color:var(--rice-dark);
+  }
+  .logo-mark{font-size:1.5rem;}
+  .nav-links{display:flex;gap:22px;font-size:.92rem;font-weight:700;flex-wrap:wrap;}
+  .nav-links a{
+    text-decoration:none;color:var(--soil);
+    padding-bottom:3px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .nav-links a:hover{border-color:var(--turmeric);color:var(--rice-dark);}
+  .nav-cta{
+    background:var(--rice);color:#fff;padding:9px 20px;border-radius:24px;
+    font-size:.88rem;font-weight:700;text-decoration:none;
+    box-shadow:0 3px 0 var(--rice-dark);white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(1px);box-shadow:0 2px 0 var(--rice-dark);}
+
 </style>
 </head>
 <body>
+<nav>
 
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-mark">🌾</span>富林有機農場</div>
+    <div class="nav-links">
+      <a href="https://snoweryi.github.io/kid/course/115_61.html">115秋_6.1打好根基</a>
+      <a href="https://snoweryi.github.io/kid/course/115_63.html">6.3珍惜所有</a>
+      <a href="https://snoweryi.github.io/kid/course/115_64.html">6.4寶貝地球</a>
+      <a href="https://snoweryi.github.io/kid/course/115_65.html">115春_6.5看見微小</a>
+      <a href="https://snoweryi.github.io/kid/course/115_66.html">6.6 解決兩難</a>
+    </div>
+    <a class="nav-cta" href="#contact">預約洽詢</a>
+  </div>
+ 
+</nav>
 <div class="hero">
   <span class="eyebrow">分類｜寶貝地球　·　115年度秋季課程</span>
   <h1>有機肥料的<span>秘密</span><br>從鴨池、雞舍到餐桌廚餘</h1>

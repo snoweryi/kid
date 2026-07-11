@@ -2,7 +2,10 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>富林有機農場 × 恩激優實驗教育機構 115年秋季食農教育課程規劃</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --soil:#6b4226;
@@ -23,15 +26,24 @@
     line-height:1.75;
     padding-bottom:60px;
   }
-  header{
-    background:linear-gradient(135deg,#3e7d4f 0%,#2c5c3a 100%);
-    color:#fff;
-    padding:44px 24px 34px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
+  h1,h2,h3,.display{
+    font-family:"ZCOOL KuaiLe","Noto Sans TC",sans-serif;
+    font-weight:400;
+    color:var(--soil-dark);
   }
-  header h1{margin:0 0 8px;font-size:1.6rem;}
+  header{
+    position:relative;
+    padding:76px 24px 96px;
+    background:
+      radial-gradient(circle at 12% 20%, rgba(163,199,154,0.35), transparent 45%),
+      radial-gradient(circle at 88% 75%, rgba(227,167,59,0.25), transparent 40%),
+      linear-gradient(160deg, #F9F4E8 0%, #F3ECD9 100%);
+    overflow:hidden;
+    text-align:center;
+  }
+  header h1{font-size:clamp(38px,6vw,64px);
+    margin:0 0 14px;
+    line-height:1.25;}
   header .sub{font-size:1.05rem;opacity:.95;}
   header .badge{
     display:inline-block;margin-top:16px;
@@ -115,10 +127,55 @@
     max-width:920px;margin:40px auto 0;padding:0 20px;
     font-size:.8rem;color:#888;text-align:center;
   }
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,242,227,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:2px solid var(--rice-light);
+  }
+  .nav-inner{
+    max-width:1900px;margin:0 auto;padding:12px;
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:10px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:8px;
+    font-size:1.15rem;font-weight:900;color:var(--rice-dark);
+  }
+  .logo-mark{font-size:1.5rem;}
+  .nav-links{display:flex;gap:22px;font-size:.92rem;font-weight:700;flex-wrap:wrap;}
+  .nav-links a{
+    text-decoration:none;color:var(--soil);
+    padding-bottom:3px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .nav-links a:hover{border-color:var(--turmeric);color:var(--rice-dark);}
+  .nav-cta{
+    background:var(--rice);color:#fff;padding:9px 20px;border-radius:24px;
+    font-size:.88rem;font-weight:700;text-decoration:none;
+    box-shadow:0 3px 0 var(--rice-dark);white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(1px);box-shadow:0 2px 0 var(--rice-dark);}
+
 </style>
 </head>
 <body>
+<nav>
 
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-mark">🌾</span>富林有機農場</div>
+    <div class="nav-links">
+      <a href="https://snoweryi.github.io/kid/course/115_61.html">115秋_6.1打好根基</a>
+      <a href="https://snoweryi.github.io/kid/course/115_63.html">6.3珍惜所有</a>
+      <a href="https://snoweryi.github.io/kid/course/115_64.html">6.4寶貝地球</a>
+      <a href="https://snoweryi.github.io/kid/course/115_65.html">115春_6.5看見微小</a>
+      <a href="https://snoweryi.github.io/kid/course/115_66.html">6.6 解決兩難</a>
+    </div>
+    <a class="nav-cta" href="#contact">預約洽詢</a>
+  </div>
+ 
+</nav>
 <header>
   <h1>🌱 富林有機農場 × 恩激優實驗教育機構</h1>
   <div class="sub">115年秋季食農教育課程規劃｜分類：打好根基</div>
