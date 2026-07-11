@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>富林有機農場 × 恩激優實驗教育機構 115年秋季食農教育課程規劃－解決兩難</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+  :root{
+    --coral:#ff6b6b;
+    --coral-light:#ffe3e3;
+    --sun:#ffb703;
+    --sun-light:#fff3d6;
+    --mint:#2ec4b6;
+    --mint-light:#dff8f5;
+    --sky:#4d96ff;
+    --sky-light:#e3efff;
+    --lav:#9d7bd8;
+    --lav-light:#f0e9fb;
+    --char:#6b4a2f;
+    --ink:#3a3226;
+    --paper:#fffdf6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    background:
+      radial-gradient(circle at 8% 12%, var(--sun-light) 0%, transparent 40%),
+      radial-gradient(circle at 92% 20%, var(--mint-light) 0%, transparent 40%),
+      radial-gradient(circle at 15% 90%, var(--sky-light) 0%, transparent 40%),
+      var(--paper);
+    color:var(--ink);
+    margin:0;
+    line-height:1.75;
+    padding-bottom:70px;
+  }
+  h1,h2,h3,.playful{font-family:"Baloo 2","Noto Sans TC",sans-serif;}
+
+  header{
+    background:linear-gradient(135deg,#ff8a5c 0%,#ff6b6b 45%, #d94f8c 100%);
+    color:#fff;
+    padding:50px 24px 40px;
+    text-align:center;
+    border-radius:0 0 40px 40px;
+    box-shadow:0 8px 24px rgba(217,79,140,.25);
+    position:relative;
+  }
+  header .emoji-row{font-size:2rem;margin-bottom:10px;letter-spacing:8px;}
+  header h1{margin:0 0 10px;font-size:1.9rem;font-weight:800;text-shadow:2px 2px 0 rgba(0,0,0,.1);}
+  header .sub{font-size:1.1rem;opacity:.97;font-weight:500;}
+  header .badge{
+    display:inline-block;margin-top:18px;
+    background:rgba(255,255,255,.22);
+    padding:10px 22px;border-radius:30px;
+    font-size:.92rem;
+    border:2px dashed rgba(255,255,255,.6);
+  }
+
+  .mascot-intro{
+    max-width:920px;margin:-20px auto 30px;padding:0 20px;
+  }
+  .mascot-card{
+    background:#fff;
+    border:3px solid var(--sun);
+    border-radius:28px;
+    padding:22px 26px;
+    box-shadow:0 6px 0 var(--sun-light), 0 10px 20px rgba(0,0,0,.06);
+    position:relative;
+    font-size:.96rem;
+  }
+  .mascot-card .mascot-face{
+    font-size:2.4rem;
+    position:absolute;
+    top:-26px;left:26px;
+    background:#fff;
+    border-radius:50%;
+    padding:6px 10px;
+    border:3px solid var(--sun);
+  }
+  .mascot-card h3{margin:14px 0 10px;color:#c9700a;font-size:1.15rem;}
+
+  .dilemma-box{
+    max-width:920px;margin:0 auto 30px;padding:0 20px;
+  }
+  .dilemma-inner{
+    background:linear-gradient(135deg,var(--lav-light),#fff);
+    border-radius:24px;
+    padding:22px 26px;
+    border:3px dashed var(--lav);
+    font-size:.95rem;
+  }
+  .dilemma-inner h3{color:var(--lav);margin-top:0;font-size:1.15rem;}
+  .vs-row{
+    display:flex;gap:14px;margin-top:14px;flex-wrap:wrap;
+  }
+  .vs-card{
+    flex:1;min-width:220px;
+    background:#fff;border-radius:16px;padding:14px 16px;
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+  }
+  .vs-card.bad{border-top:5px solid var(--coral);}
+  .vs-card.good{border-top:5px solid var(--mint);}
+  .vs-card h4{margin:0 0 6px;font-size:.95rem;}
+  .vs-card.bad h4{color:var(--coral);}
+  .vs-card.good h4{color:var(--mint);}
+
+  .section-title{
+    max-width:920px;margin:44px auto 16px;padding:0 20px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .section-title .dot{
+    width:14px;height:14px;border-radius:50%;
+    background:var(--coral);flex-shrink:0;
+  }
+  .section-title span.txt{
+    font-size:1.3rem;font-weight:800;color:var(--ink);
+  }
+
+  .overview-wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+  table.overview{
+    width:100%;border-collapse:separate;border-spacing:0 8px;
+  }
+  table.overview thead th{
+    background:transparent;color:#a15c00;font-size:.82rem;text-align:left;padding:0 12px;
+  }
+  table.overview tbody tr td{
+    background:#fff;padding:12px;font-size:.85rem;vertical-align:top;
+    box-shadow:0 2px 6px rgba(0,0,0,.05);
+  }
+  table.overview tbody tr td:first-child{border-radius:14px 0 0 14px;font-weight:700;color:var(--coral);text-align:center;}
+  table.overview tbody tr td:last-child{border-radius:0 14px 14px 0;}
+  .sdg-tag{
+    display:inline-block;background:var(--mint-light);color:#0f7a6d;
+    padding:2px 10px;border-radius:12px;font-size:.72rem;margin:1px;font-weight:700;
+  }
+
+  .lesson{max-width:920px;margin:0 auto 28px;padding:0 20px;}
+  .lesson-card{
+    background:#fff;border-radius:26px;
+    padding:24px 26px;
+    box-shadow:0 6px 0 rgba(0,0,0,.04), 0 10px 24px rgba(0,0,0,.06);
+    position:relative;
+    border:3px solid transparent;
+  }
+  .theme-1{border-color:var(--sky);} .theme-1 .lesson-num{background:var(--sky);}
+  .theme-2{border-color:var(--coral);} .theme-2 .lesson-num{background:var(--coral);}
+  .theme-3{border-color:var(--mint);} .theme-3 .lesson-num{background:var(--mint);}
+  .theme-4{border-color:var(--sun);} .theme-4 .lesson-num{background:var(--sun);}
+  .theme-5{border-color:var(--lav);} .theme-5 .lesson-num{background:var(--lav);}
+
+  .lesson-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;}
+  .lesson-num{
+    color:#fff;font-weight:800;font-family:"Baloo 2";
+    width:42px;height:42px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    font-size:1.2rem;
+    box-shadow:0 3px 0 rgba(0,0,0,.15);
+  }
+  .lesson-title{font-size:1.2rem;font-weight:800;color:var(--ink);font-family:"Baloo 2";}
+  .lesson-meta{font-size:.82rem;color:#999;margin-bottom:14px;font-weight:500;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;}
+  @media (max-width:680px){.grid2{grid-template-columns:1fr;}}
+  .box{border-radius:16px;padding:14px 16px;font-size:.88rem;background:#faf9f4;}
+  .box h4{margin:0 0 8px;font-size:.92rem;color:#a15c00;}
+  .box ul{margin:0;padding-left:18px;}
+  .box li{margin-bottom:4px;}
+
+  .flow{margin-top:16px;background:#fbfbf5;border-radius:16px;padding:16px 18px;}
+  .flow h4{color:var(--sky);margin:0 0 8px;font-size:.95rem;}
+  .flow ol{margin:0;padding-left:20px;}
+  .flow li{margin-bottom:6px;}
+
+  .safety{
+    background:#fff0e8;border:2px dashed var(--coral);
+    padding:14px 16px;border-radius:16px;font-size:.87rem;margin-top:16px;
+  }
+  .safety strong{color:var(--coral);}
+  .safety.strong{background:#ffe1e1;border:3px solid var(--coral);}
+
+  .farm-link{
+    background:var(--mint-light);border-radius:16px;
+    padding:12px 16px;font-size:.87rem;margin-top:12px;
+  }
+  .farm-link strong{color:#0f7a6d;}
+
+  .speech{
+    display:flex;align-items:flex-start;gap:10px;margin-top:14px;
+    background:var(--sky-light);border-radius:18px;padding:12px 16px;
+    font-size:.85rem;
+  }
+  .speech .icon{font-size:1.6rem;flex-shrink:0;}
+
+  footer{
+    max-width:920px;margin:44px auto 0;padding:0 20px;
+    font-size:.8rem;color:#999;text-align:center;
+  }
+
+  .divider{
+    max-width:920px;margin:6px auto;padding:0 20px;
+    text-align:center;color:#d8d2c2;font-size:1.2rem;letter-spacing:10px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="emoji-row">🔥🌱🌍♻️🔥</div>
+  <h1>解決兩難：小小碳夢想家</h1>
+  <div class="sub">富林有機農場 × 恩激優實驗教育機構　115年秋季食農教育課程</div>
+  <div class="badge">學科主軸：生物炭製作 × TLUD × 溫室效應 × 碳保存</div>
+</header>
+
+<div class="mascot-intro">
+  <div class="mascot-card">
+    <div class="mascot-face">🌱🔥</div>
+    <h3>嗨！我是小碳芽，這學期要跟大家一起解開一個超級大謎題！</h3>
+    <p>本單元延續前兩學期「打好根基」「珍惜所有」的脈絡，進入更有挑戰性的主題——<strong>解決兩難</strong>。孩子將認識碳排放與溫室效應，並發現一個有趣的矛盾：「燒東西」明明會製造碳排放，為什麼富林農場卻用一種特別的爐子（TLUD）來燒木頭，反而能幫助地球「鎖住」碳？這個看似矛盾的答案，就是這學期要帶孩子一起解開的兩難謎題。</p>
+    <p>全學期共安排 <strong>6堂主題課＋1堂暖身＋1堂成果發表</strong>，共 8 次課程，由富林有機農場場主親自到校授課。<strong style="color:#d94f8c;">特別提醒：TLUD實際生火示範屬於明火操作，全程僅由場主／受過訓練的成人執行，孩子僅在安全距離觀察，詳細安全規劃請見第6堂說明。</strong></p>
+  </div>
+</div>
+
+<div class="dilemma-box">
+  <div class="dilemma-inner">
+    <h3>🤔 這學期的大哉問：燒東西，到底是幫地球還是傷地球？</h3>
+    <p>一般人直覺會覺得「燃燒＝製造二氧化碳＝不環保」，但富林農場卻用燃燒木屑來製作生物炭，幫助土地「存住碳」。這是怎麼一回事呢？</p>
+    <div class="vs-row">
+      <div class="vs-card bad">
+        <h4>😟 一般燃燒（例如營火）</h4>
+        <p>木頭幾乎完全燒盡，碳幾乎全部變成二氧化碳飄到大氣中，加重溫室效應。</p>
+      </div>
+      <div class="vs-card good">
+        <h4>😊 TLUD生物炭爐</h4>
+        <p>透過特殊的空氣控制方式，木頭只燒掉一部分，留下穩定的「黑碳」，這些碳可以在土壤裡待上百年甚至上千年，不會輕易變回二氧化碳。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title"><div class="dot"></div><span class="txt">📅 課程總覽表</span></div>
+<div class="overview-wrap">
+<table class="overview">
+<thead>
+<tr><th>週次</th><th>課程主題</th><th>核心學科內容</th><th>對應SDG</th><th>形式</th></tr>
+</thead>
+<tbody>
+<tr><td>第0堂</td><td>兩難大挑戰開幕式</td><td>認識本學期核心謎題</td><td><span class="sdg-tag">SDG13</span></td><td>教室互動</td></tr>
+<tr><td>第1堂</td><td>誰在製造二氧化碳？</td><td>認識碳排放</td><td><span class="sdg-tag">SDG13</span></td><td>教室遊戲</td></tr>
+<tr><td>第2堂</td><td>地球的保溫毯</td><td>認識溫室效應</td><td><span class="sdg-tag">SDG13</span></td><td>教室實驗</td></tr>
+<tr><td>第3堂</td><td>把碳鎖住的秘密</td><td>認識碳保存</td><td><span class="sdg-tag">SDG13</span><span class="sdg-tag">SDG15</span></td><td>教室＋觀察</td></tr>
+<tr><td>第4堂</td><td>神奇的呼吸爐：TLUD原理</td><td>TLUD原理</td><td><span class="sdg-tag">SDG7</span><span class="sdg-tag">SDG13</span></td><td>教室教學</td></tr>
+<tr><td>第5堂</td><td>動手蓋一座小爐子</td><td>TLUD製作（組裝，不點火）</td><td><span class="sdg-tag">SDG7</span></td><td>動手實作</td></tr>
+<tr><td>第6堂</td><td>見證奇蹟的時刻：TLUD實驗</td><td>TLUD實驗（成人示範）</td><td><span class="sdg-tag">SDG13</span></td><td>戶外觀察示範</td></tr>
+<tr><td>第7堂</td><td>我的兩難解方發表會</td><td>統整發表、生物炭成果展示</td><td><span class="sdg-tag">SDG4</span><span class="sdg-tag">SDG17</span></td><td>成果展</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="divider">🌿 ・ 🔥 ・ 🌍 ・ ♻️ ・ 🌿</div>
+
+<div class="section-title"><div class="dot" style="background:var(--sky)"></div><span class="txt">📖 詳細課程規劃</span></div>
+
+<div class="lesson">
+<div class="lesson-card theme-1">
+<div class="lesson-head">
+  <div class="lesson-num">0</div>
+  <div class="lesson-title">兩難大挑戰開幕式</div>
+</div>
+<div class="lesson-meta">建議時間：40分鐘｜地點：教室｜適合年段：全年段</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識小碳芽（吉祥物）與本學期主題「解決兩難」</li>
+      <li>對「燒東西可能幫助地球」這個矛盾產生好奇心</li>
+      <li>建立本學期的探索任務地圖</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>小碳芽吉祥物道具（玩偶或圖卡）</li>
+      <li>「兩難卡」：正面寫矛盾現象、背面留白讓孩子後續填答案</li>
+      <li>學習護照（延續使用，本單元開新的一頁）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>小碳芽登場：用戲劇化語氣拋出謎題「燒東西到底是好事還是壞事？」（10分鐘）</li>
+    <li>發下「兩難卡」，讓孩子先寫下自己的直覺猜測（10分鐘）</li>
+    <li>公布本學期任務地圖：從認識碳排放，一路解開到生物炭實驗（10分鐘）</li>
+    <li>小組宣示：貼上自己的隊呼／隊名，準備展開挑戰（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="speech"><span class="icon">🌱🔥</span><span>小碳芽說：「這學期我們要當偵探，一起找出燒東西幫助地球的秘密喔！」</span></div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-2">
+<div class="lesson-head">
+  <div class="lesson-num">1</div>
+  <div class="lesson-title">誰在製造二氧化碳？——認識碳排放</div>
+</div>
+<div class="lesson-meta">建議時間：80分鐘｜地點：教室｜適合年段：全年段</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識生活中常見的碳排放來源（開車、用電、呼吸、燃燒）</li>
+      <li>理解碳排放是自然現象，但「過多」才會造成問題</li>
+      <li>連結上學期「循環魔法」的養分循環概念</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>「碳排放大搜查」情境圖卡（交通工具、電器、動植物呼吸等）</li>
+      <li>分類遊戲版（自然排放 vs 人為排放）</li>
+      <li>吸管與氣球（簡易呼出二氧化碳體驗教具）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>暖身遊戲：「這個東西會排放二氧化碳嗎？」快問快答（10分鐘）</li>
+    <li>情境圖卡分類活動：分組將圖卡分成「自然排放」與「人為排放」（25分鐘）</li>
+    <li>小教學：為什麼「多」的碳排放才是問題，適量的碳循環是自然運作（15分鐘）</li>
+    <li>吸管吹氣球體驗：感受呼吸也是碳排放的一部分（15分鐘）</li>
+    <li>回填「兩難卡」：這堂課你發現了什麼線索？（15分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link"><strong>🌾 農場連結：</strong>可分享富林農場如何比較「一般慣行農法」與「有機農法」在碳排放上的差異，讓孩子理解農業本身也跟碳排放息息相關。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-3">
+<div class="lesson-head">
+  <div class="lesson-num">2</div>
+  <div class="lesson-title">地球的保溫毯——認識溫室效應</div>
+</div>
+<div class="lesson-meta">建議時間：80分鐘｜地點：教室（近窗）｜適合年段：全年段</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>理解溫室效應的基本原理：溫室氣體像保溫毯包住地球</li>
+      <li>透過簡易實驗觀察「有蓋」與「無蓋」容器的溫度差異</li>
+      <li>認識溫室效應過強會導致的氣候變遷現象</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>兩個透明玻璃罐（一個加蓋、一個不加蓋）</li>
+      <li>溫度計兩支</li>
+      <li>溫室效應圖解海報（保溫毯比喻插畫）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>提問暖身：「為什麼夏天車子曬太陽後，車內比外面更悶熱？」（10分鐘）</li>
+    <li>分組實驗：兩個玻璃罐放置陽光下，每5分鐘記錄一次溫度（30分鐘，含等待時間可搭配其他活動交錯進行）</li>
+    <li>小教學：用「保溫毯」比喻解釋溫室氣體如何讓熱留在地球（15分鐘）</li>
+    <li>記錄與討論：加蓋罐子溫度上升較快，代表什麼意義？（15分鐘）</li>
+    <li>回填「兩難卡」：溫室效應跟燒東西有什麼關係？（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="safety">⚠️ <strong>安全提醒：</strong>玻璃罐實驗請選用不易破裂的材質或改用透明塑膠盒替代；溫度計讀取請由老師協助示範，避免孩子誤觸破損玻璃。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-4">
+<div class="lesson-head">
+  <div class="lesson-num">3</div>
+  <div class="lesson-title">把碳鎖住的秘密——認識碳保存</div>
+</div>
+<div class="lesson-meta">建議時間：80分鐘｜地點：教室＋校園觀察｜適合年段：全年段</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識大自然中的「碳保存」方式：森林、土壤、海洋</li>
+      <li>初步認識生物炭是一種特別穩定的碳保存形式</li>
+      <li>理解「保存的碳」跟「排放的碳」是同一個碳元素的不同狀態</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>生物炭實物樣本（安全冷卻、密封保存的成品）</li>
+      <li>木炭 vs 落葉腐化速度對照圖卡</li>
+      <li>碳保存地圖（森林、土壤、海洋、生物炭四種保存方式插畫）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>暖身提問：「木炭放在土裡，一百年後還會在嗎？落葉呢？」（10分鐘）</li>
+    <li>小教學：認識森林、土壤、海洋三種天然碳保存方式（20分鐘）</li>
+    <li>觸摸體驗：傳遞生物炭樣本，觀察質地與一般木炭的差異（15分鐘）</li>
+    <li>比較討論：為什麼生物炭比一般木頭更能「鎖住」碳？（20分鐘）</li>
+    <li>回填「兩難卡」：解謎進度確認，準備進入TLUD單元（15分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link"><strong>🌾 農場連結：</strong>可分享富林農場將生物炭混入土壤改良的實際做法，說明這不只是「保存碳」，同時也是很好的土壤改良劑，呼應前兩學期的土壤與循環農業概念。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-5">
+<div class="lesson-head">
+  <div class="lesson-num">4</div>
+  <div class="lesson-title">神奇的呼吸爐——TLUD原理</div>
+</div>
+<div class="lesson-meta">建議時間：80分鐘｜地點：教室｜適合年段：中高年級為主（低年級可簡化圖解說明）</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識TLUD（上點式向上氣流氣化爐）的基本構造與原理</li>
+      <li>理解TLUD與一般營火燃燒方式的關鍵差異：控制空氣、由上往下燃燒</li>
+      <li>解開本學期核心謎題：為什麼TLUD燃燒能留下穩定的碳</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>TLUD結構剖面圖／模型（雙層桶身、進氣孔設計）</li>
+      <li>動畫或影片：TLUD燃燒過程示意（無實際明火）</li>
+      <li>「解謎揭曉卡」：本學期兩難謎題的答案卡</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>回顧提問：「一般營火跟TLUD爐有什麼不一樣？」（10分鐘）</li>
+    <li>剖面模型講解：TLUD如何透過控制空氣量，讓木頭「悶燒」而非「燒盡」（25分鐘）</li>
+    <li>影片觀賞：TLUD實際運作過程（無明火現場操作，僅觀看紀錄影像）（15分鐘）</li>
+    <li>解謎揭曉：發下「解謎揭曉卡」，正式解答本學期的兩難謎題（15分鐘）</li>
+    <li>預告：下堂課要動手組裝屬於自己班上的小型TLUD結構（15分鐘）</li>
+  </ol>
+</div>
+
+<div class="speech"><span class="icon">🌱🔥</span><span>小碳芽說：「原來不是燒得越旺越好，控制空氣、慢慢悶燒，才能把碳留下來喔！」</span></div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-1">
+<div class="lesson-head">
+  <div class="lesson-num">5</div>
+  <div class="lesson-title">動手蓋一座小爐子——TLUD製作（組裝，不點火）</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘｜地點：教室／室內活動空間｜適合年段：中高年級為主，建議分組合作</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識TLUD結構的各個組件：外桶、內桶、進氣孔、排氣口</li>
+      <li>動手組裝一座「教學用」TLUD結構模型（本堂<strong>不進行點火</strong>）</li>
+      <li>培養動手實作與團隊合作能力</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>已預先鑽好孔洞的雙層金屬桶（安全處理過邊緣）</li>
+      <li>手套、組裝說明圖卡</li>
+      <li>螺絲起子或簡易固定工具（依設計而定）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>複習TLUD構造：對照上堂課的剖面圖，說出各部位名稱（10分鐘）</li>
+    <li>場主示範組裝步驟：外桶與內桶如何疊放、進氣孔位置（20分鐘）</li>
+    <li>分組動手組裝：每組在協助下完成一座教學用TLUD結構（40分鐘）</li>
+    <li>檢查與命名：為自己組裝的爐子取名字，貼上小組標籤（10分鐘）</li>
+    <li>收拾整理，並鄭重宣布：下堂課場主將示範真正的點火實驗（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="safety">⚠️ <strong>安全提醒：</strong>本堂課<strong>全程不進行點火</strong>，僅組裝結構；金屬桶邊緣需事先處理去除銳利毛邊，並全程配戴手套操作，避免割傷。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-2">
+<div class="lesson-head">
+  <div class="lesson-num">6</div>
+  <div class="lesson-title">見證奇蹟的時刻——TLUD實驗（成人示範）</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘｜地點：校園戶外空曠場地（需事先場勘與校方確認）｜形式：成人示範操作＋孩子安全距離觀察</div>
+
+<div class="safety strong">
+🔥 <strong>本堂課涉及實際明火操作，請務必於事前完成以下安全規劃：</strong>
+<ul style="margin:8px 0 0 18px;padding:0;">
+  <li>點火與燃燒過程<strong>僅由富林農場場主或受過訓練之成人</strong>操作，孩子全程<strong>不觸碰火源、不使用打火機或火柴</strong>。</li>
+  <li>活動場地須為校園內空曠、無易燃物之戶外區域，並<strong>事先取得校方核准</strong>，必要時知會當地消防單位。</li>
+  <li>設置明確的<strong>安全觀察線</strong>（建議至少3公尺以上），並使用圍欄或彩色地墊標示，孩子須全程站在觀察線外。</li>
+  <li>現場備妥<strong>滅火器、水桶、沙桶</strong>等滅火器材，並指派專人在旁監控。</li>
+  <li>選擇<strong>無風或微風</strong>的天氣進行，並留意周邊乾燥植被的火災風險。</li>
+  <li>活動前向孩子清楚說明「觀察規則」，並在活動中持續口頭提醒安全距離。</li>
+</ul>
+</div>
+
+<div class="grid2" style="margin-top:16px;">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>實際觀察TLUD爐從點火、悶燒到熄滅的完整過程</li>
+      <li>觀察並記錄燃燒後留下的生物炭外觀變化</li>
+      <li>連結前面所學，親眼見證「燃燒也能保存碳」的答案</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>正式版TLUD爐具（場主自備，已完成安全檢測）</li>
+      <li>木屑或小樹枝等燃料（場主準備）</li>
+      <li>滅火器材、觀察線標示物</li>
+      <li>觀察紀錄學習單</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>集合、複習安全規則，確認每位孩子理解觀察線的意義（10分鐘）</li>
+    <li>場主示範點火，孩子在安全距離外觀察起始的火焰狀態（10分鐘）</li>
+    <li>觀察燃燒過程：引導孩子觀察火焰顏色、煙的變化、聲音（30分鐘，過程中場主持續講解原理）</li>
+    <li>場主示範熄火與安全降溫程序，孩子在遠距離觀察（15分鐘）</li>
+    <li>完全冷卻後（如時間不足可由場主事後展示已冷卻之成品），傳遞生物炭成品供孩子觸摸觀察（15分鐘）</li>
+    <li>填寫觀察紀錄學習單，回應本學期的兩難謎題最終答案（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link"><strong>🌾 農場連結：</strong>建議場主展示富林農場實際使用生物炭改良土壤的田區，讓孩子理解今天看到的示範，跟農場真正的永續農法是同一件事。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card theme-3">
+<div class="lesson-head">
+  <div class="lesson-num">7</div>
+  <div class="lesson-title">我的兩難解方發表會</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘（可安排為班級小型成果展，邀請家長參與）｜地點：教室／校園</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>統整一學期所學，用自己的話解釋「燒東西如何幫助地球」的兩難解方</li>
+      <li>展示TLUD組裝成品與生物炭實驗成果</li>
+      <li>培養科學思辨能力：世界上很多事情不是非黑即白</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>學習護照（統整整學期蓋章紀錄）</li>
+      <li>「兩難卡」完整版（從第0堂猜測到最終解答的完整紀錄）</li>
+      <li>TLUD組裝成品與生物炭實驗照片／實物展示</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>成果展示巡禮：TLUD結構模型、生物炭實驗成品展示（20分鐘）</li>
+    <li>學生分組發表：用自己的話說出「兩難解方」——燃燒也能幫助地球的原因（30分鐘）</li>
+    <li>場主總結分享：世界上很多環境問題沒有簡單答案，需要用科學方法找到聰明的解方（15分鐘）</li>
+    <li>頒發「小小碳夢想家」證書＋合影（15分鐘）</li>
+    <li>意見回饋：發放給老師與家長的課程回饋單（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link"><strong>🌾 農場連結：</strong>可趁機邀請家長了解富林農場的生物炭應用與整體ESG永續實踐，並延伸介紹未來企業ESG參訪／校外教學方案。</div>
+</div>
+</div>
+
+<div class="section-title"><div class="dot" style="background:var(--lav)"></div><span class="txt">✅ 給學校與農場的補充建議</span></div>
+<div class="mascot-intro">
+  <div class="mascot-card" style="border-color:var(--mint);">
+    <div class="mascot-face" style="border-color:var(--mint);">📋</div>
+    <h3 style="color:#0f7a6d;">教學與安全搭配建議</h3>
+    <ul>
+      <li><strong>第6堂TLUD實驗是本學期安全等級最高的一堂課</strong>，建議至少提前2週與校方確認場地、天候備案（雨天／強風可延期）、以及是否需要通報消防單位。</li>
+      <li>建議為第6堂安排<strong>至少1位額外助教</strong>（可由農場工作人員支援），一人專責操作爐具，一人專責維持孩子安全觀察線秩序。</li>
+      <li>第3堂生物炭樣本、第6堂實驗成品，建議<strong>完全冷卻並密封後</strong>才讓孩子傳遞觸摸，避免燙傷風險。</li>
+      <li>「兩難卡」建議從第0堂發放後由孩子全程保管，於第4堂解謎、第7堂總結時前後對照使用，強化學習的完整敘事感。</li>
+      <li>成果展示的生物炭成品，建議後續實際混入班級小田地（延續前兩學期的種植區），讓孩子親眼見證生物炭改良土壤的長期效果，形成跨學期的完整教育閉環。</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  富林有機農場 × 恩激優實驗教育機構（NGU）115年秋季食農教育課程規劃－解決兩難　｜　規劃製作日期：2026年7月11日
+</footer>
+
+</body>
+</html>
