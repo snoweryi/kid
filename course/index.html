@@ -47,8 +47,8 @@
 	background: url("https://snoweryi.github.io/kid/course/img/j/1.png") 0 0 no-repeat; /* wk 角色的 sprite 圖片 */
 	/*margin: 400px auto;*/ /*（註解）置中用的 margin */
 	position: absolute; /* 絕對定位 */
-	top: 44%; /* 距離上方 55% */
-	left: 20%; /* 距離左邊 20% */
+	top: 72%; /* 距離上方 55% */
+	left: 22%; /* 距離左邊 20% */
 	animation: wkzou 1s steps(8) infinite; /* 1 秒內播放 8 格步進動畫，重複播放 */
 }
 @keyframes wkzou { /* wk 的走路動畫 */
@@ -63,8 +63,8 @@
 	background: url("https://snoweryi.github.io/kid/course/img/j/2.png") 0 0 no-repeat; /* bj 角色 sprite 圖片 */
 	/*margin: 400px auto;*/ /*（註解）原置中設定未使用 */
 	position: absolute; /* 絕對定位 */
-	top: 44%; /* 距離上方 55% */
-	left: 35%; /* 距離左邊 35% */
+	top: 72%; /* 距離上方 55% */
+	left: 38%; /* 距離左邊 35% */
 	animation: bjzou 1s steps(8) infinite; /* bj 走路動畫 */
 }
 @keyframes bjzou { /* bj 的走路動畫 */
@@ -79,8 +79,8 @@
 	background: url("https://snoweryi.github.io/kid/course/img/j/3.png") 0 0 no-repeat; /* ts 角色 sprite 圖 */
 	/*margin: 400px auto;*/ /*（註解）未使用 */
 	position: absolute; /* 絕對定位 */
-	top: 39%; /* 距離上方 50% */
-	left: 50%; /* 距離左 50% */
+	top: 68%; /* 距離上方 50% */
+	left: 53%; /* 距離左 50% */
 	animation: tszou 1s steps(8) infinite; /* ts 動畫 */
 }
 @keyframes tszou { /* ts 走路動畫 */
@@ -95,8 +95,8 @@
 	background: url("https://snoweryi.github.io/kid/course/img/j/4.png") 0 0 no-repeat; /* ss 角色 sprite 圖 */
 	/*margin: 400px auto;*/ /*（註解）未使用 */
 	position: absolute; /* 絕對定位 */
-	top: 44%; /* 距離上方 57% */
-	left: 62%; /* 距離左側 62% */
+	top: 72%; /* 距離上方 57% */
+	left: 67%; /* 距離左側 62% */
 	animation: sszou 1s steps(8) infinite; /* ss 動畫 */
 }
 @keyframes sszou { /* ss 的走路動畫 */
@@ -107,19 +107,19 @@
 
 @media (max-width: 768px) {
 	.wk {
-		top: 60%;
+		top: 80%;
 		left: 0%;
 	}
 	.bj {
-		top: 60%;
+		top: 80%;
 		left: 20%;		
 	}
 	.ts {		
-		top: 52%;
+		top: 72%;
 		left: 40%;
 	}
 	.ss {		
-		top: 60%;
+		top: 80%;
 		left: 70%;
 	}
 }
@@ -190,8 +190,8 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
-    max-width:1900px;margin:0 auto;
-    padding:70px 24px 60px;
+    max-width:1900px;margin:0px auto;
+    padding:20px 24px 60px;
     display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
   }
   @media (max-width:840px){.hero{grid-template-columns:1fr;padding-top:44px;}}
@@ -373,8 +373,22 @@
   </div>
  
 </nav>
-
 <div class="hero">
+<div class="eventheadh1">
+	<h1 >田園體驗</h1>
+	<p>悟空掉進富林有機農場啦！幫他找回散落田間的經書碎片——一場最好玩的親子取經冒險。</p>
+	</div>
+	
+  <div class="eventheadh2">
+    <div class="hero-eyebrow">🌱 新竹縣芎林鄉・有機認證農場</div>
+    <h1>在田裡，<br>長大的不只是<span class="accent">菜</span>。</h1>
+    <p class="lead">富林有機農場占地 1.3 公頃，種植有機稻米、蔬菜與水果，飼養蛋雞與紅腹頸雞。我們相信，讓孩子與大人親手觸摸土壤、認識食物的來源，是最扎實的永續教育。</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="#contact">安排食農教育課程</a>
+      <a class="btn-secondary" href="#esg">認識我們的ESG理念</a>
+    </div>
+  </div>  
+</div>
 <div class="wk"></div>
 	<div class="bj"></div>
 	<div class="ts"></div>
@@ -386,46 +400,8 @@
 		</ul>
 	</div>
 
-	<div class="eventheadh1">
-	<h1 >田園體驗</h1>
-	<p>悟空掉進富林有機農場啦！幫他找回散落田間的經書碎片——一場最好玩的親子取經冒險。</p>
-	</div>
 	
-  <div>
-    <div class="hero-eyebrow">🌱 新竹縣芎林鄉・有機認證農場</div>
-    <h1>在田裡，<br>長大的不只是<span class="accent">菜</span>。</h1>
-    <p class="lead">富林有機農場占地 1.3 公頃，種植有機稻米、蔬菜與水果，飼養蛋雞與紅腹頸雞。我們相信，讓孩子與大人親手觸摸土壤、認識食物的來源，是最扎實的永續教育。</p>
-    <div class="hero-ctas">
-      <a class="btn-primary" href="#contact">安排食農教育課程</a>
-      <a class="btn-secondary" href="#esg">認識我們的ESG理念</a>
-    </div>
-  </div>
-  <div class="hero-art">
-    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="300" cy="80" r="46" fill="#e2a63b" opacity="0.9"/>
-      <g class="floaty">
-        <ellipse cx="200" cy="330" rx="170" ry="30" fill="#bfe3e0" opacity="0.5"/>
-        <path d="M40 300 Q60 200 120 190 Q110 260 80 300 Z" fill="#5c9a4a"/>
-        <path d="M100 300 Q130 180 200 170 Q190 260 150 300 Z" fill="#4f7942"/>
-        <path d="M170 300 Q200 190 260 185 Q250 260 210 300 Z" fill="#5c9a4a"/>
-        <path d="M240 300 Q265 210 320 205 Q305 265 275 300 Z" fill="#3a6b2f"/>
-      </g>
-      <g transform="translate(255,230)">
-        <ellipse cx="0" cy="45" rx="34" ry="14" fill="#e0d8c0"/>
-        <ellipse cx="0" cy="20" rx="26" ry="24" fill="#f4efe0"/>
-        <circle cx="14" cy="10" r="14" fill="#f4efe0"/>
-        <path d="M12 0 Q20 -14 28 -2 Q22 2 18 6 Z" fill="#c65a4e"/>
-        <circle cx="20" cy="6" r="2" fill="#3c3226"/>
-        <path d="M-6 -2 Q0 -10 6 -2 Q0 2 -6 -2 Z" fill="#c65a4e"/>
-      </g>
-      <g transform="translate(90,160)" class="floaty">
-        <rect x="-3" y="0" width="6" height="55" rx="3" fill="#8a6a45"/>
-        <circle cx="0" cy="-10" r="26" fill="#f2d16b"/>
-        <circle cx="0" cy="-10" r="12" fill="#8a6a2a"/>
-      </g>
-    </svg>
-  </div>
-</div>
+
 
 <div class="facts">
   <div class="fact-card"><div class="fact-num num-font">1.3</div><div class="fact-label">公頃有機田區</div></div>
