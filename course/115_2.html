@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>富林有機農場 × 恩激優實驗教育機構 115年秋季食農教育課程規劃</title>
+<style>
+  :root{
+    --soil:#6b4226;
+    --leaf:#3e7d4f;
+    --leaf-light:#eaf4ea;
+    --sun:#f2a541;
+    --sky:#eaf6f8;
+    --ink:#2b2b23;
+    --paper:#fffdf7;
+    --line:#e2ddc9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    margin:0;
+    line-height:1.75;
+    padding-bottom:60px;
+  }
+  header{
+    background:linear-gradient(135deg,#3e7d4f 0%,#2c5c3a 100%);
+    color:#fff;
+    padding:44px 24px 34px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  header h1{margin:0 0 8px;font-size:1.6rem;}
+  header .sub{font-size:1.05rem;opacity:.95;}
+  header .badge{
+    display:inline-block;margin-top:16px;
+    background:rgba(255,255,255,.18);
+    padding:6px 18px;border-radius:20px;
+    font-size:.88rem;
+  }
+  .intro{
+    max-width:920px;margin:28px auto;padding:0 20px;
+  }
+  .intro-card{
+    background:var(--leaf-light);
+    border:1px solid #cfe6d2;
+    border-radius:12px;
+    padding:20px 22px;
+    font-size:.95rem;
+  }
+  .intro-card h3{margin-top:0;color:var(--leaf);}
+  .section-title{
+    max-width:920px;margin:40px auto 14px;padding:0 20px;
+    font-size:1.25rem;font-weight:700;color:var(--leaf);
+    border-left:6px solid var(--sun);padding-left:14px;
+  }
+  .overview-wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+  table.overview{
+    width:100%;border-collapse:collapse;background:#fff;
+    box-shadow:0 1px 5px rgba(0,0,0,.06);border-radius:8px;overflow:hidden;
+  }
+  table.overview th{
+    background:var(--leaf);color:#fff;padding:10px 8px;font-size:.85rem;text-align:left;
+  }
+  table.overview td{
+    padding:10px 8px;border-bottom:1px solid var(--line);font-size:.85rem;vertical-align:top;
+  }
+  table.overview tr:nth-child(even) td{background:#fbfbf5;}
+  .sdg-tag{
+    display:inline-block;background:#fce8cf;color:#a15c00;
+    padding:1px 8px;border-radius:10px;font-size:.72rem;margin:1px;
+  }
+  .lesson{
+    max-width:920px;margin:0 auto 26px;padding:0 20px;
+  }
+  .lesson-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:22px 24px;box-shadow:0 1px 6px rgba(0,0,0,.05);
+  }
+  .lesson-head{
+    display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;
+  }
+  .lesson-num{
+    background:var(--sun);color:#fff;font-weight:700;
+    width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .lesson-title{font-size:1.15rem;font-weight:700;color:var(--soil);}
+  .lesson-meta{font-size:.82rem;color:#777;margin-bottom:14px;}
+  .grid2{
+    display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px;
+  }
+  @media (max-width:680px){.grid2{grid-template-columns:1fr;}}
+  .box{
+    background:var(--sky);border-radius:10px;padding:14px 16px;font-size:.88rem;
+  }
+  .box h4{margin:0 0 8px;color:var(--leaf);font-size:.92rem;}
+  .box ul{margin:0;padding-left:18px;}
+  .box li{margin-bottom:4px;}
+  .flow{margin-top:14px;}
+  .flow h4{color:var(--leaf);margin-bottom:8px;}
+  .flow ol{margin:0;padding-left:20px;}
+  .flow li{margin-bottom:6px;}
+  .tag-row{margin:10px 0 0;}
+  .safety{
+    background:#fff4e8;border-left:4px solid var(--sun);
+    padding:10px 14px;border-radius:6px;font-size:.85rem;margin-top:14px;
+  }
+  .farm-link{
+    background:#eef7ee;border-left:4px solid var(--leaf);
+    padding:10px 14px;border-radius:6px;font-size:.85rem;margin-top:10px;
+  }
+  footer{
+    max-width:920px;margin:40px auto 0;padding:0 20px;
+    font-size:.8rem;color:#888;text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌱 富林有機農場 × 恩激優實驗教育機構</h1>
+  <div class="sub">115年秋季食農教育課程規劃｜分類：打好根基</div>
+  <div class="badge">主題訴求：動植物需要好的生態環境才能健康長大，人的健康長大也需要好的環境——家庭與學校</div>
+</header>
+
+<div class="intro">
+  <div class="intro-card">
+    <h3>📋 課程設計理念</h3>
+    <p>本課程以「打好根基」為核心隱喻——<strong>植物需要好的土壤、陽光、水分才能扎根茁壯，孩子也需要好的家庭與學校環境才能健康成長</strong>。全學期共安排 <strong>7 堂主題課＋1 堂開學暖身＋1 堂成果發表</strong>，共 9 次課程，由富林有機農場場主親自到校授課，並搭配「班級小田地」讓孩子從認識生態環境，一路實作到親手種下自己的種子與插枝。</p>
+    <p>課程同時融入 <strong>SDG 永續發展目標</strong>與新竹在地氣候特色，讓孩子理解「吃的東西從哪裡來」，也為富林農場未來發展食農教育與 ESG 永續園區的定位，建立第一批小小種子使用者。</p>
+  </div>
+</div>
+
+<div class="section-title">📅 課程總覽表</div>
+<div class="overview-wrap">
+<table class="overview">
+<thead>
+<tr><th>週次</th><th>課程主題</th><th>核心學科內容</th><th>對應SDG</th><th>形式</th></tr>
+</thead>
+<tbody>
+<tr><td>第0堂</td><td>開學暖身：與土地打招呼</td><td>認識富林農場、破冰活動</td><td><span class="sdg-tag">SDG4</span></td><td>教室互動</td></tr>
+<tr><td>第1堂</td><td>誰住在生態系裡？</td><td>認識生態環境</td><td><span class="sdg-tag">SDG15</span></td><td>教室＋校園觀察</td></tr>
+<tr><td>第2堂</td><td>大自然的循環魔法</td><td>認識生態循環與永續（SDG）</td><td><span class="sdg-tag">SDG12</span><span class="sdg-tag">SDG13</span></td><td>教室桌遊＋討論</td></tr>
+<tr><td>第3堂</td><td>新竹風、新竹土、新竹菜</td><td>認識新竹氣候與特色植物</td><td><span class="sdg-tag">SDG11</span></td><td>教室＋地圖活動</td></tr>
+<tr><td>第4堂</td><td>土壤大體檢：預備好土</td><td>土壤結構、堆肥、pH值初體驗</td><td><span class="sdg-tag">SDG15</span></td><td>戶外／校園田地實作</td></tr>
+<tr><td>第5堂</td><td>一顆種子的旅程</td><td>植物種植：種子</td><td><span class="sdg-tag">SDG2</span></td><td>動手實作</td></tr>
+<tr><td>第6堂</td><td>剪一段、種一片：插枝魔法</td><td>植物種植：插枝</td><td><span class="sdg-tag">SDG2</span></td><td>動手實作</td></tr>
+<tr><td>第7堂</td><td>為什麼我們家的菜長不一樣？</td><td>植物差異性：季節、陽光、雨水、根系、繁殖</td><td><span class="sdg-tag">SDG12</span></td><td>分站探索</td></tr>
+<tr><td>第8堂</td><td>成果發表：我的根基故事</td><td>統整發表、班級小田地驗收</td><td><span class="sdg-tag">SDG4</span><span class="sdg-tag">SDG17</span></td><td>成果展</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-title">📖 詳細課程規劃</div>
+
+<div class="lesson">
+<div class="lesson-card">
+<div class="lesson-head">
+  <div class="lesson-num">0</div>
+  <div class="lesson-title">開學暖身：與土地打招呼</div>
+</div>
+<div class="lesson-meta">建議時間：40分鐘｜地點：教室｜適合年段：全年段（活動深度可依年級調整）</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識富林有機農場場主與農場的基本樣貌</li>
+      <li>建立「這學期我們要一起種東西」的期待感</li>
+      <li>初步認識有機農業與一般農業的差別</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>農場空拍照片／短片（1.3公頃全景、紅腹頸雞、蛋雞）</li>
+      <li>「猜猜這是誰種的」蔬果實物或圖卡</li>
+      <li>學習護照（每位孩子一本，用於蓋章記錄每堂課）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>場主自我介紹＋農場影片欣賞（5分鐘）</li>
+    <li>「猜猜看」遊戲：用蔬果實物讓孩子猜哪些是農場種的（10分鐘）</li>
+    <li>互動問答：如果你是一顆種子，你需要什麼才能長大？（10分鐘）</li>
+    <li>發放「學習護照」，說明整學期蓋章制度（10分鐘）</li>
+    <li>預告：下週開始要認識「誰住在生態系裡」（5分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可帶紅腹頸雞的照片或羽毛標本，孩子對特殊品種雞隻通常很有興趣，是很好的破冰素材。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card">
+<div class="lesson-head">
+  <div class="lesson-num">1</div>
+  <div class="lesson-title">誰住在生態系裡？——認識生態環境</div>
+</div>
+<div class="lesson-meta">建議時間：80分鐘（2節課）｜地點：教室＋校園戶外觀察｜適合年段：低中年級為主，高年級可加深食物網分析</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>理解「生態環境」＝陽光、空氣、水、土壤、生物共同組成的家</li>
+      <li>認識富林農場裡的生物角色：稻米、蔬果、蛋雞、紅腹頸雞、昆蟲</li>
+      <li>能舉例說出「人的健康成長也需要好環境」的類比（家庭、學校）</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>生態系角色卡（生產者／消費者／分解者）</li>
+      <li>校園觀察學習單、放大鏡</li>
+      <li>富林農場生態地圖海報</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>暖身提問：「如果只有種子，沒有陽光和水，會發生什麼事？」（5分鐘）</li>
+    <li>生態系角色卡分類遊戲：認識生產者、消費者、分解者（20分鐘）</li>
+    <li>校園戶外觀察：分組尋找校園裡的「小生態系」（記錄植物、昆蟲、土壤）（30分鐘）</li>
+    <li>回教室分享觀察結果＋連結到富林農場的生態角色（15分鐘）</li>
+    <li>價值延伸討論：「家庭與學校就像我們的生態系，需要哪些好的條件？」（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可分享富林農場的紅腹頸雞、蛋雞如何在農場生態系中扮演「消費者兼小幫手」（吃害蟲、產生天然肥料）的角色。</div>
+<div class="safety">⚠️ 戶外觀察注意：提醒孩子不觸碰不明昆蟲、注意校園草地濕滑或蚊蟲叮咬，建議準備防蚊用品。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card">
+<div class="lesson-head">
+  <div class="lesson-num">2</div>
+  <div class="lesson-title">大自然的循環魔法——生態循環與永續（SDG）</div>
+</div>
+<div class="lesson-meta">建議時間：80分鐘｜地點：教室｜適合年段：中高年級（低年級可簡化為「落葉變土」故事版）</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識水循環、養分循環的基本概念</li>
+      <li>初步認識 SDG（永續發展目標）是什麼，特別是 SDG2、SDG12、SDG13、SDG15</li>
+      <li>理解「循環農業」：落葉變堆肥、雞糞變肥料的概念</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>「循環轉盤」教具（水循環／養分循環圖卡拼圖）</li>
+      <li>SDG兒童版圖卡（17個目標簡化插畫版）</li>
+      <li>堆肥實物或照片（腐熟前後對比）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>說故事：「一片落葉的奇幻旅程」引導循環概念（10分鐘）</li>
+    <li>循環轉盤拼圖遊戲：分組排出正確的水循環／養分循環順序（20分鐘）</li>
+    <li>認識SDG：挑選4個與農場最相關的目標，用簡單語言解釋給孩子聽（20分鐘）</li>
+    <li>「農場的循環魔法」影片／照片分享：雞糞如何變成肥料、稻梗如何回歸土地（20分鐘）</li>
+    <li>小組討論：「我們在家裡、學校可以做哪些小小的循環行動？」（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：這堂課很適合帶入富林農場「有機認證＋循環農業」的實際案例，讓孩子理解永續不是口號，而是真實可操作的農法。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card">
+<div class="lesson-head">
+  <div class="lesson-num">3</div>
+  <div class="lesson-title">新竹風、新竹土、新竹菜——認識新竹氣候與特色植物</div>
+</div>
+<div class="lesson-meta">建議時間：80分鐘｜地點：教室＋地圖活動｜適合年段：全年段</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識新竹「風城」的氣候特色（強風、日照、降雨型態）</li>
+      <li>理解氣候如何影響作物選擇（例如芎林的稻米、蔬果適栽性）</li>
+      <li>認識新竹在地特色植物與節氣的關係</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>新竹地圖＋芎林鄉標示海報</li>
+      <li>節氣輪盤教具</li>
+      <li>當季蔬果實物（依課程當月調整）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>「風城密碼」暖身問答：新竹為什麼風特別大？（10分鐘）</li>
+    <li>地圖任務：找出芎林鄉在新竹的位置，標示富林農場（15分鐘）</li>
+    <li>節氣輪盤遊戲：轉出當季節氣，猜猜這個節氣適合種什麼（20分鐘）</li>
+    <li>當季蔬果品嚐或觀察（依食材過敏安全評估後進行）（20分鐘）</li>
+    <li>總結繪圖：畫出「我心目中的新竹田園」（15分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可提前告知學校本堂課使用的當季蔬果，方便學校提前確認學生過敏原資訊。</div>
+<div class="safety">⚠️ 食材品嚐活動務必事先向校方與家長確認過敏原（如芒果、奇異果等常見過敏食材），並提供替代觀察方案給不適合品嚐的學生。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card">
+<div class="lesson-head">
+  <div class="lesson-num">4</div>
+  <div class="lesson-title">土壤大體檢：預備好土</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘｜地點：校園田地／可移動式種植箱｜適合年段：全年段，建議分組實作</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識土壤的組成（沙、坋、黏土、有機質）</li>
+      <li>學會簡單判斷土壤肥沃度的方法（觸感、顏色、氣味）</li>
+      <li>動手翻土、混入有機堆肥，為種植做準備</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>不同土壤樣本（沙質土、黏土、腐植土對照組）</li>
+      <li>園藝手套、小鏟子、澆水器</li>
+      <li>富林農場提供之有機堆肥</li>
+      <li>「班級小田地」種植箱或畦區</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>土壤觸感體驗：分組摸摸三種不同土壤，記錄差異（15分鐘）</li>
+    <li>「好土壤的三個條件」小教學：排水、透氣、養分（10分鐘）</li>
+    <li>實作：分組翻土、混合有機堆肥，準備班級小田地（40分鐘）</li>
+    <li>學習單填寫：畫下自己負責的那一畦土地並命名（15分鐘）</li>
+    <li>收拾整理與洗手（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：建議此堂課使用富林農場自製有機堆肥，並簡單說明堆肥製作過程，呼應第2堂的循環農業概念，前後課程首尾呼應。</div>
+<div class="safety">⚠️ 安全提醒：全程佩戴園藝手套避免刮傷；活動後務必徹底洗手；提醒有傷口的學生告知老師改由旁觀協助角色。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card">
+<div class="lesson-head">
+  <div class="lesson-num">5</div>
+  <div class="lesson-title">一顆種子的旅程——植物種植：種子</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘｜地點：校園田地／種植箱｜適合年段：全年段</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>認識種子的構造（種皮、胚、胚乳）</li>
+      <li>了解種子發芽所需條件：水分、溫度、空氣、養分</li>
+      <li>親手播種，建立責任感與觀察習慣</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>浸泡過與未浸泡的種子對照組（如稻穀、豆類）</li>
+      <li>放大鏡、解剖用種子樣本</li>
+      <li>適合當季播種之種子（依新竹秋季氣候挑選，如葉菜類）</li>
+      <li>觀察日誌本（每人一本，後續每週自行記錄）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>種子拆解觀察：用放大鏡看種皮、胚芽構造（15分鐘）</li>
+    <li>「種子發芽四要素」小實驗設計：分組設計對照組（缺水／缺光／正常）（20分鐘）</li>
+    <li>實作播種：每人在自己的小田地播下當季種子（30分鐘）</li>
+    <li>觀察日誌開篇：畫下今天播種的樣子，作為第一篇紀錄（15分鐘）</li>
+    <li>約定「照顧公約」：誰負責澆水、多久觀察一次（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：建議挑選富林農場實際栽種的當季葉菜品種作為播種素材，讓孩子與真正的農場產地產生連結感，未來也能對照「農場的菜長大了、我的菜長大了」。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card">
+<div class="lesson-head">
+  <div class="lesson-num">6</div>
+  <div class="lesson-title">剪一段、種一片：插枝魔法——植物種植：插枝</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘｜地點：校園田地／種植箱｜適合年段：中高年級為主（低年級可由老師先行修剪，孩子負責種植部分）</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>理解「無性繁殖」的概念：不用種子也能長出新植物</li>
+      <li>認識適合插枝的植物種類（如地瓜葉、九層塔、薄荷）</li>
+      <li>學會正確的插枝步驟：斜切、去除多餘葉片、扦插深度</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>適合插枝的植物枝條（地瓜葉、九層塔等）</li>
+      <li>兒童安全剪刀或修剪工具（由老師/場主協助操作刀具部分）</li>
+      <li>插枝用小盆器或種植箱空間</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>提問引導：「這是種子種的方法一模一樣嗎？」帶出無性繁殖概念（10分鐘）</li>
+    <li>示範教學：場主示範正確剪取與扦插步驟（15分鐘）</li>
+    <li>分組實作：孩子在協助下完成自己的插枝（40分鐘）</li>
+    <li>比較討論：種子種植 vs 插枝種植，哪裡不一樣？（15分鐘）</li>
+    <li>觀察日誌記錄第二篇（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可分享富林農場如何運用插枝技術快速擴大香草或蔬菜產區，讓孩子理解這是農場實際使用的生產技術，而非只是課本知識。</div>
+<div class="safety">⚠️ 若使用刀片或剪枝工具，務必由場主或教師全程協助操作，避免孩子獨立使用尖銳工具。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card">
+<div class="lesson-head">
+  <div class="lesson-num">7</div>
+  <div class="lesson-title">為什麼我們家的菜長不一樣？——植物差異性探索</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘｜地點：校園田地＋教室分站｜適合年段：全年段，採分站闖關方式進行</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>觀察並比較不同小組田地作物的生長差異</li>
+      <li>理解影響差異的五大因素：季節、陽光、雨水、根系、繁殖方式</li>
+      <li>培養科學觀察與歸納推論能力</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>五個分站教具（季節站、陽光站、雨水站、根系站、繁殖站）</li>
+      <li>根系觀察箱（透明容器種植，可看見根系生長）</li>
+      <li>闖關學習單／集章卡</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>分站闖關說明＋分組（10分鐘）</li>
+    <li>五分站輪流體驗，每站約12分鐘（60分鐘）：
+      <ul>
+        <li><strong>季節站</strong>：比對不同季節播種的生長速度照片</li>
+        <li><strong>陽光站</strong>：全日照 vs 半日照植物對照觀察</li>
+        <li><strong>雨水站</strong>：不同澆水量的植物對照組</li>
+        <li><strong>根系站</strong>：透明容器觀察根系形態差異</li>
+        <li><strong>繁殖站</strong>：回顧種子繁殖與插枝繁殖的植株差異</li>
+      </ul>
+    </li>
+    <li>回教室統整：小組發表「我們發現的三個差異」（15分鐘）</li>
+    <li>集章卡蓋章，預告下堂課成果發表（5分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：這堂課很適合搭配富林農場實際不同區塊的種植紀錄（例如向陽區 vs 背陰區的稻米生長比較），作為分站教材的真實案例佐證。</div>
+</div>
+</div>
+
+<div class="lesson">
+<div class="lesson-card">
+<div class="lesson-head">
+  <div class="lesson-num">8</div>
+  <div class="lesson-title">成果發表：我的根基故事</div>
+</div>
+<div class="lesson-meta">建議時間：90分鐘（可安排為班級小型成果展，邀請家長參與）｜地點：教室／校園田地</div>
+
+<div class="grid2">
+  <div class="box">
+    <h4>🎯 學習目標</h4>
+    <ul>
+      <li>統整一學期所學，用自己的話說出「打好根基」的意義</li>
+      <li>展示班級小田地成果（種子組、插枝組的生長對照）</li>
+      <li>連結價值觀：好的環境如何幫助植物與人一起健康成長</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>🧰 教具材料</h4>
+    <ul>
+      <li>學習護照（統整整學期蓋章紀錄）</li>
+      <li>觀察日誌本（作為成果展示品）</li>
+      <li>班級小田地現場（種子組／插枝組成果對照）</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+  <h4>🔄 活動流程</h4>
+  <ol>
+    <li>班級小田地巡禮：帶家長／來賓參觀種子組與插枝組的成長對照（20分鐘）</li>
+    <li>學生分組發表：用觀察日誌分享自己這學期的種植故事（30分鐘）</li>
+    <li>場主總結分享：「打好根基」的核心意義——好環境成就好成長（15分鐘）</li>
+    <li>頒發「小小食農達人」證書＋合影（15分鐘）</li>
+    <li>意見回饋：發放給老師與家長的課程回饋單（10分鐘）</li>
+  </ol>
+</div>
+
+<div class="farm-link">🌾 農場連結：可趁機邀請家長了解富林農場未來的食農教育／企業ESG合作方案，作為口碑擴散與後續合作機會的起點。</div>
+</div>
+</div>
+
+<div class="section-title">✅ 給學校與農場的補充建議</div>
+<div class="intro">
+  <div class="intro-card">
+    <h3>教學搭配建議</h3>
+    <ul>
+      <li><strong>班級小田地</strong>建議規劃「種子組」與「插枝組」兩區，方便第7堂課進行對照觀察。</li>
+      <li><strong>觀察日誌</strong>建議從第5堂開始，每週由校內老師帶著孩子花5分鐘固定記錄，不需等到農場場主到校才觀察。</li>
+      <li>若場地或時間限制無法全程戶外操作，第2、3堂可全室內化，第4-7堂建議保留戶外／田地實作環節。</li>
+      <li>建議與校方確認每班人數與分組方式，若人數較多（30人以上），插枝與播種活動建議增加助教人力（可由農場方支援1-2位工作人員）。</li>
+      <li>成果發表可作為未來富林農場「校外教學／企業ESG參訪」的宣傳素材，建議留存照片與影片紀錄（需先取得家長肖像使用同意）。</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  富林有機農場 × 恩激優實驗教育機構（NGU）115年秋季食農教育課程規劃　｜　規劃製作日期：2026年7月11日
+</footer>
+
+</body>
+</html>
