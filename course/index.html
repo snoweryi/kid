@@ -1,59 +1,443 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>富林有機農場｜食農教育 × ESG永續園區</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
 
-  <style>
-    .menu {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 10px;
-    }
+  :root{
+    --rice:#4f7942;
+    --rice-dark:#33532c;
+    --rice-light:#e7f0e0;
+    --turmeric:#e2a63b;
+    --turmeric-light:#fbead0;
+    --soil:#5c4430;
+    --sky:#bfe3e0;
+    --sky-light:#eef8f7;
+    --hen:#c65a4e;
+    --hen-light:#fbe6e2;
+    --paper:#f6f2e3;
+    --ink:#3c3226;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  .display{font-family:"Noto Sans TC",sans-serif;font-weight:900;}
+  .num-font{font-family:"Baloo 2","Noto Sans TC",sans-serif;font-weight:800;}
+  :focus-visible{outline:3px solid var(--turmeric);outline-offset:3px;}
 
-    .menu a.badge1 {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 16px;
-      text-decoration: none;
-      background: #cdebf7;
-      color: #0e3b4d;
-      font-size: 18px;
-      white-space: nowrap;
-      transition: 0.2s;
-    }
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,242,227,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:2px solid var(--rice-light);
+  }
+  .nav-inner{
+    max-width:1900px;margin:0 auto;padding:12px;
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:10px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:8px;
+    font-size:1.15rem;font-weight:900;color:var(--rice-dark);
+  }
+  .logo-mark{font-size:1.5rem;}
+  .nav-links{display:flex;gap:22px;font-size:.92rem;font-weight:700;flex-wrap:wrap;}
+  .nav-links a{
+    text-decoration:none;color:var(--soil);
+    padding-bottom:3px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .nav-links a:hover{border-color:var(--turmeric);color:var(--rice-dark);}
+  .nav-cta{
+    background:var(--rice);color:#fff;padding:9px 20px;border-radius:24px;
+    font-size:.88rem;font-weight:700;text-decoration:none;
+    box-shadow:0 3px 0 var(--rice-dark);white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(1px);box-shadow:0 2px 0 var(--rice-dark);}
 
-    .menu a.badge1:hover {
-      background: #046085;
-      color: #FFF;
-	  font-weight: bold;
-    }
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    max-width:1100px;margin:0 auto;
+    padding:70px 24px 60px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
+  }
+  @media (max-width:840px){.hero{grid-template-columns:1fr;padding-top:44px;}}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--turmeric-light);color:#a15c0a;
+    padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:700;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:2.5rem;line-height:1.35;color:var(--rice-dark);
+    margin-bottom:18px;
+  }
+  .hero h1 .accent{color:var(--turmeric);}
+  .hero p.lead{font-size:1.02rem;color:#5c5240;max-width:480px;margin-bottom:26px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--rice);color:#fff;padding:13px 28px;border-radius:28px;
+    font-weight:700;text-decoration:none;font-size:.95rem;
+    box-shadow:0 4px 0 var(--rice-dark);transition:transform .15s;
+  }
+  .btn-primary:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--rice-dark);}
+  .btn-secondary{
+    background:#fff;color:var(--rice-dark);padding:13px 28px;border-radius:28px;
+    font-weight:700;text-decoration:none;font-size:.95rem;border:2px solid var(--rice);
+  }
+  .btn-secondary:hover{background:var(--rice-light);}
 
-    .section-title {
-      width: 100%;
-      font-weight: bold;
-      margin-top: 12px;
-      margin-bottom: 4px;
-    }
-  </style>
+  .hero-art{
+    position:relative;aspect-ratio:1/1;
+  }
+  .hero-art svg{width:100%;height:100%;}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+  .floaty{animation:float 4s ease-in-out infinite;}
+  @media (prefers-reduced-motion:reduce){.floaty{animation:none;}}
+
+  /* ---------- QUICK FACTS ---------- */
+  .facts{
+    max-width:1100px;margin:0 auto;padding:0 24px 50px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  }
+  @media (max-width:760px){.facts{grid-template-columns:repeat(2,1fr);}}
+  .fact-card{
+    background:#fff;border-radius:20px;padding:20px 16px;text-align:center;
+    box-shadow:0 4px 14px rgba(79,121,66,.08);
+  }
+  .fact-num{font-size:1.7rem;color:var(--rice-dark);}
+  .fact-label{font-size:.82rem;color:#7a705d;margin-top:4px;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{max-width:1100px;margin:0 auto;padding:70px 24px;}
+  .section-head{text-align:center;margin-bottom:44px;}
+  .section-eyebrow{
+    font-size:.85rem;font-weight:700;color:var(--rice);
+    text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;
+  }
+  .section-head h2{font-size:1.8rem;color:var(--rice-dark);}
+  .section-head p{color:#6b6150;max-width:560px;margin:14px auto 0;font-size:.95rem;}
+
+  /* ---------- FARM MAP (signature element) ---------- */
+  .map-wrap{
+    background:linear-gradient(180deg,var(--sky-light),#fff);
+    border-radius:32px;padding:34px;
+    box-shadow:0 6px 24px rgba(79,121,66,.1);
+  }
+  .map-svg-wrap{width:100%;}
+  .map-legend{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:14px;margin-top:28px;
+  }
+  .legend-item{
+    display:flex;gap:12px;align-items:flex-start;
+    background:#fff;border-radius:16px;padding:14px 16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+  }
+  .legend-dot{
+    width:34px;height:34px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+  }
+  .legend-item h4{font-size:.92rem;color:var(--soil);margin-bottom:2px;}
+  .legend-item p{font-size:.8rem;color:#8a806d;}
+
+  /* ---------- AUDIENCE CARDS ---------- */
+  .audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media (max-width:800px){.audience-grid{grid-template-columns:1fr;}}
+  .audience-card{
+    border-radius:26px;padding:30px 26px;position:relative;overflow:hidden;
+    color:#fff;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;
+  }
+  .audience-card .icon{
+    position:absolute;top:20px;right:20px;font-size:2.6rem;opacity:.35;
+  }
+  .audience-card h3{font-size:1.2rem;margin-bottom:8px;}
+  .audience-card p{font-size:.88rem;opacity:.95;}
+  .aud-1{background:linear-gradient(135deg,#5c9a4a,#3a6b2f);}
+  .aud-2{background:linear-gradient(135deg,#e2a63b,#c07d1a);}
+  .aud-3{background:linear-gradient(135deg,#4d96b0,#2d6b82);}
+
+  /* ---------- CURRICULUM STRIP ---------- */
+  .curric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media (max-width:800px){.curric-grid{grid-template-columns:1fr;}}
+  .curric-card{
+    background:#fff;border-radius:22px;padding:24px;
+    border-top:6px solid var(--rice);
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+  }
+  .curric-card.c2{border-top-color:#4d96b0;}
+  .curric-card.c3{border-top-color:var(--hen);}
+  .curric-tag{
+    display:inline-block;font-size:.72rem;font-weight:700;
+    background:var(--rice-light);color:var(--rice-dark);
+    padding:3px 12px;border-radius:12px;margin-bottom:10px;
+  }
+  .curric-card.c2 .curric-tag{background:var(--sky-light);color:#2d6b82;}
+  .curric-card.c3 .curric-tag{background:var(--hen-light);color:#a13e33;}
+  .curric-card h3{font-size:1.15rem;color:var(--soil);margin-bottom:8px;}
+  .curric-card p{font-size:.86rem;color:#7a705d;}
+
+  /* ---------- ESG PILLARS ---------- */
+  .esg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media (max-width:800px){.esg-grid{grid-template-columns:repeat(2,1fr);}}
+  .esg-card{
+    text-align:center;padding:26px 14px;background:#fff;border-radius:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.04);
+  }
+  .esg-icon{font-size:2rem;margin-bottom:10px;}
+  .esg-card h4{font-size:.95rem;color:var(--soil);margin-bottom:6px;}
+  .esg-card p{font-size:.78rem;color:#8a806d;}
+
+  /* ---------- LOCATION ---------- */
+  .location-wrap{
+    background:var(--rice-dark);color:#fff;border-radius:32px;
+    padding:44px 36px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;
+  }
+  @media (max-width:800px){.location-wrap{grid-template-columns:1fr;}}
+  .location-wrap h2{color:#fff;font-size:1.6rem;margin-bottom:14px;}
+  .location-wrap p{opacity:.9;font-size:.92rem;margin-bottom:20px;}
+  .loc-stats{display:flex;gap:20px;flex-wrap:wrap;}
+  .loc-stat{background:rgba(255,255,255,.12);border-radius:16px;padding:16px 20px;flex:1;min-width:150px;}
+  .loc-stat .num{font-size:1.4rem;color:var(--turmeric);}
+  .loc-stat .lbl{font-size:.8rem;opacity:.85;margin-top:2px;}
+  .loc-visual{
+    background:rgba(255,255,255,.08);border-radius:20px;
+    padding:24px;font-size:.85rem;line-height:2;
+  }
+  .loc-visual .row{display:flex;align-items:center;gap:10px;}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact-wrap{
+    text-align:center;background:var(--turmeric-light);
+    border-radius:32px;padding:50px 30px;
+  }
+  .contact-wrap h2{color:var(--rice-dark);font-size:1.7rem;margin-bottom:14px;}
+  .contact-wrap p{color:#7a5c1a;max-width:520px;margin:0 auto 26px;font-size:.95rem;}
+  footer{
+    max-width:1100px;margin:0 auto;padding:36px 24px 50px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
+    font-size:.82rem;color:#8a806d;
+  }
+  footer .foot-logo{font-weight:800;color:var(--rice-dark);}
+
+
+</style>
 </head>
-
 <body>
 
-  <div class="menu">
-	<div class="section-title">115學年秋季</div>
-	<a href="https://snoweryi.github.io/kid/course/index.html" class="badge1">首頁</a>
-	<a href="https://snoweryi.github.io/kid/course/115_61.html" class="badge1">6.1 打好根基</a>
-	<a href="https://snoweryi.github.io/kid/course/115_63.html" class="badge1">6.3 珍惜所有</a>
-	<a href="https://snoweryi.github.io/kid/course/115_64.html" class="badge1">6.4 寶貝地球</a>
-	<div class="section-title">115學年春季</div>
-	<a href="https://snoweryi.github.io/kid/course/115_65.html" class="badge1">6.5 看見微小</a>
-	<a href="https://snoweryi.github.io/kid/course/115_66.html" class="badge1">6.6 解決兩難</a>
-	<a href="https://snoweryi.github.io/kid/course/115_67.html" class="badge1">6.7 茁壯成長</a>
-	
+<nav>
+
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-mark">🌾</span>富林有機農場</div>
+    <div class="nav-links">
+      <a href="https://snoweryi.github.io/kid/course/115_61.html">115秋_6.1打好根基</a>
+      <a href="https://snoweryi.github.io/kid/course/115_63.html">6.3珍惜所有</a>
+      <a href="https://snoweryi.github.io/kid/course/115_64.html">6.4寶貝地球</a>
+      <a href="https://snoweryi.github.io/kid/course/115_65.html">115春_6.5看見微小</a>
+      <a href="https://snoweryi.github.io/kid/course/115_66.html">6.6 解決兩難</a>
+    </div>
+    <a class="nav-cta" href="#contact">預約洽詢</a>
   </div>
+ 
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="hero-eyebrow">🌱 新竹縣芎林鄉・有機認證農場</div>
+    <h1>在田裡，<br>長大的不只是<span class="accent">菜</span>。</h1>
+    <p class="lead">富林有機農場占地 1.3 公頃，種植有機稻米、蔬菜與水果，飼養蛋雞與紅腹頸雞。我們相信，讓孩子與大人親手觸摸土壤、認識食物的來源，是最扎實的永續教育。</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="#contact">安排食農教育課程</a>
+      <a class="btn-secondary" href="#esg">認識我們的ESG理念</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="300" cy="80" r="46" fill="#e2a63b" opacity="0.9"/>
+      <g class="floaty">
+        <ellipse cx="200" cy="330" rx="170" ry="30" fill="#bfe3e0" opacity="0.5"/>
+        <path d="M40 300 Q60 200 120 190 Q110 260 80 300 Z" fill="#5c9a4a"/>
+        <path d="M100 300 Q130 180 200 170 Q190 260 150 300 Z" fill="#4f7942"/>
+        <path d="M170 300 Q200 190 260 185 Q250 260 210 300 Z" fill="#5c9a4a"/>
+        <path d="M240 300 Q265 210 320 205 Q305 265 275 300 Z" fill="#3a6b2f"/>
+      </g>
+      <g transform="translate(255,230)">
+        <ellipse cx="0" cy="45" rx="34" ry="14" fill="#e0d8c0"/>
+        <ellipse cx="0" cy="20" rx="26" ry="24" fill="#f4efe0"/>
+        <circle cx="14" cy="10" r="14" fill="#f4efe0"/>
+        <path d="M12 0 Q20 -14 28 -2 Q22 2 18 6 Z" fill="#c65a4e"/>
+        <circle cx="20" cy="6" r="2" fill="#3c3226"/>
+        <path d="M-6 -2 Q0 -10 6 -2 Q0 2 -6 -2 Z" fill="#c65a4e"/>
+      </g>
+      <g transform="translate(90,160)" class="floaty">
+        <rect x="-3" y="0" width="6" height="55" rx="3" fill="#8a6a45"/>
+        <circle cx="0" cy="-10" r="26" fill="#f2d16b"/>
+        <circle cx="0" cy="-10" r="12" fill="#8a6a2a"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="facts">
+  <div class="fact-card"><div class="fact-num num-font">1.3</div><div class="fact-label">公頃有機田區</div></div>
+  <div class="fact-card"><div class="fact-num num-font">100%</div><div class="fact-label">有機認證栽培</div></div>
+  <div class="fact-card"><div class="fact-num num-font">5</div><div class="fact-label">分鐘車程抵達高鐵新竹站</div></div>
+  <div class="fact-card"><div class="fact-num num-font">8</div><div class="fact-label">公里內達新竹科學園區</div></div>
+</div>
+
+<section id="map">
+  <div class="section-head">
+    <div class="section-eyebrow">Farm Map</div>
+    <h2>走進富林，看看田裡都住著誰</h2>
+    <p>從入口的食農教育園區，到稻田、蔬果園與雞舍，每一塊土地都有自己的故事。</p>
+  </div>
+  <div class="map-wrap">
+    <div class="map-svg-wrap">
+      <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="800" height="420" rx="24" fill="#eef8f2"/>
+        <!-- 稻田區 -->
+        <path d="M40 260 Q80 150 220 150 Q260 260 220 320 Q100 340 40 260Z" fill="#8fbf6a" opacity="0.9"/>
+        <text x="120" y="250" font-size="16" fill="#33532c" font-family="Noto Sans TC" font-weight="700">🌾 稻田區</text>
+        <!-- 蔬果園 -->
+        <path d="M260 150 Q340 120 420 160 Q430 240 360 260 Q270 250 260 150Z" fill="#e2a63b" opacity="0.55"/>
+        <text x="300" y="200" font-size="16" fill="#7a5c1a" font-family="Noto Sans TC" font-weight="700">🥬 有機蔬果園</text>
+        <!-- 雞舍 -->
+        <circle cx="560" cy="200" r="80" fill="#fbe6e2"/>
+        <text x="518" y="205" font-size="16" fill="#a13e33" font-family="Noto Sans TC" font-weight="700">🐔 雞舍</text>
+        <text x="510" y="228" font-size="12" fill="#a13e33" font-family="Noto Sans TC">蛋雞・紅腹頸雞</text>
+        <!-- 食農教育園區 -->
+        <rect x="620" y="290" width="150" height="100" rx="18" fill="#bfe3e0"/>
+        <text x="632" y="335" font-size="15" fill="#2d6b82" font-family="Noto Sans TC" font-weight="700">🏫 食農教育</text>
+        <text x="650" y="355" font-size="15" fill="#2d6b82" font-family="Noto Sans TC" font-weight="700">園區</text>
+        <!-- 入口路徑 -->
+        <path d="M30 380 Q300 340 620 340" stroke="#c9bd9a" stroke-width="6" fill="none" stroke-dasharray="2 12" stroke-linecap="round"/>
+        <text x="30" y="405" font-size="13" fill="#8a806d" font-family="Noto Sans TC">🚗 入口 / 停車區</text>
+      </svg>
+    </div>
+    <div class="map-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--rice-light);">🌾</div>
+        <div><h4>有機稻田區</h4><p>四季輪作，體驗插秧、收割與碾米的完整歷程。</p></div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--turmeric-light);">🥬</div>
+        <div><h4>有機蔬果園</h4><p>依新竹氣候栽種當季葉菜與水果，是播種與插枝課程的主要場地。</p></div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--hen-light);">🐔</div>
+        <div><h4>雞舍：蛋雞與紅腹頸雞</h4><p>認識蛋的來源、生態系中消費者角色的最佳教材。</p></div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--sky-light);">🏫</div>
+        <div><h4>食農教育園區</h4><p>戶外教室、分站闖關與成果發表的主要活動空間。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="audience">
+  <div class="section-head">
+    <div class="section-eyebrow">Who We Teach</div>
+    <h2>不管幾歲，都能在田裡找到自己的位置</h2>
+    <p>我們為不同對象設計深度不同的食農體驗，從國小課程到企業ESG參訪，都能量身安排。</p>
+  </div>
+  <div class="audience-grid">
+    <div class="audience-card aud-1">
+      <span class="icon">🧒</span>
+      <h3>小朋友</h3>
+      <p>國小食農教育課程，從認識生態環境到親手種植、動手實作，建立對土地的第一份感情。</p>
+    </div>
+    <div class="audience-card aud-2">
+      <span class="icon">👨‍👩‍👧</span>
+      <h3>大朋友</h3>
+      <p>親子共學、假日農場體驗，重新認識食物從產地到餐桌的完整旅程。</p>
+    </div>
+    <div class="audience-card aud-3">
+      <span class="icon">🏢</span>
+      <h3>企業團隊</h3>
+      <p>企業ESG永續教育、員工團建，結合碳管理、循環農業與生物多樣性的深度參訪方案。</p>
+    </div>
+  </div>
+</section>
+
+<!--<section id="curriculum">
+  <div class="section-head">
+    <div class="section-eyebrow">115年秋季課程系列</div>
+    <h2>三部曲食農教育課程</h2>
+    <p>與恩激優實驗教育機構（NGU）合作開發，由場主親自到校授課的完整學期課程。</p>
+  </div>
+  <div class="curric-grid">
+    <div class="curric-card">
+      <span class="curric-tag">第一部曲</span>
+      <h3>🌱 打好根基</h3>
+      <p>認識生態環境與循環永續，從土壤準備到親手播種、插枝，理解好的環境如何成就好的成長。</p>
+    </div>
+    <div class="curric-card c2">
+      <span class="curric-tag">第二部曲</span>
+      <h3>💧 珍惜所有</h3>
+      <p>雨水收集、水質檢測與綠色能源實作，體會地球資源有限，也學會珍惜時間與體力。</p>
+    </div>
+    <div class="curric-card c3">
+      <span class="curric-tag">第三部曲</span>
+      <h3>🔥 解決兩難</h3>
+      <p>從碳排放、溫室效應到生物炭與TLUD實驗，親眼見證燃燒也能幫助地球鎖住碳。</p>
+    </div>
+  </div>
+</section>-->
+
+<section id="esg">
+  <div class="section-head">
+    <div class="section-eyebrow">ESG × Sustainability</div>
+    <h2>不只是農場，是一座永續教育園區</h2>
+    <p>富林農場致力於將生產、教育與永續三者結合，成為企業ESG合作與環境教育的示範場域。</p>
+  </div>
+  <div class="esg-grid">
+    <div class="esg-card"><div class="esg-icon">♻️</div><h4>循環農業</h4><p>雞糞堆肥、稻梗回田，落實資源循環利用。</p></div>
+    <div class="esg-card"><div class="esg-icon">🦋</div><h4>生物多樣性</h4><p>友善栽培環境，維護田間生態系的多樣性。</p></div>
+    <div class="esg-card"><div class="esg-icon">🌍</div><h4>碳管理</h4><p>生物炭應用與碳保存實作，落實具體減碳行動。</p></div>
+    <div class="esg-card"><div class="esg-icon">🤝</div><h4>社區參與</h4><p>結合在地學校與企業，共同推動全民食農教育。</p></div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="location-wrap">
+    <div>
+      <h2>交通位置優越，企業與學校都方便到訪</h2>
+      <p>富林有機農場位於新竹縣芎林鄉，鄰近新竹高鐵站與新竹科學園區，是都會近郊少見的食農教育與ESG活動場域首選。</p>
+      <div class="loc-stats">
+        <div class="loc-stat"><div class="num num-font">3.2km</div><div class="lbl">距離新竹高鐵站</div></div>
+        <div class="loc-stat"><div class="num num-font">5min</div><div class="lbl">高鐵站車程</div></div>
+        <div class="loc-stat"><div class="num num-font">8km</div><div class="lbl">距離新竹科學園區</div></div>
+      </div>
+    </div>
+    <div class="loc-visual">
+      <div class="row">🚄 &nbsp;新竹高鐵站 —— 約5分鐘車程</div>
+      <div class="row">🏭 &nbsp;新竹科學園區 —— 約8公里</div>
+      <div class="row">🏫 &nbsp;鄰近學校可安排校外教學一日往返</div>
+      <div class="row">🏢 &nbsp;企業員工可利用半日彈性安排ESG活動</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-wrap">
+    <h2>準備好帶著孩子或團隊，走進田裡了嗎？</h2>
+    <p>不論是國小食農課程、親子假日體驗，或是企業ESG永續參訪，都歡迎與我們聯繫，一起討論最合適的方案。</p>
+    <a class="btn-primary" href="#">📩 立即洽詢課程與參訪安排</a>
+  </div>
+</section>
   <div>
   有一小學(N G U恩激優實驗教育機構)邀請富林有機農場場主至學校授課，以下是該小學提供的115年秋季課程大綱，是否可以幫我建議與規劃符合國小的課程，並請以.html 輸出<br>
 <br>
@@ -64,5 +448,10 @@
 
 
   </div>
+<footer>
+  <div class="foot-logo">🌾 富林有機農場</div>
+  <div>新竹縣芎林鄉｜有機認證｜食農教育 × ESG永續園區</div>
+</footer>
+
 </body>
 </html>

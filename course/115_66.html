@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>富林有機農場 × 恩激優實驗教育機構 115年秋季食農教育課程規劃－解決兩難</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
 
@@ -34,19 +36,27 @@
     line-height:1.75;
     padding-bottom:70px;
   }
-  h1,h2,h3,.playful{font-family:"Baloo 2","Noto Sans TC",sans-serif;}
+  h1,h2,h3,.playful{font-family:"ZCOOL KuaiLe","Noto Sans TC",sans-serif;}
+  h1,h2,h3,.display{
+    font-family:"ZCOOL KuaiLe","Noto Sans TC",sans-serif;
+    font-weight:400;
+    color:var(--soil-dark);
+  }
 
   header{
-    background:linear-gradient(135deg,#ff8a5c 0%,#ff6b6b 45%, #d94f8c 100%);
-    color:#fff;
-    padding:50px 24px 40px;
-    text-align:center;
-    border-radius:0 0 40px 40px;
-    box-shadow:0 8px 24px rgba(217,79,140,.25);
     position:relative;
+    padding:76px 24px 96px;
+    background:
+      radial-gradient(circle at 12% 20%, rgba(163,199,154,0.35), transparent 45%),
+      radial-gradient(circle at 88% 75%, rgba(227,167,59,0.25), transparent 40%),
+      linear-gradient(160deg, #F9F4E8 0%, #F3ECD9 100%);
+    overflow:hidden;
+    text-align:center;
   }
   header .emoji-row{font-size:2rem;margin-bottom:10px;letter-spacing:8px;}
-  header h1{margin:0 0 10px;font-size:1.9rem;font-weight:800;text-shadow:2px 2px 0 rgba(0,0,0,.1);}
+  header h1{font-size:clamp(38px,6vw,64px);
+    margin:0 0 14px;
+    line-height:1.25;}
   header .sub{font-size:1.1rem;opacity:.97;font-weight:500;}
   header .badge{
     display:inline-block;margin-top:18px;
