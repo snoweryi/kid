@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>富林有機農場｜宏觀視野：大地觀測小旅行</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky-day:#8ECAE6;
+    --sky-dawn:#FFD9A0;
+    --sky-dusk:#FFB4A2;
+    --sun:#FFD166;
+    --night:#3D348B;
+    --rice:#90BE6D;
+    --rice-dark:#5B8C3E;
+    --earth:#C08552;
+    --cream:#FFF9F0;
+    --pink:#FF6B6B;
+    --ink:#3A3A3A;
+    --card-shadow: 0 10px 30px rgba(80,60,30,.15);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Noto Sans TC", sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.title-font{font-family:"ZCOOL KuaiLe", "Noto Sans TC", sans-serif;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:82vh;
+    background:linear-gradient(180deg, var(--sky-day) 0%, var(--sky-dawn) 55%, var(--sky-dusk) 100%);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px 120px;
+  }
+  .cloud{
+    position:absolute;
+    background:#fff;
+    border-radius:50px;
+    opacity:.8;
+    animation:drift linear infinite;
+  }
+  .cloud:before,.cloud:after{
+    content:"";
+    position:absolute;
+    background:#fff;
+    border-radius:50%;
+  }
+  .cloud1{width:120px;height:40px;top:12%;left:-150px;animation-duration:38s;}
+  .cloud1:before{width:60px;height:60px;top:-30px;left:15px;}
+  .cloud1:after{width:70px;height:70px;top:-25px;left:55px;}
+  .cloud2{width:90px;height:32px;top:22%;left:-120px;animation-duration:50s;animation-delay:6s;}
+  .cloud2:before{width:45px;height:45px;top:-22px;left:10px;}
+  .cloud2:after{width:50px;height:50px;top:-18px;left:40px;}
+  .cloud3{width:70px;height:26px;top:8%;left:-100px;animation-duration:30s;animation-delay:14s;opacity:.7;}
+  .cloud3:before{width:35px;height:35px;top:-16px;left:8px;}
+  .cloud3:after{width:40px;height:40px;top:-14px;left:32px;}
+  @keyframes drift{ from{transform:translateX(0);} to{transform:translateX(calc(100vw + 250px));} }
+
+  .sun{
+    position:absolute;
+    top:10%;
+    right:14%;
+    width:90px;height:90px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, #FFE9A8, var(--sun));
+    box-shadow:0 0 60px 20px rgba(255,209,102,.6);
+    animation:bob 4s ease-in-out infinite;
+  }
+  @keyframes bob{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
+
+  .hero-hill{
+    position:absolute;
+    bottom:0; left:0; width:100%;
+    height:140px;
+    background: radial-gradient(
+    circle at top,
+    #b2d498 0%,
+    #90be6d 35%,
+    #90c769 65%,
+    #95c47e 100%
+);
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
+    transform:scale(1.5);
+  }
+  .hero-hill2{
+    position:absolute;
+    bottom:-10px; left:0; width:100%;
+    height:90px;
+    background: radial-gradient(
+    circle at top,
+    #b2d498 0%,
+    #90be6d 35%,
+    #90c769 65%,
+    #95c47e 100%
+);
+    border-radius:50% 50% 0 0 / 100% 100% 0 0;
+    transform:scale(1.3) translateX(4%);
+    opacity:.75;
+  }
+  .stalk{
+    position:absolute;
+    bottom:6px;
+    font-size:26px;
+    animation:sway 2.6s ease-in-out infinite;
+    transform-origin:bottom center;
+  }
+  @keyframes sway{ 0%,100%{transform:rotate(-6deg);} 50%{transform:rotate(6deg);} }
+
+  .hero h1{
+    position:relative; z-index:2;
+    font-size:clamp(28px,5vw,46px);
+    color:#5B3A29;
+    margin:0 0 8px;
+    text-shadow:0 3px 0 #fff8;
+  }
+  .hero p.subtitle{
+    position:relative; z-index:2;
+    font-size:clamp(15px,2.2vw,20px);
+    color:#5B3A29;
+    margin:0 0 26px;
+    font-weight:500;
+  }
+  .badge{
+    position:relative;z-index:2;
+    display:inline-block;
+    background:#fff;
+    padding:6px 18px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--rice-dark);
+    box-shadow:var(--card-shadow);
+    margin-bottom:16px;
+  }
+  .scrolldown{
+    position:relative;z-index:2;
+    margin-top:10px;
+    font-size:14px;
+    color:#5B3A29;
+    animation:bob2 1.6s ease-in-out infinite;
+  }
+  @keyframes bob2{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+  /* ---------- NAV ---------- */
+  .nav-wrap{
+    position:sticky; top:0; z-index:50;
+    background:var(--cream);
+    padding:12px 10px;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+  }
+  .nav{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    flex-wrap:wrap;
+    max-width:1960px;
+    margin:0 auto;
+  }
+  .nav button{
+    font-family:"Noto Sans TC",sans-serif;
+    border:none;
+    cursor:pointer;
+    background:#fff;
+    padding:10px 16px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:700;
+    color:#8a6a4a;
+    box-shadow:0 3px 0 #e8dcc8;
+    transition:.2s transform, .2s background, .2s color;
+    white-space:nowrap;
+  }
+  .nav button:hover{transform:translateY(-2px);}
+  .nav button.active{
+    background:var(--pink);
+    color:#fff;
+    box-shadow:0 3px 0 #c94f4f;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  .stage{
+    max-width:1900px;
+    margin:30px auto 60px;
+    padding:0 18px;
+  }
+  .topic{
+    display:none;
+    animation:fadeUp .5s ease;
+  }
+  .topic.active{display:block;}
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);} }
+
+  .topic-card{
+    background:#fff;
+    border-radius:28px;
+    box-shadow:var(--card-shadow);
+    padding:28px clamp(18px,4vw,40px) 36px;
+    position:relative;
+    overflow:hidden;
+  }
+  .topic-head{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:6px;
+  }
+  .topic-emoji{
+    font-size:52px;
+    display:inline-block;
+  }
+  .anim-bounce{animation:bounce 2.2s ease-in-out infinite;}
+  .anim-spin{animation:spin 6s linear infinite;}
+  .anim-float{animation:floaty 3s ease-in-out infinite;}
+  .anim-wobble{animation:wobble 2.4s ease-in-out infinite;}
+  .anim-fall{animation:fall 3s ease-in-out infinite;}
+  @keyframes bounce{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-10px) rotate(6deg);}}
+  @keyframes spin{from{transform:rotate(0);}to{transform:rotate(360deg);}}
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+  @keyframes wobble{0%,100%{transform:rotate(-8deg);}50%{transform:rotate(8deg);}}
+  @keyframes fall{0%{transform:translateY(-6px) rotate(0);}50%{transform:translateY(6px) rotate(10deg);}100%{transform:translateY(-6px) rotate(0);}}
+
+  .topic h2{
+    font-size:26px;
+    margin:0;
+    color:#5B3A29;
+  }
+  .topic .eyebrow{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    color:var(--pink);
+    letter-spacing:1px;
+    margin-bottom:2px;
+  }
+
+  .section-block{
+    margin-top:20px;
+    padding:18px 20px;
+    border-radius:18px;
+  }
+  .block-title{
+    display:flex;align-items:center;gap:8px;
+    font-weight:700; font-size:15px;
+    margin-bottom:10px;
+    color:#5B3A29;
+  }
+  .learn-block{background:#FFF3E0;}
+  .farm-block{
+    background:#EFF7E6;
+    border:2px dashed var(--rice-dark);
+  }
+  .quiz-block{background:#FDEBEC;}
+
+  ul.points{margin:0;padding-left:20px;}
+  ul.points li{margin-bottom:8px;line-height:1.6;font-size:15px;}
+
+  .quiz-options{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}
+  .opt{
+    font-family:"Noto Sans TC",sans-serif;
+    border:2px solid #f2b8bb;
+    background:#fff;
+    padding:9px 16px;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:500;
+    transition:.15s;
+  }
+  .opt:hover{background:#FFE3E5;}
+  .opt.correct{background:#C9E8B6;border-color:#7CBF5C;animation:pop .4s;}
+  .opt.wrong{background:#F4B7B7;border-color:#e07a7a;animation:shake .4s;}
+  @keyframes pop{0%{transform:scale(1);}50%{transform:scale(1.12);}100%{transform:scale(1);}}
+  @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+  .feedback{
+    margin-top:10px;
+    font-size:14px;
+    font-weight:700;
+    min-height:20px;
+  }
+  .feedback.ok{color:var(--rice-dark);}
+  .feedback.no{color:#c0504d;}
+
+  .nav-arrows{
+    display:flex;justify-content:space-between;margin-top:26px;
+  }
+  .arrow-btn{
+    border:none;background:var(--rice-dark);color:#fff;
+    padding:10px 20px;border-radius:999px;font-weight:700;
+    cursor:pointer;font-family:"Noto Sans TC",sans-serif;
+    box-shadow:0 3px 0 #3f6a29;
+  }
+  .arrow-btn:disabled{opacity:.3;cursor:default;}
+
+  /* ---------- FINAL QUIZ ---------- */
+  .final-wrap{
+    max-width:1900px;margin:0 auto 70px;padding:0 18px;
+  }
+  .final-card{
+    background:linear-gradient(160deg,#FFE9C7,#FFD3D3);
+    border-radius:28px;
+    box-shadow:var(--card-shadow);
+    padding:30px clamp(18px,4vw,40px) 36px;
+    text-align:center;
+  }
+  #finalBody{margin-top:16px;}
+  .final-q{font-size:17px;font-weight:700;margin-bottom:14px;}
+  .medal{font-size:64px;margin:10px 0;}
+  .final-btn{
+    margin-top:16px;border:none;background:var(--pink);color:#fff;
+    padding:12px 26px;border-radius:999px;font-weight:700;font-size:15px;
+    cursor:pointer;font-family:"Noto Sans TC",sans-serif;box-shadow:0 3px 0 #c94f4f;
+  }
+
+  footer{
+    background:#5B3A29;
+    color:#FBEFDD;
+    padding:36px 20px;
+    text-align:center;
+  }
+  footer h3{margin:0 0 8px;font-size:20px;color:#FFD9A0;}
+  footer p{margin:4px 0;font-size:14px;line-height:1.7;}
+  footer .farm-name{font-weight:700;color:#fff;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important;}
+  }
+     /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,242,227,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:2px solid var(--rice-light);
+  }
+  .nav-inner{
+    max-width:1900px;margin:0 auto;padding:12px;
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:10px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:8px;
+    font-size:1.15rem;font-weight:900;color:var(--rice-dark);
+  }
+  .logo a{
+    text-decoration:none;color:var(--soil);
+    padding-bottom:3px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .logo-mark{font-size:1.5rem;}
+  .nav-links{display:flex;gap:22px;font-size:.92rem;font-weight:700;flex-wrap:wrap;}
+  .nav-links a{
+    text-decoration:none;color:var(--soil);
+    padding-bottom:3px;border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .nav-links a:hover{border-color:var(--turmeric);color:var(--rice-dark);}
+  .nav-cta{
+    background:var(--rice);color:#fff;padding:9px 20px;border-radius:24px;
+    font-size:.88rem;font-weight:700;text-decoration:none;
+    box-shadow:0 3px 0 var(--rice-dark);white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(1px);box-shadow:0 2px 0 var(--rice-dark);}
+.soil-strip{
+    height:14px;
+    background:repeating-linear-gradient(90deg, #8B5E3C 0 26px, #5B4028 26px 30px);
+  }
+</style>
+</head>
+<body>
+<nav>
+
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-mark">🌾</span><a href="https://snoweryi.github.io/kid/course">富林有機農場</a></div>
+    <div class="nav-links">
+      <a href="https://snoweryi.github.io/kid/course/115_61.html">115_6.1打好根基</a>
+      <a href="https://snoweryi.github.io/kid/course/115_63.html">6.3珍惜所有</a>
+      <a href="https://snoweryi.github.io/kid/course/115_64.html">6.4寶貝地球</a>
+      <a href="https://snoweryi.github.io/kid/course/115_65.html">115_6.5看見微小</a>
+      <a href="https://snoweryi.github.io/kid/course/115_66.html">6.6解決兩難</a>
+	  <a href="https://snoweryi.github.io/kid/course/115_67.html">6.7茁壯成長</a>
+	  <a href="https://snoweryi.github.io/kid/course/116_51.html">116_5.1互助互利</a>
+    
+	
+		<a href="https://snoweryi.github.io/kid/course/116_55.html">5.5宏觀視野</a>
+	
+	</div>
+    <a class="nav-cta" href="#contact">預約洽詢</a>
+  </div>
+ 
+</nav>
+<!-- HERO -->
+<section class="hero">
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+  <div class="sun"></div>
+  <span class="badge">🌾 富林有機農場 × 校園食農教育</span>
+  <h1>宏觀視野：大地觀測小旅行</h1>
+  <p class="subtitle">跟著農夫阿伯，一起抬頭看天、低頭看地，發現藏在農場裡的大地科學！</p>
+  <div class="scrolldown">↓ 點下面的按鈕開始探索 ↓</div>
+  <div class="hero-hill2"></div>
+  <div class="hero-hill"></div>
+  <span class="stalk" style="left:8%;">🌾</span>
+  <span class="stalk" style="left:22%;animation-delay:.4s;">🌾</span>
+  <span class="stalk" style="left:38%;animation-delay:.8s;">🐔</span>
+  <span class="stalk" style="left:55%;animation-delay:.2s;">🌾</span>
+  <span class="stalk" style="left:70%;animation-delay:.6s;">🌾</span>
+  <span class="stalk" style="left:85%;animation-delay:1s;">🌾</span>
+</section>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <div class="nav" id="navBar">
+    <button data-t="0" class="active">☀️ 日出日落</button>
+    <button data-t="1">🌡️ 溫度雨量</button>
+    <button data-t="2">🌕 月圓月陰</button>
+    <button data-t="3">🌊 潮汐變化</button>
+    <button data-t="4">🍂 四季變化</button>
+  </div>
+</div>
+
+<div class="stage" id="stage">
+
+  <!-- TOPIC 0 -->
+  <div class="topic active" data-topic="0">
+    <div class="topic-card">
+      <div class="topic-head">
+        <span class="topic-emoji anim-spin">☀️</span>
+        <div>
+          <span class="eyebrow">主題一</span>
+          <h2>日出日落：地球的呼吸</h2>
+        </div>
+      </div>
+
+      <div class="section-block learn-block">
+        <div class="block-title">📘 我們要學會的事</div>
+        <ul class="points">
+          <li>地球每天自己轉一圈（自轉），才會有白天和黑夜。</li>
+          <li>太陽總是從東邊升起，從西邊落下，就像每天固定的上下班時間！</li>
+          <li>夏天的白天比較長、冬天的白天比較短，日出日落的時間會偷偷改變喔。</li>
+        </ul>
+      </div>
+
+      <div class="section-block farm-block">
+        <div class="block-title">🌾 富林農場實境連結</div>
+        <ul class="points">
+          <li>農場裡的蛋雞是「看光作息」的雞：天一亮就起床活動，天黑就回雞舍睡覺。</li>
+          <li>農夫伯伯習慣在日出前巡田水、日落前收工，完全跟著太陽的時刻表生活。</li>
+          <li><b>體驗活動：</b>到校前一週，請班級同學記錄自己家附近的日出日落時間，上課時和農場的紀錄做比較！</li>
+        </ul>
+      </div>
+
+      <div class="section-block quiz-block">
+        <div class="block-title">🎯 想一想</div>
+        <p style="margin:0 0 6px;font-weight:500;">富林農場的蛋雞，通常會在什麼時候開始活動呢？</p>
+        <div class="quiz-options">
+          <button class="opt" data-c="0">半夜十二點</button>
+          <button class="opt" data-c="1">太陽升起、天剛亮的時候</button>
+          <button class="opt" data-c="0">吃飽飯後突然決定</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="nav-arrows">
+        <button class="arrow-btn" id="prevBtn" disabled>← 上一個</button>
+        <button class="arrow-btn" id="nextBtn">下一個 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 1 -->
+  <div class="topic" data-topic="1">
+    <div class="topic-card">
+      <div class="topic-head">
+        <span class="topic-emoji anim-bounce">🌧️</span>
+        <div>
+          <span class="eyebrow">主題二</span>
+          <h2>溫度雨量：植物的餐桌禮儀</h2>
+        </div>
+      </div>
+
+      <div class="section-block learn-block">
+        <div class="block-title">📘 我們要學會的事</div>
+        <ul class="points">
+          <li>溫度計可以量出空氣冷熱，雨量筒可以量出下了多少雨。</li>
+          <li>植物就像小朋友，太冷太熱、太乾太濕都長不好，需要「剛剛好」的溫度和水分。</li>
+          <li>有機農法不灑化學藥劑，所以農夫要更用心觀察天氣，幫作物調整照顧方式。</li>
+        </ul>
+      </div>
+
+      <div class="section-block farm-block">
+        <div class="block-title">🌾 富林農場實境連結</div>
+        <ul class="points">
+          <li>農場設有雨量筒，每天記錄下雨量，決定稻田要不要放水或排水。</li>
+          <li>有機蔬菜遇到高溫會用遮陰網保護，遇到大雨會提前挖排水溝。</li>
+          <li><b>體驗活動：</b>親手用溫度計量一量農場今天的氣溫，並和教室裡的溫度做比較。</li>
+        </ul>
+      </div>
+
+      <div class="section-block quiz-block">
+        <div class="block-title">🎯 想一想</div>
+        <p style="margin:0 0 6px;font-weight:500;">農場的雨量筒主要是用來做什麼的？</p>
+        <div class="quiz-options">
+          <button class="opt" data-c="1">記錄下雨量，幫助決定稻田放水排水</button>
+          <button class="opt" data-c="0">拿來種花</button>
+          <button class="opt" data-c="0">給小雞喝水用的</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="nav-arrows">
+        <button class="arrow-btn" id="prevBtn2">← 上一個</button>
+        <button class="arrow-btn" id="nextBtn2">下一個 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 2 -->
+  <div class="topic" data-topic="2">
+    <div class="topic-card">
+      <div class="topic-head">
+        <span class="topic-emoji anim-float">🌕</span>
+        <div>
+          <span class="eyebrow">主題三</span>
+          <h2>月圓月陰：老祖宗的農民曆</h2>
+        </div>
+      </div>
+
+      <div class="section-block learn-block">
+        <div class="block-title">📘 我們要學會的事</div>
+        <ul class="points">
+          <li>月亮繞著地球轉，我們看到的月亮形狀會慢慢改變：新月 → 上弦月 → 滿月 → 下弦月。</li>
+          <li>一次完整的變化大約是一個月，這也是「月曆」名字的由來。</li>
+          <li>古時候的農夫沒有手機，靠「農民曆」上的月相來安排播種和收成。</li>
+        </ul>
+      </div>
+
+      <div class="section-block farm-block">
+        <div class="block-title">🌾 富林農場實境連結</div>
+        <ul class="points">
+          <li>富林農場仍會參考農民曆節氣安排部分農事，傳承老一輩的智慧。</li>
+          <li>滿月的夜晚，農場裡的青蛙、昆蟲特別活躍，是很棒的夜間生態觀察時機。</li>
+          <li><b>體驗活動：</b>發下月相卡片，讓小朋友照順序排出「新月到滿月」的變化過程。</li>
+        </ul>
+      </div>
+
+      <div class="section-block quiz-block">
+        <div class="block-title">🎯 想一想</div>
+        <p style="margin:0 0 6px;font-weight:500;">月亮從新月變成滿月，中間大約經過多久？</p>
+        <div class="quiz-options">
+          <button class="opt" data-c="0">一天</button>
+          <button class="opt" data-c="1">大約半個月</button>
+          <button class="opt" data-c="0">一年</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="nav-arrows">
+        <button class="arrow-btn" id="prevBtn3">← 上一個</button>
+        <button class="arrow-btn" id="nextBtn3">下一個 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 3 -->
+  <div class="topic" data-topic="3">
+    <div class="topic-card">
+      <div class="topic-head">
+        <span class="topic-emoji anim-wobble">🌊</span>
+        <div>
+          <span class="eyebrow">主題四</span>
+          <h2>潮汐變化：月亮的隱形手</h2>
+        </div>
+      </div>
+
+      <div class="section-block learn-block">
+        <div class="block-title">📘 我們要學會的事</div>
+        <ul class="points">
+          <li>月亮的引力會拉動海水，讓海面產生「漲潮」和「退潮」。</li>
+          <li>滿月和新月的時候，海水被拉得特別厲害，稱為「大潮」。</li>
+          <li>潮汐每天都會發生，而且跟月亮的位置密切相關，就像月亮在遠方牽著海水的手。</li>
+        </ul>
+      </div>
+
+      <div class="section-block farm-block">
+        <div class="block-title">🌾 富林農場實境連結</div>
+        <ul class="points">
+          <li>富林農場雖然不靠海，但灌溉水源來自河川與地下水，同樣受氣候與水文影響，和沿海生態系環環相扣。</li>
+          <li>新竹沿海漁業與內陸農業其實共享同一套水資源系統，農場推廣「從山到海」的環境教育概念。</li>
+          <li><b>體驗活動：</b>用兩張圖卡（滿月大潮／半月小潮）讓小朋友配對，理解月相與潮汐的關係。</li>
+        </ul>
+      </div>
+
+      <div class="section-block quiz-block">
+        <div class="block-title">🎯 想一想</div>
+        <p style="margin:0 0 6px;font-weight:500;">「大潮」通常發生在哪個月相的時候？</p>
+        <div class="quiz-options">
+          <button class="opt" data-c="1">滿月或新月</button>
+          <button class="opt" data-c="0">上弦月的隔天</button>
+          <button class="opt" data-c="0">只有下雨天</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="nav-arrows">
+        <button class="arrow-btn" id="prevBtn4">← 上一個</button>
+        <button class="arrow-btn" id="nextBtn4">下一個 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 4 -->
+  <div class="topic" data-topic="4">
+    <div class="topic-card">
+      <div class="topic-head">
+        <span class="topic-emoji anim-fall">🍂</span>
+        <div>
+          <span class="eyebrow">主題五</span>
+          <h2>四季變化：農場的一年行事曆</h2>
+        </div>
+      </div>
+
+      <div class="section-block learn-block">
+        <div class="block-title">📘 我們要學會的事</div>
+        <ul class="points">
+          <li>地球一邊繞太陽公轉、一邊帶著傾斜的角度轉動，才會有春夏秋冬四季。</li>
+          <li>古人把一年分成「二十四節氣」，像立春、清明、白露、冬至，用來提醒農事時間。</li>
+          <li>不同季節，日照長短、溫度、雨量都不一樣，作物也各有適合生長的季節。</li>
+        </ul>
+      </div>
+
+      <div class="section-block farm-block">
+        <div class="block-title">🌾 富林農場實境連結</div>
+        <ul class="points">
+          <li>富林農場依循「春耕、夏耘、秋收、冬藏」安排稻米與蔬果的種植與輪作。</li>
+          <li>農場會依節氣舉辦體驗活動，例如清明插秧、白露收成等季節限定行程。</li>
+          <li><b>體驗活動：</b>發下四季圖卡，讓小朋友把「稻米生長四階段」配對到正確的季節。</li>
+        </ul>
+      </div>
+
+      <div class="section-block quiz-block">
+        <div class="block-title">🎯 想一想</div>
+        <p style="margin:0 0 6px;font-weight:500;">四季的產生，主要和下面哪一件事最有關？</p>
+        <div class="quiz-options">
+          <button class="opt" data-c="0">農夫決定的</button>
+          <button class="opt" data-c="1">地球傾斜著繞太陽公轉</button>
+          <button class="opt" data-c="0">月亮的形狀</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="nav-arrows">
+        <button class="arrow-btn" id="prevBtn5">← 上一個</button>
+        <button class="arrow-btn" id="nextBtn5">前往總測驗 →</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FINAL QUIZ -->
+<div class="final-wrap" id="finalWrap" style="display:none;">
+  <div class="final-card">
+    <h2 style="margin:0;color:#5B3A29;">🏅 小小農夫觀天員 · 總測驗</h2>
+    <p style="margin:6px 0 0;font-size:14px;color:#7a5a3f;">回答五個問題，看看你能拿到什麼獎章！</p>
+    <div id="finalBody"></div>
+  </div>
+</div>
+
+<footer>
+  <h3>富林有機農場</h3>
+  <p class="farm-name">📍 新竹縣芎林鄉｜有機認證 1.3 公頃｜稻米・蔬果・食農教育園區</p>
+  <p>🚄 距新竹高鐵站約 3.2 公里（車程約 5 分鐘）　🏢 距新竹科學園區約 8 公里</p>
+  <p>歡迎預約校外教學、企業 ESG 活動與食農教育課程</p>
+</footer>
+
+<script>
+  // ---- Topic navigation ----
+  const topics = document.querySelectorAll('.topic');
+  const navBtns = document.querySelectorAll('#navBar button');
+  let current = 0;
+
+  function showTopic(i){
+    if(i < 0){ i = 0; }
+    if(i >= topics.length){ showFinal(); return; }
+    current = i;
+    topics.forEach((t,idx)=> t.classList.toggle('active', idx===i));
+    navBtns.forEach((b,idx)=> b.classList.toggle('active', idx===i));
+    document.getElementById('finalWrap').style.display = 'none';
+    window.scrollTo({top: document.getElementById('stage').offsetTop - 70, behavior:'smooth'});
+  }
+
+  navBtns.forEach(b=>{
+    b.addEventListener('click', ()=> showTopic(parseInt(b.dataset.t)));
+  });
+
+  // wire up each topic's prev/next arrow buttons
+  const prevIds = ['prevBtn','prevBtn2','prevBtn3','prevBtn4','prevBtn5'];
+  const nextIds = ['nextBtn','nextBtn2','nextBtn3','nextBtn4','nextBtn5'];
+  prevIds.forEach((id,idx)=>{
+    const el = document.getElementById(id);
+    if(el) el.addEventListener('click', ()=> showTopic(idx-1));
+  });
+  nextIds.forEach((id,idx)=>{
+    const el = document.getElementById(id);
+    if(el) el.addEventListener('click', ()=> showTopic(idx+1));
+  });
+
+  // ---- Per-topic quiz feedback ----
+  document.querySelectorAll('.quiz-block').forEach(block=>{
+    const opts = block.querySelectorAll('.opt');
+    const fb = block.querySelector('.feedback');
+    let answered = false;
+    opts.forEach(opt=>{
+      opt.addEventListener('click', ()=>{
+        if(answered) return;
+        if(opt.dataset.c === '1'){
+          answered = true;
+          opt.classList.add('correct');
+          fb.textContent = '🎉 答對了！你是超棒的小小觀察家！';
+          fb.className = 'feedback ok';
+        } else {
+          opt.classList.add('wrong');
+          fb.textContent = '再想想看，農場裡藏著答案喔～';
+          fb.className = 'feedback no';
+          setTimeout(()=> opt.classList.remove('wrong'), 500);
+        }
+      });
+    });
+  });
+
+  // ---- Final quiz ----
+  const finalQuestions = [
+    { q:'太陽從哪個方向升起？', opts:['東邊','西邊','北邊'], c:0 },
+    { q:'雨量筒是用來量什麼的？', opts:['溫度','下雨量','風速'], c:1 },
+    { q:'月亮的形狀變化週期大約是？', opts:['一天','半個月','一個月'], c:2 },
+    { q:'大潮通常發生在什麼時候？', opts:['滿月或新月','上弦月','平常日'], c:0 },
+    { q:'四季形成的主要原因是？', opts:['地球傾斜公轉','農夫安排','月亮形狀'], c:0 },
+  ];
+  let fIndex = 0, fScore = 0;
+  const finalBody = document.getElementById('finalBody');
+  const finalWrap = document.getElementById('finalWrap');
+
+  function showFinal(){
+    topics.forEach(t=>t.classList.remove('active'));
+    navBtns.forEach(b=>b.classList.remove('active'));
+    finalWrap.style.display = 'block';
+    fIndex = 0; fScore = 0;
+    renderFinalQ();
+    window.scrollTo({top: finalWrap.offsetTop - 70, behavior:'smooth'});
+  }
+
+  function renderFinalQ(){
+    if(fIndex >= finalQuestions.length){ renderResult(); return; }
+    const q = finalQuestions[fIndex];
+    finalBody.innerHTML = `
+      <div class="final-q">第 ${fIndex+1} 題／共 ${finalQuestions.length} 題：${q.q}</div>
+      <div class="quiz-options" style="justify-content:center;" id="finalOpts"></div>
+      <div class="feedback" id="finalFb" style="text-align:center;"></div>
+    `;
+    const optsWrap = document.getElementById('finalOpts');
+    q.opts.forEach((label,idx)=>{
+      const btn = document.createElement('button');
+      btn.className = 'opt';
+      btn.textContent = label;
+      btn.addEventListener('click', ()=>{
+        const fb = document.getElementById('finalFb');
+        if(idx === q.c){
+          btn.classList.add('correct');
+          fScore++;
+          fb.textContent = '🎉 答對了！';
+          fb.className = 'feedback ok';
+        } else {
+          btn.classList.add('wrong');
+          fb.textContent = '喔喔，答錯了～';
+          fb.className = 'feedback no';
+        }
+        [...optsWrap.children].forEach(b=> b.disabled = true);
+        setTimeout(()=>{ fIndex++; renderFinalQ(); }, 900);
+      });
+      optsWrap.appendChild(btn);
+    });
+  }
+
+  function renderResult(){
+    let medal = '🥉', msg = '小小農夫見習生，繼續加油！';
+    if(fScore >= 5){ medal='🥇'; msg='太厲害了！你是宏觀視野金牌觀察員！'; }
+    else if(fScore >= 3){ medal='🥈'; msg='表現很棒！你已經是農場小達人囉！'; }
+    finalBody.innerHTML = `
+      <div class="medal">${medal}</div>
+      <div class="final-q">答對 ${fScore} / ${finalQuestions.length} 題</div>
+      <p>${msg}</p>
+      <button class="final-btn" id="restartBtn">🔄 再玩一次</button>
+    `;
+    document.getElementById('restartBtn').addEventListener('click', ()=> showTopic(0));
+  }
+</script>
+
+</body>
+</html>
