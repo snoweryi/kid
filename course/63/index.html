@@ -131,180 +131,67 @@
     max-width: 1600px;margin:40px auto 0;padding:0 20px;
     font-size:.8rem;color:#888;text-align:center;
   }
-  /* ---------- NAV ---------- */
-  nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(246,242,227,.92);
-    backdrop-filter:blur(6px);
-    border-bottom:2px solid var(--rice-light);
-  }
-  .nav-inner{
-    max-width:1900px;margin:0 auto;padding:12px;
-    display:flex;align-items:center;justify-content:space-between;
-    flex-wrap:wrap;gap:10px;
-  }
-  .logo{
-    display:flex;align-items:center;gap:8px;
-    font-size:1.15rem;font-weight:900;color:var(--rice-dark);
-  }
-  .logo a{
-    text-decoration:none;color:var(--soil);
-    padding-bottom:3px;border-bottom:2px solid transparent;
-    transition:border-color .2s, color .2s;
-  }
-.logo-mark{font-size:16px;}
-  .nav-links{
-    display:flex;
-    gap:20px;
-    font-size:14px;
-    font-weight:700;
-    flex-wrap:wrap;
-}
 
-
-.nav-links a{
-
-    position:relative;
-
-    text-decoration:none;
-
-    color:var(--soil);
-
-    padding:8px 4px;
-
-    transition:
-        color .3s ease,
-        transform .3s ease;
-
-}
-
-
-/* 原本 hover */
-.nav-links a:hover{
-
-    color:var(--rice-dark);
-
-    transform:
-    translateY(-2px);
-
-}
-
-
-
-/* 底部自然草線 */
-.nav-links a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:0;
-
-    width:0;
-
-    height:3px;
-
-
-    background:
-
-    linear-gradient(
-        90deg,
-        var(--turmeric),
-        #8bc34a
-    );
-
-
-    border-radius:10px;
-
-
-    transform:
-    translateX(-50%);
-
-
-    transition:
-    width .35s ease;
-
-}
-
-
-
-.nav-links a:hover::after{
-
-    width:80%;
-
-}
-
-
-
-/* active 狀態 */
-.nav-links a.active{
-
-    color:var(--rice-dark);
-
-}
-
-
-
-/* active 底線 */
-.nav-links a.active::after{
-
-    width:100%;
-
-    background:
-
-    linear-gradient(
-        90deg,
-        #f4b400,
-        #7cb342
-    );
-
-
-    box-shadow:
-
-    0 3px 8px rgba(124,179,66,.35);
-
-}
-
-
-
-/* active 微微跳動 */
-.nav-links a.active{
-
-    animation:
-    navActive 3s ease-in-out infinite;
-
-}
-
-
-@keyframes navActive{
-
-
-    0%,100%{
-
-        transform:
-        translateY(0);
-
-    }
-
-
-    50%{
-
-        transform:
-        translateY(-3px);
-
-    }
-
-}
-  
-  .nav-cta{
-    background:var(--rice);color:#fff;padding:9px 20px;border-radius:24px;
-    font-size:.88rem;font-weight:700;text-decoration:none;
-    box-shadow:0 3px 0 var(--rice-dark);white-space:nowrap;
-  }
-  .nav-cta:hover{transform:translateY(1px);box-shadow:0 2px 0 var(--rice-dark);}
-.soil-strip{
+	/* ---------- NAV ---------- */
+	nav{
+		position:sticky;top:0;z-index:50;
+		background:rgba(246,242,227,.92);
+		backdrop-filter:blur(6px);
+		border-bottom:2px solid var(--rice-light);
+	}
+	.nav-inner{
+		max-width:1900px;margin:0 auto;padding:12px;
+		display:flex;align-items:center;justify-content:space-between;
+		flex-wrap:wrap;gap:10px;
+	}
+	.logo{
+		display:flex;align-items:center;gap:8px;
+		font-size:1.15rem;font-weight:900;color:var(--rice-dark);
+	}
+	.logo a{
+		text-decoration:none;color:var(--soil);
+		padding-bottom:3px;border-bottom:2px solid transparent;
+		transition:border-color .2s, color .2s;
+	}
+	.logo-mark{font-size:16px;}
+	.nav-links{display:flex;gap:20px;font-size:14px;font-weight:700;flex-wrap:wrap;}
+	.nav-links a{position:relative;text-decoration:none; color:var(--soil);
+		padding:8px 4px;
+		transition:color .3s ease,transform .3s ease;
+	}
+	/* hover */
+	.nav-links a:hover{color:var(--rice-dark);transform:translateY(-2px);}
+	/* 底部自然草線 */
+	.nav-links a::after{content:"";position:absolute;
+		left:50%;bottom:0;width:0;height:3px;
+		background:linear-gradient(90deg,
+			var(--turmeric),#8bc34a);
+		border-radius:10px;
+		transform:translateX(-50%);
+		transition:width .35s ease;
+	}
+	.nav-links a:hover::after{width:80%;}
+	/* active 狀態 */
+	.nav-links a.active{color:var(--rice-dark);}
+	/* active 底線 */
+	.nav-links a.active::after{width:100%;
+		background:linear-gradient(90deg,#f4b400,#7cb342);
+		box-shadow: 0 3px 8px rgba(124,179,66,.35);
+	}
+	/* active 微微跳動 */
+	.nav-links a.active{animation:navActive 3s ease-in-out infinite;}
+	@keyframes navActive{
+		0%,100%{transform:translateY(0);}
+		50%{transform:translateY(-3px);}
+	}
+	.nav-cta{
+		background:var(--rice);color:#fff;padding:9px 20px;border-radius:24px;
+		font-size:.88rem;font-weight:700;text-decoration:none;
+		box-shadow:0 3px 0 var(--rice-dark);white-space:nowrap;
+	}
+	.nav-cta:hover{transform:translateY(1px);box-shadow:0 2px 0 var(--rice-dark);}
+
+	.soil-strip{
     height:14px;
     background:repeating-linear-gradient(90deg, #8B5E3C 0 26px, #5B4028 26px 30px);
   }
