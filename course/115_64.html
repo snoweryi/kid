@@ -297,13 +297,150 @@
     transition:border-color .2s, color .2s;
   }
   .logo-mark{font-size:1.5rem;}
-  .nav-links{display:flex;gap:22px;font-size:.92rem;font-weight:700;flex-wrap:wrap;}
-  .nav-links a{
-    text-decoration:none;color:var(--soil);
-    padding-bottom:3px;border-bottom:2px solid transparent;
-    transition:border-color .2s, color .2s;
-  }
-  .nav-links a:hover{border-color:var(--turmeric);color:var(--rice-dark);}
+  .nav-links{
+    display:flex;
+    gap:22px;
+    font-size:.92rem;
+    font-weight:700;
+    flex-wrap:wrap;
+}
+
+
+.nav-links a{
+
+    position:relative;
+
+    text-decoration:none;
+
+    color:var(--soil);
+
+    padding:8px 4px;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+
+/* 原本 hover */
+.nav-links a:hover{
+
+    color:var(--rice-dark);
+
+    transform:
+    translateY(-2px);
+
+}
+
+
+
+/* 底部自然草線 */
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:0;
+
+    width:0;
+
+    height:3px;
+
+
+    background:
+
+    linear-gradient(
+        90deg,
+        var(--turmeric),
+        #8bc34a
+    );
+
+
+    border-radius:10px;
+
+
+    transform:
+    translateX(-50%);
+
+
+    transition:
+    width .35s ease;
+
+}
+
+
+
+.nav-links a:hover::after{
+
+    width:80%;
+
+}
+
+
+
+/* active 狀態 */
+.nav-links a.active{
+
+    color:var(--rice-dark);
+
+}
+
+
+
+/* active 底線 */
+.nav-links a.active::after{
+
+    width:100%;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #f4b400,
+        #7cb342
+    );
+
+
+    box-shadow:
+
+    0 3px 8px rgba(124,179,66,.35);
+
+}
+
+
+
+/* active 微微跳動 */
+.nav-links a.active{
+
+    animation:
+    navActive 3s ease-in-out infinite;
+
+}
+
+
+@keyframes navActive{
+
+
+    0%,100%{
+
+        transform:
+        translateY(0);
+
+    }
+
+
+    50%{
+
+        transform:
+        translateY(-3px);
+
+    }
+
+}
   .nav-cta{
     background:var(--rice);color:#fff;padding:9px 20px;border-radius:24px;
     font-size:.88rem;font-weight:700;text-decoration:none;
