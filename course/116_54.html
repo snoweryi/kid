@@ -3,42 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>蚯蚓超人來了！富林農場土地大冒險｜食農教育課程</title>
+<title>善的循環大冒險：我是富林小小永續農夫｜富林有機農場食農教育課程</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-
 <style>
 :root{
-  --sky-top:#6EC3E8;
+  
+  --sun:#FFD966; --sun-glow:#FFF3B0;
+  --grass-dark:#3F9142; --grass:#5BB55B; --grass-light:#9BDD8F;
+  --soil:#8B5E3C; --soil-dark:#5C3D22; --soil-light:#C79A67;
+  --rice:#E8B23D;
+  --water:#5EC9E6;
+  --pink:#FF8FAB; --purple:#B084CC; --orange:#FFA552; --red:#FF6B6B;
+  --text-dark:#3A3226; --text-soft:#6B5F4F;
+  --card-bg:#FFFDF7; --card-bg2:#FFF7E6; --line:#E8DEC8;
+  --radius:22px; --shadow:0 8px 24px rgba(90,60,20,0.14);
+  --font-main:"PingFang TC","Microsoft JhengHei","Heiti TC","Noto Sans TC",sans-serif;
+	
+	--sky-top:#6EC3E8;
   --sky-mid:#9FDCEF;
   --sky-bottom:#DFF6FF;
-  --sun:#FFD966;
-  --sun-glow:#FFF3B0;
-  --grass-dark:#3F9142;
-  --grass:#5BB55B;
-  --grass-light:#8FD48A;
-  --soil:#8B5E3C;
-  --soil-dark:#5C3D22;
-  --soil-light:#B98356;
-  --water:#5EC9E6;
-  --flower-pink:#FF8FAB;
-  --flower-purple:#B084CC;
-  --flower-orange:#FFA552;
-  --accent-red:#FF6B6B;
-  --text-dark:#3A3226;
-  --text-soft:#6B5F4F;
-  --card-bg:#FFFDF7;
-  --card-bg2:#FFF7E6;
-  --line:#E8DEC8;
-  --radius:22px;
-  --shadow:0 8px 24px rgba(90,60,20,0.14);
-  --font-main:"PingFang TC","Microsoft JhengHei","Heiti TC","Noto Sans TC",sans-serif;
-
---sun-main:#ffd95a;
+	--sun-main:#ffd95a;
     --sun-light:#fff8d5;
     --sun-orange:#ffad2f;
     --sun-glow:rgba(255,220,90,.55);
+	--flower-orange:#fa7902;
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -46,21 +36,28 @@ body{
   margin:0;
   font-family:var(--font-main);
   color:var(--text-dark);
-  background:var(--sky-bottom);
+  background:
+	linear-gradient(
+	to bottom,
+	#8ed8ff 0%,
+	#c9f2ff 45%,
+	#8ed35f 70%,
+	#4e9b39 100%
+	);
+
+
   overflow-x:hidden;
 }
-h1,h2,h3,.display{
+h1,h2,h3,h4,.display{
     font-family:"ZCOOL KuaiLe","Noto Sans TC",sans-serif;
     font-weight:400;
     color:var(--soil-dark);
   }
 p{line-height:1.9; margin:0 0 1em;}
-a{color:inherit;}
-img{max-width:100%;}
-button{font-family:inherit; cursor:pointer;}
 .wrap{max-width:1900px; margin:0 auto; padding:0 20px;}
+button{font-family:inherit; cursor:pointer;}
 
-/* ---------- NAV ---------- */
+/* NAV */
 #topnav{
   position:sticky; top:0; z-index:500;
   background:rgba(255,253,247,0.96);
@@ -68,23 +65,22 @@ button{font-family:inherit; cursor:pointer;}
   box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 #topnav .navrow{
-  display:flex; gap:6px; overflow-x:auto; padding:10px 14px;
+  display:flex; gap:4px; overflow-x:auto; padding:4px;
   scrollbar-width:thin;
 }
 #topnav .navrow::-webkit-scrollbar{height:6px;}
 #topnav .navrow::-webkit-scrollbar-thumb{background:var(--grass-light); border-radius:6px;}
 #topnav a{
-    flex:0 0 auto;
-  font-size:15px; font-weight:700;
+  flex:0 0 auto;
+  font-size:14px; font-weight:700;
   background:var(--card-bg2);
   border:2px solid var(--line);
-  padding:10px; border-radius:999px;
+  padding:6px; border-radius:999px;
   text-decoration:none; white-space:nowrap;
   transition:transform .15s, background .15s;
+  color:#007286;
 }
 #topnav a:hover{background:var(--flower-orange); color:#fff; transform:translateY(-2px);}
-
-/* ---------- HERO ---------- */
 #hero{
   position:relative;
   min-height:100vh;
@@ -93,6 +89,7 @@ button{font-family:inherit; cursor:pointer;}
   display:flex; align-items:center; justify-content:center;
   text-align:center;
 }
+/* HERO */
 /* 太陽主體 */
 .sun{
     position:absolute;
@@ -204,34 +201,27 @@ button{font-family:inherit; cursor:pointer;}
   50%{box-shadow:0 0 80px 42px var(--sun-glow);}
 }
 /*太陽*/
-.cloud{position:absolute; background:#fff; border-radius:50px; opacity:.92; filter:drop-shadow(0 6px 4px rgba(0,0,0,0.05));}
-.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%;}
-.cloud1{width:120px;height:40px;top:10%;left:-140px;animation:drift 38s linear infinite;}
-.cloud1:before{width:60px;height:60px;top:-25px;left:15px;}
-.cloud1:after{width:45px;height:45px;top:-15px;left:60px;}
-.cloud2{width:90px;height:32px;top:22%;left:-140px;animation:drift 50s linear infinite 6s;}
-.cloud2:before{width:45px;height:45px;top:-20px;left:10px;}
-.cloud2:after{width:35px;height:35px;top:-12px;left:45px;}
-.cloud3{width:150px;height:46px;top:6%;left:-200px;animation:drift 60s linear infinite 15s;}
-.cloud3:before{width:70px;height:70px;top:-30px;left:25px;}
-.cloud3:after{width:50px;height:50px;top:-18px;left:80px;}
-@keyframes drift{ from{transform:translateX(0);} to{transform:translateX(140vw);} }
 
-.bird{position:absolute; font-size:22px; animation:fly 16s linear infinite;}
-.bird2{animation-duration:22s; animation-delay:4s; font-size:16px;}
-@keyframes fly{
-  0%{transform:translate(-10vw,0) scaleX(1);}
-  49%{transform:translate(60vw,-30px) scaleX(1);}
-  50%{transform:translate(60vw,-30px) scaleX(-1);}
-  100%{transform:translate(-10vw,10px) scaleX(-1);}
-}
+.cloud{position:absolute; background:#fff; border-radius:50px; opacity:.92;}
+.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%;}
+.cloud1{width:120px;height:40px;top:8%;left:-140px;animation:drift 40s linear infinite;}
+.cloud1:before{width:60px;height:60px;top:-25px;left:15px;} .cloud1:after{width:45px;height:45px;top:-15px;left:60px;}
+.cloud2{width:90px;height:32px;top:20%;left:-140px;animation:drift 52s linear infinite 7s;}
+.cloud2:before{width:45px;height:45px;top:-20px;left:10px;} .cloud2:after{width:35px;height:35px;top:-12px;left:45px;}
+@keyframes drift{from{transform:translateX(0);}to{transform:translateX(140vw);}}
+.bird{position:absolute; font-size:20px; animation:fly 18s linear infinite;}
+@keyframes fly{0%{transform:translate(-10vw,0) scaleX(1);}49%{transform:translate(60vw,-30px) scaleX(1);}50%{transform:translate(60vw,-30px) scaleX(-1);}100%{transform:translate(-10vw,10px) scaleX(-1);}}
 .butterfly{position:absolute; font-size:20px; animation:flutter 9s ease-in-out infinite;}
-@keyframes flutter{
-  0%,100%{transform:translate(0,0) rotate(0deg);}
-  25%{transform:translate(20px,-18px) rotate(10deg);}
-  50%{transform:translate(-10px,-30px) rotate(-8deg);}
-  75%{transform:translate(15px,-10px) rotate(6deg);}
-}
+@keyframes flutter{0%,100%{transform:translate(0,0) rotate(0);}25%{transform:translate(20px,-18px) rotate(10deg);}50%{transform:translate(-10px,-30px) rotate(-8deg);}75%{transform:translate(15px,-10px) rotate(6deg);}}
+.rainbow-arc{position:absolute; top:6%; left:50%; transform:translateX(-50%); width:520px; max-width:90vw; opacity:0; animation:rainbowIn 2s ease 1.2s forwards;}
+@keyframes rainbowIn{to{opacity:.85;}}
+.grassline{position:absolute; left:0; right:0; bottom:0; height:120px; background:linear-gradient(to top, var(--grass-dark), var(--grass)); clip-path:polygon(0% 40%,3% 20%,6% 45%,9% 15%,12% 40%,15% 10%,18% 42%,21% 18%,24% 44%,27% 12%,30% 40%,33% 20%,36% 46%,39% 15%,42% 40%,45% 10%,48% 42%,51% 18%,54% 44%,57% 12%,60% 40%,63% 20%,66% 46%,69% 15%,72% 40%,75% 10%,78% 42%,81% 18%,84% 44%,87% 12%,90% 40%,93% 20%,96% 46%,100% 15%,100% 100%,0% 100%); animation:sway 3.5s ease-in-out infinite;}
+@keyframes sway{0%,100%{transform:skewX(0);}50%{transform:skewX(1.4deg);}}
+.flower{position:absolute; bottom:14px; font-size:24px; animation:bloom 2.4s ease-out forwards;}
+@keyframes bloom{0%{transform:scale(0) rotate(-30deg); opacity:0;}70%{transform:scale(1.15) rotate(4deg); opacity:1;}100%{transform:scale(1) rotate(0);}}
+.rice-ear{position:absolute; bottom:30px; font-size:22px; animation:riceSway 2.6s ease-in-out infinite;}
+@keyframes riceSway{0%,100%{transform:rotate(-6deg);}50%{transform:rotate(6deg);}}
+
 
 .hero-inner{position:relative; z-index:5; padding:120px 20px 40px;}
 .hero-badge{
@@ -240,275 +230,183 @@ button{font-family:inherit; cursor:pointer;}
   border:2px dashed var(--grass);
 }
 #hero h1{
-  font-size:clamp(38px,6vw,60px);
+	font-size:clamp(38px,6vw,64px);
+    margin:0 0 14px;
+    line-height:1.25; 
   color:#fff;
   text-shadow:0 4px 0 rgba(60,120,50,0.4), 0 2px 20px rgba(0,0,0,0.15);
   letter-spacing:2px;
 }
-#hero .sub{
-  font-size:clamp(15px,2.4vw,20px);
-  color:#22452a; background:rgba(255,255,255,0.55); display:inline-block;
-  padding:10px 22px; border-radius:20px; font-weight:700; margin-top:10px;
-}
-.hero-meta{
-  margin-top:26px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
-}
-.hero-meta span{
-  background:#fff; border-radius:16px; padding:10px 18px; font-weight:700; font-size:14px;
-  box-shadow:var(--shadow);
-}
-.scrolldown{
-  margin-top:34px; font-size:14px; color:#fff; font-weight:700; opacity:.9;
-  animation:bob 1.6s ease-in-out infinite;
-}
+
+#hero .sub{font-size:clamp(14px,2.2vw,19px); color:#22452a; background:rgba(255,255,255,0.6); display:inline-block; padding:10px 22px; border-radius:20px; font-weight:700; margin-top:10px;}
+.hero-meta{margin-top:22px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+.hero-meta span{background:#fff; border-radius:16px; padding:9px 16px; font-weight:700; font-size:13.5px; box-shadow:var(--shadow);}
+.life-row{margin-top:26px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
+.life-chip{background:rgba(255,255,255,0.9); border-radius:14px; padding:10px 14px; font-size:12.5px; font-weight:700; color:var(--grass-dark); box-shadow:var(--shadow); min-width:120px;}
+.life-chip b{display:block; font-size:20px; color:var(--orange);}
+.scrolldown{margin-top:28px; font-size:14px; color:#fff; font-weight:700; opacity:.9; animation:bob 1.6s ease-in-out infinite;}
 @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
 
-/* grass along hero bottom */
-.grassline{
-  position:absolute; left:0; right:0; bottom:0; height:120px;
-  background:linear-gradient(to top, var(--grass-dark), var(--grass));
-  clip-path:polygon(0% 40%, 3% 20%, 6% 45%, 9% 15%, 12% 40%, 15% 10%, 18% 42%, 21% 18%, 24% 44%, 27% 12%, 30% 40%, 33% 20%, 36% 46%, 39% 15%, 42% 40%, 45% 10%, 48% 42%, 51% 18%, 54% 44%, 57% 12%, 60% 40%, 63% 20%, 66% 46%, 69% 15%, 72% 40%, 75% 10%, 78% 42%, 81% 18%, 84% 44%, 87% 12%, 90% 40%, 93% 20%, 96% 46%, 100% 15%, 100% 100%, 0% 100%);
-  transform-origin:bottom center;
-  animation:sway 3.5s ease-in-out infinite;
-}
-@keyframes sway{0%,100%{transform:skewX(0deg);}50%{transform:skewX(1.4deg);}}
-.flower{position:absolute; bottom:14px; font-size:26px; animation:bloom 2.4s ease-out forwards;}
-@keyframes bloom{0%{transform:scale(0) rotate(-30deg);opacity:0;}70%{transform:scale(1.15) rotate(4deg);opacity:1;}100%{transform:scale(1) rotate(0);}}
+/* CYCLE WHEEL (signature element) */
+.wheel-wrap{display:flex; justify-content:center; margin:20px auto 10px;}
+.cycle-label{text-anchor:middle; font-size:13px; font-weight:800; fill:var(--text-dark);}
+.cycle-node{transition:filter .4s, opacity .4s;}
+.cycle-node.dim{opacity:.35; filter:grayscale(60%);}
+.cycle-node.lit{opacity:1; filter:none;}
+.cycle-arrow{stroke:var(--grass-dark); stroke-width:3; fill:none; stroke-dasharray:8 6; opacity:.5;}
+.cycle-arrow.lit{opacity:1; stroke:var(--orange);}
 
-/* ---------- SECTION GENERIC ---------- */
-section{padding:64px 0; position:relative;max-width:1900px;}
-.section-title{
-  text-align:center; margin-bottom:8px; font-size:clamp(24px,4vw,36px); color:var(--grass-dark);
-}
-.section-sub{text-align:center; color:var(--text-soft); margin-bottom:40px; font-size:15px;}
+section{padding:60px 0; position:relative;}
+.section-title{text-align:center; margin-bottom:8px; font-size:clamp(23px,4vw,34px); color:var(--grass-dark);}
+.section-sub{text-align:center; color:var(--text-soft); margin-bottom:36px; font-size:14.5px;}
 .band-grass{background:linear-gradient(to bottom, #F2FBEA, #E4F6DA);}
 .band-sky{background:linear-gradient(to bottom, #EAF8FF, #F7FCFF);}
 .band-soil{background:linear-gradient(to bottom, #FCEFE0, #F7E3CB);}
-.emoji-tag{font-size:34px; display:block; margin-bottom:10px;}
+.emoji-tag{font-size:32px; display:block; margin-bottom:10px;}
 
-/* card grid */
-.grid{display:grid; gap:20px;}
+.grid{display:grid; gap:18px;}
 .grid-3{grid-template-columns:repeat(3,1fr);}
 .grid-2{grid-template-columns:repeat(2,1fr);}
-@media (max-width:800px){.grid-3{grid-template-columns:repeat(2,1fr);} }
-@media (max-width:560px){.grid-3,.grid-2{grid-template-columns:1fr;} }
-
-.card{
-  background:var(--card-bg); border-radius:var(--radius); padding:22px;
-  box-shadow:var(--shadow); border:2px solid #fff;
-  transition:transform .25s;
-}
+@media (max-width:800px){.grid-3{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.grid-3,.grid-2{grid-template-columns:1fr;}}
+.card{background:var(--card-bg); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); border:2px solid #fff; transition:transform .25s;}
 .card:hover{transform:translateY(-6px) rotate(-.4deg);}
+.card h4{color:var(--grass-dark); font-size:16.5px;}
+.card p{font-size:13.8px; color:var(--text-soft);}
 
-/* Objectives */
-.goal-card{text-align:center;}
-.goal-card h4{color:var(--grass-dark); font-size:17px;}
-.goal-card p{font-size:14px; color:var(--text-soft);}
+/* story box */
+.story-box{background:linear-gradient(160deg,#FFF7E6,#FFFDF7); border:3px dashed var(--orange); border-radius:26px; padding:28px 26px; max-width:820px; margin:0 auto; box-shadow:var(--shadow); position:relative;}
+.story-box:before{content:"📖 故事時間"; position:absolute; top:-18px; left:24px; background:var(--orange); color:#fff; padding:6px 16px; border-radius:999px; font-weight:800; font-size:13px;}
+.story-box p{font-size:15px; white-space:pre-line;}
 
-/* Timeline */
-.timeline{
-  position:relative; margin:0 auto; max-width:1900px; padding-left:6px;
-}
-.timeline:before{
-  content:""; position:absolute; left:44px; top:0; bottom:0; width:6px;
-  background:repeating-linear-gradient(to bottom, var(--grass) 0 14px, transparent 14px 24px);
-  border-radius:6px;
-}
-.tl-item{position:relative; padding:0 0 34px 90px; }
-.tl-dot{
-  position:absolute; left:24px; top:2px; width:46px; height:46px; border-radius:50%;
-  background:var(--sun); display:flex; align-items:center; justify-content:center;
-  font-size:20px; box-shadow:0 0 0 6px #fff, var(--shadow);
-}
-.tl-time{font-weight:800; color:var(--flower-orange); font-size:13px;}
-.tl-card{background:var(--card-bg); border-radius:16px; padding:14px 18px; box-shadow:var(--shadow); margin-top:4px;}
-.tl-card h4{margin:0 0 4px; font-size:16px; color:var(--grass-dark);}
-.tl-card p{margin:0; font-size:13.5px; color:var(--text-soft);}
+/* timeline (reuse) */
+.timeline{position:relative; margin:0 auto; max-width:900px;}
+.timeline:before{content:""; position:absolute; left:44px; top:0; bottom:0; width:6px; background:repeating-linear-gradient(to bottom, var(--grass) 0 14px, transparent 14px 24px); border-radius:6px;}
+.tl-item{position:relative; padding:0 0 30px 90px;}
+.tl-dot{position:absolute; left:24px; top:2px; width:46px; height:46px; border-radius:50%; background:var(--sun); display:flex; align-items:center; justify-content:center; font-size:19px; box-shadow:0 0 0 6px #fff, var(--shadow);}
+.tl-time{font-weight:800; color:var(--orange); font-size:12.5px;}
+.tl-card{background:var(--card-bg); border-radius:16px; padding:13px 17px; box-shadow:var(--shadow); margin-top:4px;}
+.tl-card h4{margin:0 0 4px; font-size:15.5px; color:var(--grass-dark);}
+.tl-card p{margin:0; font-size:13px; color:var(--text-soft);}
 
-/* Unit cards with expandable script */
-.unit{
-  background:var(--card-bg); border-radius:var(--radius); box-shadow:var(--shadow);
-  margin-bottom:22px; overflow:hidden; border:2px solid #fff;
-}
-.unit-head{
-  display:flex; align-items:center; gap:14px; padding:18px 22px; cursor:pointer;
-  background:linear-gradient(90deg, var(--card-bg2), #fff);
-}
-.unit-head .num{
-  width:40px; height:40px; border-radius:50%; background:var(--grass); color:#fff;
-  display:flex; align-items:center; justify-content:center; font-weight:800; flex:0 0 auto;
-}
-.unit-head h3{margin:0; font-size:18px; color:var(--text-dark);}
+/* station units */
+.unit{background:var(--card-bg); border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:20px; overflow:hidden; border:2px solid #fff;}
+.unit-head{display:flex; align-items:center; gap:14px; padding:17px 22px; cursor:pointer; background:linear-gradient(90deg, var(--card-bg2), #fff);}
+.unit-head .num{width:42px; height:42px; border-radius:50%; background:var(--grass); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; flex:0 0 auto; font-size:18px;}
+.unit-head h3{margin:0; font-size:17.5px;}
+.unit-head .sub-station{display:block; font-size:12px; font-weight:400; color:var(--text-soft);}
 .unit-head .arrow{margin-left:auto; transition:transform .3s; font-size:18px; color:var(--grass-dark);}
 .unit.open .arrow{transform:rotate(180deg);}
 .unit-body{max-height:0; overflow:hidden; transition:max-height .45s ease;}
 .unit-body-inner{padding:4px 24px 26px;}
-.unit-body-inner h5{margin:16px 0 6px; color:var(--flower-purple); font-size:14.5px;}
-.script-box{
-  background:#FFF7E6; border-left:5px solid var(--sun); border-radius:10px;
-  padding:14px 16px; font-size:14.5px; color:#5c4a2a; white-space:pre-line; line-height:1.85;
-}
+.unit-body-inner h5{margin:16px 0 6px; color:var(--purple); font-size:14px;}
+.script-box{background:#FFF7E6; border-left:5px solid var(--sun); border-radius:10px; padding:14px 16px; font-size:14px; color:#5c4a2a; white-space:pre-line; line-height:1.85;}
+.mat{font-size:12.8px; color:var(--text-soft); background:#F4F1E4; border-radius:8px; padding:8px 10px; margin-top:8px;}
 
-/* Q&A */
-.qa-list{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+/* qa */
+.qa-list{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
 @media (max-width:700px){.qa-list{grid-template-columns:1fr;}}
-.qa-item{
-  background:var(--card-bg); border-radius:14px; padding:14px 16px; box-shadow:var(--shadow);
-  border:2px solid #fff; font-size:14px; cursor:pointer; position:relative;
-}
-.qa-item .qnum{color:#fff; background:var(--flower-pink); border-radius:50%; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; font-size:12px; margin-right:8px;}
-.qa-item .ans{display:none; margin-top:8px; color:var(--grass-dark); font-weight:700; border-top:1px dashed var(--line); padding-top:8px;}
+.qa-item{background:var(--card-bg); border-radius:14px; padding:13px 15px; box-shadow:var(--shadow); border:2px solid #fff; font-size:13.5px; cursor:pointer; position:relative;}
+.qa-item .qnum{color:#fff; background:var(--pink); border-radius:50%; width:22px; height:22px; display:inline-flex; align-items:center; justify-content:center; font-size:11px; margin-right:7px;}
+.qa-item .ans{display:none; margin-top:8px; color:var(--grass-dark); font-weight:700; border-top:1px dashed var(--line); padding-top:7px;}
 .qa-item.show .ans{display:block;}
-.qa-item .hint{float:right; color:var(--text-soft); font-size:12px;}
+.qa-item .hint{float:right; color:var(--text-soft); font-size:11px;}
+.qa-cat-title{margin:26px 0 12px; color:var(--orange); font-size:16px;}
 
-/* games / groups */
-.tag-count{
-  display:inline-block; background:var(--flower-orange); color:#fff; border-radius:999px;
-  padding:2px 12px; font-size:12px; font-weight:700; margin-bottom:10px;
-}
-.mat{font-size:13px; color:var(--text-soft); background:#F4F1E4; border-radius:8px; padding:8px 10px; margin-top:8px;}
-
-/* DIY steps */
-.diy-block{margin-bottom:34px;}
+/* diy */
+.diy-block{margin-bottom:32px;}
 .step-list{counter-reset:step; list-style:none; padding:0; margin:14px 0 0;}
-.step-list li{
-  counter-increment:step; position:relative; padding:10px 10px 10px 46px; margin-bottom:8px;
-  background:#fff; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.06); font-size:14.5px;
-}
-.step-list li:before{
-  content:counter(step); position:absolute; left:10px; top:8px; width:26px; height:26px; border-radius:50%;
-  background:var(--grass); color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800;
-}
+.step-list li{counter-increment:step; position:relative; padding:10px 10px 10px 46px; margin-bottom:8px; background:#fff; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.06); font-size:14px;}
+.step-list li:before{content:counter(step); position:absolute; left:10px; top:8px; width:26px; height:26px; border-radius:50%; background:var(--grass); color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800;}
 
-/* safety */
-.safety-list{list-style:none; padding:0; display:grid; gap:12px; grid-template-columns:repeat(2,1fr);}
-@media (max-width:700px){.safety-list{grid-template-columns:1fr;}}
-.safety-list li{background:#FFF0EC; border-left:5px solid var(--accent-red); border-radius:10px; padding:12px 14px; font-size:14px;}
+/* safety / faq */
+.faq-list{list-style:none; padding:0; display:grid; gap:12px; grid-template-columns:repeat(2,1fr);}
+@media (max-width:700px){.faq-list{grid-template-columns:1fr;}}
+.faq-list li{background:#FFF0EC; border-left:5px solid var(--red); border-radius:10px; padding:12px 14px; font-size:13.5px;}
+.faq-list li b{color:var(--grass-dark); display:block; margin-bottom:4px;}
+.tip-list{list-style:none; padding:0; display:grid; gap:12px;}
+.tip-list li{background:#EAF6FF; border-left:5px solid var(--water); border-radius:10px; padding:12px 14px; font-size:13.5px;}
 
 /* SDGs */
-.sdg-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:14px;}
+.sdg-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:12px;}
 @media (max-width:800px){.sdg-grid{grid-template-columns:repeat(3,1fr);}}
 @media (max-width:480px){.sdg-grid{grid-template-columns:repeat(2,1fr);}}
-.sdg-item{
-  border-radius:16px; padding:16px 10px; text-align:center; color:#fff; font-weight:700; font-size:13px;
-  box-shadow:var(--shadow);
-}
-.sdg-item .n{font-size:26px; display:block;}
+.sdg-item{border-radius:16px; padding:14px 8px; text-align:center; color:#fff; font-weight:700; font-size:12.5px; box-shadow:var(--shadow);}
+.sdg-item .n{font-size:24px; display:block;}
 .sdg2{background:#E5243B;} .sdg3{background:#4C9F38;} .sdg4{background:#C5192D;}
 .sdg12{background:#BF8B2E;} .sdg13{background:#3F7E44;} .sdg15{background:#56C02B;}
 
-/* compare table */
-.compare-wrap{overflow-x:auto;}
-table.compare{width:100%; border-collapse:separate; border-spacing:0 8px; min-width:640px;}
-table.compare th{background:transparent; padding:6px 12px; font-size:14px; color:var(--text-soft); text-align:left;}
-table.compare td{background:#fff; padding:12px 14px; font-size:14px; box-shadow:0 3px 8px rgba(0,0,0,0.05);}
-table.compare td:first-child{border-radius:12px 0 0 12px; font-weight:800; color:var(--grass-dark); background:var(--card-bg2);}
-table.compare td:last-child{border-radius:0 12px 12px 0;}
-.col-soil{color:var(--soil-dark); font-weight:700;}
-.col-water{color:#1B7FA0; font-weight:700;}
-
-/* flip cards for science */
-.flip-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+/* flip science */
+.flip-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
 @media (max-width:900px){.flip-grid{grid-template-columns:repeat(2,1fr);}}
 @media (max-width:480px){.flip-grid{grid-template-columns:1fr;}}
-.flip-card{ perspective:1000px; height:190px; }
-.flip-inner{ position:relative; width:100%; height:100%; transition:transform .6s; transform-style:preserve-3d; cursor:pointer;}
+.flip-card{perspective:1000px; height:180px;}
+.flip-inner{position:relative; width:100%; height:100%; transition:transform .6s; transform-style:preserve-3d; cursor:pointer;}
 .flip-card.flipped .flip-inner{transform:rotateY(180deg);}
-.flip-front,.flip-back{
-  position:absolute; inset:0; backface-visibility:hidden; border-radius:18px; padding:16px;
-  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
-  box-shadow:var(--shadow);
-}
+.flip-front,.flip-back{position:absolute; inset:0; backface-visibility:hidden; border-radius:18px; padding:14px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-shadow:var(--shadow);}
 .flip-front{background:linear-gradient(160deg, var(--grass-light), var(--grass)); color:#fff;}
-.flip-back{background:#fff; transform:rotateY(180deg); font-size:13px; color:var(--text-dark); overflow:auto;}
-.flip-front .icon{font-size:34px;}
+.flip-back{background:#fff; transform:rotateY(180deg); font-size:12.5px; color:var(--text-dark); overflow:auto;}
+.flip-front .icon{font-size:32px;}
+
+/* mini scenes */
+.scene{position:relative; height:130px; background:linear-gradient(to bottom, #DFF3FF 0%, #DFF3FF 55%, var(--soil-light) 55%, var(--soil-dark) 100%); border-radius:18px; overflow:hidden; margin-top:14px;}
+.scene .raindrop{position:absolute; top:-10px; width:3px; height:14px; background:var(--water); border-radius:2px; animation:rainfall 1.2s linear infinite;}
+@keyframes rainfall{to{transform:translateY(140px); opacity:.2;}}
+.scene .seedling{position:absolute; bottom:36%; left:50%; transform:translateX(-50%); font-size:26px; animation:seedgrow 3s ease-in-out infinite alternate;}
+@keyframes seedgrow{0%{transform:translateX(-50%) scale(.7);}100%{transform:translateX(-50%) scale(1.15);}}
+.scene .bug{position:absolute; bottom:40%; font-size:18px; animation:bugmove 4s linear infinite;}
+@keyframes bugmove{0%{left:-10%;}50%{left:60%;}100%{left:120%;}}
+.scene .ladybug{position:absolute; bottom:42%; font-size:20px; animation:ladymove 4s linear infinite; animation-delay:.6s;}
+@keyframes ladymove{0%{left:-20%;}50%{left:65%;}100%{left:130%;}}
+.scene .tomato{position:absolute; bottom:38%; font-size:22px; animation:harvestbounce 1.6s ease-in-out infinite;}
+@keyframes harvestbounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px) rotate(8deg);}}
+.scene .steam{position:absolute; bottom:50%; font-size:16px; opacity:.7; animation:steamrise 2.2s ease-in-out infinite;}
+@keyframes steamrise{0%{transform:translateY(0) scale(1); opacity:.7;}100%{transform:translateY(-24px) scale(1.3); opacity:0;}}
+.scene .peel{position:absolute; top:-14px; font-size:20px; animation:peeldrop 2.4s ease-in infinite;}
+@keyframes peeldrop{0%{top:-14px; opacity:1;}80%{opacity:1;}100%{top:70%; opacity:0;}}
+.scene .worm2{position:absolute; bottom:6%; font-size:20px; animation:wormwiggle 1.4s ease-in-out infinite;}
+@keyframes wormwiggle{0%,100%{transform:rotate(-8deg);}50%{transform:rotate(8deg);}}
+.scene .sparkle-up{position:absolute; bottom:10%; font-size:16px; animation:sparkleup 2s ease-in infinite;}
+@keyframes sparkleup{0%{transform:translateY(0); opacity:0;}30%{opacity:1;}100%{transform:translateY(-70px); opacity:0;}}
 
 /* quest */
-.stage-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-bottom:30px;}
+.stage-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:26px;}
 @media (max-width:900px){.stage-grid{grid-template-columns:repeat(3,1fr);}}
 @media (max-width:560px){.stage-grid{grid-template-columns:repeat(2,1fr);}}
-.stage-btn{
-  background:#fff; border:3px solid var(--line); border-radius:18px; padding:14px 8px; text-align:center;
-  font-weight:800; font-size:13px; color:var(--text-soft); transition:.2s;
-}
-.stage-btn.active{border-color:var(--flower-orange); box-shadow:var(--shadow);}
+.stage-btn{background:#fff; border:3px solid var(--line); border-radius:18px; padding:12px 6px; text-align:center; font-weight:800; font-size:12.5px; color:var(--text-soft); transition:.2s;}
+.stage-btn.active{border-color:var(--orange); box-shadow:var(--shadow);}
 .stage-btn.done{background:var(--grass); color:#fff; border-color:var(--grass-dark);}
-.stage-btn .ic{display:block; font-size:26px; margin-bottom:4px;}
-
-.quest-panel{background:var(--card-bg); border-radius:var(--radius); box-shadow:var(--shadow); padding:26px; max-width:1700px; margin:0 auto;}
-.opt-btn{
-  display:block; width:100%; text-align:left; background:#fff; border:2px solid var(--line); border-radius:12px;
-  padding:12px 16px; margin-bottom:10px; font-size:14.5px; transition:.15s;
-}
-.opt-btn:hover{border-color:var(--flower-orange);}
+.stage-btn .ic{display:block; font-size:24px; margin-bottom:4px;}
+.quest-panel{background:var(--card-bg); border-radius:var(--radius); box-shadow:var(--shadow); padding:24px; max-width:700px; margin:0 auto;}
+.opt-btn{display:block; width:100%; text-align:left; background:#fff; border:2px solid var(--line); border-radius:12px; padding:11px 15px; margin-bottom:9px; font-size:14px; transition:.15s;}
+.opt-btn:hover{border-color:var(--orange);}
 .opt-btn.correct{background:var(--grass-light); border-color:var(--grass-dark); color:#22452a; font-weight:800;}
-.opt-btn.wrong{background:#FFDADA; border-color:var(--accent-red);}
-.feedback{margin-top:10px; font-weight:800; min-height:24px;}
+.opt-btn.wrong{background:#FFDADA; border-color:var(--red);}
+.feedback{margin-top:10px; font-weight:800; min-height:22px; font-size:14px;}
 
 /* certificate */
 #certificate-area{text-align:center;}
-.cert{
-  max-width:1900px; margin:0 auto; background:#FFFDF3; border:10px solid var(--sun);
-  border-radius:26px; padding:44px 30px; position:relative; box-shadow:var(--shadow);
-  background-image:radial-gradient(circle at 10% 10%, rgba(255,215,102,0.25), transparent 40%),
-                    radial-gradient(circle at 90% 90%, rgba(143,212,138,0.3), transparent 40%);
-}
-.cert h2{color:var(--flower-orange); font-size:26px; letter-spacing:4px;}
-.cert .name-line{font-size:26px; font-weight:800; color:var(--grass-dark); margin:18px 0; border-bottom:3px dotted var(--grass); display:inline-block; padding:0 20px 6px;}
-.cert input{
-  font-size:22px; text-align:center; border:none; border-bottom:3px dotted var(--grass); background:transparent;
-  font-weight:800; color:var(--grass-dark); padding:4px 10px; width:260px; font-family:inherit;
-}
-.cert .stamp{font-size:46px; margin-top:10px;}
-.cert .date{margin-top:14px; font-size:13px; color:var(--text-soft);}
-.btn-main{
-  background:var(--flower-orange); color:#fff; border:none; padding:12px 26px; border-radius:999px;
-  font-weight:800; font-size:15px; box-shadow:var(--shadow); margin:8px;
-}
+.cert{max-width:680px; margin:0 auto; background:#FFFDF3; border:10px solid var(--sun); border-radius:26px; padding:40px 28px; position:relative; box-shadow:var(--shadow);
+  background-image:radial-gradient(circle at 10% 10%, rgba(255,215,102,0.25), transparent 40%), radial-gradient(circle at 90% 90%, rgba(155,221,143,0.3), transparent 40%);}
+.cert h2{color:var(--orange); font-size:24px; letter-spacing:3px;}
+.cert .name-line{font-size:24px; font-weight:800; color:var(--grass-dark); margin:16px 0; border-bottom:3px dotted var(--grass); display:inline-block; padding:0 18px 6px;}
+.cert input{font-size:20px; text-align:center; border:none; border-bottom:3px dotted var(--grass); background:transparent; font-weight:800; color:var(--grass-dark); padding:4px 10px; width:240px; font-family:inherit;}
+.cert .stamp{font-size:42px; margin-top:8px;}
+.cert .date{margin-top:12px; font-size:12.5px; color:var(--text-soft);}
+.btn-main{background:var(--orange); color:#fff; border:none; padding:12px 24px; border-radius:999px; font-weight:800; font-size:14.5px; box-shadow:var(--shadow); margin:8px;}
 .btn-main:hover{filter:brightness(1.08);}
 .btn-ghost{background:#fff; color:var(--grass-dark); border:2px solid var(--grass);}
 
-/* rainbow celebration */
-.rainbow{
-  position:fixed; inset:0; pointer-events:none; z-index:900; display:none;
-  background:conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red);
-  opacity:.16; animation:spin 6s linear infinite;
-}
+.rainbow{position:fixed; inset:0; pointer-events:none; z-index:900; display:none; background:conic-gradient(from 0deg, red, orange, yellow, green, blue, indigo, violet, red); opacity:.16; animation:spin 6s linear infinite;}
 @keyframes spin{from{transform:rotate(0);}to{transform:rotate(360deg);}}
+.confetti-piece{position:fixed; top:-20px; width:10px; height:16px; z-index:950; pointer-events:none; animation:fall linear forwards;}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg); opacity:.2;}}
+.star-burst{position:fixed; z-index:960; pointer-events:none; font-size:26px; animation:pop 1s ease-out forwards;}
+@keyframes pop{0%{transform:translateY(0) scale(0); opacity:1;}60%{transform:translateY(-50px) scale(1.3); opacity:1;}100%{transform:translateY(-90px) scale(1); opacity:0;}}
 
-.confetti-piece{
-  position:fixed; top:-20px; width:10px; height:16px; z-index:950; pointer-events:none;
-  animation:fall linear forwards;
-}
-@keyframes fall{
-  to{ transform:translateY(110vh) rotate(540deg); opacity:.2; }
-}
-
-.star-burst{
-  position:fixed; z-index:960; pointer-events:none; font-size:26px; animation:pop 1s ease-out forwards;
-}
-@keyframes pop{
-  0%{transform:translateY(0) scale(0); opacity:1;}
-  60%{transform:translateY(-50px) scale(1.3); opacity:1;}
-  100%{transform:translateY(-90px) scale(1); opacity:0;}
-}
-
-/* worm / soil / water mini animations used as decorative icons */
-.mini-anim{position:relative; height:70px; margin:10px auto; width:70px;}
-.worm-wiggle{display:inline-block; animation:wiggle 1.4s ease-in-out infinite;}
-@keyframes wiggle{0%,100%{transform:rotate(-8deg);}50%{transform:rotate(8deg);}}
-.drop{display:inline-block; animation:droplet 1.6s ease-in infinite;}
-@keyframes droplet{0%{transform:translateY(-6px);opacity:0;}30%{opacity:1;}100%{transform:translateY(16px);opacity:0;}}
-.sprout{display:inline-block; animation:grow 2.4s ease-in-out infinite alternate;}
-@keyframes grow{0%{transform:scaleY(.7);}100%{transform:scaleY(1.05);}}
-
-footer{background:var(--soil-dark); color:#f5e9d3; text-align:center; padding:34px 20px; font-size:13px;}
+footer{background:var(--soil-dark); color:#f5e9d3; text-align:center; padding:32px 20px; font-size:13px;}
 footer b{color:#fff;}
 
-.toggle-wrap{display:flex; justify-content:center; gap:14px; margin-bottom:22px;}
-.toggle-btn{padding:10px 22px; border-radius:999px; border:2px solid var(--line); background:#fff; font-weight:800;}
-.toggle-btn.active-soil{background:var(--soil); color:#fff; border-color:var(--soil-dark);}
-.toggle-btn.active-water{background:var(--water); color:#fff; border-color:#1B7FA0;}
 
 /* ---------- NAV ---------- */
   nav{
@@ -608,7 +506,7 @@ footer b{color:#fff;}
     height:14px;
     background:repeating-linear-gradient(90deg, #8B5E3C 0 26px, #5B4028 26px 30px);
   }
-
+  
 </style>
 </head>
 <body>
@@ -639,18 +537,20 @@ footer b{color:#fff;}
 <nav id="topnav">
   <div class="navrow">
     <a href="#hero">🏡 首頁</a>
-    <a href="#goals">🎯 課程目標</a>
-    <a href="#timeline">⏰ 時間軸</a>
-    <a href="#units">📖 教學單元</a>
+    <a href="#philosophy">💡 課程理念</a>
+    <a href="#goals">🎯 學習目標</a>
+    <a href="#timeline">⏰ 教學流程</a>
+    <a href="#story">📖 故事導入</a>
+    <a href="#stations">🚉 六大車站</a>
     <a href="#qa">💬 互動問答</a>
-    <a href="#games">🎲 小遊戲</a>
-    <a href="#groups">👨‍👩‍👧‍👦 分組活動</a>
+    <a href="#games">🎲 互動遊戲</a>
+    <a href="#groups">👨‍👩‍👧‍👦 小組活動</a>
     <a href="#diy">🛠️ DIY實作</a>
-    <a href="#science">🔬 科學小教室</a>
-    <a href="#compare">⚖️ 土耕水耕PK</a>
+    <a href="#journey">🍽️ 產地到餐桌</a>
+    <a href="#science">🔬 循環知識</a>
     <a href="#teacher">🧑‍🏫 教師手冊</a>
-    <a href="#quest">🗺️ 闖關遊戲</a>
-    <a href="#certificate">🏅 小小農夫證書</a>
+    <a href="#quest">🗺️ 大闖關</a>
+    <a href="#certificate">🏅 永續農夫證書</a>
   </div>
 </nav>
 
@@ -658,181 +558,183 @@ footer b{color:#fff;}
 <section id="hero">
   <div class="cloud cloud1"></div>
   <div class="cloud cloud2"></div>
-  <div class="cloud cloud3"></div>
   <div class="sun"></div>
-  <div class="bird" style="top:18%;">🐦</div>
-  <div class="bird bird2" style="top:28%;">🐦</div>
-  <div class="butterfly" style="top:60%; left:15%;">🦋</div>
-  <div class="butterfly" style="top:68%; left:75%; animation-delay:2s;">🦋</div>
+  <div class="bird" style="top:16%;">🐦</div>
+  <div class="butterfly" style="top:58%; left:14%;">🦋</div>
+  <div class="butterfly" style="top:66%; left:78%; animation-delay:2s;">🦋</div>
+  
   <div class="grassline">
-    <div class="flower" style="left:8%; animation-delay:.4s;">🌼</div>
-    <div class="flower" style="left:22%; animation-delay:1.1s;">🌸</div>
-    <div class="flower" style="left:38%; animation-delay:.7s;">🌻</div>
-    <div class="flower" style="left:55%; animation-delay:1.4s;">🌷</div>
-    <div class="flower" style="left:70%; animation-delay:.9s;">🌼</div>
-    <div class="flower" style="left:85%; animation-delay:1.6s;">🌸</div>
+    <div class="flower" style="left:6%; animation-delay:.4s;">🌼</div>
+    <div class="flower" style="left:20%; animation-delay:1.1s;">🌸</div>
+    <div class="rice-ear" style="left:35%; animation-delay:.3s;">🌾</div>
+    <div class="flower" style="left:50%; animation-delay:1.4s;">🌷</div>
+    <div class="rice-ear" style="left:64%; animation-delay:.8s;">🌾</div>
+    <div class="flower" style="left:78%; animation-delay:.9s;">🌻</div>
+    <div class="flower" style="left:90%; animation-delay:1.6s;">🌼</div>
   </div>
   <div class="hero-inner">
-    <span class="hero-badge">富林有機農場 × 食農教育出隊課程</span>
-    <h1>蚯蚓超人來了！<br>富林農場土地大冒險</h1>
-    <p class="sub">認識蚯蚓・玩土壤・種水耕・當一天小小農夫</p>
+    <span class="hero-badge">富林有機農場 × LIFE 永續教育課程</span>
+    <h1>善的循環大冒險<br>我是富林小小永續農夫</h1>
+    <p class="sub">一粒種子的旅程・土地與人的約定・善的循環正在發生</p>
     <div class="hero-meta">
       <span>👧🧒 國小 3-6 年級</span>
       <span>⏱️ 90-120 分鐘</span>
-      <span>🌱 動手做・愛地球</span>
+      <span>🌱 生命教育・環境教育・品格教育</span>
     </div>
-    <div class="scrolldown">↓ 往下滑，開始今天的冒險 ↓</div>
+    <div class="life-row">
+      <div class="life-chip"><b>L</b>Life 生命探索</div>
+      <div class="life-chip"><b>I</b>Innovation 智慧創新</div>
+      <div class="life-chip"><b>F</b>Farming 農業實踐</div>
+      <div class="life-chip"><b>E</b>Earth 地球共生</div>
+    </div>
+    <div class="scrolldown">↓ 往下滑，跟著小種子善善一起出發 ↓</div>
   </div>
 </section>
 
-<!-- ================= 課程目標 ================= -->
-<section id="goals" class="band-grass">
+<!-- ================= 課程理念 ================= -->
+<section id="philosophy" class="band-grass">
   <div class="wrap">
-    <h2 class="section-title">🎯 課程目標</h2>
-    <p class="section-sub">今天的冒險，我們要讓每個小朋友都變成……</p>
-    <div class="grid grid-3">
-      <div class="card goal-card"><span class="emoji-tag">🌈</span><h4>喜歡大自然</h4><p>從觀察、觸摸、動手做中，感受戶外世界的美好與驚奇。</p></div>
-      <div class="card goal-card"><span class="emoji-tag worm-wiggle">🪱</span><h4>不再害怕蚯蚓</h4><p>透過近距離接觸與遊戲，理解蚯蚓其實是溫和的好朋友。</p></div>
-      <div class="card goal-card"><span class="emoji-tag">♻️</span><h4>理解蚯蚓的重要性</h4><p>知道蚯蚓如何幫助土壤呼吸、分解廚餘、製造養分。</p></div>
-      <div class="card goal-card"><span class="emoji-tag">🟤</span><h4>認識健康土壤</h4><p>分辨土壤的顏色、觸感與生命力，知道好土從哪裡來。</p></div>
-      <div class="card goal-card"><span class="emoji-tag sprout">🌱</span><h4>認識植物如何生長</h4><p>了解根、水、陽光、養分之間的合作關係。</p></div>
-      <div class="card goal-card"><span class="emoji-tag">⚖️</span><h4>比較土耕與水耕</h4><p>透過實作與觀察，說出兩種種植方式的差異與優缺點。</p></div>
-    </div>
-    <div class="card" style="margin-top:24px; text-align:center;">
-      <h4>🍚 建立珍惜食物與環境保護觀念</h4>
-      <p style="max-width:1900px; margin:0 auto;">從一顆種子到一碗飯，孩子將理解食物得來不易，進而學會感謝土地、珍惜資源、愛護環境。</p>
+    <h2 class="section-title">💡 課程理念</h2>
+    <p class="section-sub">富林有機農場相信：每一份善意，都能形成善的循環</p>
+    <div class="card" style="max-width:820px; margin:0 auto;">
+      <p>富林有機農場長期推動有機農業、食農教育、環境教育、ESG 永續教育、生物多樣性與循環農業。我們相信，孩子從一粒種子開始，就能理解生命、土地、食物與環境之間彼此相依的關係。</p>
+      <p>本課程以富林農場的 <b>LIFE 永續教育精神</b> 為核心：<b>L（Life）</b>生命探索、<b>I（Innovation）</b>智慧創新、<b>F（Farming）</b>農業實踐、<b>E（Earth）</b>地球共生。我們希望每個孩子最後都能理解：</p>
+      <p style="text-align:center; font-weight:800; color:var(--grass-dark); font-size:17px;">「善待土地，就是善待自己；<br>照顧環境，就是照顧未來。」</p>
     </div>
   </div>
 </section>
 
-<!-- ================= 學習重點 ================= -->
-<section class="band-sky">
+<!-- ================= 學習目標（循環輪） ================= -->
+<section id="goals" class="band-sky">
   <div class="wrap">
-    <h2 class="section-title">📌 學習重點</h2>
-    <div class="grid grid-3">
-      <div class="card">
-        <span class="emoji-tag">🧠</span>
-        <h4>知識面</h4>
-        <p>蚯蚓生態與構造、土壤組成、微生物分解作用、養分循環、根與光合作用、水耕原理。</p>
-      </div>
-      <div class="card">
-        <span class="emoji-tag">✋</span>
-        <h4>技能面</h4>
-        <p>製作蚯蚓堆肥箱、辨識土壤種類、調配種植土、土耕與水耕種植操作、觀察記錄。</p>
-      </div>
-      <div class="card">
-        <span class="emoji-tag">💚</span>
-        <h4>態度面</h4>
-        <p>尊重生命、珍惜食物、愛護環境、團隊合作、勇於嘗試不熟悉的事物。</p>
-      </div>
+    <h2 class="section-title">🎯 學習目標：善的循環</h2>
+    <p class="section-sub">請學生理解這個生生不息的循環，這也是今天闖關任務的地圖</p>
+    <div class="wheel-wrap">
+      <svg id="cycleWheel" width="360" height="360" viewBox="0 0 340 340">
+        <path class="cycle-arrow" id="arrowPath" d="M170,60 A122,122 0 1 1 169,60" />
+        <g id="nodeGroup"></g>
+      </svg>
+    </div>
+    <div class="grid grid-3" style="margin-top:10px;">
+      <div class="card"><span class="emoji-tag">🟤</span><h4>① 土地孕育生命</h4><p>健康的土壤是萬物生長的起點，蘊藏著養分與無數小生物。</p></div>
+      <div class="card"><span class="emoji-tag">👩‍🌾</span><h4>② 農夫照顧植物</h4><p>農夫用心育苗、灌溉、施肥、防治蟲害，陪伴植物長大。</p></div>
+      <div class="card"><span class="emoji-tag">🥬</span><h4>③ 植物提供食物</h4><p>植物成熟後，成為我們餐桌上營養美味的食物。</p></div>
+      <div class="card"><span class="emoji-tag">🍽️</span><h4>④ 人珍惜食物</h4><p>我們感恩每一份食物，不浪費、吃多少拿多少。</p></div>
+      <div class="card"><span class="emoji-tag">🍌</span><h4>⑤ 剩餘資源回到土地</h4><p>吃不完的果皮菜葉，經過堆肥與蚯蚓分解，變回養分。</p></div>
+      <div class="card"><span class="emoji-tag">✨</span><h4>⑥ 土地再次孕育生命</h4><p>養分回到土壤，滋養下一顆種子，循環再次展開。</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= 時間軸 ================= -->
+<!-- ================= 教學流程 ================= -->
 <section id="timeline" class="band-grass">
   <div class="wrap">
-    <h2 class="section-title">⏰ 課程流程時間軸</h2>
-    <p class="section-sub">總時長約 120 分鐘，可依學校鐘點拆為兩個 60 分鐘場次（例如：蚯蚓場 + 土水耕場）</p>
+    <h2 class="section-title">⏰ 教學流程時間軸</h2>
+    <p class="section-sub">總時長約 120 分鐘，可拆為兩堂 60 分鐘課程（例如：土地與種植場 + 餐桌與堆肥場）</p>
     <div class="timeline">
-      <div class="tl-item"><div class="tl-dot">📖</div><div class="tl-time">00:00-00:05（5分鐘）</div><div class="tl-card"><h4>故事開場：蚯蚓超人現身</h4><p>用繪本／角色扮演帶入蚯蚓超人角色，引發好奇心與期待感。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">🪱</div><div class="tl-time">00:05-00:20（15分鐘）</div><div class="tl-card"><h4>認識蚯蚓</h4><p>蚯蚓的身體構造、居住環境、喜歡吃的食物，破除恐懼感。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">🧰</div><div class="tl-time">00:20-00:40（20分鐘）</div><div class="tl-card"><h4>DIY 製作蚯蚓桶</h4><p>分組合作，動手鋪報紙、放廚餘、安置蚯蚓。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">🔍</div><div class="tl-time">00:40-00:50（10分鐘）</div><div class="tl-card"><h4>蚯蚓桶安置與觀察任務</h4><p>說明擺放位置、澆水頻率，並發下「蚯蚓觀察日記」任務單。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">🟤</div><div class="tl-time">00:50-01:10（20分鐘）</div><div class="tl-card"><h4>認識土壤家族</h4><p>沙土、黏土、壤土大集合，透過遊戲比較觸感與保水力。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">🌱</div><div class="tl-time">01:10-01:30（20分鐘）</div><div class="tl-card"><h4>製作種植土 ＋ 土耕種植</h4><p>調配專屬種植土配方，親手種下小菜苗。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">💧</div><div class="tl-time">01:30-01:45（15分鐘）</div><div class="tl-card"><h4>水耕小教室 ＋ 水耕種植</h4><p>認識水耕原理，動手組裝保特瓶水耕栽培瓶。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">⚖️</div><div class="tl-time">01:45-01:55（10分鐘）</div><div class="tl-card"><h4>土耕 VS 水耕大車拼</h4><p>透過互動比較與小組發表，統整兩種種植法的差異。</p></div></div>
-      <div class="tl-item"><div class="tl-dot">🏅</div><div class="tl-time">01:55-02:00（5分鐘）</div><div class="tl-card"><h4>闖關總複習 ＋ 頒發證書</h4><p>五關考驗總複習，完成後授予「小小農夫證書」。</p></div></div>
+      <div class="tl-item"><div class="tl-dot">📖</div><div class="tl-time">00:00-00:08（8分鐘）</div><div class="tl-card"><h4>故事導入：小種子善善的心願</h4><p>用故事帶出善的循環主軸與農場吉祥物家族。</p></div></div>
+      <div class="tl-item"><div class="tl-dot">🟤</div><div class="tl-time">00:08-00:20（12分鐘）</div><div class="tl-card"><h4>第一站｜土地車站：認識農業與挑戰</h4><p>認識農業的意義，以及氣候、病蟲害、土壤退化等挑戰。</p></div></div>
+      <div class="tl-item"><div class="tl-dot">👩‍🌾</div><div class="tl-time">00:20-00:40（20分鐘）</div><div class="tl-card"><h4>第二站｜農夫車站：育苗與灌溉照顧 DIY</h4><p>動手育苗、播種，學習正確灌溉與日常照顧方式。</p></div></div>
+      <div class="tl-item"><div class="tl-dot">🌱</div><div class="tl-time">00:40-01:00（20分鐘）</div><div class="tl-card"><h4>第三站｜植物車站：有機肥與蟲害防治</h4><p>動手製作有機肥、學習自然防治蟲害的方法（瓢蟲大戰蚜蟲）。</p></div></div>
+      <div class="tl-item"><div class="tl-dot">🧺</div><div class="tl-time">01:00-01:10（10分鐘）</div><div class="tl-card"><h4>第四站｜豐收車站：收成體驗</h4><p>體驗採摘收成的喜悅，認識農夫辛勞的果實。</p></div></div>
+      <div class="tl-item"><div class="tl-dot">🍽️</div><div class="tl-time">01:10-01:20（10分鐘）</div><div class="tl-card"><h4>第五站｜餐桌車站：從農場到餐桌</h4><p>認識食物旅程，建立珍惜食物、不浪費的態度。</p></div></div>
+      <div class="tl-item"><div class="tl-dot">🪱</div><div class="tl-time">01:20-01:35（15分鐘）</div><div class="tl-card"><h4>第六站｜堆肥車站：廚餘變黃金</h4><p>認識堆肥與蚯蚓分解，理解養分如何回到土地。</p></div></div>
+      <div class="tl-item"><div class="tl-dot">🗺️</div><div class="tl-time">01:35-01:50（15分鐘）</div><div class="tl-card"><h4>善的循環大闖關總複習</h4><p>五關考驗，統整今天學到的完整循環旅程。</p></div></div>
+      <div class="tl-item"><div class="tl-dot">🏅</div><div class="tl-time">01:50-02:00（10分鐘）</div><div class="tl-card"><h4>頒發證書 ＋ 課程結語</h4><p>授予「富林小小永續農夫證書」，並帶回善的循環的祝福。</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ================= 教學單元 + 講稿 ================= -->
-<section id="units" class="band-sky">
+<!-- ================= 故事導入 ================= -->
+<section id="story" class="band-sky">
   <div class="wrap">
-    <h2 class="section-title">📖 教學單元與老師講稿</h2>
-    <p class="section-sub">點擊每個單元卡片，展開完整可直接使用的教學內容與講稿</p>
+    <h2 class="section-title">📖 故事導入：小種子善善的心願</h2>
+    <p class="section-sub">老師可直接朗讀給孩子聽，作為整堂課的故事主軸</p>
+    <div class="story-box">
+      <p>「在富林農場的種子倉庫裡，住著一顆小小的種子，她的名字叫『善善』。善善常常望著窗外，看著農場裡忙碌的身影，心裡有一個小小的心願：『我好想快點被種到土裡，長成一棵健康的植物，變成大家餐桌上的食物！』
+
+有一天，善善終於被一雙溫暖的手輕輕放進土裡。土地公公微笑著對她說：『歡迎來到我的家，善善，我會給你滿滿的養分喔！』這時，天上的陽光姐姐灑下溫暖的光芒，雨滴哥哥也送來清涼的水分。善善開心地喝著水、曬著太陽，一天一天長大。
+
+住在土裡的蚯蚓超人也常常來拜訪，牠一邊鑽土一邊說：『善善，我幫你把土壤翻鬆，讓你的根可以呼吸、可以長得更深更壯喔！』有一天，一群蚜蟲想要偷偷靠近善善，還好瓢蟲警長及時出現，把蚜蟲趕跑，保護了善善的安全。
+
+終於，善善長成了一棵漂亮健康的蔬菜，農夫伯伯把她輕輕採收下來，送到了餐桌上，變成了一道美味的料理。小朋友們吃得津津有味，還把吃不完的菜葉和果皮，投進了堆肥桶裡。蚯蚓超人和好多微生物朋友，又把這些廚餘分解成了養分，悄悄地送回了土地公公的家。
+
+『謝謝你們！』土地公公說：『有了這些養分，我又可以孕育出新的種子寶寶了！』於是，善的循環，又重新開始了……
+
+小朋友，今天，你們每一個人，都會成為富林農場的『小小永續農夫』，跟著善善的腳步，一起完成六個車站的任務，體驗這趟善的循環大冒險，你們準備好了嗎？」</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 六大車站 ================= -->
+<section id="stations" class="band-grass">
+  <div class="wrap">
+    <h2 class="section-title">🚉 六大車站：詳細教學內容與講稿</h2>
+    <p class="section-sub">點擊車站卡片，展開完整教學內容與可直接使用的老師講稿</p>
 
     <div class="unit" data-unit>
-      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">1</div><h3>故事開場：蚯蚓超人現身</h3><div class="arrow">▾</div></div>
+      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">1</div><div><h3>土地車站</h3><span class="sub-station">認識農業 ・ 農業的挑戰</span></div><div class="arrow">▾</div></div>
       <div class="unit-body"><div class="unit-body-inner">
         <h5>教學內容</h5>
-        <p>老師扮演或播放「蚯蚓超人」角色，用誇張逗趣的方式自我介紹，引起學生好奇與注意力，建立本堂課的故事主線。</p>
+        <p>認識農業的意義：人類種植作物、飼養動物來獲取食物的活動。介紹農業面臨的挑戰：氣候變遷（乾旱、暴雨）、病蟲害、土壤退化與化學資材過度使用。帶入「有機農業」概念作為友善土地的解決方案。</p>
         <h5>老師講稿</h5>
-        <div class="script-box">「大家好～我是住在富林農場土壤裡的蚯蚓超人！咻～（做出鑽土動作）我沒有超能力披風，但我有一個秘密武器，就是我的『身體』！我每天都在土裡鑽來鑽去，把土翻鬆、把落葉分解成養分，農夫伯伯都說沒有我，農場的蔬菜就長不好！今天，蚯蚓超人要邀請大家一起加入『土地偵探隊』，你們準備好了嗎？（帶動口號：土地偵探隊，出發！）」</div>
+        <div class="script-box">「小小永續農夫們，歡迎來到第一站——土地車站！你們知道嗎？我們每天吃的米飯、蔬菜、水果，其實都來自一件很重要的事，叫做『農業』。農夫伯伯要跟土地一起合作，才能種出食物。不過，農夫的工作並不輕鬆，他們要面對很多挑戰：太陽太大會乾旱、雨下太多會淹水，還有討厭的害蟲會來搗蛋。富林農場選擇用『有機』的方式來種植，不灑農藥、不用化學肥料，而是順應大自然的力量，跟土地和平相處。這就是我們今天要學習的第一課：認識土地，尊重土地。」</div>
+        <div class="scene"><div class="raindrop" style="left:20%;"></div><div class="raindrop" style="left:50%; animation-delay:.4s;"></div><div class="raindrop" style="left:75%; animation-delay:.8s;"></div><div class="seedling">🌱</div></div>
       </div></div>
     </div>
 
     <div class="unit" data-unit>
-      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">2</div><h3>認識蚯蚓</h3><div class="arrow">▾</div></div>
+      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">2</div><div><h3>農夫車站</h3><span class="sub-station">育苗與種植 ・ 灌溉與照顧</span></div><div class="arrow">▾</div></div>
       <div class="unit-body"><div class="unit-body-inner">
         <h5>教學內容</h5>
-        <p>介紹蚯蚓的身體構造（環節、口、肛門、沒有眼睛和骨頭）、呼吸方式（皮膚呼吸，所以要濕潤）、喜歡吃的食物（果皮、菜葉、咖啡渣）、居住環境（陰暗潮濕、富含有機質的土壤）。</p>
+        <p>認識育苗的意義（先在小盆器中培育幼苗，等長壯再移植）、播種的正確方法、灌溉的原則（少量多次、避免積水），並動手完成育苗與播種 DIY。</p>
         <h5>老師講稿</h5>
-        <div class="script-box">「小朋友，你們看過蚯蚓嗎？很多人第一眼會覺得『好噁心』，但其實蚯蚓一點都不可怕喔！牠沒有牙齒、沒有眼睛，也不會咬人，牠是用皮膚呼吸的，所以身體要濕濕的才能活下去。蚯蚓最愛吃什麼呢？是水果皮、菜葉這些廚餘！牠把這些廚餘吃進去，排出來的『蚯蚓大便』，叫做『蚓糞』，是超級營養的天然肥料喔！所以蚯蚓其實是土壤裡最勤勞的清潔工兼施肥員！現在，我要請大家伸出手，我們一起輕輕地、溫柔地摸摸看蚯蚓模型，練習『溫柔的手』。」</div>
-        <h5>教具建議</h5>
-        <p>蚯蚓活體（可用透明飼養盒展示）、蚯蚓觸感教具（濕潤黏土條或矽膠仿真蚯蚓）、放大鏡。</p>
+        <div class="script-box">「歡迎來到農夫車站！現在，你們就是照顧善善的農夫囉。第一件事是『育苗』——我們先把種子種在小小的育苗盆裡，讓它在安全、溫暖的環境中發芽長根，等它長壯一點，才會被『請』到更大的土地裡。接著是『灌溉』，植物喝水要像我們喝水一樣，少量多次，土壤濕濕的就好，不能積水，不然根會爛掉喔！現在，請大家拿起你的育苗盆，跟著老師的步驟，一起完成今天的第一個 DIY 任務。」</div>
+        <div class="scene"><div class="raindrop" style="left:30%;"></div><div class="raindrop" style="left:65%; animation-delay:.5s;"></div><div class="seedling" style="font-size:30px;">🌿</div></div>
       </div></div>
     </div>
 
     <div class="unit" data-unit>
-      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">3</div><h3>DIY 製作蚯蚓桶</h3><div class="arrow">▾</div></div>
+      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">3</div><div><h3>植物車站</h3><span class="sub-station">有機肥預備與施作 ・ 蟲害防治</span></div><div class="arrow">▾</div></div>
       <div class="unit-body"><div class="unit-body-inner">
         <h5>教學內容</h5>
-        <p>分組合作完成蚯蚓堆肥箱：鋪底層、加入濕報紙、放入蚯蚓與少量廚餘、覆蓋保濕。詳細步驟見「DIY實作」區塊。</p>
+        <p>認識有機肥的來源（堆肥、蚓糞、廚餘發酵）與施作方式（少量、埋入根部周圍避免直接接觸莖幹）。介紹自然防治蟲害的方法：吸引瓢蟲等天敵、種植驅蟲植物，而非使用化學農藥。</p>
         <h5>老師講稿</h5>
-        <div class="script-box">「現在每一組都會拿到一個蚯蚓的新家——蚯蚓桶！我們要幫蚯蚓布置一個舒服的房間。第一步，鋪上濕報紙當作牠們的床墊；第二步，放入一些果皮菜葉當晚餐；第三步，輕輕地把蚯蚓請進新家；最後，蓋上蓋子，留一點透氣孔。記得，蚯蚓喜歡『陰暗、潮濕、安靜』，所以動作要輕，聲音要小聲喔！」</div>
+        <div class="script-box">「植物長大需要營養，就像我們長大需要吃飯一樣！富林農場使用『有機肥』，這是用堆肥或蚯蚓的大便做成的天然養分，一點都不臭喔，聞起來像泥土的味道。施肥的時候，我們會把有機肥輕輕埋在植物根部旁邊，不會直接碰到莖，這樣植物才能慢慢吸收。那如果有害蟲怎麼辦呢？富林農場不噴農藥，而是請瓢蟲警長來幫忙！瓢蟲最喜歡吃討厭的蚜蟲了，這就是大自然裡『生物防治』的智慧。」</div>
+        <div class="scene"><div class="bug" style="bottom:35%;">🐛</div><div class="ladybug">🐞</div><div class="seedling" style="font-size:28px;">🥬</div></div>
       </div></div>
     </div>
 
     <div class="unit" data-unit>
-      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">4</div><h3>蚯蚓桶安置與觀察任務</h3><div class="arrow">▾</div></div>
+      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">4</div><div><h3>豐收車站</h3><span class="sub-station">收成體驗</span></div><div class="arrow">▾</div></div>
       <div class="unit-body"><div class="unit-body-inner">
         <h5>教學內容</h5>
-        <p>說明蚯蚓桶應放置於陰涼通風處、避免陽光直曬與淋雨；每週檢查濕度（如乾燥需噴水）、每 1-2 週補充少量廚餘、避免放入肉類油脂與辛香料。發下「蚯蚓觀察日記」記錄表。</p>
+        <p>體驗採收的過程（用剪刀或雙手輕輕採摘，避免破壞植株），認識判斷成熟度的方法（顏色、大小、觸感），並學習秤重、計數等簡單數學連結。</p>
         <h5>老師講稿</h5>
-        <div class="script-box">「蚯蚓桶做好了，接下來的任務更重要——照顧牠！請把蚯蚓桶放在教室後面陰涼的角落，不要曬到太陽，也不要被雨淋濕。每個星期，值日生要打開蓋子聞聞看、摸摸看濕度夠不夠，太乾的話要噴一點水。每一到兩週，可以加一點點新的果皮菜葉當點心，但記得：不能放肉、不能放油、不能放辣的東西，蚯蚓會生病喔！」</div>
+        <div class="script-box">「經過農夫車站與植物車站的悉心照顧，善善終於要長大成熟了！現在是最令人期待的『豐收車站』。請大家輕輕地、溫柔地把準備好的蔬果採摘下來，就像跟植物說『謝謝你、辛苦你了』一樣。採收的時候，我們可以看看顏色夠不夠紅、夠不夠飽滿，這就是判斷『成熟』的方法喔！大家可以把收成的蔬果放進小籃子裡，秤秤看重量、數數看數量，這也是一種有趣的數學任務呢！」</div>
+        <div class="scene"><div class="tomato" style="left:30%;">🍅</div><div class="tomato" style="left:55%; animation-delay:.4s;">🍓</div><div class="tomato" style="left:75%; animation-delay:.8s;">🥕</div></div>
       </div></div>
     </div>
 
     <div class="unit" data-unit>
-      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">5</div><h3>認識土壤家族</h3><div class="arrow">▾</div></div>
+      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">5</div><div><h3>餐桌車站</h3><span class="sub-station">從農場到餐桌 ・ 珍惜食物</span></div><div class="arrow">▾</div></div>
       <div class="unit-body"><div class="unit-body-inner">
         <h5>教學內容</h5>
-        <p>介紹三種常見土壤：沙土（顆粒粗、排水快、保水差）、黏土（顆粒細、保水強、易板結）、壤土（沙、黏土、有機質混合，最適合種植）。搭配觸摸與觀察活動。</p>
+        <p>認識食物從產地到餐桌的旅程（採收→清洗整理→運送→烹調→上桌），建立感恩食物、不浪費、吃多少拿多少的態度。</p>
         <h5>老師講稿</h5>
-        <div class="script-box">「土壤偵探隊注意了！世界上的土壤不是只有一種喔！我們準備了三種土：第一種摸起來粗粗的，是沙土，水一倒下去咻一下就流光了；第二種摸起來黏黏的，是黏土，捏起來可以變成一顆球；第三種摸起來鬆鬆軟軟、帶點深咖啡色，是壤土，這是農夫伯伯最喜歡的土，因為它既能留住水分，又不會積水，還有滿滿的養分！」</div>
+        <div class="script-box">「小朋友，你們知道嗎？餐桌上的一道菜，要經過好多好多的努力才能完成：農夫辛苦種植、採收之後要清洗整理，再運送到市場或廚房，最後經過烹調，才能變成香噴噴的料理端上桌。這中間充滿了許多人的心血！所以，我們要練習『吃多少、拿多少』，把碗裡的食物吃完，這就是對農夫、對土地最好的感謝方式。」</div>
+        <div class="scene"><div class="steam" style="left:35%;">〰️</div><div class="steam" style="left:55%; animation-delay:.6s;">〰️</div><div class="tomato" style="left:45%; bottom:30%;">🍽️</div></div>
       </div></div>
     </div>
 
     <div class="unit" data-unit>
-      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">6</div><h3>製作種植土 ＋ 土耕種植</h3><div class="arrow">▾</div></div>
+      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">6</div><div><h3>堆肥車站</h3><span class="sub-station">廚餘處理 ・ 廚餘變黃金 ・ 循環完成</span></div><div class="arrow">▾</div></div>
       <div class="unit-body"><div class="unit-body-inner">
         <h5>教學內容</h5>
-        <p>依比例混合園土、堆肥（可用蚓糞）、椰纖或稻殼，調配出適合種植的種植土，並將菜苗或種子種入育苗盆。</p>
+        <p>認識廚餘如何透過堆肥箱與蚯蚓分解，轉變成養分回到土壤，完成「善的循環」的最後一哩路，並連結到循環農業的核心精神。</p>
         <h5>老師講稿</h5>
-        <div class="script-box">「現在我們要當調配師！請拿出量杯，兩杯園土、一杯堆肥、一杯椰纖，把它們倒進大盆子裡，用手或小鏟子攪拌均勻，這就是我們自己做的『種植土』！接著，把種植土裝進育苗盆八分滿，用手指戳一個小洞，把種子輕輕放進去，覆蓋一層薄薄的土，最後澆一點水，跟你的小種子說：『加油長大喔！』」</div>
-      </div></div>
-    </div>
-
-    <div class="unit" data-unit>
-      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">7</div><h3>水耕小教室 ＋ 水耕種植</h3><div class="arrow">▾</div></div>
-      <div class="unit-body"><div class="unit-body-inner">
-        <h5>教學內容</h5>
-        <p>說明水耕原理：植物不需要土壤，只要根部能接觸到含有養分的水（營養液），一樣可以吸收水分與養分生長。動手組裝保特瓶水耕栽培瓶。</p>
-        <h5>老師講稿</h5>
-        <div class="script-box">「小朋友，你們相信植物可以『不用土』就長大嗎？這就是水耕的魔法！植物的根其實不是一定要土壤，它只是需要『水』和『養分』，所以我們把營養液加進水裡，讓根泡在裡面，一樣可以把養分吸收上去，長成漂亮的蔬菜！現在請把海綿剪一個十字，把種子放進去，再把海綿放進裝了營養液的保特瓶瓶蓋洞裡，讓根可以垂下去碰到水。」</div>
-      </div></div>
-    </div>
-
-    <div class="unit" data-unit>
-      <div class="unit-head" onclick="toggleUnit(this)"><div class="num">8</div><h3>土耕 VS 水耕大車拼</h3><div class="arrow">▾</div></div>
-      <div class="unit-body"><div class="unit-body-inner">
-        <h5>教學內容</h5>
-        <p>結合互動比較表（見「土耕水耕PK」區）與分組發表，統整土耕與水耕的優缺點、適合場地與生活應用。</p>
-        <h5>老師講稿</h5>
-        <div class="script-box">「經過今天的實作，你們已經是土耕跟水耕的小專家了！現在每一組要選出一位代表，說出一個『土耕的優點』和一個『水耕的優點』。不管是哪一種方式，它們的共同目標都是一樣的——讓植物健康長大，變成我們桌上的食物！所以不管用哪種方法種菜的農夫，都值得我們說一聲謝謝。」</div>
+        <div class="script-box">「歡迎來到今天旅程的最後一站——堆肥車站！我們吃剩的果皮菜葉，不是垃圾，而是『還沒被使用的養分』。只要把它們放進堆肥桶，蚯蚓超人和好多微生物朋友就會開始工作，把廚餘一點一點分解，最後變成營養滿滿的天然肥料。這些肥料會再被送回土地公公的家，滋養下一顆種子，讓善的循環繼續下去。所以，善善的心願實現了嗎？她從一顆種子，長成植物，變成食物，最後又化作養分回到土地——這就是完整的善的循環！」</div>
+        <div class="scene"><div class="peel" style="left:30%;">🍌</div><div class="peel" style="left:60%; animation-delay:1s;">🥬</div><div class="worm2" style="left:45%;">🪱</div><div class="sparkle-up" style="left:50%;">✨</div><div class="sparkle-up" style="left:65%; animation-delay:1s;">✨</div></div>
       </div></div>
     </div>
 
@@ -840,40 +742,44 @@ footer b{color:#fff;}
 </section>
 
 <!-- ================= 互動問答 ================= -->
-<section id="qa" class="band-grass">
+<section id="qa" class="band-sky">
   <div class="wrap">
     <h2 class="section-title">💬 課堂互動問答（點擊卡片看答案）</h2>
-    <p class="section-sub" id="qaCounter">共 36 題，涵蓋蚯蚓、土壤、水耕與環境保護</p>
-    <div class="qa-list" id="qaList"></div>
+    <p class="section-sub">共 40 題，依六大車站主題分類</p>
+    <div id="qaContainer"></div>
   </div>
 </section>
 
-<!-- ================= 小遊戲 ================= -->
-<section id="games" class="band-sky">
+<!-- ================= 互動遊戲 ================= -->
+<section id="games" class="band-grass">
   <div class="wrap">
-    <h2 class="section-title">🎲 課堂小遊戲</h2>
+    <h2 class="section-title">🎲 互動遊戲</h2>
     <div class="grid grid-3">
-      <div class="card"><span class="tag-count">遊戲 1</span><h4>🧤 蚯蚓摸摸箱</h4><p>在不透明箱子放入濕潤仿真蚯蚓（黏土條）與真正蚯蚓，讓學生矇眼觸摸並猜猜看，破除對蚯蚓的恐懼感，最後公布答案給予掌聲鼓勵。</p><div class="mat">教具：不透明箱、仿真蚯蚓、活體蚯蚓、眼罩</div></div>
-      <div class="card"><span class="tag-count">遊戲 2</span><h4>🥕 我會分類賓果</h4><p>準備食物卡片（果皮、菜葉、肉、糖果、塑膠等），學生要判斷「哪些可以給蚯蚓吃」，答對可在賓果卡上蓋章，先連成一線者獲勝。</p><div class="mat">教具：食物圖卡、賓果卡、印章</div></div>
-      <div class="card"><span class="tag-count">遊戲 3</span><h4>🏗️ 土壤層層疊</h4><p>用彩色豆子或米粒模擬土壤剖面（表土、腐植層、母岩層），分組比賽在時間內堆疊出正確順序的土壤剖面模型。</p><div class="mat">教具：彩色豆子/米粒、透明杯</div></div>
-      <div class="card"><span class="tag-count">遊戲 4</span><h4>🎲 蚯蚓爬格子</h4><p>設計大富翁式地板遊戲，學生擲骰子前進，答對格子上的問題才能前進，答錯原地不動或退一步，最快抵達「蚯蚓的家」者獲勝。</p><div class="mat">教具：地板棋盤、骰子、問題卡</div></div>
-      <div class="card"><span class="tag-count">遊戲 5</span><h4>🔎 水耕小偵探</h4><p>準備兩杯種子：一杯加營養液、一杯只加清水，請學生每天觀察並記錄生長差異，推理營養液的重要性。</p><div class="mat">教具：透明杯、營養液、種子、觀察紀錄表</div></div>
-      <div class="card"><span class="tag-count">加碼遊戲</span><h4>🌱 種子急行軍</h4><p>分組比賽誰的種子先發芽，並討論影響發芽速度的因素（水分、溫度、陽光），培養科學觀察與假設能力。</p><div class="mat">教具：種子、育苗盆、計時表</div></div>
+      <div class="card"><span class="emoji-tag">🎲</span><h4>1. 天氣骰子挑戰</h4><p>擲骰子決定今天的天氣（豔陽／大雨／乾旱／涼爽），討論這種天氣對農作物的影響，訓練隨機應變思考。</p></div>
+      <div class="card"><span class="emoji-tag">🃏</span><h4>2. 播種大車拼</h4><p>將「鬆土、播種、覆土、澆水」步驟卡打亂，讓學生搶答排出正確順序，最快正確者得分。</p></div>
+      <div class="card"><span class="emoji-tag">💧</span><h4>3. 灌溉水滴接力</h4><p>分組用小杯子接力運水，倒入指定水量的容器中，模擬「少量多次」的正確灌溉方式。</p></div>
+      <div class="card"><span class="emoji-tag">🧪</span><h4>4. 有機肥配方賓果</h4><p>準備堆肥材料圖卡（果皮、菜葉、蛋殼、咖啡渣、肉類、塑膠），學生判斷可否做堆肥，答對蓋章連線。</p></div>
+      <div class="card"><span class="emoji-tag">🐞</span><h4>5. 瓢蟲大戰蚜蟲</h4><p>學生分兩組角色扮演瓢蟲與蚜蟲，進行你追我跑的抓人遊戲，體驗生物防治的樂趣。</p></div>
+      <div class="card"><span class="emoji-tag">🧺</span><h4>6. 豐收採摘大賽</h4><p>教室內佈置假蔬果道具，限時比賽誰採摘的「成熟蔬果」數量最多且品質最好。</p></div>
+      <div class="card"><span class="emoji-tag">🧠</span><h4>7. 餐桌記憶翻牌</h4><p>翻牌配對遊戲：食物卡片配對它的來源植物卡片（如飯配稻穗、豆漿配黃豆）。</p></div>
+      <div class="card"><span class="emoji-tag">⏱️</span><h4>8. 廚餘分類快手賽</h4><p>限時將食物圖卡分類至「可堆肥」與「不可堆肥」兩個籃子，考驗反應與判斷力。</p></div>
+      <div class="card"><span class="emoji-tag">🎯</span><h4>加碼｜循環棋</h4><p>大富翁式地板棋，走到「善的循環」六個車站格子要回答問題才能前進，最快完成一圈者獲勝。</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= 分組活動 ================= -->
-<section id="groups" class="band-grass">
+<!-- ================= 小組活動 ================= -->
+<section id="groups" class="band-sky">
   <div class="wrap">
-    <h2 class="section-title">👨‍👩‍👧‍👦 分組合作活動</h2>
+    <h2 class="section-title">👨‍👩‍👧‍👦 小組合作活動</h2>
     <div class="grid grid-3">
-      <div class="card"><span class="tag-count">活動 1</span><h4>蚯蚓桶合作組裝</h4><p>四人一組分工：挖土員、鋪報紙員、放廚餘員、記錄員，共同完成一個蚯蚓堆肥箱並輪流分享感受。</p></div>
-      <div class="card"><span class="tag-count">活動 2</span><h4>土壤採集任務</h4><p>分組到校園不同角落（花圃、樹下、操場邊）採集土壤樣本，比較顏色、濕度與顆粒感，回報最適合種菜的地點。</p></div>
-      <div class="card"><span class="tag-count">活動 3</span><h4>種植土配方實驗</h4><p>各組嘗試不同比例的園土、堆肥、椰纖，比賽誰調配出的種植土最鬆軟、最適合種菜，並說明理由。</p></div>
-      <div class="card"><span class="tag-count">活動 4</span><h4>水耕系統組裝賽</h4><p>分組合作在時間內完成保特瓶水耕栽培瓶組裝，包含剪瓶、放海綿、加營養液、放種子，最快且最正確的小組獲得掌聲。</p></div>
-      <div class="card"><span class="tag-count">活動 5</span><h4>土耕水耕辯論賽</h4><p>將全班分成「土耕隊」與「水耕隊」，各自準備理由說服大家自己的種植方式比較好，最後老師總結：兩種方式各有優點，沒有絕對的輸贏。</p></div>
-      <div class="card"><span class="tag-count">加碼活動</span><h4>小小農夫市集扮演</h4><p>分組扮演農夫、消費者、菜販，模擬蔬果從產地到餐桌的過程，體驗食物得來不易與友善農業的價值。</p></div>
+      <div class="card"><span class="emoji-tag">🧩</span><h4>1. 土地拼圖任務</h4><p>分組拼出「農田、菜園、果園、雞舍」拼圖，並說出各自的特色與功能。</p></div>
+      <div class="card"><span class="emoji-tag">🏃</span><h4>2. 育苗接力賽</h4><p>小組接力完成「裝土、播種、覆土、澆水」四道育苗工序，最快且正確完成的小組獲勝。</p></div>
+      <div class="card"><span class="emoji-tag">🚿</span><h4>3. 灌溉水管迷宮</h4><p>合作用軟管或紙捲搭建一條「水管」，讓水從起點順利流到植物盆栽處，訓練團隊合作與工程思維。</p></div>
+      <div class="card"><span class="emoji-tag">🧑‍🔬</span><h4>4. 有機肥調配比賽</h4><p>各組嘗試不同比例的堆肥材料，比賽誰調配出的有機肥最適合植物（老師可用氣味、鬆軟度評分）。</p></div>
+      <div class="card"><span class="emoji-tag">🛡️</span><h4>5. 瓢蟲防疫隊</h4><p>分組設計「保護植物」的方案海報，說明如何用天然方式防治蟲害，並上台簡報。</p></div>
+      <div class="card"><span class="emoji-tag">🍽️</span><h4>6. 惜食餐桌佈置</h4><p>小組合作用食物模型佈置一桌「吃多少、拿多少」的惜食示範餐桌，並說明佈置理念。</p></div>
+      <div class="card"><span class="emoji-tag">♻️</span><h4>加碼｜廚餘分類接龍</h4><p>小組接龍說出一種可堆肥的廚餘，不能重複，答不出來或說錯的組別要接受可愛的小挑戰。</p></div>
     </div>
   </div>
 </section>
@@ -881,61 +787,104 @@ footer b{color:#fff;}
 <!-- ================= DIY實作 ================= -->
 <section id="diy" class="band-soil">
   <div class="wrap">
-    <h2 class="section-title">🛠️ DIY 實作詳細步驟</h2>
+    <h2 class="section-title">🛠️ DIY 實作活動</h2>
 
     <div class="diy-block">
-      <h3>🪱 製作蚯蚓桶</h3>
-      <div class="mat">材料：透氣塑膠箱或保麗龍箱、報紙、少量廚餘（果皮菜葉）、蚯蚓數隻、噴水器、小鏟子</div>
+      <h3>🌱 育苗 DIY</h3>
+      <div class="mat">材料：育苗穴盤或紙杯（底部戳洞）、育苗土、種子（如小白菜、萵苣）、噴水器</div>
       <ol class="step-list">
-        <li>在箱子側邊或蓋子戳數個透氣小孔。</li>
-        <li>將報紙撕成條狀，噴濕至如擰乾毛巾般濕潤，鋪在箱底約 5-8 公分厚。</li>
-        <li>灑上一小把土壤，增加礦物質與微生物。</li>
-        <li>將蚯蚓輕輕放入箱中，讓牠們自然鑽入報紙層。</li>
-        <li>放入少量切碎的果皮菜葉（份量約一個手掌大），避開肉類、油脂、辛香料。</li>
-        <li>再蓋上一層濕報紙保濕遮光。</li>
-        <li>蓋上蓋子，放置於陰涼通風處。</li>
-        <li>貼上小組名字標籤，完成專屬蚯蚓的家！</li>
+        <li>在育苗杯底部戳 2-3 個小排水孔。</li>
+        <li>裝入育苗土至八分滿。</li>
+        <li>用手指戳一個約 0.5-1 公分深的小洞。</li>
+        <li>放入 1-2 顆種子，輕輕覆土。</li>
+        <li>用噴水器輕輕噴濕表土，避免沖散種子。</li>
+        <li>放置於溫暖有光但不曝曬處，貼上姓名與日期標籤。</li>
       </ol>
     </div>
 
     <div class="diy-block">
-      <h3>🟤 製作種植土</h3>
-      <div class="mat">材料：園土 2 份、堆肥或蚓糞 1 份、椰纖或稻殼 1 份、大盆子、量杯</div>
+      <h3>🕳️ 播種 DIY（移植到大盆）</h3>
+      <div class="mat">材料：已發芽的幼苗、大一點的種植盆、種植土、小鏟子</div>
       <ol class="step-list">
-        <li>用量杯量取 2 杯園土倒入大盆子。</li>
-        <li>加入 1 杯堆肥（或蚓糞）。</li>
-        <li>加入 1 杯椰纖或稻殼，增加透氣度。</li>
-        <li>用手或小鏟子充分攪拌均勻，直到顏色一致、質地鬆軟。</li>
-        <li>抓一把試試看：捏起來不會滴水、放開後會自然散開，就是理想的種植土。</li>
+        <li>在種植盆中裝入種植土至七分滿。</li>
+        <li>挖一個比幼苗根球稍大的洞。</li>
+        <li>小心地將幼苗連根土一起移入洞中，避免傷到根部。</li>
+        <li>周圍填土並輕壓，使幼苗站穩。</li>
+        <li>澆水至土壤濕潤，放置於適合的光照環境。</li>
       </ol>
     </div>
 
     <div class="diy-block">
-      <h3>🌱 土耕植物種植</h3>
-      <div class="mat">材料：調配好的種植土、菜苗或種子（如小白菜、萵苣）、育苗盆、澆水器</div>
+      <h3>🧪 有機肥 DIY</h3>
+      <div class="mat">材料：果皮菜葉（切碎）、乾葉或稻殼、少量舊土或已完成的堆肥、有蓋容器</div>
       <ol class="step-list">
-        <li>將種植土裝入育苗盆至八分滿。</li>
-        <li>用手指在中央戳一個約 1 公分深的小洞。</li>
-        <li>放入種子或菜苗根部，輕輕覆土。</li>
-        <li>用手掌輕壓土壤，使根部與土壤密合。</li>
-        <li>澆水至土壤濕潤但不積水。</li>
-        <li>放置於有陽光但不曝曬的地方，並貼上姓名牌。</li>
+        <li>將果皮菜葉切成小塊，增加分解面積。</li>
+        <li>在容器底部鋪一層乾葉或稻殼。</li>
+        <li>鋪上一層切碎的廚餘。</li>
+        <li>撒上少量舊土或現成堆肥作為「菌種」。</li>
+        <li>重複堆疊乾料與廚餘，最上層覆蓋乾料保濕遮味。</li>
+        <li>蓋上蓋子（留透氣孔），每週翻拌一次，約 4-6 週後即成熟可使用。</li>
       </ol>
     </div>
 
     <div class="diy-block">
-      <h3>💧 水耕植物種植</h3>
-      <div class="mat">材料：乾淨保特瓶（剪開瓶身）、水耕海綿、營養液、種子（如空心菜、青江菜）、剪刀</div>
+      <h3>🔍 觀察植物 DIY</h3>
+      <div class="mat">材料：觀察紀錄表、尺、放大鏡、色鉛筆</div>
       <ol class="step-list">
-        <li>將保特瓶從三分之一處剪開，瓶蓋部分倒插入瓶身當作杯座（老師可事先剪好，避免學生使用刀具）。</li>
-        <li>在瓶蓋鑽一個小洞，讓海綿可以卡住並讓根部垂下。</li>
-        <li>將水耕海綿剪出十字切口。</li>
-        <li>把種子放入海綿十字切口中。</li>
-        <li>依照產品說明比例，將營養液與水混合，倒入瓶身下半部。</li>
-        <li>將裝了種子的海綿放入瓶蓋洞口，確保底部能接觸到營養液。</li>
-        <li>放置在有光線的窗邊，每 3-5 天補充一次營養液。</li>
+        <li>每週固定時間觀察自己種植的植物。</li>
+        <li>用尺測量植株高度，記錄在表格中。</li>
+        <li>數一數葉片數量，並用放大鏡觀察葉片紋路與是否有蟲害。</li>
+        <li>用色鉛筆畫下植物目前的樣子。</li>
+        <li>寫下一句「給植物的悄悄話」，培養情感連結。</li>
       </ol>
     </div>
+
+    <h3 style="margin-top:10px;">🧪 課堂小實驗：有機養分大不同</h3>
+    <div class="card">
+      <p>準備兩個相同的花盆與種子：A 盆使用一般園土，B 盆使用加入有機堆肥的種植土，其餘澆水、光照條件相同。請學生每週觀察並記錄兩盆植物的生長高度、葉片顏色與數量，兩週後進行比較，討論「有機肥為什麼能幫助植物長得更好」。</p>
+    </div>
+
+    <h3 style="margin-top:30px;">🧺 收成體驗設計</h3>
+    <div class="card">
+      <p>建議提前 2-3 週於校園或教室準備已可採收的作物（如小番茄、萵苣、九層塔），課程當天讓學生實際體驗採收：觀察成熟度、用正確方式採摘、清洗整理、秤重計數，最後可簡單品嚐或帶回家與家人分享，感受「一分耕耘、一分收穫」的踏實與喜悅。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 從農場到餐桌 / 循環 ================= -->
+<section id="journey" class="band-sky">
+  <div class="wrap">
+    <h2 class="section-title">🍽️ 從農場到餐桌・廚餘回到土地</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <span class="emoji-tag">🚜</span>
+        <h4>從農場到餐桌</h4>
+        <p>採收 → 清洗整理 → 運送 → 烹調 → 上桌。每一道菜背後，都是農夫的辛勞與土地的滋養，值得我們細細品味與感恩。</p>
+      </div>
+      <div class="card">
+        <span class="emoji-tag">♻️</span>
+        <h4>廚餘如何回到土地</h4>
+        <p>廚餘投入堆肥桶 → 蚯蚓與微生物分解 → 轉化為天然養分（蚓糞、堆肥）→ 施入土壤 → 滋養下一輪作物，完成「善的循環」。</p>
+      </div>
+    </div>
+    <div class="grid grid-2" style="margin-top:6px;">
+      <div class="card">
+        <h4>🔄 循環農業</h4>
+        <p>循環農業是一種「不浪費」的農業模式：農場產生的廢棄物（如廚餘、雜草、動物糞便）經過處理後，重新成為滋養土地的資源，減少對外部資源的依賴，形成自給自足的生態圈。</p>
+      </div>
+      <div class="card">
+        <h4>🌾 有機農業</h4>
+        <p>有機農業不使用化學農藥與化學肥料，而是運用天然堆肥、生物防治等方式來耕作，重視土壤健康、生物多樣性與生態平衡，是對土地與人體都更友善的耕作方式。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 循環知識（科學小教室） ================= -->
+<section id="science" class="band-grass">
+  <div class="wrap">
+    <h2 class="section-title">🔬 循環知識小教室（點卡片翻面看解說）</h2>
+    <div class="flip-grid" id="flipGrid"></div>
   </div>
 </section>
 
@@ -944,38 +893,14 @@ footer b{color:#fff;}
   <div class="wrap">
     <h2 class="section-title">🧑‍🏫 教師手冊</h2>
 
-    <h3>⚠️ 安全注意事項</h3>
-    <ul class="safety-list">
-      <li>🧼 實作前後務必洗手，避免將手放入口中。</li>
-      <li>🩹 若學生對泥土、花粉或特定食材有過敏史，請事先告知並安排替代任務。</li>
-      <li>✂️ 涉及剪刀、美工刀的步驟（如剪保特瓶）建議由老師事先處理或全程在旁協助。</li>
-      <li>🚫 提醒學生種植土、蚓糞、營養液皆不可誤食。</li>
-      <li>🪱 蚯蚓為活體，提醒學生動作放輕，不可用力抓握或丟擲。</li>
-      <li>🌞 戶外活動請注意防曬、補充水分，並留意蚊蟲叮咬。</li>
-      <li>🧤 若擔心衛生問題，可準備一次性手套供學生選用（但鼓勵嘗試直接觸摸以克服恐懼）。</li>
-      <li>🧺 廚餘與工具使用後應妥善分類與清潔，維持環境整潔。</li>
-    </ul>
-
-    <h3 style="margin-top:36px;">🌤️ 課程結語</h3>
-    <div class="card">
-      <p>「今天，你們不只是國小的學生，更是富林農場的『榮譽土地偵探隊員』！你們摸過蚯蚓、玩過泥土、種下屬於自己的植物，也認識了不需要土壤的水耕魔法。請記得，每一口飯、每一片菜葉，背後都有農夫伯伯的辛勞、土壤裡蚯蚓的努力，還有陽光雨水的滋養。希望大家回家後，也能繼續照顧自己種下的小種子，並且更珍惜每一餐的食物，一起愛護我們的地球家園！」</p>
-    </div>
-
-    <h3 style="margin-top:36px;">📚 延伸學習</h3>
+    <h3>🌍 ESG 永續教育</h3>
     <div class="grid grid-3">
-      <div class="card"><h4>📖 推薦讀物</h4><p>《蚯蚓的日記》繪本、《土壤的故事》科普書、《一粒種子的旅行》繪本。</p></div>
-      <div class="card"><h4>🎬 推薦影片</h4><p>兒童科普頻道之「土壤與分解者」「水耕農業介紹」相關教學短片。</p></div>
-      <div class="card"><h4>🚜 校外實地參訪</h4><p>安排至富林有機農場進行半日或一日食農教育體驗，實地參觀有機稻田、菜園與雞舍。</p></div>
+      <div class="card"><h4>E 環境</h4><p>循環農業、有機土壤管理、生物防治減少化學資材使用，降低碳足跡。</p></div>
+      <div class="card"><h4>S 社會</h4><p>普及食農教育、促進親子共學、連結企業員工與社區參與農場永續活動。</p></div>
+      <div class="card"><h4>G 治理</h4><p>農場透明化生產流程、有機驗證把關品質、建立可追溯的永續經營模式。</p></div>
     </div>
 
-    <h3 style="margin-top:36px;">📝 回家作業</h3>
-    <div class="grid grid-3">
-      <div class="card"><h4>1. 種植觀察日記</h4><p>每天觀察土耕與水耕植物的變化，記錄高度、葉片數與心情小語，持續 2 週。</p></div>
-      <div class="card"><h4>2. 一粒米的旅程</h4><p>訪問家中長輩：「我們家的米飯是怎麼來的？」並畫出從稻田到餐桌的簡單流程圖。</p></div>
-      <div class="card"><h4>3. 廚餘小偵探週記</h4><p>記錄家裡一週產生的廚餘種類與份量，思考哪些可以做成堆肥，減少浪費。</p></div>
-    </div>
-
-    <h3 style="margin-top:36px;">🌍 SDGs 永續發展目標連結</h3>
+    <h3 style="margin-top:34px;">🌍 SDGs 永續發展目標連結</h3>
     <div class="sdg-grid">
       <div class="sdg-item sdg2"><span class="n">🌾</span>SDG2<br>消除飢餓</div>
       <div class="sdg-item sdg3"><span class="n">💪</span>SDG3<br>良好健康與福祉</div>
@@ -984,70 +909,71 @@ footer b{color:#fff;}
       <div class="sdg-item sdg13"><span class="n">🌡️</span>SDG13<br>氣候行動</div>
       <div class="sdg-item sdg15"><span class="n">🌳</span>SDG15<br>陸地生態</div>
     </div>
-    <p style="margin-top:16px; font-size:14px; color:var(--text-soft);">
-      本課程透過有機種植與蚯蚓堆肥呼應 <b>SDG2</b>（支持永續農業）；透過認識天然食材與健康飲食呼應 <b>SDG3</b>；透過完整的食農教育活動呼應 <b>SDG4</b>；透過廚餘減量與循環利用呼應 <b>SDG12</b>；透過有機農法減少化肥碳排呼應 <b>SDG13</b>；透過認識土壤生物多樣性呼應 <b>SDG15</b>。
-    </p>
+    <p style="margin-top:14px; font-size:13.5px; color:var(--text-soft);">本課程透過循環農業與有機種植呼應 <b>SDG2</b>；認識天然食材與健康飲食呼應 <b>SDG3</b>；完整的食農與永續教育活動呼應 <b>SDG4</b>；廚餘減量與循環再利用呼應 <b>SDG12</b>；有機農法減少化肥碳排呼應 <b>SDG13</b>；認識土壤生物多樣性與生態防治呼應 <b>SDG15</b>。</p>
 
-    <h3 style="margin-top:36px;">🏢 ESG 永續教育連結</h3>
+    <h3 style="margin-top:34px;">🍽️ 食農教育五大面向</h3>
     <div class="grid grid-3">
-      <div class="card"><h4>E 環境</h4><p>循環農業（廚餘→蚯蚓→堆肥→種植）、有機土壤管理、減少化學資材使用，降低農業碳足跡。</p></div>
-      <div class="card"><h4>S 社會</h4><p>普及食農教育、促進親子共學、連結社區與企業員工參與農場永續活動。</p></div>
-      <div class="card"><h4>G 治理</h4><p>農場透明化生產流程、有機驗證把關品質、建立可追溯的永續經營模式。</p></div>
+      <div class="card"><h4>① 農業生產</h4><p>認識農業的意義、有機耕作方式與農業面臨的挑戰。</p></div>
+      <div class="card"><h4>② 飲食健康</h4><p>了解天然食材的營養價值，建立均衡飲食觀念。</p></div>
+      <div class="card"><h4>③ 飲食生活與文化</h4><p>從產地到餐桌的完整體驗，珍惜食物、感恩農夫辛勞。</p></div>
+      <div class="card"><h4>④ 生態環境</h4><p>認識循環農業、生物防治與土壤生態，理解永續發展的重要。</p></div>
+      <div class="card"><h4>⑤ 社會參與</h4><p>透過農場與學校、企業合作的永續教育活動，連結社區與社會responsibility。</p></div>
     </div>
 
-    <h3 style="margin-top:36px;">🍽️ 食農教育五大面向對應</h3>
+    <h3 style="margin-top:34px;">🌱 生命教育・環境教育・品格教育</h3>
     <div class="grid grid-3">
-      <div class="card"><h4>① 農業生產</h4><p>認識稻米、蔬果、雞蛋等食材的生產過程與有機農法。</p></div>
-      <div class="card"><h4>② 飲食健康</h4><p>了解天然食材對健康的益處，建立均衡飲食觀念。</p></div>
-      <div class="card"><h4>③ 飲食生活與文化</h4><p>透過動手種植與收成體驗，珍惜食物、感恩農夫的辛勞。</p></div>
-      <div class="card"><h4>④ 生態環境</h4><p>認識蚯蚓、土壤微生物與生物多樣性，理解生態永續的重要。</p></div>
-      <div class="card"><h4>⑤ 社會參與</h4><p>透過農場與學校、企業合作的食農教育活動，連結社區與社會。</p></div>
+      <div class="card"><h4>💛 生命教育</h4><p>透過育苗、照顧植物到收成的完整歷程，體會生命從萌芽到成熟的歷程，學習尊重與珍惜每一個生命。</p></div>
+      <div class="card"><h4>🌎 環境教育</h4><p>認識土壤、水資源、生物多樣性與循環農業，理解人類行為與環境永續之間密不可分的關係。</p></div>
+      <div class="card"><h4>🤝 品格教育</h4><p>培養感恩惜福、責任分工、團隊合作與愛護環境的品格，將「善的循環」內化為生活態度。</p></div>
     </div>
+
+    <h3 style="margin-top:34px;">📚 延伸活動</h3>
+    <div class="grid grid-3">
+      <div class="card"><h4>校園小菜園</h4><p>在校園規劃一塊小小菜園，讓學生持續實踐今天所學的育苗、灌溉與照顧技巧。</p></div>
+      <div class="card"><h4>堆肥觀察角</h4><p>於教室或校園設置小型堆肥觀察站，長期記錄廚餘分解與養分變化。</p></div>
+      <div class="card"><h4>富林農場實地參訪</h4><p>安排至富林有機農場進行半日或一日的深度食農教育體驗與 ESG 永續參訪。</p></div>
+    </div>
+
+    <h3 style="margin-top:34px;">👨‍👩‍👧 親子活動</h3>
+    <div class="grid grid-2">
+      <div class="card"><h4>親子種植計畫</h4><p>與家人一起在家中陽台種下一盆蔬菜，共同記錄成長過程，建立家庭共學時光。</p></div>
+      <div class="card"><h4>家庭廚餘減量挑戰</h4><p>全家一起挑戰一週內減少廚餘量，並嘗試將部分廚餘做成簡易堆肥或給家中植物施肥。</p></div>
+    </div>
+
+    <h3 style="margin-top:34px;">📝 回家作業</h3>
+    <div class="grid grid-3">
+      <div class="card"><h4>1. 循環觀察日記</h4><p>持續記錄自己育苗種植的植物成長過程，連續 2 週，並畫下最喜歡的一次觀察。</p></div>
+      <div class="card"><h4>2. 惜食小任務</h4><p>連續一週記錄自己是否做到「吃多少、拿多少」，並寫下一次印象深刻的惜食經驗。</p></div>
+      <div class="card"><h4>3. 家庭善循環訪談</h4><p>訪問家人：「我們家的廚餘都是怎麼處理的？」並提出一個可以讓家裡更循環永續的小建議。</p></div>
+    </div>
+
+    <h3 style="margin-top:34px;">⚠️ 教師教學提醒</h3>
+    <ul class="tip-list">
+      <li>📅 收成體驗建議提前 2-3 週於校園或教室準備好可採收的作物，避免當天時間不足。</li>
+      <li>🌦️ 若安排戶外活動，請預先準備雨備方案（室內盆栽版本），並留意學生防曬與飲水。</li>
+      <li>👥 六人一組為佳，確保每位學生都能實際動手操作 DIY 活動，避免時間拖延。</li>
+      <li>🧼 實作前後提醒學生洗手，並注意過敏史（如對特定植物或土壤過敏）。</li>
+      <li>⏳ 若時間有限，可將六大車站拆為兩堂課：「土地・農夫・植物」為一堂，「豐收・餐桌・堆肥」為另一堂。</li>
+      <li>🎭 鼓勵老師融入角色扮演語氣（土地公公、蚯蚓超人、瓢蟲警長等），提升孩子的投入感。</li>
+    </ul>
+
+    <h3 style="margin-top:34px;">❓ 常見學生問題</h3>
+    <ul class="faq-list">
+      <li><b>Q：為什麼不用農藥除蟲，這樣不是比較快嗎？</b>農藥雖然快，但也會傷害土壤裡的好朋友（像蚯蚓、瓢蟲），還可能殘留在食物上，對健康不好，所以我們選擇用瓢蟲等天然方式。</li>
+      <li><b>Q：堆肥會不會很臭？</b>正確操作的堆肥聞起來像泥土的味道，只要材料比例正確、定期翻拌，就不會有惡臭。</li>
+      <li><b>Q：蚯蚓會不會咬人？</b>蚯蚓沒有牙齒，不會咬人，牠是溫和的土壤清潔工。</li>
+      <li><b>Q：為什麼要花時間做有機肥，直接買肥料不是更快？</b>自己製作有機肥不僅環保、省錢，還能把家裡的廚餘變成有用的資源，減少浪費，也更了解食物循環的過程。</li>
+      <li><b>Q：為什麼要循環？直接把廚餘丟掉不行嗎？</b>廚餘丟掉會變成垃圾，增加焚燒或掩埋的負擔；但如果做成堆肥，就能重新滋養土地，種出新的食物，這就是「化廢為寶」的智慧。</li>
+      <li><b>Q：水耕跟土耕種植的植物有一樣的循環嗎？</b>兩者的養分來源不同，但一樣都需要陽光、水和照顧，最終目標都是提供健康的食物給大家。</li>
+    </ul>
   </div>
 </section>
 
-<!-- ================= 科學小教室 ================= -->
-<section id="science" class="band-grass">
-  <div class="wrap">
-    <h2 class="section-title">🔬 自然科學小教室（點卡片翻面看解說）</h2>
-    <p class="section-sub">用國小程度的語言，認識今天冒險中的科學知識</p>
-    <div class="flip-grid" id="flipGrid"></div>
-  </div>
-</section>
-
-<!-- ================= 土耕水耕PK ================= -->
-<section id="compare" class="band-sky">
-  <div class="wrap">
-    <h2 class="section-title">⚖️ 土耕 VS 水耕大車拼</h2>
-    <div class="toggle-wrap">
-      <button class="toggle-btn active-soil" id="btnSoilView" onclick="setCompareView('soil')">🟤 我挺土耕</button>
-      <button class="toggle-btn" id="btnWaterView" onclick="setCompareView('water')">💧 我挺水耕</button>
-    </div>
-    <div class="compare-wrap">
-      <table class="compare">
-        <thead><tr><th>比較項目</th><th class="col-soil">🟤 土耕</th><th class="col-water">💧 水耕</th></tr></thead>
-        <tbody>
-          <tr><td>生長介質</td><td class="col-soil">土壤（含養分與微生物）</td><td class="col-water">水＋營養液</td></tr>
-          <tr><td>用水量</td><td class="col-soil">較多，且部分會滲入地下</td><td class="col-water">可循環使用，較節省</td></tr>
-          <tr><td>生長速度</td><td class="col-soil">依土壤肥沃度而定</td><td class="col-water">養分吸收快，通常較快</td></tr>
-          <tr><td>病蟲害</td><td class="col-soil">較容易有土壤害蟲</td><td class="col-water">相對較少土壤病蟲害</td></tr>
-          <tr><td>空間需求</td><td class="col-soil">需要土地或大型容器</td><td class="col-water">可垂直堆疊，空間彈性大</td></tr>
-          <tr><td>營養來源</td><td class="col-soil">土壤天然養分＋堆肥</td><td class="col-water">人工調配營養液</td></tr>
-          <tr><td>環境限制</td><td class="col-soil">受氣候、土質影響大</td><td class="col-water">室內也能栽種，較不受氣候限制</td></tr>
-          <tr><td>成本與設備</td><td class="col-soil">成本低，設備簡單</td><td class="col-water">初期設備成本較高</td></tr>
-          <tr><td>適合場地</td><td class="col-soil">農地、菜園、校園花圃</td><td class="col-water">陽台、教室、都市空間</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="text-align:center; margin-top:20px; color:var(--text-soft); font-size:14px;" id="compareNote">兩種種植方式各有優點，適合的場地與需求不同，沒有絕對的好壞之分！</p>
-  </div>
-</section>
-
-<!-- ================= 闖關遊戲 ================= -->
+<!-- ================= 闖關 ================= -->
 <section id="quest" class="band-grass">
   <div class="wrap">
-    <h2 class="section-title">🗺️ 五關總複習大挑戰</h2>
-    <p class="section-sub">完成全部五關，即可解鎖「小小農夫證書」！</p>
+    <h2 class="section-title">🗺️ 善的循環大闖關</h2>
+    <p class="section-sub">完成全部五關，即可解鎖「富林小小永續農夫證書」！</p>
     <div class="stage-grid" id="stageGrid"></div>
     <div class="quest-panel" id="questPanel"></div>
   </div>
@@ -1056,18 +982,18 @@ footer b{color:#fff;}
 <!-- ================= 證書 ================= -->
 <section id="certificate" class="band-sky">
   <div class="wrap" id="certificate-area">
-    <h2 class="section-title">🏅 小小農夫證書</h2>
+    <h2 class="section-title">🏅 富林小小永續農夫證書</h2>
     <p class="section-sub" id="certHint">完成五關挑戰後，即可在下方輸入姓名並產生專屬證書</p>
     <div class="cert">
-      <div>🌾🐛🌻</div>
-      <h2>小小農夫證書</h2>
+      <div>🌾🪱🌻</div>
+      <h2>富林小小永續農夫證書</h2>
       <p style="color:var(--text-soft);">茲證明</p>
       <div class="name-line"><input type="text" id="certName" placeholder="請輸入你的名字" maxlength="12"></div>
-      <p style="color:var(--text-soft);">已完成「蚯蚓超人來了！富林農場土地大冒險」<br>全部課程與五關挑戰，展現對土地、蚯蚓與植物的用心與愛護。</p>
+      <p style="color:var(--text-soft);">已完成「善的循環大冒險」全部課程與五關挑戰，<br>用心體會土地、農夫、植物、餐桌與堆肥之間善的循環，展現愛護環境的行動力。</p>
       <div class="stamp">🏵️</div>
-      <div class="date">富林有機農場 食農教育園區 敬贈｜<span id="certDate"></span></div>
+      <div class="date">富林有機農場 食農教育・ESG永續教育園區 敬贈｜<span id="certDate"></span></div>
     </div>
-    <div style="margin-top:22px;">
+    <div style="margin-top:20px;">
       <button class="btn-main" onclick="printCert()">🖨️ 列印 / 下載證書</button>
       <button class="btn-main btn-ghost" onclick="celebrate()">🎉 再慶祝一次</button>
     </div>
@@ -1076,7 +1002,7 @@ footer b{color:#fff;}
 
 <footer>
   <p><b>富林有機農場</b>｜新竹縣芎林鄉｜食農教育・環境教育・ESG 永續教育園區</p>
-  <p>本教材專為國小到校授課設計，教師可依班級狀況彈性調整時間與活動順序。</p>
+  <p>本教材以 LIFE 永續教育精神設計，教師可依班級狀況彈性調整時間與活動順序，長期作為富林農場到校授課品牌教材使用。</p>
 </footer>
 
 <script>
@@ -1097,113 +1023,148 @@ function toggleUnit(head){
   }
 }
 
-/* ---------- Q&A data (36 questions) ---------- */
-const qaData = [
-  ["蚯蚓有沒有眼睛？","沒有，蚯蚓靠皮膚感覺光線與震動。"],
-  ["蚯蚓用什麼呼吸？","用皮膚呼吸，所以身體要保持濕潤。"],
-  ["蚯蚓最喜歡吃什麼？","果皮、菜葉等有機廚餘。"],
-  ["蚯蚓的大便叫什麼？","蚓糞，是很好的天然肥料。"],
-  ["蚯蚓喜歡潮濕還是乾燥的環境？","潮濕陰暗的環境。"],
-  ["蚯蚓身體是由什麼組成的一節一節？","環節。"],
-  ["蚯蚓桶可以放肉類嗎？","不可以，會發臭並讓蚯蚓生病。"],
-  ["蚯蚓對土壤有什麼幫助？","翻鬆土壤、增加透氣性、分解有機質。"],
-  ["蚯蚓桶要放在陽光下曝曬嗎？","不可以，要放在陰涼通風處。"],
-  ["蚯蚓是益蟲還是害蟲？","益蟲，是農夫的好幫手。"],
-  ["土壤裡除了蚯蚓，還有哪些小生物？","昆蟲、微生物、真菌等分解者。"],
-  ["摸起來粗粗的、排水很快的是哪一種土？","沙土。"],
-  ["摸起來黏黏的、可以捏成球的是哪一種土？","黏土。"],
-  ["混合了沙土、黏土與有機質，最適合種植的土叫什麼？","壤土。"],
-  ["健康的土壤顏色通常是什麼顏色？","深咖啡色或黑褐色。"],
-  ["為什麼植物需要土壤？","土壤提供水分、養分與根部支撐。"],
-  ["土壤裡的有機質從哪裡來？","落葉、枯枝、生物殘骸分解而來。"],
-  ["土壤板結（太硬）對植物好不好？","不好，會讓根部無法呼吸與伸展。"],
-  ["為什麼要幫種植土加堆肥？","增加養分，讓植物長得更健康。"],
-  ["為什麼種植土要加椰纖或稻殼？","增加透氣度與排水性。"],
-  ["植物的根有什麼功能？","吸收水分和養分、固定植株。"],
-  ["植物為什麼需要陽光？","進行光合作用，製造養分。"],
-  ["光合作用需要哪三個主要條件？","陽光、水、二氧化碳。"],
-  ["光合作用會產生什麼氣體？","氧氣。"],
-  ["水耕種植需不需要土壤？","不需要，只需要水和營養液。"],
-  ["水耕植物的根泡在什麼裡面？","含有營養液的水中。"],
-  ["水耕海綿的作用是什麼？","固定種子與根部。"],
-  ["水耕大約多久要補充一次營養液？","約每 3-5 天。"],
-  ["水耕適合種在什麼地方？","陽台、教室、室內窗邊等空間有限的地方。"],
-  ["土耕和水耕，哪一種比較節省澆水？","水耕，因為水可以循環利用。"],
-  ["為什麼有些人喜歡土耕？","成本低、養分天然、操作簡單。"],
-  ["為什麼有些人喜歡水耕？","乾淨、少病蟲害、空間彈性大。"],
-  ["我們為什麼要珍惜食物？","因為食物得來不易，背後有許多人的努力。"],
-  ["廚餘可以怎麼再利用？","做成堆肥或給蚯蚓吃，變成養分。"],
-  ["什麼是有機農業？","不使用化學農藥與化肥，友善土地的耕作方式。"],
-  ["我們可以怎麼愛護環境？","減少浪費、做好垃圾分類、愛護動植物。"]
+/* ---------- cycle wheel ---------- */
+const cyclePts = [
+  {x:170,y:40, icon:"🟤", label:"土地"},
+  {x:282.6,y:105, icon:"👩‍🌾", label:"農夫"},
+  {x:282.6,y:235, icon:"🥬", label:"植物"},
+  {x:170,y:300, icon:"🍽️", label:"餐桌"},
+  {x:57.4,y:235, icon:"🍌", label:"惜食"},
+  {x:57.4,y:105, icon:"🪱", label:"堆肥"}
 ];
-const qaList = document.getElementById('qaList');
-qaData.forEach((item,i)=>{
-  const div = document.createElement('div');
-  div.className = 'qa-item';
-  div.innerHTML = `<span class="hint">點我看答案</span><span class="qnum">${i+1}</span>${item[0]}<div class="ans">💡 ${item[1]}</div>`;
-  div.onclick = ()=>{ div.classList.toggle('show'); };
-  qaList.appendChild(div);
+const nodeGroup = document.getElementById('nodeGroup');
+cyclePts.forEach((p,i)=>{
+  const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+  g.setAttribute('class','cycle-node dim');
+  g.setAttribute('id','node'+i);
+  g.innerHTML = `<circle cx="${p.x}" cy="${p.y}" r="30" fill="#fff" stroke="var(--grass)" stroke-width="3"/>
+    <text x="${p.x}" y="${p.y+8}" text-anchor="middle" font-size="24">${p.icon}</text>
+    <text class="cycle-label" x="${p.x}" y="${p.y+46}">${p.label}</text>`;
+  nodeGroup.appendChild(g);
+});
+function litNodes(indices){
+  cyclePts.forEach((p,i)=>{
+    const el = document.getElementById('node'+i);
+    if(indices.includes(i)){ el.classList.remove('dim'); el.classList.add('lit'); }
+  });
+}
+
+/* ---------- Q&A data (40 questions, categorized) ---------- */
+const qaCats = [
+  {title:"🟤 土地與農業", items:[
+    ["農業是什麼樣的活動？","人類種植作物、飼養動物來獲取食物的活動。"],
+    ["健康的土壤裡藏著什麼？","豐富的養分與許多小生物，如蚯蚓和微生物。"],
+    ["什麼是有機農業？","不使用化學農藥與化肥，順應自然的耕作方式。"],
+    ["農業會遇到哪些天氣挑戰？","乾旱、暴雨、颱風等極端氣候。"],
+    ["土壤退化是什麼意思？","土壤養分流失、變得貧瘠不利植物生長。"],
+    ["為什麼富林農場選擇有機農法？","為了友善土地、保護生物多樣性與環境健康。"],
+    ["土地公公在故事裡代表什麼？","孕育生命、提供養分的土地。"],
+    ["為什麼說「土地孕育生命」？","因為所有植物與食物的起點都來自健康的土壤。"]
+  ]},
+  {title:"👩‍🌾 育苗與灌溉", items:[
+    ["什麼是育苗？","先在小容器中培育幼苗，等長壯再移植到大盆或田裡。"],
+    ["育苗盆底部為什麼要戳洞？","讓多餘的水分可以排出，避免根部泡爛。"],
+    ["灌溉的原則是什麼？","少量多次，保持濕潤但不積水。"],
+    ["為什麼植物不能一次澆太多水？","水太多會讓根部缺氧腐爛。"],
+    ["移植幼苗時要注意什麼？","小心不要傷到根部，連根土一起移植。"],
+    ["雨滴哥哥在故事中負責什麼任務？","提供植物生長需要的水分。"],
+    ["為什麼要幫幼苗貼姓名標籤？","方便辨識與觀察紀錄，也培養責任感。"]
+  ]},
+  {title:"🌱 有機肥與蟲害防治", items:[
+    ["有機肥是用什麼做成的？","堆肥、蚓糞或發酵過的廚餘等天然材料。"],
+    ["施肥時為什麼不能直接碰到植物的莖？","可能會傷害或燒傷植物組織。"],
+    ["瓢蟲最愛吃什麼害蟲？","蚜蟲。"],
+    ["什麼是生物防治？","利用天敵來控制害蟲，取代化學農藥。"],
+    ["為什麼富林農場不噴農藥？","農藥可能傷害有益生物，也可能殘留在食物上。"],
+    ["有機肥聞起來像什麼？","像泥土的自然味道，不會有惡臭（正確發酵時）。"],
+    ["瓢蟲警長在故事中扮演什麼角色？","保護植物、驅趕害蟲的守護者。"]
+  ]},
+  {title:"🧺 豐收與餐桌", items:[
+    ["採收蔬果時動作應該怎麼樣？","輕輕地、溫柔地採摘，避免傷到植株。"],
+    ["怎麼判斷蔬果是否成熟？","觀察顏色、大小與觸感。"],
+    ["食物從農場到餐桌要經過哪些步驟？","採收、清洗整理、運送、烹調、上桌。"],
+    ["什麼是「吃多少、拿多少」？","依照自己的食量取餐，避免浪費食物。"],
+    ["為什麼要珍惜餐桌上的食物？","因為背後有農夫的辛勞與土地的滋養。"],
+    ["收成後可以怎麼慶祝？","品嚐自己種的蔬果、與家人朋友分享。"],
+    ["豐收代表善的循環走到第幾步？","第三步：植物提供食物。"]
+  ]},
+  {title:"🪱 廚餘與循環", items:[
+    ["廚餘可以怎麼再利用？","做成堆肥或給蚯蚓吃，轉化成養分。"],
+    ["蚯蚓在堆肥過程中扮演什麼角色？","幫忙分解廚餘，製造天然肥料。"],
+    ["堆肥完成後可以拿來做什麼？","施到土壤裡，滋養新的植物。"],
+    ["什麼是循環農業？","農場資源循環利用、不浪費的永續耕作模式。"],
+    ["「廚餘變黃金」是什麼意思？","廚餘經過處理變成珍貴的天然養分。"],
+    ["善的循環的最後一步是什麼？","剩餘資源回到土地，土地再次孕育生命。"],
+    ["為什麼說循環是「善」的？","因為它讓資源生生不息，善待環境也善待未來。"],
+    ["善善這顆種子最後經歷了哪些身份？","種子、植物、食物，最後化作養分回到土地。"]
+  ]}
+];
+const qaContainer = document.getElementById('qaContainer');
+let qCounter = 0;
+qaCats.forEach(cat=>{
+  const h = document.createElement('h3');
+  h.className = 'qa-cat-title';
+  h.textContent = cat.title;
+  qaContainer.appendChild(h);
+  const list = document.createElement('div');
+  list.className = 'qa-list';
+  cat.items.forEach(item=>{
+    qCounter++;
+    const div = document.createElement('div');
+    div.className = 'qa-item';
+    div.innerHTML = `<span class="hint">點我看答案</span><span class="qnum">${qCounter}</span>${item[0]}<div class="ans">💡 ${item[1]}</div>`;
+    div.onclick = ()=>{ div.classList.toggle('show'); };
+    list.appendChild(div);
+  });
+  qaContainer.appendChild(list);
 });
 
 /* ---------- science flip cards ---------- */
 const scienceData = [
-  ["🪱 蚯蚓","蚯蚓沒有眼睛也沒有骨頭，用皮膚呼吸，喜歡吃落葉果皮，牠鑽土時會幫土壤翻鬆、透氣，排出的蚓糞是天然肥料。"],
-  ["🟤 土壤","土壤是由岩石風化的顆粒、空氣、水分和有機質組成的，它是植物的家，也住著許多小生物。"],
-  ["🦠 微生物","微生物是肉眼看不到的小小生物，牠們住在土壤裡，負責把落葉、廚餘分解成植物可以吸收的養分。"],
-  ["♻️ 分解","分解就是把大的東西變成小小的碎片或養分的過程，蚯蚓和微生物都是厲害的分解高手。"],
-  ["🔄 養分循環","植物落葉→分解者分解→變成養分→回到土裡→被植物根部吸收，這樣不斷循環，叫做養分循環。"],
-  ["🌿 根","根是植物埋在土裡（或泡在水裡）的部分，負責吸收水分與養分，也能把植物固定住。"],
-  ["☀️ 光合作用","植物利用陽光、水和空氣中的二氧化碳，在葉子裡製造養分，同時釋放出我們呼吸需要的氧氣。"],
-  ["💧 水耕原理","植物不一定需要土壤，只要根部能接觸到含有養分的水（營養液），一樣可以吸收養分健康長大。"]
+  ["🟤 循環農業","循環農業就是讓農場裡的資源（像廚餘、雜草）不浪費，經過處理後重新變成養分回到土地，形成一個生生不息的圈圈。"],
+  ["🌾 有機農業","有機農業不使用化學農藥與肥料，而是用天然的堆肥與生物防治方式耕作，對土地與人都比較健康。"],
+  ["🪱 蚯蚓分解","蚯蚓和微生物會把廚餘、落葉分解成小小的養分顆粒，讓植物可以重新吸收利用。"],
+  ["🐞 生物防治","利用天敵（像瓢蟲吃蚜蟲）來控制害蟲數量，是一種友善環境的除蟲方法。"],
+  ["🌱 養分循環","養分從土壤到植物，再到食物，最後透過廚餘與分解回到土壤，不斷循環。"],
+  ["💧 灌溉原則","植物喝水要少量多次，土壤濕潤但不能積水，才能健康生長。"],
+  ["🍽️ 惜食精神","吃多少、拿多少，感恩每一份食物，是對農夫與土地最好的回報。"],
+  ["✨ 善的循環","從土地、農夫、植物、餐桌、惜食到堆肥，六個步驟環環相扣，形成生生不息的善的循環。"]
 ];
 const flipGrid = document.getElementById('flipGrid');
-scienceData.forEach((item,i)=>{
+scienceData.forEach(item=>{
   const card = document.createElement('div');
   card.className = 'flip-card';
+  const parts = item[0].split(' ');
   card.innerHTML = `<div class="flip-inner">
-      <div class="flip-front"><span class="icon">${item[0].split(' ')[0]}</span><h4 style="margin-top:8px;">${item[0].split(' ')[1]}</h4><p style="font-size:12px; opacity:.85;">點我翻面</p></div>
+      <div class="flip-front"><span class="icon">${parts[0]}</span><h4 style="margin-top:6px; font-size:14px;">${parts[1]}</h4><p style="font-size:11px; opacity:.85;">點我翻面</p></div>
       <div class="flip-back"><p>${item[1]}</p></div>
     </div>`;
   card.onclick = ()=> card.classList.toggle('flipped');
   flipGrid.appendChild(card);
 });
 
-/* ---------- compare toggle ---------- */
-function setCompareView(v){
-  document.getElementById('btnSoilView').classList.toggle('active-soil', v==='soil');
-  document.getElementById('btnWaterView').classList.toggle('active-water', v==='water');
-  document.getElementById('compareNote').textContent = v==='soil'
-    ? '土耕的優點是成本低、養分天然，還能培養與土地的親密感！'
-    : '水耕的優點是乾淨清爽、空間彈性大，很適合都市空間種植！';
-}
-
 /* ---------- quest / stages ---------- */
 const stages = [
-  {icon:"🪱", name:"找蚯蚓的家",
-   q:"蚯蚓最喜歡住在什麼樣的環境？",
-   opts:["陰暗潮濕的土壤裡","乾燥曬太陽的沙地上","水泥地上","冰箱裡"],
-   correct:0,
-   feedback:"答對了！蚯蚓喜歡陰暗潮濕、富含有機質的土壤。"},
-  {icon:"🥕", name:"我會分類廚餘",
-   q:"下面哪一項『可以』放進蚯蚓桶當食物？",
-   opts:["炸雞骨頭","蘋果皮","糖果","塑膠袋"],
-   correct:1,
-   feedback:"答對了！果皮菜葉是蚯蚓最愛的天然食物。"},
-  {icon:"🔍", name:"土壤偵探",
-   q:"哪一種土壤最適合種植蔬菜？",
-   opts:["純沙土","純黏土","壤土（混合有機質）","水泥地"],
-   correct:2,
-   feedback:"答對了！壤土保水又透氣，養分也豐富，是種植的最佳選擇。"},
-  {icon:"🌱", name:"我是種植高手",
-   q:"土耕種植的正確步驟，第一步應該是？",
-   opts:["先澆水再裝土","先把種植土裝進育苗盆","先把種子丟在桌上","先曬種子三天"],
-   correct:1,
-   feedback:"答對了！要先準備好種植土，再進行播種與澆水。"},
-  {icon:"💧", name:"水耕小博士",
-   q:"水耕植物的根部主要吸收什麼來獲得養分？",
-   opts:["空氣中的灰塵","含營養液的水","陽光的熱度","塑膠瓶的味道"],
-   correct:1,
-   feedback:"答對了！水耕靠根部接觸含營養液的水來吸收養分。"}
+  {icon:"🟤", name:"認識土地", nodeIdx:[0],
+   q:"下面哪一個最能代表健康的土地？",
+   opts:["充滿養分與小生物的鬆軟土壤","硬邦邦沒有生物的水泥地","完全乾燥龜裂的沙地","覆蓋厚厚垃圾的土地"],
+   correct:0, feedback:"答對了！健康的土壤鬆軟、有養分，還住著許多小生物。"},
+  {icon:"👩‍🌾", name:"我是小小農夫", nodeIdx:[1],
+   q:"照顧幼苗澆水時，正確的方式是？",
+   opts:["一次澆很多水淹過土壤","少量多次，保持濕潤不積水","完全不澆水靠雨水","用熱水加速生長"],
+   correct:1, feedback:"答對了！少量多次的灌溉才能讓根部健康呼吸。"},
+  {icon:"🌱", name:"植物醫生", nodeIdx:[2],
+   q:"富林農場用什麼方法對付蚜蟲？",
+   opts:["噴灑化學農藥","請瓢蟲來吃掉蚜蟲","用火燒掉植物","什麼都不做"],
+   correct:1, feedback:"答對了！瓢蟲是天然的蟲害防治好幫手。"},
+  {icon:"🍽️", name:"餐桌守護者", nodeIdx:[3,4],
+   q:"「吃多少、拿多少」代表的態度是？",
+   opts:["浪費食物沒關係","珍惜食物、不浪費","食物越多越好","不需要感謝農夫"],
+   correct:1, feedback:"答對了！珍惜食物就是感謝農夫與土地最好的方式。"},
+  {icon:"🪱", name:"廚餘變黃金", nodeIdx:[5],
+   q:"廚餘經過堆肥處理後，最後會變成什麼？",
+   opts:["有害的垃圾","滋養土地的天然養分","有毒的化學物質","完全消失不見"],
+   correct:1, feedback:"答對了！廚餘經過分解會變成珍貴的天然肥料，完成善的循環！"}
 ];
 let currentStage = 0;
 let completed = new Array(stages.length).fill(false);
@@ -1215,7 +1176,7 @@ function renderStageGrid(){
     const btn = document.createElement('div');
     btn.className = 'stage-btn' + (completed[i]?' done':'') + (i===currentStage?' active':'');
     btn.innerHTML = `<span class="ic">${s.icon}</span>第${'一二三四五'[i]}關<br>${s.name}${completed[i]?' ✅':''}`;
-    btn.onclick = ()=>{ if(!completed[i] || true){ currentStage = i; renderStageGrid(); renderQuestPanel(); } };
+    btn.onclick = ()=>{ currentStage = i; renderStageGrid(); renderQuestPanel(); };
     stageGrid.appendChild(btn);
   });
 }
@@ -1240,6 +1201,7 @@ function renderQuestPanel(){
         fb.style.color = 'var(--grass-dark)';
         fb.textContent = '🎉 ' + s.feedback;
         completed[currentStage]=true;
+        litNodes(stages.slice(0,currentStage+1).flatMap(st=>st.nodeIdx));
         spawnStars();
         renderStageGrid();
         setTimeout(()=>{
@@ -1248,7 +1210,7 @@ function renderQuestPanel(){
         }, 1300);
       }else{
         b.classList.add('wrong');
-        fb.style.color = 'var(--accent-red)';
+        fb.style.color = 'var(--red)';
         fb.textContent = '再想想看喔！';
       }
     };
@@ -1257,7 +1219,7 @@ function renderQuestPanel(){
 }
 function checkAllDone(){
   if(completed.every(Boolean)){
-    document.getElementById('certHint').textContent = '🎉 恭喜完成全部五關！輸入姓名領取專屬證書吧！';
+    document.getElementById('certHint').textContent = '🎉 恭喜完成全部五關！善的循環已經形成，輸入姓名領取專屬證書吧！';
     celebrate();
   }
 }
