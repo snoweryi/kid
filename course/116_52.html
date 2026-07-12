@@ -145,16 +145,9 @@ button{font-family:inherit; cursor:pointer;}
             transparent 10deg,
             rgba(255,230,120,.35) 20deg
         );
-
-
     filter:blur(3px);
-
-    animation:
-        rotateSunRay 20s linear infinite;
-
+    animation:rotateSunRay 20s linear infinite;
 }
-
-
 
 /* 柔和光暈 */
 .sun::after{
@@ -173,8 +166,7 @@ button{font-family:inherit; cursor:pointer;}
 }
 /* 升起 */
 @keyframes sunrise{
-    0%{
-        transform:
+    0%{transform:
             translate(-50%,250px)
             scale(.45);
         opacity:0;
@@ -236,13 +228,91 @@ button{font-family:inherit; cursor:pointer;}
 .cloud3:after{width:50px;height:50px;top:-18px;left:80px;}
 @keyframes drift{ from{transform:translateX(0);} to{transform:translateX(140vw);} }
 
-.bird{position:absolute; font-size:22px; animation:fly 16s linear infinite;}
-.bird2{animation-duration:22s; animation-delay:4s; font-size:16px;}
-@keyframes fly{
-  0%{transform:translate(-10vw,0) scaleX(1);}
-  49%{transform:translate(60vw,-30px) scaleX(1);}
-  50%{transform:translate(60vw,-30px) scaleX(-1);}
-  100%{transform:translate(-10vw,10px) scaleX(-1);}
+/* 小鳥基本設定 */
+.bird{
+    position:absolute;
+    left:-10vw;
+    top:18%;
+    font-size:28px;
+    z-index:20;
+    filter:
+        drop-shadow(0 5px 4px rgba(0,0,0,.15));
+	animation:
+        birdFly 26s linear infinite,
+        birdWing .6s ease-in-out infinite alternate;
+}
+/* 第二隻小鳥 */
+.bird2{
+    top:28%;
+    font-size:22px;
+    animation-duration:38s,.7s;
+    animation-delay: 6s, 0s;
+}
+
+/* 第三隻小鳥 */
+.bird3{
+    top:12%;
+    font-size:34px;
+    animation-duration:32s, .5s;
+    animation-delay: 16s, 0s;
+}
+/* 飛行路徑 */
+@keyframes birdFly{
+    0%{transform:
+            translate(-10vw,0)
+            rotate(5deg)
+            scaleX(1);
+    }
+    20%{transform:
+            translate(25vw,-35px)
+            rotate(-5deg)
+            scaleX(1);
+    }
+    45%{transform:
+            translate(65vw,-10px)
+            rotate(8deg)
+            scaleX(1);
+    }
+    50%{transform:
+            translate(80vw,-40px)
+            rotate(0deg)
+            scaleX(-1);
+
+    }
+    75%{transform:
+            translate(35vw,-70px)
+            rotate(-8deg)
+            scaleX(-1);
+    }
+    100%{
+        transform:
+            translate(-15vw,0)
+            rotate(5deg)
+            scaleX(-1);
+
+    }
+
+}
+
+
+
+/* 翅膀拍動 */
+@keyframes birdWing{
+
+
+    from{
+
+        margin-top:-3px;
+
+    }
+
+
+    to{
+
+        margin-top:8px;
+
+    }
+
 }
 .butterfly{position:absolute; font-size:20px; animation:flutter 9s ease-in-out infinite;}
 @keyframes flutter{
@@ -623,8 +693,12 @@ footer b{color:#fff;}
   <div class="cloud cloud2"></div>
   <div class="cloud cloud3"></div>
   <div class="sun"></div>
-  <div class="bird" style="top:18%;">🐦</div>
-  <div class="bird bird2" style="top:28%;">🐦</div>
+  <div class="bird">🐦</div>
+	<div class="bird bird2">🐤</div>
+	<div class="bird bird3">🕊️</div>
+
+  <!--<div class="bird" style="top:18%;">🐦</div>
+  <div class="bird bird2" style="top:28%;">🐦</div>-->
   <div class="butterfly" style="top:60%; left:15%;">🦋</div>
   <div class="butterfly" style="top:68%; left:75%; animation-delay:2s;">🦋</div>
   <div class="grassline">
