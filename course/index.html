@@ -381,120 +381,43 @@
   footer .foot-logo{font-weight:800;color:var(--rice-dark);}
 
 
-	/* ===== Dropdown ===== */
-
-.dropdown{
-
-    position:relative;
-
-}
-
-
-.dropbtn{
-
-    display:block;
-
-}
-
-
+/* ===== Dropdown ===== */
+.dropdown{position:relative;}
+.dropbtn{display:block;}
 /* 下拉選單 */
-
 .dropdown-menu{
-
     position:absolute;
-
-    top:100%;
-
-    left:50%;
-
-    transform:
-        translateX(-50%)
-        translateY(10px);
-
+    top:100%;left:50%;
+    transform:translateX(-50%) translateY(10px);
     min-width:220px;
-
     padding:10px;
-
     background:#fffef8;
-
     border:1px solid rgba(0,0,0,.08);
-
     border-radius:18px;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.15);
-
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
     display:flex;
-
     flex-direction:column;
-
     gap:6px;
-
     opacity:0;
-
     visibility:hidden;
-
-    transition:
-        .3s;
-
+    transition:.3s;
     z-index:100;
-
 }
-
-
 /* Hover 顯示 */
-
 .dropdown:hover .dropdown-menu{
-
     opacity:1;
-
     visibility:visible;
-
-    transform:
-        translateX(-50%)
-        translateY(0);
-
+    transform:translateX(-50%) translateY(0);
 }
-
-
 /* 選單項目 */
-
-.dropdown-menu a{
-
-    padding:10px 15px;
-
-    border-radius:10px;
-
-    transition:.25s;
-
-}
-
-
+.dropdown-menu a{padding:10px 15px;border-radius:10px;transition:.25s;}
 /* Hover */
-
-.dropdown-menu a:hover{
-
-    background:#edf8dd;
-
-    transform:translateX(5px);
-
-}
-
-
+.dropdown-menu a:hover{background:#edf8dd;transform:translateX(5px);}
 /* Active */
-
 .dropdown-menu a.active{
-
-    background:linear-gradient(
-        90deg,
-        #ffe082,
-        #aed581
-    );
-
+    background:linear-gradient(90deg,#ffe082,#aed581);
     color:#2e5d2f;
-
     font-weight:bold;
-
 }
 </style>
 </head>
@@ -558,20 +481,21 @@
 	<!--</div> 
 </nav>-->
 <div class="hero">
-<div class="eventheadh1">
+	<div class="eventheadh2" style="padding-left:8rem;">
+		<div class="hero-eyebrow">🌱 新竹縣芎林鄉・有機認證農場</div>
+		<h1>在田裡，<br>長大的不只是<span class="accent">菜</span>。</h1>
+		<p class="lead">富林有機農場占地 1.3 公頃，種植有機稻米、蔬菜與水果，飼養蛋雞與紅腹頸雞。我們相信，讓孩子與大人親手觸摸土壤、認識食物的來源，是最扎實的永續教育。</p>
+		<div class="hero-ctas">
+		  <a class="btn-primary" href="#contact">安排食農教育課程</a>
+		  <a class="btn-secondary" href="#esg">認識我們的ESG理念</a>
+		</div>
+	</div> 
+	<div class="eventheadh1" style="padding-right:4rem;">
 	<h1 >田園體驗</h1>
 	<p>悟空掉進富林有機農場啦！幫他找回散落田間的經書碎片——一場最好玩的親子取經冒險。</p>
 	</div>
 	
-  <div class="eventheadh2">
-    <div class="hero-eyebrow">🌱 新竹縣芎林鄉・有機認證農場</div>
-    <h1>在田裡，<br>長大的不只是<span class="accent">菜</span>。</h1>
-    <p class="lead">富林有機農場占地 1.3 公頃，種植有機稻米、蔬菜與水果，飼養蛋雞與紅腹頸雞。我們相信，讓孩子與大人親手觸摸土壤、認識食物的來源，是最扎實的永續教育。</p>
-    <div class="hero-ctas">
-      <a class="btn-primary" href="#contact">安排食農教育課程</a>
-      <a class="btn-secondary" href="#esg">認識我們的ESG理念</a>
-    </div>
-  </div>  
+   
 </div>
 
 <div class="wk"></div>
