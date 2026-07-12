@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>富林有機農場｜平衡生活：植物照顧大冒險</title>
+<title>富林有機農場｜由小觀大：動物照顧大冒險</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --sky:#CDEAC0;
-    --soil:#8B5E3C;
-    --soil-dark:#6B4226;
+    --sky:#FFE8B0;
+    --straw:#E8C07D;
+    --straw-dark:#B8863E;
     --leaf:#7CB342;
     --leaf-dark:#4E7A2E;
-    --water:#4FB0C6;
+    --water:#5FB8D6;
     --sun:#FFD166;
-    --cream:#FFF9F0;
+    --cream:#FFFBF2;
     --pink:#FF6B6B;
     --ink:#3A3A3A;
     --card-shadow: 0 10px 30px rgba(80,60,30,.15);
@@ -35,7 +35,7 @@
   .hero{
     position:relative;
     min-height:82vh;
-    background:linear-gradient(180deg, var(--sky) 0%, #EAF6DC 55%, var(--cream) 100%);
+    background:linear-gradient(180deg, var(--sky) 0%, #FFF3D6 55%, var(--cream) 100%);
     overflow:hidden;
     display:flex;
     flex-direction:column;
@@ -45,40 +45,35 @@
     padding:40px 20px 130px;
   }
   .fly{
-    position:absolute;
-    font-size:22px;
-    animation:float linear infinite;
-    opacity:.85;
+    position:absolute; font-size:22px;
+    animation:float linear infinite; opacity:.85;
   }
   @keyframes float{
     0%{transform:translate(0,0) rotate(0deg);}
-    50%{transform:translate(20px,-30px) rotate(15deg);}
+    50%{transform:translate(18px,-26px) rotate(12deg);}
     100%{transform:translate(0,0) rotate(0deg);}
   }
   .sun-mini{
     position:absolute; top:8%; right:12%;
     width:64px;height:64px;border-radius:50%;
-    background:radial-gradient(circle at 35% 35%, #FFE9A8, var(--sun));
+    background:radial-gradient(circle at 35% 35%, #FFF1C2, var(--sun));
     box-shadow:0 0 40px 14px rgba(255,209,102,.55);
     animation:bob 4s ease-in-out infinite;
   }
   @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
 
-  .grow-stage{
-    position:relative;
-    width:110px;height:130px;
-    margin:0 auto 14px;
+  .egg-stage{
+    position:relative; width:120px; height:130px; margin:0 auto 12px;
   }
-  .grow-stage span{
+  .egg-stage span{
     position:absolute; inset:0;
-    display:flex;align-items:flex-end;justify-content:center;
-    font-size:80px;
-    opacity:0;
+    display:flex; align-items:flex-end; justify-content:center;
+    font-size:76px; opacity:0;
     animation:cycle 6s infinite;
   }
-  .grow-stage span:nth-child(1){animation-delay:0s;}
-  .grow-stage span:nth-child(2){animation-delay:2s;}
-  .grow-stage span:nth-child(3){animation-delay:4s;}
+  .egg-stage span:nth-child(1){animation-delay:0s;}
+  .egg-stage span:nth-child(2){animation-delay:2s;}
+  .egg-stage span:nth-child(3){animation-delay:4s;}
   @keyframes cycle{
     0%{opacity:0; transform:translateY(10px) scale(.8);}
     8%{opacity:1; transform:translateY(0) scale(1);}
@@ -90,53 +85,48 @@
   .hero h1{
     position:relative; z-index:2;
     font-size:clamp(38px,5vw,46px);
-    color:var(--soil-dark);
+    color:var(--straw-dark);
     margin:0 0 8px;
     text-shadow:0 3px 0 #fff8;
   }
   .hero p.subtitle{
     position:relative; z-index:2;
     font-size:clamp(15px,2.2vw,20px);
-    color:var(--soil-dark);
+    color:var(--straw-dark);
     margin:0 0 26px;
     font-weight:500;
   }
   .badge{
     position:relative;z-index:2;
-    display:inline-block;
-    background:#fff;
-    padding:6px 18px;
-    border-radius:999px;
-    font-size:13px;
-    font-weight:700;
+    display:inline-block; background:#fff;
+    padding:6px 18px; border-radius:999px;
+    font-size:13px; font-weight:700;
     color:var(--leaf-dark);
     box-shadow:var(--card-shadow);
     margin-bottom:16px;
   }
   .scrolldown{
-    position:relative;z-index:2;
-    margin-top:6px;
-    font-size:14px;
-    color:var(--soil-dark);
+    position:relative;z-index:2; margin-top:6px;
+    font-size:14px; color:var(--straw-dark);
     animation:bob2 1.6s ease-in-out infinite;
   }
   @keyframes bob2{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
 
-  .hero-soil{
+  .hero-ground{
     position:absolute; bottom:0; left:0; width:100%; height:120px;
-    background:var(--soil);
+    background:var(--straw);
     border-radius:50% 50% 0 0 / 100% 100% 0 0;
     transform:scale(1.5);
   }
-  .hero-soil2{
+  .hero-ground2{
     position:absolute; bottom:-14px; left:0; width:100%; height:70px;
-    background:var(--soil-dark);
+    background:var(--straw-dark);
     border-radius:50% 50% 0 0 / 100% 100% 0 0;
     transform:scale(1.3) translateX(4%);
     opacity:.9;
   }
-  .sprout{
-    position:absolute; bottom:8px; font-size:24px;
+  .critter{
+    position:absolute; bottom:8px; font-size:26px;
     animation:sway 2.6s ease-in-out infinite;
     transform-origin:bottom center;
   }
@@ -145,34 +135,27 @@
   /* ---------- nav1 ---------- */
   .nav1-wrap{
     position:sticky; top:0; z-index:50;
-    background:var(--cream);
-    padding:12px 8px;
+    background:var(--cream); padding:12px 8px;
     box-shadow:0 4px 14px rgba(0,0,0,.06);
   }
   .nav1{
     display:flex; gap:8px; justify-content:center; flex-wrap:wrap;
-    max-width:1900px; margin:0 auto;
+    max-width:1050px; margin:0 auto;
   }
   .nav1 button{
     font-family:"Noto Sans TC",sans-serif;
-    border:none; cursor:pointer;
-    background:#fff;
-    padding:9px 14px;
-    border-radius:999px;
-    font-size:13.5px;
-    font-weight:700;
-    color:#6b5138;
-    box-shadow:0 3px 0 #e3ddc9;
+    border:none; cursor:pointer; background:#fff;
+    padding:9px 13px; border-radius:999px;
+    font-size:13px; font-weight:700; color:#8a6a34;
+    box-shadow:0 3px 0 #ecd9ae;
     transition:.2s transform,.2s background,.2s color;
     white-space:nowrap;
   }
-  .nav1 button:hover{transform:translateY(-2px);}
-  .nav1 button.active{
-    background:var(--pink); color:#fff; box-shadow:0 3px 0 #c94f4f;
-  }
+  .nav1 button:hover{ transform:translateY(-2px); }
+  .nav1 button.active{ background:var(--pink); color:#fff; box-shadow:0 3px 0 #c94f4f; }
 
   /* ---------- SECTIONS ---------- */
-  .stage{ max-width: 1900px; margin:30px auto 60px; padding:0 18px; }
+  .stage{ max-width:900px; margin:30px auto 60px; padding:0 18px; }
   .topic{ display:none; animation:fadeUp .5s ease; }
   .topic.active{ display:block; }
   @keyframes fadeUp{ from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);} }
@@ -182,28 +165,29 @@
     padding:28px clamp(18px,4vw,40px) 36px; position:relative; overflow:hidden;
   }
   .topic-head{ display:flex; align-items:center; gap:16px; margin-bottom:6px; }
-  .topic-emoji{ font-size:52px; display:inline-block; }
+  .topic-emoji{ font-size:50px; display:inline-block; }
   .anim-bounce{animation:bounce 2.2s ease-in-out infinite;}
   .anim-spin{animation:spin 7s linear infinite;}
   .anim-float{animation:floaty 3s ease-in-out infinite;}
   .anim-wobble{animation:wobble 2.4s ease-in-out infinite;}
   .anim-pulse{animation:pulse 2s ease-in-out infinite;}
-  .anim-drip{animation:drip 1.8s ease-in-out infinite;}
+  .anim-waddle{animation:waddle 1.4s ease-in-out infinite;}
   @keyframes bounce{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-10px) rotate(6deg);}}
   @keyframes spin{from{transform:rotate(0);}to{transform:rotate(360deg);}}
   @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
   @keyframes wobble{0%,100%{transform:rotate(-8deg);}50%{transform:rotate(8deg);}}
   @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.12);}}
-  @keyframes drip{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+  @keyframes waddle{0%,100%{transform:translateX(-4px) rotate(-5deg);}50%{transform:translateX(4px) rotate(5deg);}}
 
-  .topic h2{ font-size:25px; margin:0; color:var(--soil-dark); }
+  .topic h2{ font-size:25px; margin:0; color:var(--straw-dark); }
   .topic .eyebrow{ display:block; font-size:13px; font-weight:700; color:var(--pink); letter-spacing:1px; margin-bottom:2px; }
 
   .section-block{ margin-top:20px; padding:18px 20px; border-radius:18px; }
-  .block-title{ display:flex; align-items:center; gap:8px; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--soil-dark); }
+  .block-title{ display:flex; align-items:center; gap:8px; font-weight:700; font-size:15px; margin-bottom:10px; color:var(--straw-dark); }
   .learn-block{ background:#FFF3E0; }
   .farm-block{ background:#EAF5DF; border:2px dashed var(--leaf-dark); }
-  .quiz-block{ background:#E6F4F7; }
+  .quiz-block{ background:#E9F1FB; }
+  .note-block{ background:#FDECEC; border:2px dotted #E39A9A; }
 
   ul.points{ margin:0; padding-left:20px; }
   ul.points li{ margin-bottom:8px; line-height:1.6; font-size:15px; }
@@ -211,11 +195,11 @@
   .quiz-options{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
   .opt{
     font-family:"Noto Sans TC",sans-serif;
-    border:2px solid #a9dbe6; background:#fff;
+    border:2px solid #b7cdf0; background:#fff;
     padding:9px 16px; border-radius:14px; cursor:pointer;
     font-size:14px; font-weight:500; transition:.15s;
   }
-  .opt:hover{ background:#E9F8FB; }
+  .opt:hover{ background:#EEF3FC; }
   .opt.correct{ background:#C9E8B6; border-color:#7CBF5C; animation:pop .4s; }
   .opt.wrong{ background:#F4B7B7; border-color:#e07a7a; animation:shake .4s; }
   @keyframes pop{0%{transform:scale(1);}50%{transform:scale(1.12);}100%{transform:scale(1);}}
@@ -234,9 +218,9 @@
   .arrow-btn:disabled{ opacity:.3; cursor:default; }
 
   /* ---------- FINAL QUIZ ---------- */
-  .final-wrap{ max-width:1900px; margin:0 auto 70px; padding:0 18px; }
+  .final-wrap{ max-width:900px; margin:0 auto 70px; padding:0 18px; }
   .final-card{
-    background:linear-gradient(160deg,#E6F4DD,#D6EFF4);
+    background:linear-gradient(160deg,#FFEFD0,#DCEEF8);
     border-radius:28px; box-shadow:var(--card-shadow);
     padding:30px clamp(18px,4vw,40px) 36px; text-align:center;
   }
@@ -249,8 +233,8 @@
     cursor:pointer; font-family:"Noto Sans TC",sans-serif; box-shadow:0 3px 0 #c94f4f;
   }
 
-  footer{ background:var(--soil-dark); color:#FBEFDD; padding:36px 20px; text-align:center; }
-  footer h3{ margin:0 0 8px; font-size:20px; color:#CDE8A0; }
+  footer{ background:var(--straw-dark); color:#FFF7E6; padding:36px 20px; text-align:center; }
+  footer h3{ margin:0 0 8px; font-size:20px; color:#FFE9B0; }
   footer p{ margin:4px 0; font-size:14px; line-height:1.7; }
   footer .farm-name{ font-weight:700; color:#fff; }
 
@@ -300,7 +284,6 @@
 </style>
 </head>
 <body>
-
 <nav>
 	<div class="nav-inner">
 		<div class="logo"><span class="logo-mark">🌾</span><a href="https://snoweryi.github.io/kid/course">富林有機農場</a></div>
@@ -325,39 +308,40 @@
 </nav>
 <!-- HERO -->
 <section class="hero">
-  <span class="fly" style="top:14%;left:16%;animation-duration:5s;">🦋</span>
-  <span class="fly" style="top:26%;left:72%;animation-duration:6.5s;animation-delay:1s;">🐝</span>
-  <span class="fly" style="top:10%;left:50%;animation-duration:7s;animation-delay:2s;">🍃</span>
+  <span class="fly" style="top:14%;left:16%;animation-duration:5s;">🪶</span>
+  <span class="fly" style="top:24%;left:72%;animation-duration:6.5s;animation-delay:1s;">🦋</span>
+  <span class="fly" style="top:10%;left:50%;animation-duration:7s;animation-delay:2s;">🪶</span>
   <div class="sun-mini"></div>
 
   <span class="badge">🌾 富林有機農場 × 校園食農教育</span>
-  <h1>平衡生活：植物照顧大冒險</h1>
-  <div class="grow-stage">
-    <span>🌰</span><span>🌱</span><span>🌻</span>
+  <h1>由小觀大：動物照顧大冒險</h1>
+  <div class="egg-stage">
+    <span>🥚</span><span>🐣</span><span>🐥</span>
   </div>
-  <p class="subtitle">從一顆種子到餐桌上的美味，跟著小小農夫，學會照顧一株植物需要的所有溫柔！</p>
+  <p class="subtitle">從一顆蛋開始，認識雞和鴨的一生，學會像小小飼育員一樣，溫柔照顧每個小生命！</p>
   <div class="scrolldown">↓ 點下面的按鈕開始探索 ↓</div>
 
-  <div class="hero-soil2"></div>
-  <div class="hero-soil"></div>
-  <span class="sprout" style="left:6%;">🌱</span>
-  <span class="sprout" style="left:20%;animation-delay:.3s;">🐛</span>
-  <span class="sprout" style="left:35%;animation-delay:.6s;">🌱</span>
-  <span class="sprout" style="left:50%;animation-delay:.2s;">🪱</span>
-  <span class="sprout" style="left:65%;animation-delay:.8s;">🌱</span>
-  <span class="sprout" style="left:80%;animation-delay:.5s;">🌿</span>
+  <div class="hero-ground2"></div>
+  <div class="hero-ground"></div>
+  <span class="critter" style="left:6%;">🐔</span>
+  <span class="critter" style="left:20%;animation-delay:.3s;">🥚</span>
+  <span class="critter" style="left:35%;animation-delay:.6s;">🐤</span>
+  <span class="critter" style="left:50%;animation-delay:.2s;">🦆</span>
+  <span class="critter" style="left:65%;animation-delay:.8s;">🐥</span>
+  <span class="critter" style="left:80%;animation-delay:.5s;">🌾</span>
 </section>
 
 <!-- nav1 -->
 <div class="nav1-wrap">
   <div class="nav1" id="nav1Bar">
-    <button data-t="0" class="active">🌱 生命週期</button>
-    <button data-t="1">🟤 土壤</button>
-    <button data-t="2">🍂 肥料</button>
-    <button data-t="3">💧 水質酸鹼</button>
-    <button data-t="4">☀️ 陽光</button>
-    <button data-t="5">🌡️ 溫度</button>
-    <button data-t="6">📅 種植時間</button>
+    <button data-t="0" class="active">🥚 雞蛋觀察</button>
+    <button data-t="1">🐣 雞蛋孵育</button>
+    <button data-t="2">🦆 鴨蛋孵育</button>
+    <button data-t="3">🐔 雞的習性</button>
+    <button data-t="4">🐤 雞的照顧</button>
+    <button data-t="5">🦆 鴨的習性</button>
+    <button data-t="6">💦 鴨的照顧</button>
+    <button data-t="7">♻️ 清理堆肥</button>
   </div>
 </div>
 
@@ -367,32 +351,32 @@
   <div class="topic active" data-topic="0">
     <div class="topic-card">
       <div class="topic-head">
-        <span class="topic-emoji anim-bounce">🌱</span>
-        <div><span class="eyebrow">主題一</span><h2>植物的生命週期</h2></div>
+        <span class="topic-emoji anim-wobble">🥚</span>
+        <div><span class="eyebrow">主題一</span><h2>雞蛋觀察：小小的完整世界</h2></div>
       </div>
       <div class="section-block learn-block">
         <div class="block-title">📘 我們要學會的事</div>
         <ul class="points">
-          <li>植物的一生會經過：種子 → 發芽 → 幼苗 → 開花 → 結果 → 產生新的種子。</li>
-          <li>這個過程會不斷循環，一顆種子最後又能變成很多新種子，生命就這樣延續下去。</li>
-          <li>不同植物的生命週期長短不同，有的幾週就完成，有的要好幾個月。</li>
+          <li>一顆蛋由外到內分別是：蛋殼、蛋白、蛋黃，還有一個裝空氣的「氣室」。</li>
+          <li>蛋殼上有許多肉眼看不見的小孔，可以讓空氣進出，讓胚胎呼吸。</li>
+          <li>蛋黃顏色深淺，其實跟母雞吃的飼料有關，不代表營養一定比較好或不好。</li>
         </ul>
       </div>
       <div class="section-block farm-block">
         <div class="block-title">🌾 富林農場實境連結</div>
         <ul class="points">
-          <li>稻米的一生：育苗 → 插秧 → 分蘗（長出很多新芽）→ 抽穗 → 結穗變黃金稻穗 → 收割。</li>
-          <li>食農教育園區設有各生長階段的實體展示區，可以近距離觀察每個階段的稻子長什麼樣子。</li>
-          <li><b>體驗活動：</b>發下生命週期圖卡，讓小朋友依照正確順序排出「種子到稻穗」的成長過程。</li>
+          <li>富林農場每天新鮮撿拾的雞蛋，可以讓小朋友觀察蛋殼顏色、大小的自然差異。</li>
+          <li>對照市售雞蛋，聞聞看、摸摸看新鮮雞蛋的觸感與外觀。</li>
+          <li><b>體驗活動：</b>打開一顆生蛋，用放大鏡觀察蛋黃、蛋白與繫帶（固定蛋黃的白色細絲）。</li>
         </ul>
       </div>
       <div class="section-block quiz-block">
         <div class="block-title">🎯 想一想</div>
-        <p style="margin:0 0 6px;font-weight:500;">植物的生命週期，最後又會回到什麼？</p>
+        <p style="margin:0 0 6px;font-weight:500;">蛋殼上的小孔，主要的功能是什麼？</p>
         <div class="quiz-options">
-          <button class="opt" data-c="0">變成石頭</button>
-          <button class="opt" data-c="1">產生新的種子</button>
-          <button class="opt" data-c="0">永遠不會結束的葉子</button>
+          <button class="opt" data-c="1">讓空氣進出，幫助胚胎呼吸</button>
+          <button class="opt" data-c="0">讓蛋黃流出來</button>
+          <button class="opt" data-c="0">裝飾用的花紋</button>
         </div>
         <div class="feedback"></div>
       </div>
@@ -407,32 +391,32 @@
   <div class="topic" data-topic="1">
     <div class="topic-card">
       <div class="topic-head">
-        <span class="topic-emoji anim-wobble">🟤</span>
-        <div><span class="eyebrow">主題二</span><h2>土壤：植物的家</h2></div>
+        <span class="topic-emoji anim-pulse">🐣</span>
+        <div><span class="eyebrow">主題二</span><h2>雞蛋的孵育：21天的等待</h2></div>
       </div>
       <div class="section-block learn-block">
         <div class="block-title">📘 我們要學會的事</div>
         <ul class="points">
-          <li>好的土壤要鬆軟、透氣，還要有豐富的有機質（像是落葉、腐爛的植物殘渣）。</li>
-          <li>土壤裡住著很多小幫手，像蚯蚓、微生物，牠們會幫忙把土壤變得更肥沃。</li>
-          <li>如果土壤又硬又缺乏養分，植物的根就很難伸展、也吸收不到營養。</li>
+          <li>雞蛋孵化大約需要 21 天，過程中需要維持約 37～38°C 的恆定溫度。</li>
+          <li>母雞（或孵蛋器）會定時翻動雞蛋，讓每個部位均勻受熱，避免胚胎黏在蛋殼上。</li>
+          <li>可以用「照蛋」的方式（用強光照蛋殼），觀察裡面血管和胚胎的生長狀況。</li>
         </ul>
       </div>
       <div class="section-block farm-block">
         <div class="block-title">🌾 富林農場實境連結</div>
         <ul class="points">
-          <li>富林農場採友善耕作，不使用會傷害土壤的化學農藥，讓蚯蚓和微生物安心住在田裡。</li>
-          <li>農場的有機認證，其中一項重要標準就是「土壤健康」，蚯蚓數量越多，代表土壤越健康。</li>
-          <li><b>體驗活動：</b>實際挖一小塊農場的土，找找看裡面有沒有蚯蚓，摸摸土壤鬆軟的觸感。</li>
+          <li>富林農場可示範孵蛋箱的溫濕度控制設備，說明科技如何輔助自然孵化。</li>
+          <li>透過照蛋燈實際照射受精蛋，讓孩子看見發育中的血管網絡，非常震撼有趣。</li>
+          <li><b>體驗活動：</b>分組計算「今天孵化到第幾天」，並在孵化日曆上做記號。</li>
         </ul>
       </div>
       <div class="section-block quiz-block">
         <div class="block-title">🎯 想一想</div>
-        <p style="margin:0 0 6px;font-weight:500;">哪一種土壤代表比較健康、適合種植？</p>
+        <p style="margin:0 0 6px;font-weight:500;">雞蛋從孵化到小雞出殼，大約需要多少天？</p>
         <div class="quiz-options">
-          <button class="opt" data-c="1">鬆軟、有蚯蚓住在裡面的土</button>
-          <button class="opt" data-c="0">又硬又乾、灰白色的土</button>
-          <button class="opt" data-c="0">完全沒有生物的土</button>
+          <button class="opt" data-c="0">7 天</button>
+          <button class="opt" data-c="1">21 天</button>
+          <button class="opt" data-c="0">2 個月</button>
         </div>
         <div class="feedback"></div>
       </div>
@@ -447,32 +431,36 @@
   <div class="topic" data-topic="2">
     <div class="topic-card">
       <div class="topic-head">
-        <span class="topic-emoji anim-pulse">🍂</span>
-        <div><span class="eyebrow">主題三</span><h2>肥料：植物的營養餐</h2></div>
+        <span class="topic-emoji anim-float">🦆</span>
+        <div><span class="eyebrow">主題三</span><h2>鴨蛋的孵育：多等一週的耐心</h2></div>
       </div>
       <div class="section-block learn-block">
         <div class="block-title">📘 我們要學會的事</div>
         <ul class="points">
-          <li>肥料就像植物的營養餐，可以補充土壤裡的養分。</li>
-          <li>有機肥料（像堆肥、動物糞便、稻殼）來自大自然，會慢慢分解、溫和地滋養土地。</li>
-          <li>化學肥料效果快，但用太多可能會傷害土壤和環境，這也是有機農法選擇避免的原因。</li>
+          <li>鴨蛋孵化大約需要 28 天，比雞蛋多了約一週的時間。</li>
+          <li>鴨蛋孵化過程需要比雞蛋更高的濕度，因為鴨蛋殼比較厚、透氣孔也不太一樣。</li>
+          <li>不同禽鳥的孵化條件都不完全相同，這也是為什麼孵蛋箱需要依種類調整設定。</li>
         </ul>
       </div>
       <div class="section-block farm-block">
         <div class="block-title">🌾 富林農場實境連結</div>
         <ul class="points">
-          <li>富林農場把蛋雞的雞糞、稻殼、廚餘做成有機堆肥，回饋給土地，形成「循環農業」。</li>
-          <li>這樣的做法讓農場不需要仰賴化學肥料，也減少了廢棄物，是很好的 ESG 永續示範。</li>
-          <li><b>體驗活動：</b>觀察堆肥區，聞一聞（不用手摸）發酵中的堆肥，了解「垃圾變黃金」的過程。</li>
+          <li>富林農場可安排與合作牧場一同展示雞蛋與鴨蛋的孵化對照組，讓孩子比較兩者的差異。</li>
+          <li>透過「雞蛋 vs 鴨蛋」比較表，理解孵化天數、體型、蛋殼厚度等不同之處。</li>
+          <li><b>體驗活動：</b>觸摸比較雞蛋與鴨蛋的重量、蛋殼觸感，猜猜哪一顆孵化時間比較長。</li>
         </ul>
+      </div>
+      <div class="section-block note-block">
+        <div class="block-title">📌 給場主的小提醒</div>
+        <p style="margin:0;font-size:14px;line-height:1.6;">富林農場目前主要飼養蛋雞與紅腹頸雞，若學校希望實際展示鴨蛋孵育過程，建議提前準備鴨蛋樣本或與鄰近水禽牧場合作，才能讓這個單元更完整生動。</p>
       </div>
       <div class="section-block quiz-block">
         <div class="block-title">🎯 想一想</div>
-        <p style="margin:0 0 6px;font-weight:500;">富林農場的有機堆肥，主要來自哪些材料？</p>
+        <p style="margin:0 0 6px;font-weight:500;">鴨蛋的孵化天數，跟雞蛋比起來是？</p>
         <div class="quiz-options">
-          <button class="opt" data-c="1">雞糞、稻殼、廚餘</button>
-          <button class="opt" data-c="0">化學合成藥劑</button>
-          <button class="opt" data-c="0">塑膠瓶罐</button>
+          <button class="opt" data-c="1">比雞蛋長，大約 28 天</button>
+          <button class="opt" data-c="0">比雞蛋短，大約 10 天</button>
+          <button class="opt" data-c="0">完全一樣，都是 21 天</button>
         </div>
         <div class="feedback"></div>
       </div>
@@ -487,32 +475,32 @@
   <div class="topic" data-topic="3">
     <div class="topic-card">
       <div class="topic-head">
-        <span class="topic-emoji anim-drip">💧</span>
-        <div><span class="eyebrow">主題四</span><h2>水質與酸鹼度</h2></div>
+        <span class="topic-emoji anim-bounce">🐔</span>
+        <div><span class="eyebrow">主題四</span><h2>雞的習性與生長</h2></div>
       </div>
       <div class="section-block learn-block">
         <div class="block-title">📘 我們要學會的事</div>
         <ul class="points">
-          <li>植物喝的水和土壤，也要注意「酸鹼度」，我們用 pH 值來表示，範圍是 0～14。</li>
-          <li>pH 7 是中性，數字越小越「酸」，數字越大越「鹼」。</li>
-          <li>大部分蔬菜喜歡微酸到中性的環境（大約 pH 6～7），太酸或太鹼都會影響生長。</li>
+          <li>雞是群居動物，群體中會有「啄序」（誰先吃、誰後吃的社會地位順序）。</li>
+          <li>雞的作息「日出而作、日落而息」，天亮活動、天黑回巢休息。</li>
+          <li>雞的一生大致會經過：雛雞 → 中雞 → 成雞，體型和羽毛顏色會隨階段改變。</li>
         </ul>
       </div>
       <div class="section-block farm-block">
         <div class="block-title">🌾 富林農場實境連結</div>
         <ul class="points">
-          <li>農場會定期用試紙檢測灌溉水源與土壤的酸鹼度，確保作物在最適合的環境中生長。</li>
-          <li>如果土壤太酸，農場可能會加入天然的貝殼粉或石灰來調整，而不是使用化學藥劑。</li>
-          <li><b>體驗活動：</b>用 pH 試紙分別測試清水、檸檬水、肥皂水，親眼看看試紙顏色的變化。</li>
+          <li>富林農場飼養一般蛋雞，也飼養特色品種「紅腹頸雞」，可以比較外觀與習性的不同。</li>
+          <li>放養的蛋雞會在田間自由覓食、洗沙浴，這些都是雞的天然行為。</li>
+          <li><b>體驗活動：</b>觀察雞群互動 5 分鐘，記錄看看誰是「群體中最先吃到飼料的雞」。</li>
         </ul>
       </div>
       <div class="section-block quiz-block">
         <div class="block-title">🎯 想一想</div>
-        <p style="margin:0 0 6px;font-weight:500;">pH 值等於 7，代表這個環境是？</p>
+        <p style="margin:0 0 6px;font-weight:500;">雞群裡「誰先吃、誰後吃」的社會地位順序，稱作什麼？</p>
         <div class="quiz-options">
-          <button class="opt" data-c="0">非常酸</button>
-          <button class="opt" data-c="1">中性</button>
-          <button class="opt" data-c="0">非常鹼</button>
+          <button class="opt" data-c="1">啄序</button>
+          <button class="opt" data-c="0">飛行順序</button>
+          <button class="opt" data-c="0">睡覺順序</button>
         </div>
         <div class="feedback"></div>
       </div>
@@ -527,32 +515,32 @@
   <div class="topic" data-topic="4">
     <div class="topic-card">
       <div class="topic-head">
-        <span class="topic-emoji anim-spin">☀️</span>
-        <div><span class="eyebrow">主題五</span><h2>陽光：植物的能量餐廳</h2></div>
+        <span class="topic-emoji anim-wobble">🐤</span>
+        <div><span class="eyebrow">主題五</span><h2>雞的照顧：飼育員的日常</h2></div>
       </div>
       <div class="section-block learn-block">
         <div class="block-title">📘 我們要學會的事</div>
         <ul class="points">
-          <li>植物利用陽光、水和空氣中的二氧化碳，透過「光合作用」製造養分，並釋放出氧氣。</li>
-          <li>沒有陽光，植物就沒辦法自己做飯，會長得又瘦又弱、葉子發黃。</li>
-          <li>不同植物需要的日照量不同，有些喜歡全日照，有些則喜歡半遮蔭。</li>
+          <li>照顧雞需要準備：乾淨的飼料、充足的飲水、通風乾燥的雞舍。</li>
+          <li>健康的雞眼睛明亮、羽毛有光澤、走路有精神；生病的雞常常縮著身體、不太動。</li>
+          <li>每天要固定時間餵食、撿蛋、清潔雞舍，才能維持雞群的健康與蛋的品質。</li>
         </ul>
       </div>
       <div class="section-block farm-block">
         <div class="block-title">🌾 富林農場實境連結</div>
         <ul class="points">
-          <li>農場會依作物特性安排種植位置：喜光的稻米種在開闊田區，怕強光曬傷的葉菜則搭配遮陰網。</li>
-          <li>富林農場地處新竹平原，日照充足，是稻米生長的良好條件之一。</li>
-          <li><b>體驗活動：</b>比較「有遮蔭」和「全日照」下兩株小苗的葉色與生長狀況差異。</li>
+          <li>富林農場每天有固定的餵食、撿蛋、環境整理流程（飼育 SOP），確保雞群健康、雞蛋新鮮。</li>
+          <li>農場採有機認證管理，不濫用藥物，改用良好飼養環境來預防疾病。</li>
+          <li><b>體驗活動：</b>穿上小飼育員圍裙，實際體驗撿雞蛋、輕輕放入蛋籃的正確方式。</li>
         </ul>
       </div>
       <div class="section-block quiz-block">
         <div class="block-title">🎯 想一想</div>
-        <p style="margin:0 0 6px;font-weight:500;">植物利用陽光進行光合作用，會製造出養分，同時也會釋放出什麼氣體？</p>
+        <p style="margin:0 0 6px;font-weight:500;">健康的雞，通常會有什麼樣的外觀表現？</p>
         <div class="quiz-options">
-          <button class="opt" data-c="0">二氧化碳</button>
-          <button class="opt" data-c="1">氧氣</button>
-          <button class="opt" data-c="0">氮氣</button>
+          <button class="opt" data-c="1">眼睛明亮、羽毛有光澤、走路有精神</button>
+          <button class="opt" data-c="0">整天縮在角落不動</button>
+          <button class="opt" data-c="0">羽毛雜亂、眼睛無神</button>
         </div>
         <div class="feedback"></div>
       </div>
@@ -567,32 +555,36 @@
   <div class="topic" data-topic="5">
     <div class="topic-card">
       <div class="topic-head">
-        <span class="topic-emoji anim-bounce">🌡️</span>
-        <div><span class="eyebrow">主題六</span><h2>溫度：植物的舒適圈</h2></div>
+        <span class="topic-emoji anim-waddle">🦆</span>
+        <div><span class="eyebrow">主題六</span><h2>鴨的習性與生長</h2></div>
       </div>
       <div class="section-block learn-block">
         <div class="block-title">📘 我們要學會的事</div>
         <ul class="points">
-          <li>每種植物都有自己喜歡的溫度範圍，太冷或太熱都會讓它們長得不好。</li>
-          <li>溫度會影響種子發芽的速度、開花結果的時間，甚至味道的好壞。</li>
-          <li>台灣四季分明，農夫需要依照溫度變化，調整不同季節種植的作物。</li>
+          <li>鴨子喜歡有水的環境，牠們的腳趾間有「蹼」，非常適合划水游泳。</li>
+          <li>鴨子也是群居動物，走路時常常一隻跟著一隻，形成排隊的可愛畫面。</li>
+          <li>鴨子的生長速度通常比雞快，體型也比較大，叫聲也不太一樣（「呱呱」而不是「咕咕」）。</li>
         </ul>
       </div>
       <div class="section-block farm-block">
         <div class="block-title">🌾 富林農場實境連結</div>
         <ul class="points">
-          <li>台灣稻米喜歡溫暖的氣候，富林農場主要在氣溫較暖的季節種植水稻。</li>
-          <li>冬季氣溫較低時，農場會改種耐寒的裡作蔬菜，讓土地一年四季都能好好利用。</li>
-          <li><b>體驗活動：</b>用溫度計實際測量農場不同角落（陽光下／樹蔭下／田水裡）的溫度差異。</li>
+          <li>可透過「雞 vs 鴨」對照表，帶孩子比較蹼足、羽毛防水性、叫聲、生長速度的不同。</li>
+          <li>鴨子的覓食行為（在水邊吃小昆蟲、水草）也能延伸到生態池、濕地生態的介紹。</li>
+          <li><b>體驗活動：</b>模仿雞走路和鴨子走路的樣子，用身體記住兩者步態的差異。</li>
         </ul>
+      </div>
+      <div class="section-block note-block">
+        <div class="block-title">📌 給場主的小提醒</div>
+        <p style="margin:0;font-size:14px;line-height:1.6;">此單元同樣建議視農場目前是否有飼養鴨隻決定呈現方式；若尚未飼養，可用影片、圖卡搭配雞群做「異同比較」的形式進行教學。</p>
       </div>
       <div class="section-block quiz-block">
         <div class="block-title">🎯 想一想</div>
-        <p style="margin:0 0 6px;font-weight:500;">富林農場為什麼會在冬天改種耐寒蔬菜，而不是繼續種稻米？</p>
+        <p style="margin:0 0 6px;font-weight:500;">鴨子的腳趾間有什麼構造，讓牠們很會游泳？</p>
         <div class="quiz-options">
-          <button class="opt" data-c="1">因為稻米喜歡溫暖氣候，冬天太冷不適合</button>
-          <button class="opt" data-c="0">因為農夫比較喜歡蔬菜</button>
-          <button class="opt" data-c="0">因為稻米種太多了</button>
+          <button class="opt" data-c="1">蹼</button>
+          <button class="opt" data-c="0">羽毛</button>
+          <button class="opt" data-c="0">尾巴</button>
         </div>
         <div class="feedback"></div>
       </div>
@@ -607,38 +599,78 @@
   <div class="topic" data-topic="6">
     <div class="topic-card">
       <div class="topic-head">
-        <span class="topic-emoji anim-float">📅</span>
-        <div><span class="eyebrow">主題七</span><h2>種植時間：農夫的智慧行事曆</h2></div>
+        <span class="topic-emoji anim-float">💦</span>
+        <div><span class="eyebrow">主題七</span><h2>鴨的照顧：水中生活的細節</h2></div>
       </div>
       <div class="section-block learn-block">
         <div class="block-title">📘 我們要學會的事</div>
         <ul class="points">
-          <li>「什麼時候種什麼」是農夫長年累積下來的經驗，太早或太晚播種都可能影響收成。</li>
-          <li>老祖宗把一年分成二十四節氣，作為安排農事時間的重要參考。</li>
-          <li>順應時節種植，不僅收成較好，也比較不需要額外的人工介入（例如加溫、加藥）。</li>
+          <li>照顧鴨子需要提供戲水池或水源，讓牠們清潔羽毛、維持健康。</li>
+          <li>鴨子的羽毛有防水油脂，會用嘴巴整理羽毛，保持不容易被水弄濕。</li>
+          <li>鴨舍要注意防潮但也要留設戲水空間，飼料需求量通常比雞多一些。</li>
         </ul>
       </div>
       <div class="section-block farm-block">
         <div class="block-title">🌾 富林農場實境連結</div>
         <ul class="points">
-          <li>富林農場依循「春耕、夏耘、秋收、冬藏」的節奏，規劃全年的稻米與蔬果種植時程。</li>
-          <li>農場會依節氣舉辦體驗活動，讓孩子親身參與插秧、收割等不同時節的農事工作。</li>
-          <li><b>體驗活動：</b>對照農場的「全年種植行事曆」，找出自己生日當月農場正在忙什麼農事。</li>
+          <li>若農場規劃增設小型戲水池，可作為未來食農教育園區的生態延伸亮點。</li>
+          <li>可連結富林農場的濕地／水資源循環理念，介紹水域生態在農場中的角色。</li>
+          <li><b>體驗活動：</b>觀察（或透過影片）鴨子整理羽毛的動作，猜猜牠們在做什麼。</li>
         </ul>
       </div>
       <div class="section-block quiz-block">
         <div class="block-title">🎯 想一想</div>
-        <p style="margin:0 0 6px;font-weight:500;">農夫依照「二十四節氣」安排農事，主要是為了什麼？</p>
+        <p style="margin:0 0 6px;font-weight:500;">鴨子為什麼身上的羽毛不容易被水弄濕？</p>
         <div class="quiz-options">
-          <button class="opt" data-c="1">順應季節變化，讓作物長得更好</button>
-          <button class="opt" data-c="0">單純是一種傳統習俗，沒有實際作用</button>
-          <button class="opt" data-c="0">只是用來紀念節日</button>
+          <button class="opt" data-c="1">因為羽毛上有防水油脂</button>
+          <button class="opt" data-c="0">因為牠們不喜歡下水</button>
+          <button class="opt" data-c="0">因為羽毛是塑膠做的</button>
         </div>
         <div class="feedback"></div>
       </div>
       <div class="nav1-arrows">
         <button class="arrow-btn" id="prevBtn7">← 上一個</button>
-        <button class="arrow-btn" id="nextBtn7">前往總測驗 →</button>
+        <button class="arrow-btn" id="nextBtn7">下一個 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 7 -->
+  <div class="topic" data-topic="7">
+    <div class="topic-card">
+      <div class="topic-head">
+        <span class="topic-emoji anim-spin">♻️</span>
+        <div><span class="eyebrow">主題八</span><h2>雞舍鴨舍清理與堆肥製作</h2></div>
+      </div>
+      <div class="section-block learn-block">
+        <div class="block-title">📘 我們要學會的事</div>
+        <ul class="points">
+          <li>雞舍鴨舍要定期清理，避免糞便堆積、細菌孳生，讓動物保持健康。</li>
+          <li>清出來的糞便不是垃圾，混合稻殼、落葉發酵後，可以變成營養豐富的有機堆肥。</li>
+          <li>這個過程就是「循環農業」：動物的排泄物回歸土地，滋養作物，作物又能餵養動物。</li>
+        </ul>
+      </div>
+      <div class="section-block farm-block">
+        <div class="block-title">🌾 富林農場實境連結</div>
+        <ul class="points">
+          <li>富林農場把雞舍清理出的糞便，混合稻殼與廚餘，製作成有機堆肥回饋稻田與菜園。</li>
+          <li>這是農場落實 ESG 永續與循環農業的具體實例，也是很好的環境教育示範。</li>
+          <li><b>體驗活動：</b>參觀堆肥區，觀察不同發酵階段的堆肥顏色與質地變化（不直接用手觸摸）。</li>
+        </ul>
+      </div>
+      <div class="section-block quiz-block">
+        <div class="block-title">🎯 想一想</div>
+        <p style="margin:0 0 6px;font-weight:500;">雞舍清理出來的糞便，經過發酵後可以變成什麼？</p>
+        <div class="quiz-options">
+          <button class="opt" data-c="1">有機堆肥，滋養土地</button>
+          <button class="opt" data-c="0">直接丟棄的垃圾</button>
+          <button class="opt" data-c="0">不能再利用的廢棄物</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+      <div class="nav1-arrows">
+        <button class="arrow-btn" id="prevBtn8">← 上一個</button>
+        <button class="arrow-btn" id="nextBtn8">前往總測驗 →</button>
       </div>
     </div>
   </div>
@@ -648,8 +680,8 @@
 <!-- FINAL QUIZ -->
 <div class="final-wrap" id="finalWrap" style="display:none;">
   <div class="final-card">
-    <h2 style="margin:0;color:var(--soil-dark);">🏅 小小植物照護員 · 總測驗</h2>
-    <p style="margin:6px 0 0;font-size:14px;color:#5c6b3f;">回答七個問題，看看你能拿到什麼獎章！</p>
+    <h2 style="margin:0;color:var(--straw-dark);">🏅 小小飼育員 · 總測驗</h2>
+    <p style="margin:6px 0 0;font-size:14px;color:#6b5230;">回答八個問題，看看你能拿到什麼獎章！</p>
     <div id="finalBody"></div>
   </div>
 </div>
@@ -680,8 +712,8 @@
     b.addEventListener('click', ()=> showTopic(parseInt(b.dataset.t)));
   });
 
-  const prevIds = ['prevBtn','prevBtn2','prevBtn3','prevBtn4','prevBtn5','prevBtn6','prevBtn7'];
-  const nextIds = ['nextBtn','nextBtn2','nextBtn3','nextBtn4','nextBtn5','nextBtn6','nextBtn7'];
+  const prevIds = ['prevBtn','prevBtn2','prevBtn3','prevBtn4','prevBtn5','prevBtn6','prevBtn7','prevBtn8'];
+  const nextIds = ['nextBtn','nextBtn2','nextBtn3','nextBtn4','nextBtn5','nextBtn6','nextBtn7','nextBtn8'];
   prevIds.forEach((id,idx)=>{
     const el = document.getElementById(id);
     if(el) el.addEventListener('click', ()=> showTopic(idx-1));
@@ -701,7 +733,7 @@
         if(opt.dataset.c === '1'){
           answered = true;
           opt.classList.add('correct');
-          fb.textContent = '🎉 答對了！你是超棒的小小照護員！';
+          fb.textContent = '🎉 答對了！你是超棒的小小飼育員！';
           fb.className = 'feedback ok';
         } else {
           opt.classList.add('wrong');
@@ -714,13 +746,14 @@
   });
 
   const finalQuestions = [
-    { q:'植物生命週期的最後一步，會產生什麼？', opts:['新的種子','石頭','塑膠'], c:0 },
-    { q:'健康的土壤裡，通常會有很多什麼生物？', opts:['蚯蚓','塑膠微粒','石頭'], c:0 },
-    { q:'富林農場的有機堆肥主要來自？', opts:['化學藥劑','雞糞、稻殼、廚餘','塑膠瓶'], c:1 },
-    { q:'pH 值 7 代表水質是？', opts:['非常酸','中性','非常鹼'], c:1 },
-    { q:'植物行光合作用時會釋放出什麼氣體？', opts:['氧氣','氮氣','甲烷'], c:0 },
-    { q:'台灣稻米喜歡什麼樣的氣候？', opts:['寒冷','溫暖','乾旱沙漠'], c:1 },
-    { q:'農夫依照二十四節氣安排農事，主要目的是？', opts:['順應季節讓作物長更好','單純習俗','紀念節日'], c:0 },
+    { q:'蛋殼上的小孔主要功能是什麼？', opts:['讓空氣進出幫助呼吸','裝飾花紋','讓蛋黃流出'], c:0 },
+    { q:'雞蛋孵化大約需要幾天？', opts:['7 天','21 天','2 個月'], c:1 },
+    { q:'鴨蛋孵化天數跟雞蛋比起來？', opts:['比較長，約 28 天','比較短，約 10 天','完全一樣'], c:0 },
+    { q:'雞群裡「誰先吃、誰後吃」的順序稱作？', opts:['啄序','飛行順序','睡覺順序'], c:0 },
+    { q:'健康的雞通常會有什麼樣的外觀？', opts:['眼睛明亮、羽毛有光澤','整天縮著不動','羽毛雜亂'], c:0 },
+    { q:'鴨子腳趾間的構造，讓牠們很會游泳的是？', opts:['蹼','尾巴','羽毛'], c:0 },
+    { q:'鴨子羽毛不容易被水弄濕，是因為？', opts:['有防水油脂','不喜歡下水','羽毛是塑膠做的'], c:0 },
+    { q:'雞舍清出的糞便，經過發酵後可以變成？', opts:['有機堆肥','垃圾','無法利用的廢棄物'], c:0 },
   ];
   let fIndex = 0, fScore = 0;
   const finalBody = document.getElementById('finalBody');
@@ -768,9 +801,9 @@
   }
 
   function renderResult(){
-    let medal = '🥉', msg = '小小植物照護見習生，繼續加油！';
-    if(fScore >= 7){ medal='🥇'; msg='太厲害了！你是植物照顧金牌達人！'; }
-    else if(fScore >= 4){ medal='🥈'; msg='表現很棒！你已經是農場小達人囉！'; }
+    let medal = '🥉', msg = '小小飼育見習生，繼續加油！';
+    if(fScore >= 8){ medal='🥇'; msg='太厲害了！你是動物照顧金牌達人！'; }
+    else if(fScore >= 5){ medal='🥈'; msg='表現很棒！你已經是農場小達人囉！'; }
     finalBody.innerHTML = `
       <div class="medal">${medal}</div>
       <div class="final-q">答對 ${fScore} / ${finalQuestions.length} 題</div>
