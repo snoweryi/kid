@@ -104,8 +104,8 @@ button{font-family:inherit; cursor:pointer;}
 /* 太陽主體 */
 .sun{
     position:absolute;
-    top:18%;
-    left:80%;
+    top:12%;
+    left:86%;
     width:120px;
     height:120px;
     border-radius:50%;
@@ -136,7 +136,7 @@ button{font-family:inherit; cursor:pointer;}
 .sun::before{
     content:"";
     position:absolute;
-    inset:-45px;
+    inset:-51px;
     border-radius:50%;
 	background:
         repeating-conic-gradient(
@@ -153,13 +153,13 @@ button{font-family:inherit; cursor:pointer;}
 .sun::after{
     content:"";
     position:absolute;
-    inset:-90px;
+    inset:-100px;
     border-radius:50%;
     background:
         radial-gradient(
             circle,
             rgba(255,230,120,.35),
-            transparent 65%
+            transparent 66%
         );
     animation:
         aura 4s ease-in-out infinite;
@@ -182,7 +182,7 @@ button{font-family:inherit; cursor:pointer;}
 /* 升起後漂浮 */
 @keyframes sunFloat{
     0%{margin-top:0;}
-    100%{margin-top:-18px;}
+    100%{margin-top:-28px;}
 }
 /* 呼吸發光 */
 @keyframes sunPulse{
@@ -190,8 +190,7 @@ button{font-family:inherit; cursor:pointer;}
         0 0 30px rgba(255,240,150,.8),
         0 0 70px rgba(255,220,90,.55),
         0 0 130px rgba(255,180,30,.35);
-    }
-    50%{box-shadow:
+    }50%{box-shadow:
         0 0 50px rgba(255,250,180,1),
         0 0 110px rgba(255,220,90,.8),
         0 0 180px rgba(255,180,30,.55);
@@ -235,8 +234,7 @@ button{font-family:inherit; cursor:pointer;}
     top:18%;
     font-size:28px;
     z-index:20;
-    filter:
-        drop-shadow(0 5px 4px rgba(0,0,0,.15));
+    filter:drop-shadow(0 5px 4px rgba(0,0,0,.15));
 	animation:
         birdFly 26s linear infinite,
         birdWing .6s ease-in-out infinite alternate;
@@ -259,61 +257,37 @@ button{font-family:inherit; cursor:pointer;}
 /* 飛行路徑 */
 @keyframes birdFly{
     0%{transform:
-            translate(-10vw,0)
-            rotate(5deg)
-            scaleX(1);
+		translate(-10vw,0)
+		rotate(5deg)
+		scaleX(1);
+    }20%{transform:
+		translate(25vw,-35px)
+		rotate(-5deg)
+		scaleX(1);
+    }45%{transform:
+		translate(65vw,-10px)
+		rotate(8deg)
+		scaleX(1);
+    } 50%{transform:
+		translate(80vw,-40px)
+		rotate(0deg)
+		scaleX(-1);
+    }75%{transform:
+		translate(35vw,-70px)
+		rotate(-8deg)
+		scaleX(-1);
+    }100%{transform:
+		translate(-15vw,0)
+		rotate(5deg)
+		scaleX(-1);
     }
-    20%{transform:
-            translate(25vw,-35px)
-            rotate(-5deg)
-            scaleX(1);
-    }
-    45%{transform:
-            translate(65vw,-10px)
-            rotate(8deg)
-            scaleX(1);
-    }
-    50%{transform:
-            translate(80vw,-40px)
-            rotate(0deg)
-            scaleX(-1);
-
-    }
-    75%{transform:
-            translate(35vw,-70px)
-            rotate(-8deg)
-            scaleX(-1);
-    }
-    100%{
-        transform:
-            translate(-15vw,0)
-            rotate(5deg)
-            scaleX(-1);
-
-    }
-
 }
-
-
-
 /* 翅膀拍動 */
 @keyframes birdWing{
-
-
-    from{
-
-        margin-top:-3px;
-
-    }
-
-
-    to{
-
-        margin-top:8px;
-
-    }
-
+    from{margin-top:-3px;}
+    to{margin-top:8px;}
 }
+
 .butterfly{position:absolute; font-size:20px; animation:flutter 9s ease-in-out infinite;}
 @keyframes flutter{
   0%,100%{transform:translate(0,0) rotate(0deg);}
