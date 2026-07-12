@@ -33,6 +33,10 @@
   --radius:22px;
   --shadow:0 8px 24px rgba(90,60,20,0.14);
   --font-main:"PingFang TC","Microsoft JhengHei","Heiti TC","Noto Sans TC",sans-serif;
+	--sun-main:#ffd95a;
+    --sun-light:#fff8d5;
+    --sun-orange:#ffad2f;
+    --sun-glow:rgba(255,220,90,.55);
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -40,7 +44,16 @@ body{
   margin:0;
   font-family:var(--font-main);
   color:var(--text-dark);
-  background:var(--sky-bottom);
+  background:
+	linear-gradient(
+	to bottom,
+	#8ed8ff 0%,
+	#c9f2ff 45%,
+	#8ed35f 70%,
+	#4e9b39 100%
+	);
+
+
   overflow-x:hidden;
 }
 h1,h2,h3,.display{
@@ -88,15 +101,135 @@ button{font-family:inherit; cursor:pointer;}
   display:flex; align-items:center; justify-content:center;
   text-align:center;
 }
+/* 太陽主體 */
 .sun{
-  position:absolute; top:14%; left:50%; width:110px; height:110px; border-radius:50%;
-  background:radial-gradient(circle at 35% 35%, #fff6cf, var(--sun) 60%, #ffbf47 100%);
-  box-shadow:0 0 60px 30px var(--sun-glow);
-  animation:sunrise 5s ease-out forwards, sunpulse 4s ease-in-out 5s infinite;
+    position:absolute;
+    top:18%;
+    left:80%;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff 0%,
+            var(--sun-light) 20%,
+            var(--sun-main) 55%,
+            var(--sun-orange) 100%
+        );
+
+    box-shadow:
+        0 0 30px rgba(255,240,150,.9),
+        0 0 70px var(--sun-glow),
+        0 0 130px rgba(255,180,30,.45);
+
+
+    transform:
+        translate(-50%,250px)
+        scale(.5);
+
+    opacity:0;
+
+    animation:
+        sunrise 6s cubic-bezier(.25,.8,.25,1) forwards,
+        sunFloat 5s ease-in-out 6s infinite alternate,
+        sunPulse 4s ease-in-out infinite;
 }
+
+
+/* 太陽光芒 */
+.sun::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-45px;
+
+    border-radius:50%;
+
+
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(255,230,120,.35) 0deg,
+            transparent 10deg,
+            rgba(255,230,120,.35) 20deg
+        );
+
+
+    filter:blur(3px);
+
+    animation:
+        rotateSunRay 20s linear infinite;
+
+}
+
+
+
+/* 柔和光暈 */
+.sun::after{
+    content:"";
+    position:absolute;
+    inset:-90px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,230,120,.35),
+            transparent 65%
+        );
+    animation:
+        aura 4s ease-in-out infinite;
+}
+/* 升起 */
 @keyframes sunrise{
-  0%{ transform:translate(-50%, 220px) scale(.6); opacity:0;}
-  100%{ transform:translate(-50%, 0) scale(1); opacity:1;}
+    0%{
+        transform:
+            translate(-50%,250px)
+            scale(.45);
+        opacity:0;
+    }
+    50%{opacity:.8;}
+    100%{
+        transform:
+            translate(-50%,0)
+            scale(1);
+        opacity:1;
+    }
+}
+/* 升起後漂浮 */
+@keyframes sunFloat{
+    0%{margin-top:0;}
+    100%{margin-top:-18px;}
+}
+/* 呼吸發光 */
+@keyframes sunPulse{
+    0%,100%{box-shadow:
+        0 0 30px rgba(255,240,150,.8),
+        0 0 70px rgba(255,220,90,.55),
+        0 0 130px rgba(255,180,30,.35);
+    }
+    50%{box-shadow:
+        0 0 50px rgba(255,250,180,1),
+        0 0 110px rgba(255,220,90,.8),
+        0 0 180px rgba(255,180,30,.55);
+    }
+}
+/* 光線旋轉 */
+@keyframes rotateSunRay{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+/* 外圍光暈縮放 */
+@keyframes aura{
+	0%,100%{transform:scale(.8);opacity:.5;}
+    50%{transform:scale(1.15);opacity:1;}
+}
+/* 手機版 */
+@media(max-width:768px){
+    .sun{width:80px;height:80px;left:75%;top:12%;}
 }
 @keyframes sunpulse{
   0%,100%{box-shadow:0 0 60px 30px var(--sun-glow);}
@@ -138,11 +271,9 @@ button{font-family:inherit; cursor:pointer;}
   border:2px dashed var(--grass);
 }
 #hero h1{
-font-size:clamp(38px,6vw,64px);
+	font-size:clamp(38px,6vw,64px);
     margin:0 0 14px;
-    line-height:1.25;
-	
-  
+    line-height:1.25; 
   color:#fff;
   text-shadow:0 4px 0 rgba(60,120,50,0.4), 0 2px 20px rgba(0,0,0,0.15);
   letter-spacing:2px;
