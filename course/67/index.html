@@ -25,6 +25,21 @@
     --card:#FFFFFF;
     --line:#E8DCC4;
   }
+    body::-webkit-scrollbar {
+    width: 12px;
+}
+body::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, #a89b92, #876f5f);
+}
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg,#f0e6bb,#c8e8ba, #bee8d6,#c2e2ed);
+    border-radius: 6px;
+	text-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+body::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(135deg,#aad6e6,#a8e3e6, #c1e3aa,#e8e0ac);
+    
+}
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
