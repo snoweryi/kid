@@ -386,7 +386,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* 原本 hover */
 .nav-links a:hover{
 
-    color:var(--rice-dark);
+    color:#33532c;
 
     transform:
     translateY(-2px);
@@ -397,38 +397,22 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* 底部自然草線 */
 .nav-links a::after{
-
     content:"";
-
     position:absolute;
-
     left:50%;
-
     bottom:0;
-
     width:0;
-
     height:3px;
-
-
     background:
-
     linear-gradient(
         90deg,
-        var(--turmeric),
+        #e2a63b,
         #8bc34a
     );
-
-
     border-radius:10px;
-
-
     transform:
     translateX(-50%);
-
-
-    transition:
-    width .35s ease;
+    transition:width .35s ease;
 
 }
 
