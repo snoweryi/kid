@@ -276,7 +276,7 @@
 <body>
 <nav>
 	<div class="nav-inner">
-		<div class="logo"><span class="logo-mark">🌾</span><a href="https://snoweryi.github.io/kid/course">富林有機農場</a></div>
+		<div class="logo"><a href="https://snoweryi.github.io/kid/course"><img src="../img/logo_1.png" style="width:160px;"></a></div>
 		<div class="nav-links">
 			<a href="https://snoweryi.github.io/kid/course/61" >6.1打好根基</a>
 			<a href="https://snoweryi.github.io/kid/course/63" >6.3珍惜所有</a>
@@ -670,6 +670,35 @@
 </footer>
   
 </div>
+<script>
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+document.addEventListener('contextmenu', e => e.preventDefault());
 
+document.addEventListener('keydown', e => {
+    // F12
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
+
+    // Ctrl+Shift+I、Ctrl+Shift+J、Ctrl+Shift+C
+    if (
+        e.ctrlKey &&
+        e.shiftKey &&
+        ['I', 'J', 'C'].includes(e.key.toUpperCase())
+    ) {
+        e.preventDefault();
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.key.toUpperCase() === 'U') {
+        e.preventDefault();
+    }
+});
+</script>
 </body>
 </html>

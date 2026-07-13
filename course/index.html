@@ -499,7 +499,7 @@
 </head>
 <body>
 <div class="nav-links">
-    <span class="logo-mark">🌾</span><a href="https://snoweryi.github.io/kid/course">富林有機農場</a>
+    <div class="logo"><a href="https://snoweryi.github.io/kid/course"><img src="img/logo_1.png" style="width:160px;"></a></div>
     <div class="dropdown">
         <a href="#" class="dropbtn active">116學年秋季 ▾</a>
         <div class="dropdown-menu">
@@ -750,6 +750,35 @@
   <div class="foot-logo">🌾 富林有機農場</div>
   <div>新竹縣芎林鄉｜有機認證｜食農教育 × ESG永續園區</div>
 </footer>
+<script>
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+document.addEventListener('contextmenu', e => e.preventDefault());
 
-</body>
+document.addEventListener('keydown', e => {
+    // F12
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
+
+    // Ctrl+Shift+I、Ctrl+Shift+J、Ctrl+Shift+C
+    if (
+        e.ctrlKey &&
+        e.shiftKey &&
+        ['I', 'J', 'C'].includes(e.key.toUpperCase())
+    ) {
+        e.preventDefault();
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.key.toUpperCase() === 'U') {
+        e.preventDefault();
+    }
+});
+</script>
+</body></html>
 
