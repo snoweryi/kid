@@ -31,7 +31,7 @@
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    background:var(--paper);
+    background:#faf8f5;
     background-image:
       radial-gradient(circle at 15% 8%, rgba(217,164,65,0.10), transparent 40%),
       radial-gradient(circle at 85% 92%, rgba(79,122,74,0.12), transparent 45%);
@@ -56,7 +56,7 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
-    padding:34px 30px 0;
+    padding:0;
     text-align:center;
 	background:linear-gradient(to bottom, var(--sky-top) 0%, var(--sky-mid) 45%, var(--sky-bottom) 75%);
   }
@@ -67,10 +67,12 @@
     color:var(--rice-gold-deep);
     font-weight:700;
     margin-bottom:10px;
+	padding-top:51px;
   }
   .eyebrow::before, .eyebrow::after{content:"◆ "; letter-spacing:0;}
   .title-wrap{ position:relative; display:inline-block; margin:2px auto 4px;}
   .title{
+  padding-top:28px;
    font-family:"ZCOOL KuaiLe","Noto Sans TC",sans-serif;
     font-weight:700;
     
@@ -86,7 +88,7 @@
         0 6px 10px rgba(58,110,60,.18),
         0 0 16px rgba(255,255,255,.9);
   }
-  .brush-underline{ display:block; margin:2px auto 0; width:82%; }
+  .brush-underline{ display:block; margin:6px auto 0; width:86%; }
   .slogan{
     font-size:17px;
     font-weight:700;
@@ -542,51 +544,96 @@
 	<div class="bird bird3">🕊️</div>
     <!-- illustrated paddy field scene -->
     <svg class="field-scene" viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
-      <!-- sky -->
+      <!-- mountains --><!-- ===== 遠山 ===== -->
+<path d="M0 92 C60 40 120 30 180 70
+       C230 100 290 20 360 60 C420 95 480 40 550 65
+       C610 85 680 35 760 75 L760 210 L0 210 Z" fill="#8FB78C"/>
+
+<!-- ===== 第二層山 ===== -->
+<path d="M0 120 C80 80 150 90 220 120 C290 80 360 90 430 120
+       C510 90 590 85 670 115 C710 128 735 130 760 120 L760 210 L0 210 Z" fill="#5E8757"/>
+
+<!-- 山腳森林 -->
+<path d="M0 126 C20 98 90 132 130 122 C170 112 220 132 260 122
+       C310 112 360 132 420 122 C470 112 540 132 610 122
+       C660 116 710 126 760 120 L760 145 L0 145 Z" fill="#417042"/>
       
-      
-      <!-- mountains -->
-      <path d="M0 90 L100 40 L190 85 L280 30 L400 88 L520 45 L620 90 L760 55 L760 210 L0 210 Z" fill="#8FAE72" opacity="0.55"/>
-      <path d="M0 120 L120 78 L240 118 L360 70 L480 120 L600 82 L760 118 L760 210 L0 210 Z" fill="#4F7A4A" opacity="0.75"/>
       <!-- water plane -->
-      <rect x="0" y="128" width="760" height="82" fill="#7FA0A3" opacity="0.55"/>
-      <!-- paddy rows with seedlings -->
-      <g stroke="#28472C" stroke-width="1" opacity="0.25">
-        <line x1="0" y1="150" x2="760" y2="150"/>
-        <line x1="0" y1="168" x2="760" y2="168"/>
-        <line x1="0" y1="186" x2="760" y2="186"/>
-        <line x1="0" y1="204" x2="760" y2="204"/>
-      </g>
-      <!-- seedling generator rows -->
-      <g fill="none" stroke="#28472C" stroke-width="2.4" stroke-linecap="round">
-        <!-- row 1 -->
-        <g transform="translate(20,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(70,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(120,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(200,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(250,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(300,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(380,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(430,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(480,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(560,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(610,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(660,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(710,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <!-- row 2 -->
-        <g transform="translate(40,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(95,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(150,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(230,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(285,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(340,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(410,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(465,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(520,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(590,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(645,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-        <g transform="translate(700,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
-      </g>
+<path d="M0 145 C120 138 220 150 360 145
+       C480 140 620 152 760 145 L760 210 L0 210 Z" fill="#c9e8f5"/>
+	<g opacity=".45" stroke="#fff" stroke-width="2">
+<path d="M40 160 C70 158 90 162 120 160"/>
+<path d="M210 168 C245 166 275 170 310 168"/>
+<path d="M430 155 C465 153 500 158 535 155"/>
+<path d="M620 175 C655 172 690 176 725 173"/>
+</g>
+
+
+<g stroke="#7E6B3F" stroke-width="2" fill="none" opacity=".5">
+<path d="M0 156 Q380 146 760 156"/>
+<path d="M0 173 Q380 163 760 173"/>
+<path d="M0 190 Q380 180 760 190"/>
+</g>
+
+<!--秧苗定義-->
+<defs>
+<g id="rice">
+    <path d="M0 8 C-3 3 -2 -4 -1 -12
+           M0 8
+           C3 2 6 -4 4 -12
+           M0 8
+           C-6 2 -8 -3 -6 -10"
+        stroke="#2F7E3A"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        fill="none"/>
+</g>
+</defs>
+<use href="#rice" x="40" y="160"/>
+<use href="#rice" x="90" y="162"/>
+<use href="#rice" x="145" y="158"/>
+<use href="#rice" x="205" y="164"/>
+<use href="#rice" x="270" y="160"/>
+<use href="#rice" x="335" y="165"/>
+<use href="#rice" x="410" y="158"/>
+<use href="#rice" x="480" y="163"/>
+<use href="#rice" x="550" y="160"/>
+<use href="#rice" x="620" y="165"/>
+<use href="#rice" x="700" y="160"/>
+
+<use href="#rice" x="30" y="190"/>
+<use href="#rice" x="60" y="180"/>
+<use href="#rice" x="80" y="192"/>
+<use href="#rice" x="120" y="180"/>
+<use href="#rice" x="151" y="188"/>
+<use href="#rice" x="195" y="194"/>
+<use href="#rice" x="240" y="190"/>
+<use href="#rice" x="280" y="186"/>
+<use href="#rice" x="325" y="195"/>
+<use href="#rice" x="400" y="182"/>
+<use href="#rice" x="450" y="193"/>
+<use href="#rice" x="510" y="190"/>
+<use href="#rice" x="570" y="188"/>
+<use href="#rice" x="600" y="195"/>
+<use href="#rice" x="660" y="188"/>
+<use href="#rice" x="710" y="190"/>
+
+<!--鴿子-->
+<g stroke="#5C5C5C" stroke-width="2" fill="none" opacity=".6">
+
+<path d="M120 55 q8 -8 16 0"/>
+<path d="M136 55 q8 -8 16 0"/>
+
+<path d="M470 46 q6 -6 10 0"/>
+<path d="M480 46 q6 -6 10 0"/>
+
+<path d="M280 46 q8 -8 16 0"/>
+<path d="M296 46 q8 -8 16 0"/>
+
+<path d="M560 42 q8 -8 16 0"/>
+<path d="M576 42 q8 -8 16 0"/>
+
+</g>
       <!-- footprints leading into field -->
       <g fill="#6E5238" opacity="0.55">
         <ellipse cx="358" cy="200" rx="5" ry="8"/>
