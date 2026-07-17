@@ -19,6 +19,14 @@
     --sky:#CFE0D6;
     --ink:#26231C;
     --white:#FFFBF2;
+	--sun-main:#ffd95a;
+    --sun-light:#fff8d5;
+    --sun-orange:#ffad2f;
+    --sun-glow:rgba(255,220,90,.55);
+	--turmeric:#e2a63b;
+	--sky-top:#6EC3E8;
+  --sky-mid:#bfe8f5;
+  --sky-bottom:#f2f8fa;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
@@ -33,6 +41,7 @@
     justify-content:center;
     padding:28px 12px 50px;
   }
+  
   .poster{
     width:100%;
     max-width:1260px;
@@ -49,6 +58,7 @@
     position:relative;
     padding:34px 30px 0;
     text-align:center;
+	background:linear-gradient(to bottom, var(--sky-top) 0%, var(--sky-mid) 45%, var(--sky-bottom) 75%);
   }
   .eyebrow{
     font-family:"Space Mono", monospace;
@@ -61,15 +71,20 @@
   .eyebrow::before, .eyebrow::after{content:"◆ "; letter-spacing:0;}
   .title-wrap{ position:relative; display:inline-block; margin:2px auto 4px;}
   .title{
-    font-family:"Noto Serif TC", serif;
-    font-weight:900;
-    font-size:clamp(46px, 11vw, 66px);
+   font-family:"ZCOOL KuaiLe","Noto Sans TC",sans-serif;
+    font-weight:700;
+    
+    font-size:clamp(46px, 10vw, 60px);
     line-height:1.05;
-    color:var(--paddy-deep);
+    color:#fff;
     margin:0;
     position:relative;
     z-index:2;
     letter-spacing:.02em;
+	text-shadow:
+        0 4px 0 #025e7a,
+        0 6px 10px rgba(58,110,60,.18),
+        0 0 16px rgba(255,255,255,.9);
   }
   .brush-underline{ display:block; margin:2px auto 0; width:82%; }
   .slogan{
@@ -302,6 +317,200 @@
     .title{ font-size:44px; }
     .info-cell{ min-width:44%; }
   }
+  
+  /* 太陽主體 */
+.sun{
+    position:absolute;
+    top:16%;
+    left:86%;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff 0%,
+            var(--sun-light) 20%,
+            var(--sun-main) 55%,
+            var(--sun-orange) 100%
+        );
+    box-shadow:
+        0 0 30px rgba(255,240,150,.9),
+        0 0 70px var(--sun-glow),
+        0 0 130px rgba(255,180,30,.45);
+    transform:
+        translate(-50%,250px)
+        scale(.5);
+    opacity:0;
+    animation:
+        sunrise 6s cubic-bezier(.25,.8,.25,1) forwards,
+        sunFloat 5s ease-in-out 6s infinite alternate,
+        sunPulse 4s ease-in-out infinite;
+}
+/* 太陽光芒 */
+.sun::before{
+    content:"";
+    position:absolute;
+    inset:-51px;
+    border-radius:50%;
+	background:
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(255,230,120,.35) 0deg,
+            transparent 10deg,
+            rgba(255,230,120,.35) 20deg
+        );
+    filter:blur(3px);
+    animation:rotateSunRay 20s linear infinite;
+}
+/* 柔和光暈 */
+.sun::after{
+    content:"";
+    position:absolute;
+    inset:-100px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,230,120,.35),
+            transparent 66%
+        );
+    animation:
+        aura 4s ease-in-out infinite;
+}
+/* 升起 */
+@keyframes sunrise{
+    0%{transform:
+            translate(-50%,250px)
+            scale(.45);
+        opacity:0;
+    }
+    50%{opacity:.8;}
+    100%{
+        transform:
+            translate(-50%,0)
+            scale(1);
+        opacity:1;
+    }
+}
+/* 升起後漂浮 */
+@keyframes sunFloat{
+    0%{margin-top:0;}
+    100%{margin-top:-28px;}
+}
+/* 呼吸發光 */
+@keyframes sunPulse{
+    0%,100%{box-shadow:
+        0 0 30px rgba(255,240,150,.8),
+        0 0 70px rgba(255,220,90,.55),
+        0 0 130px rgba(255,180,30,.35);
+    }50%{box-shadow:
+        0 0 50px rgba(255,250,180,1),
+        0 0 110px rgba(255,220,90,.8),
+        0 0 180px rgba(255,180,30,.55);
+    }
+}
+/* 光線旋轉 */
+@keyframes rotateSunRay{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+/* 外圍光暈縮放 */
+@keyframes aura{
+	0%,100%{transform:scale(.8);opacity:.5;}
+    50%{transform:scale(1.15);opacity:1;}
+}
+/* 手機版 */
+@media(max-width:768px){
+    .sun{width:80px;height:80px;left:75%;top:12%;}
+}
+@keyframes sunpulse{
+  0%,100%{box-shadow:0 0 60px 30px var(--sun-glow);}
+  50%{box-shadow:0 0 80px 42px var(--sun-glow);}
+}
+/*太陽*/
+
+.cloud{position:absolute; background:#fff; border-radius:50px; opacity:.62; filter:drop-shadow(0 6px 4px rgba(0,0,0,0.05));}
+.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%;}
+.cloud1{width:120px;height:40px;top:10%;left:-140px;animation:drift 38s linear infinite;}
+.cloud1:before{width:60px;height:60px;top:-25px;left:15px;}
+.cloud1:after{width:45px;height:45px;top:-15px;left:60px;}
+.cloud2{width:90px;height:32px;top:22%;left:-140px;animation:drift 50s linear infinite 6s;}
+.cloud2:before{width:45px;height:45px;top:-20px;left:10px;}
+.cloud2:after{width:35px;height:35px;top:-12px;left:45px;}
+.cloud3{width:150px;height:46px;top:6%;left:-200px;animation:drift 60s linear infinite 15s;}
+.cloud3:before{width:70px;height:70px;top:-30px;left:25px;}
+.cloud3:after{width:50px;height:50px;top:-18px;left:80px;}
+@keyframes drift{ from{transform:translateX(0);} to{transform:translateX(140vw);} }
+
+/* 小鳥基本設定 */
+.bird{
+    position:absolute;
+    left:-10vw;
+    top:18%;
+    font-size:28px;
+    z-index:20;
+    filter:drop-shadow(0 5px 4px rgba(0,0,0,.15));
+	animation:
+        birdFly 26s linear infinite,
+        birdWing .6s ease-in-out infinite alternate;
+}
+/* 第二隻小鳥 */
+.bird2{
+    top:28%;
+    font-size:22px;
+    animation-duration:38s,.7s;
+    animation-delay: 6s, 0s;
+}
+
+/* 第三隻小鳥 */
+.bird3{
+    top:12%;
+    font-size:34px;
+    animation-duration:32s, .5s;
+    animation-delay: 16s, 0s;
+}
+/* 飛行路徑 */
+@keyframes birdFly{
+    0%{transform:
+		translate(-10vw,0)
+		rotate(5deg)
+		scaleX(1);
+    }20%{transform:
+		translate(25vw,-35px)
+		rotate(-5deg)
+		scaleX(1);
+    }45%{transform:
+		translate(65vw,-10px)
+		rotate(8deg)
+		scaleX(1);
+    } 50%{transform:
+		translate(80vw,-40px)
+		rotate(0deg)
+		scaleX(-1);
+    }75%{transform:
+		translate(35vw,-70px)
+		rotate(-8deg)
+		scaleX(-1);
+    }100%{transform:
+		translate(-15vw,0)
+		rotate(5deg)
+		scaleX(-1);
+    }
+}
+/* 翅膀拍動 */
+@keyframes birdWing{
+    from{margin-top:-3px;}
+    to{margin-top:8px;}
+}
+
+.butterfly{position:absolute; font-size:20px; animation:flutter 9s ease-in-out infinite;}
+@keyframes flutter{
+  0%,100%{transform:translate(0,0) rotate(0deg);}
+  25%{transform:translate(20px,-18px) rotate(10deg);}
+  50%{transform:translate(-10px,-30px) rotate(-8deg);}
+  75%{transform:translate(15px,-10px) rotate(6deg);}
+}
 </style>
 </head>
 <body>
@@ -312,6 +521,7 @@
     <div class="eyebrow">全民食農教育 × ESG 永續體驗</div>
     <div class="title-wrap">
       <h1 class="title">秧苗總動員</h1>
+	  
       <svg class="brush-underline" viewBox="0 0 400 26" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 14 C 80 4, 160 22, 240 10 S 360 4, 394 14" stroke="#B9822A" stroke-width="6" fill="none" stroke-linecap="round"/>
         <g transform="translate(196,-4)">
@@ -323,14 +533,18 @@
     </div>
     <div class="slogan">赤腳踩泥土，一起<span class="accent">「稻」</span>快樂！</div>
     <div class="subline">跟著秧苗，種下豐收與永續的第一步</div>
-
+	<div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+  <div class="cloud cloud3"></div>
+  <div class="sun"></div>
+  <div class="bird">🐦</div>
+	<div class="bird bird2">🐤</div>
+	<div class="bird bird3">🕊️</div>
     <!-- illustrated paddy field scene -->
     <svg class="field-scene" viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
       <!-- sky -->
-      <rect x="0" y="0" width="760" height="210" fill="#CFE0D6"/>
-      <!-- sun -->
-      <circle cx="640" cy="46" r="34" fill="#D9A441" opacity="0.9"/>
-      <circle cx="640" cy="46" r="46" fill="none" stroke="#D9A441" stroke-width="2" opacity="0.35"/>
+      
+      
       <!-- mountains -->
       <path d="M0 90 L100 40 L190 85 L280 30 L400 88 L520 45 L620 90 L760 55 L760 210 L0 210 Z" fill="#8FAE72" opacity="0.55"/>
       <path d="M0 120 L120 78 L240 118 L360 70 L480 120 L600 82 L760 118 L760 210 L0 210 Z" fill="#4F7A4A" opacity="0.75"/>
