@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>秧苗總動員｜富林有機農場插秧體驗活動</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paddy-deep:#28472C;
+    --paddy-mid:#4F7A4A;
+    --paddy-soft:#8FAE72;
+    --rice-gold:#D9A441;
+    --rice-gold-deep:#B9822A;
+    --mud:#6E5238;
+    --paper:#F1EAD9;
+    --paper-deep:#E7DCC3;
+    --sky:#CFE0D6;
+    --ink:#26231C;
+    --white:#FFFBF2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(217,164,65,0.10), transparent 40%),
+      radial-gradient(circle at 85% 92%, rgba(79,122,74,0.12), transparent 45%);
+    font-family:"Noto Sans TC", sans-serif;
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+    padding:28px 12px 50px;
+  }
+  .poster{
+    width:100%;
+    max-width:760px;
+    background:var(--paper);
+    border:2px solid var(--paddy-deep);
+    outline:6px solid var(--paper);
+    outline-offset:-14px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:34px 30px 0;
+    text-align:center;
+  }
+  .eyebrow{
+    font-family:"Space Mono", monospace;
+    letter-spacing:.35em;
+    font-size:12px;
+    color:var(--rice-gold-deep);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .eyebrow::before, .eyebrow::after{content:"◆ "; letter-spacing:0;}
+  .title-wrap{ position:relative; display:inline-block; margin:2px auto 4px;}
+  .title{
+    font-family:"Noto Serif TC", serif;
+    font-weight:900;
+    font-size:clamp(46px, 11vw, 66px);
+    line-height:1.05;
+    color:var(--paddy-deep);
+    margin:0;
+    position:relative;
+    z-index:2;
+    letter-spacing:.02em;
+  }
+  .brush-underline{ display:block; margin:2px auto 0; width:82%; }
+  .slogan{
+    font-size:17px;
+    font-weight:700;
+    color:var(--mud);
+    margin:10px 0 4px;
+    letter-spacing:.04em;
+  }
+  .slogan .accent{ color:var(--rice-gold-deep); }
+  .subline{
+    font-size:12.5px;
+    color:var(--paddy-mid);
+    font-weight:500;
+    margin-bottom:14px;
+  }
+
+  .field-scene{ width:100%; display:block; margin-top:6px; }
+
+  /* ---------- INFO STRIP ---------- */
+  .info-strip{
+    background:var(--paddy-deep);
+    color:var(--white);
+    display:flex;
+    flex-wrap:wrap;
+    align-items:stretch;
+    margin-top:-2px;
+  }
+  .info-cell{
+    flex:1 1 auto;
+    min-width:150px;
+    padding:14px 16px;
+    border-right:1px dashed rgba(255,251,242,0.28);
+    position:relative;
+  }
+  .info-cell:last-child{ border-right:none; }
+  .info-label{
+    font-family:"Space Mono", monospace;
+    font-size:10px;
+    letter-spacing:.18em;
+    color:var(--rice-gold);
+    margin-bottom:4px;
+    display:block;
+  }
+  .info-value{
+    font-size:14px;
+    font-weight:700;
+    line-height:1.5;
+  }
+  .info-value small{ font-weight:400; opacity:.85; font-size:12px; }
+
+  /* ---------- ORG STRIP ---------- */
+  .org-strip{
+    display:flex;
+    justify-content:center;
+    gap:26px;
+    flex-wrap:wrap;
+    padding:14px 20px;
+    background:var(--paper-deep);
+    border-bottom:2px dashed var(--paddy-soft);
+    font-size:12.5px;
+  }
+  .org-strip .org-item b{ color:var(--paddy-deep); }
+  .org-strip .org-item{ color:var(--mud); }
+
+  /* ---------- SCHEDULE ---------- */
+  .schedule-section{ padding:26px 24px 10px; }
+  .section-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .section-head .num{
+    font-family:"Noto Serif TC",serif;
+    font-weight:900;
+    font-size:22px;
+    color:var(--rice-gold-deep);
+    background:var(--white);
+    border:2px solid var(--paddy-deep);
+    width:34px;height:34px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .section-head h2{
+    font-family:"Noto Serif TC", serif;
+    font-size:20px;
+    color:var(--paddy-deep);
+    margin:0;
+    letter-spacing:.06em;
+  }
+  .section-head .rule{ flex:1; height:2px; background:repeating-linear-gradient(90deg,var(--paddy-soft) 0 8px, transparent 8px 14px); }
+
+  .timeline{ position:relative; padding-left:6px; }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:38px; top:6px; bottom:6px;
+    width:2px;
+    background:repeating-linear-gradient(180deg, var(--paddy-mid) 0 6px, transparent 6px 12px);
+  }
+  .t-row{
+    display:grid;
+    grid-template-columns:76px 30px 1fr;
+    align-items:start;
+    margin-bottom:2px;
+  }
+  .t-time{
+    font-family:"Space Mono", monospace;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--paddy-deep);
+    padding-top:10px;
+    line-height:1.35;
+  }
+  .t-time span{ display:block; font-size:10px; color:var(--mud); font-weight:400; }
+  .t-dot-wrap{ display:flex; justify-content:center; padding-top:10px; }
+  .t-dot{
+    width:14px;height:14px;
+    border-radius:50%;
+    background:var(--rice-gold);
+    border:2px solid var(--paddy-deep);
+    z-index:2;
+  }
+  .t-highlight .t-dot{ background:var(--paddy-deep); width:18px; height:18px; }
+  .t-body{
+    padding:8px 0 16px;
+    border-bottom:1px solid rgba(110,82,56,0.18);
+  }
+  .t-title{ font-weight:700; font-size:14.5px; color:var(--ink); margin-bottom:3px; }
+  .t-staff{
+    display:inline-block;
+    font-size:11px;
+    color:var(--paddy-deep);
+    background:var(--paddy-soft);
+    background:rgba(143,174,114,0.28);
+    border:1px solid var(--paddy-soft);
+    padding:1px 8px;
+    border-radius:20px;
+    margin-right:6px;
+  }
+  .t-row.t-highlight .t-body{ background:rgba(217,164,65,0.13); border-radius:4px; padding:10px 10px 16px; }
+  .t-row.t-highlight .t-title{ color:var(--paddy-deep); font-size:15.5px; }
+
+  /* ---------- ESG STRIP ---------- */
+  .esg-strip{
+    margin:18px 24px 0;
+    padding:16px 18px;
+    border:2px dashed var(--rice-gold-deep);
+    background:var(--white);
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .esg-strip h3{
+    font-family:"Noto Serif TC", serif;
+    font-size:14.5px;
+    color:var(--paddy-deep);
+    margin:0 0 6px;
+  }
+  .esg-strip p{
+    font-size:12px;
+    color:var(--mud);
+    line-height:1.7;
+    margin:0;
+    flex:1 1 240px;
+  }
+  .esg-tags{ display:flex; gap:6px; flex-wrap:wrap; }
+  .esg-tags span{
+    font-size:10.5px;
+    font-weight:700;
+    color:var(--white);
+    background:var(--paddy-mid);
+    padding:3px 9px;
+    border-radius:20px;
+    white-space:nowrap;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer{
+    margin-top:24px;
+    background:var(--paddy-deep);
+    color:var(--white);
+    padding:20px 24px 22px;
+    position:relative;
+  }
+  .footer .addr{
+    font-size:13.5px;
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .footer .addr span{
+    font-family:"Space Mono", monospace;
+    color:var(--rice-gold);
+    margin-right:6px;
+  }
+  .footer .note{
+    font-size:11px;
+    color:rgba(255,251,242,0.75);
+    line-height:1.7;
+  }
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px dashed rgba(255,251,242,0.3);
+    font-size:11px;
+    color:var(--rice-gold);
+  }
+  .stamp{
+    font-family:"Noto Serif TC", serif;
+    font-weight:900;
+    font-size:13px;
+    border:2px solid var(--rice-gold);
+    color:var(--rice-gold);
+    padding:5px 10px;
+    transform:rotate(-4deg);
+    letter-spacing:.1em;
+  }
+
+  @media print{
+    body{ padding:0; background:var(--paper); }
+    .poster{ max-width:none; border:none; outline:none; }
+  }
+  @media (max-width:480px){
+    .title{ font-size:44px; }
+    .info-cell{ min-width:44%; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">全民食農教育 × ESG 永續體驗</div>
+    <div class="title-wrap">
+      <h1 class="title">秧苗總動員</h1>
+      <svg class="brush-underline" viewBox="0 0 400 26" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 14 C 80 4, 160 22, 240 10 S 360 4, 394 14" stroke="#B9822A" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <g transform="translate(196,-4)">
+          <path d="M0 22 C -2 12, 2 4, 0 -2" stroke="#4F7A4A" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M0 16 C 6 10, 10 4, 8 -4" stroke="#4F7A4A" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M0 16 C -6 10, -10 6, -9 -2" stroke="#4F7A4A" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+    <div class="slogan">赤腳踩泥土，一起<span class="accent">「稻」</span>快樂！</div>
+    <div class="subline">跟著秧苗，種下豐收與永續的第一步</div>
+
+    <!-- illustrated paddy field scene -->
+    <svg class="field-scene" viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+      <!-- sky -->
+      <rect x="0" y="0" width="760" height="210" fill="#CFE0D6"/>
+      <!-- sun -->
+      <circle cx="640" cy="46" r="34" fill="#D9A441" opacity="0.9"/>
+      <circle cx="640" cy="46" r="46" fill="none" stroke="#D9A441" stroke-width="2" opacity="0.35"/>
+      <!-- mountains -->
+      <path d="M0 90 L100 40 L190 85 L280 30 L400 88 L520 45 L620 90 L760 55 L760 210 L0 210 Z" fill="#8FAE72" opacity="0.55"/>
+      <path d="M0 120 L120 78 L240 118 L360 70 L480 120 L600 82 L760 118 L760 210 L0 210 Z" fill="#4F7A4A" opacity="0.75"/>
+      <!-- water plane -->
+      <rect x="0" y="128" width="760" height="82" fill="#7FA0A3" opacity="0.55"/>
+      <!-- paddy rows with seedlings -->
+      <g stroke="#28472C" stroke-width="1" opacity="0.25">
+        <line x1="0" y1="150" x2="760" y2="150"/>
+        <line x1="0" y1="168" x2="760" y2="168"/>
+        <line x1="0" y1="186" x2="760" y2="186"/>
+        <line x1="0" y1="204" x2="760" y2="204"/>
+      </g>
+      <!-- seedling generator rows -->
+      <g fill="none" stroke="#28472C" stroke-width="2.4" stroke-linecap="round">
+        <!-- row 1 -->
+        <g transform="translate(20,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(70,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(120,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(200,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(250,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(300,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(380,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(430,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(480,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(560,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(610,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(660,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(710,140)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <!-- row 2 -->
+        <g transform="translate(40,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(95,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(150,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(230,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(285,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(340,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(410,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(465,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(520,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(590,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(645,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+        <g transform="translate(700,158)"><path d="M0 12 C-2 4 1 -2 -1 -10 M0 10 C4 3 7 -1 6 -9 M0 10 C-5 4 -8 0 -7 -8"/></g>
+      </g>
+      <!-- footprints leading into field -->
+      <g fill="#6E5238" opacity="0.55">
+        <ellipse cx="358" cy="200" rx="5" ry="8"/>
+        <ellipse cx="372" cy="188" rx="5" ry="8"/>
+        <ellipse cx="356" cy="176" rx="4.5" ry="7"/>
+        <ellipse cx="370" cy="164" rx="4.5" ry="7"/>
+        <ellipse cx="358" cy="152" rx="4" ry="6.5"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- INFO STRIP -->
+  <div class="info-strip">
+    <div class="info-cell">
+      <span class="info-label">DATE 活動日期</span>
+      <div class="info-value">2026 年 8 月 1 日<small>（六）</small></div>
+    </div>
+    <div class="info-cell">
+      <span class="info-label">TIME 活動時間</span>
+      <div class="info-value">08:00 － 12:30<small>　全程約 4.5 小時</small></div>
+    </div>
+    <div class="info-cell">
+      <span class="info-label">VENUE 活動地點</span>
+      <div class="info-value">富林有機農場<small>　新竹縣芎林鄉</small></div>
+    </div>
+  </div>
+
+  <!-- ORG STRIP -->
+  <div class="org-strip">
+    <div class="org-item">主辦單位｜<b>新竹縣芎林鄉農會</b></div>
+    <div class="org-item">協辦單位｜<b>富林有機農場</b></div>
+  </div>
+
+  <!-- SCHEDULE -->
+  <div class="schedule-section">
+    <div class="section-head">
+      <div class="num">田</div>
+      <h2>活動流程 Field Day Schedule</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="t-row">
+        <div class="t-time">08:00<br>－08:30<span>30 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <div class="t-title">來賓報到、領取斗笠（或名牌）、分組、茶水</div>
+          <span class="t-staff">農會工作人員</span>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-time">08:30<br>－08:50<span>20 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <div class="t-title">長官及貴賓致詞</div>
+          <span class="t-staff">農會</span>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-time">08:50<br>－09:10<span>20 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <div class="t-title">富林有機農場介紹、有機理念分享</div>
+          <span class="t-staff">富林有機農場</span>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-time">09:10<br>－09:30<span>20 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <div class="t-title">食農教育－認識水稻的一生及有機耕作</div>
+          <span class="t-staff">富林有機農場</span>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-time">09:30<br>－09:40<span>10 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <div class="t-title">插秧技巧示範、安全注意事項</div>
+          <span class="t-staff">富林有機農場</span>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-time">09:40<br>－10:00<span>20 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <div class="t-title">祭拜土地公祈福儀式（祈求風調雨順、平安順利、五穀豐收）</div>
+          <span class="t-staff">農會</span><span class="t-staff">富林有機農場</span>
+        </div>
+      </div>
+
+      <div class="t-row t-highlight">
+        <div class="t-time">10:00<br>－10:50<span>50 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <div class="t-title">★ 分組下田插秧體驗</div>
+          <span class="t-staff">全體</span>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-time">10:50<br>－11:05<span>15 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <div class="t-title">清洗、更換鞋襪、稍作休息</div>
+          <span class="t-staff">全體</span>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-time">11:05<br>－11:20<span>15 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <div class="t-title">心得分享、有獎徵答、大合照</div>
+          <span class="t-staff">農會</span><span class="t-staff">富林有機農場</span>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-time">11:20<br>－11:30<span>10 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body">
+          <div class="t-title">感謝致詞、活動圓滿結束</div>
+          <span class="t-staff">農會</span>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-time">11:30<br>－12:30<span>60 分鐘</span></div>
+        <div class="t-dot-wrap"><div class="t-dot"></div></div>
+        <div class="t-body" style="border-bottom:none;">
+          <div class="t-title">享用在地風味午餐、自由交流</div>
+          <span class="t-staff">全體</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ESG STRIP -->
+  <div class="esg-strip">
+    <div style="flex:1 1 240px;">
+      <h3>🌾 這不只是插秧，是一堂永續課</h3>
+      <p>富林有機農場致力推動食農教育、循環農業與生物多樣性，每一次彎腰插秧，都是為土地與下一代種下永續的種子。</p>
+    </div>
+    <div class="esg-tags">
+      <span>有機認證</span>
+      <span>食農教育</span>
+      <span>ESG 永續</span>
+      <span>友善土地</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="addr"><span>ADDR</span>新竹縣芎林鄉下山村十鄰五座屋 38-5 號｜富林有機農場</div>
+    <div class="note">
+      ※ 請著長袖衣褲、防滑雨鞋或可下田舊鞋，並自備換洗衣物、毛巾與防曬用品。<br>
+      ※ 如遇天候不佳，活動異動訊息將另行通知，敬請留意農會公告。
+    </div>
+    <div class="footer-bottom">
+      <span>報名洽詢｜新竹縣芎林鄉農會 . 富林有機農場</span>
+      <span class="stamp">豐收在望</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
