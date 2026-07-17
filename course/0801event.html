@@ -35,7 +35,7 @@
   }
   .poster{
     width:100%;
-    max-width:760px;
+    max-width:1260px;
     background:var(--paper);
     border:2px solid var(--paddy-deep);
     outline:6px solid var(--paper);
@@ -53,7 +53,7 @@
   .eyebrow{
     font-family:"Space Mono", monospace;
     letter-spacing:.35em;
-    font-size:12px;
+    font-size:14px;
     color:var(--rice-gold-deep);
     font-weight:700;
     margin-bottom:10px;
@@ -81,7 +81,7 @@
   }
   .slogan .accent{ color:var(--rice-gold-deep); }
   .subline{
-    font-size:12.5px;
+    font-size:14px;
     color:var(--paddy-mid);
     font-weight:500;
     margin-bottom:14px;
@@ -108,7 +108,7 @@
   .info-cell:last-child{ border-right:none; }
   .info-label{
     font-family:"Space Mono", monospace;
-    font-size:10px;
+    font-size:14px;
     letter-spacing:.18em;
     color:var(--rice-gold);
     margin-bottom:4px;
@@ -119,7 +119,7 @@
     font-weight:700;
     line-height:1.5;
   }
-  .info-value small{ font-weight:400; opacity:.85; font-size:12px; }
+  .info-value small{ font-weight:400; opacity:.85; font-size:14px; }
 
   /* ---------- ORG STRIP ---------- */
   .org-strip{
@@ -130,7 +130,7 @@
     padding:14px 20px;
     background:var(--paper-deep);
     border-bottom:2px dashed var(--paddy-soft);
-    font-size:12.5px;
+    font-size:14px;
   }
   .org-strip .org-item b{ color:var(--paddy-deep); }
   .org-strip .org-item{ color:var(--mud); }
@@ -168,25 +168,25 @@
   .timeline::before{
     content:"";
     position:absolute;
-    left:38px; top:6px; bottom:6px;
+    left:140px; top:6px; bottom:6px;
     width:2px;
     background:repeating-linear-gradient(180deg, var(--paddy-mid) 0 6px, transparent 6px 12px);
   }
   .t-row{
     display:grid;
-    grid-template-columns:76px 30px 1fr;
+    grid-template-columns:120px 30px 1fr;
     align-items:start;
     margin-bottom:2px;
   }
   .t-time{
     font-family:"Space Mono", monospace;
-    font-size:12.5px;
+    font-size:14px;
     font-weight:700;
     color:var(--paddy-deep);
     padding-top:10px;
     line-height:1.35;
   }
-  .t-time span{ display:block; font-size:10px; color:var(--mud); font-weight:400; }
+  .t-time span{ display:block; font-size:12px; color:var(--mud); font-weight:400; }
   .t-dot-wrap{ display:flex; justify-content:center; padding-top:10px; }
   .t-dot{
     width:14px;height:14px;
@@ -197,13 +197,13 @@
   }
   .t-highlight .t-dot{ background:var(--paddy-deep); width:18px; height:18px; }
   .t-body{
-    padding:8px 0 16px;
+    padding:8px 0 12px 16px;
     border-bottom:1px solid rgba(110,82,56,0.18);
   }
-  .t-title{ font-weight:700; font-size:14.5px; color:var(--ink); margin-bottom:3px; }
+  .t-title{ font-weight:700; font-size: 16px; color:var(--ink); margin-bottom:3px; }
   .t-staff{
     display:inline-block;
-    font-size:11px;
+    font-size:14px;
     color:var(--paddy-deep);
     background:var(--paddy-soft);
     background:rgba(143,174,114,0.28);
@@ -228,12 +228,12 @@
   }
   .esg-strip h3{
     font-family:"Noto Serif TC", serif;
-    font-size:14.5px;
+    font-size: 16px;
     color:var(--paddy-deep);
     margin:0 0 6px;
   }
   .esg-strip p{
-    font-size:12px;
+    font-size:14px;
     color:var(--mud);
     line-height:1.7;
     margin:0;
@@ -241,7 +241,7 @@
   }
   .esg-tags{ display:flex; gap:6px; flex-wrap:wrap; }
   .esg-tags span{
-    font-size:10.5px;
+    font-size:14px;
     font-weight:700;
     color:var(--white);
     background:var(--paddy-mid);
@@ -259,7 +259,7 @@
     position:relative;
   }
   .footer .addr{
-    font-size:13.5px;
+    font-size:14px;
     font-weight:700;
     margin-bottom:4px;
   }
@@ -269,7 +269,7 @@
     margin-right:6px;
   }
   .footer .note{
-    font-size:11px;
+    font-size:14px;
     color:rgba(255,251,242,0.75);
     line-height:1.7;
   }
@@ -280,13 +280,13 @@
     margin-top:14px;
     padding-top:12px;
     border-top:1px dashed rgba(255,251,242,0.3);
-    font-size:11px;
+    font-size:14px;
     color:var(--rice-gold);
   }
   .stamp{
     font-family:"Noto Serif TC", serif;
     font-weight:900;
-    font-size:13px;
+    font-size:14px;
     border:2px solid var(--rice-gold);
     color:var(--rice-gold);
     padding:5px 10px;
@@ -417,7 +417,7 @@
     <div class="timeline">
 
       <div class="t-row">
-        <div class="t-time">08:00<br>－08:30<span>30 分鐘</span></div>
+        <div class="t-time">08:00－08:30<span>30 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body">
           <div class="t-title">來賓報到、領取斗笠（或名牌）、分組、茶水</div>
@@ -426,7 +426,7 @@
       </div>
 
       <div class="t-row">
-        <div class="t-time">08:30<br>－08:50<span>20 分鐘</span></div>
+        <div class="t-time">08:30－08:50<span>20 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body">
           <div class="t-title">長官及貴賓致詞</div>
@@ -435,7 +435,7 @@
       </div>
 
       <div class="t-row">
-        <div class="t-time">08:50<br>－09:10<span>20 分鐘</span></div>
+        <div class="t-time">08:50－09:10<span>20 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body">
           <div class="t-title">富林有機農場介紹、有機理念分享</div>
@@ -444,7 +444,7 @@
       </div>
 
       <div class="t-row">
-        <div class="t-time">09:10<br>－09:30<span>20 分鐘</span></div>
+        <div class="t-time">09:10－09:30<span>20 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body">
           <div class="t-title">食農教育－認識水稻的一生及有機耕作</div>
@@ -453,7 +453,7 @@
       </div>
 
       <div class="t-row">
-        <div class="t-time">09:30<br>－09:40<span>10 分鐘</span></div>
+        <div class="t-time">09:30－09:40<span>10 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body">
           <div class="t-title">插秧技巧示範、安全注意事項</div>
@@ -462,7 +462,7 @@
       </div>
 
       <div class="t-row">
-        <div class="t-time">09:40<br>－10:00<span>20 分鐘</span></div>
+        <div class="t-time">09:40－10:00<span>20 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body">
           <div class="t-title">祭拜土地公祈福儀式（祈求風調雨順、平安順利、五穀豐收）</div>
@@ -471,7 +471,7 @@
       </div>
 
       <div class="t-row t-highlight">
-        <div class="t-time">10:00<br>－10:50<span>50 分鐘</span></div>
+        <div class="t-time">10:00－10:50<span>50 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body">
           <div class="t-title">★ 分組下田插秧體驗</div>
@@ -480,7 +480,7 @@
       </div>
 
       <div class="t-row">
-        <div class="t-time">10:50<br>－11:05<span>15 分鐘</span></div>
+        <div class="t-time">10:50－11:05<span>15 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body">
           <div class="t-title">清洗、更換鞋襪、稍作休息</div>
@@ -489,7 +489,7 @@
       </div>
 
       <div class="t-row">
-        <div class="t-time">11:05<br>－11:20<span>15 分鐘</span></div>
+        <div class="t-time">11:05－11:20<span>15 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body">
           <div class="t-title">心得分享、有獎徵答、大合照</div>
@@ -498,7 +498,7 @@
       </div>
 
       <div class="t-row">
-        <div class="t-time">11:20<br>－11:30<span>10 分鐘</span></div>
+        <div class="t-time">11:20－11:30<span>10 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body">
           <div class="t-title">感謝致詞、活動圓滿結束</div>
@@ -507,7 +507,7 @@
       </div>
 
       <div class="t-row">
-        <div class="t-time">11:30<br>－12:30<span>60 分鐘</span></div>
+        <div class="t-time">11:30－12:30<span>60 分鐘</span></div>
         <div class="t-dot-wrap"><div class="t-dot"></div></div>
         <div class="t-body" style="border-bottom:none;">
           <div class="t-title">享用在地風味午餐、自由交流</div>
