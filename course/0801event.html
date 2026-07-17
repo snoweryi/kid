@@ -290,6 +290,57 @@
     color:rgba(255,251,242,0.75);
     line-height:1.7;
   }
+  .note {
+    max-width: 1200px;
+    
+    padding: 6px;
+    
+    border: 1px solid #d9cfa7;
+    border-radius: 16px;
+    color: #4a4235;
+    font-size: 16px;
+    line-height: 1.9;
+    box-shadow: 0 5px 15px rgba(80, 60, 20, 0.08);
+}
+
+.note h3 {
+    margin: 0 0 18px;
+    padding-left: 14px;
+    border-left: 5px solid #6b8e23;
+    color: #cefabe;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.note p {
+    margin: 0 0 15px;
+}
+
+.note strong {
+    color: #ffd8c9;
+    font-weight: 700;
+}
+
+.note .warning {
+    background: #fff3cd;
+    border-left: 5px solid #d69e2e;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: #6b4f00;
+}
+
+@media (max-width: 768px) {
+    .note {
+        margin: 20px 15px;
+        padding: 22px 20px;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .note h3 {
+        font-size: 19px;
+    }
+}
   .footer-bottom{
     display:flex;
     justify-content:space-between;
@@ -795,13 +846,53 @@
 
   <!-- FOOTER -->
   <div class="footer">
-    <div class="addr"><span>ADDR</span>新竹縣芎林鄉下山村十鄰五座屋 38-5 號｜富林有機農場</div>
+    
     <div class="note">
-      ※ 請著長袖衣褲、防滑雨鞋或可下田舊鞋，並自備換洗衣物、毛巾與防曬用品。<br>
-      ※ 如遇天候不佳，活動異動訊息將另行通知，敬請留意農會公告。
-    </div>
+    <h3>🌱 裝備與穿著建議</h3>
+    <p>
+        <strong>衣物：</strong>
+        建議穿著不怕髒的薄長袖或短袖，下半身選擇寬鬆、好捲起褲管的長褲或短褲。
+    </p>
+    <p>
+        <strong>鞋襪：</strong>
+        建議自備拖鞋（田埂邊行走替換）或雨鞋。若想赤腳下田享受泥土觸感，可準備一雙厚底襪子防護腳底。
+    </p>
+    <p>
+        <strong>防曬 / 防蚊：</strong>
+        田間無遮蔽，請自備遮陽帽、薄外套或袖套。準備一條濕毛巾繞在脖子上，既能防曬也能擦汗。
+    </p>
+    <p>
+        <strong>清潔補給：</strong>
+        務必攜帶一套完整的換洗衣物及大毛巾，並自備環保水壺隨時補充水分。
+    </p>
+
+    <h3>🌾 插秧技巧與田間須知</h3>
+    <p class="warning">
+        <strong style="color:#f74602">一定會弄髒：</strong>
+        水田佈滿泥漿，請抱持弄髒的心理準備，放下包袱盡情體驗。
+    </p>
+
+    <p>
+        <strong>拿取秧苗：</strong>
+        每次取約 5-7 株秧苗，盡量連同附著的培養土一起分離，避免傷及根系。
+    </p>
+
+    <p>
+        <strong>插秧要領：</strong>
+        以拇指和食指捏住秧苗基部，垂直插入土中（入土深度約為食指第二指節中間），手指垂直離開泥土，確保秧苗直立即可。
+    </p>
+
+    <p>
+        <strong>注意安全：</strong>
+        參加者（特別是小朋友）在田區行走時切勿奔跑，以免滑倒。若遇陣雨，通常活動照常，建議可自備輕便雨衣。
+    </p>
+</div>
+
     <div class="footer-bottom">
-      <span>報名洽詢｜新竹縣芎林鄉農會 . 富林有機農場</span>
+	<div class="addr">
+	<span>ADDR</span>新竹縣芎林鄉下山村十鄰五座屋 38-5 號｜富林有機農場</div>
+      
+	  <span>報名洽詢｜新竹縣芎林鄉農會 . 富林有機農場</span>
       <span class="stamp">豐收在望</span>
     </div>
   </div>
